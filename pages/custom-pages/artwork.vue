@@ -2,10 +2,11 @@
 const route = useRoute()
 </script>
 
+
+
+
 <template>
 
-
-<!--
   <div style="border:solid" class="w-full h-screen p-2">
     <AppHeader />
 
@@ -20,8 +21,8 @@ const route = useRoute()
   <div style="border: solid;" class="w-full max-w-7xl mx-auto h-[120px]">
     <p>Paragraph ou of the scree</p>
   </div>
--->
+
+  </template>
 
 
 
-</template>
