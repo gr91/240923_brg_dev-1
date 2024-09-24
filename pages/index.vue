@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const route = useRoute()
+
+//add Netlify Identity Widget 
+useHead({
+  script: [
+    { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" },
+  ],
+});
 </script>
 
 <template >
