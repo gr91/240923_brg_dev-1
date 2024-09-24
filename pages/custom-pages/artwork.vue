@@ -4,31 +4,18 @@ const route = useRoute()
 
 <template>
 
-<!--
-  <div class="sticky w-full max-w-7xl h-28 py-[18px] px-[16px] bg-[#e6e6e4] justify-between items-start inline-flex">
-    <div class="w-[768px] flex-col justify-start items-start inline-flex">
-      <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">1993–1995</div>
-      <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">Decomposizione della materia</div>
+  <div style="border:solid" class="w-full h-screen p-2">
+    <AppHeader />
+    <div style="border: solid; border-color: red" class="w-full max-w-7xl mx-auto h-[120px] p-[16px] mb-2 ">
+      <p>Placeholder text</p>
     </div>
-    <div class="justify-end items-center gap-4 flex">
-      <div class="pb-0.5 border-b border-[#323232] justify-center items-center flex">
-        <div class="text-center text-[#323232] text-[11px] font-medium font-['Neue Haas Unica W1G'] uppercase tracking-widest">Images</div>
-      </div>
-      <div class="pb-0.5 border-b border-[#323232] justify-center items-center flex">
-        <div class="text-center text-[#323232] text-[11px] font-medium font-['Neue Haas Unica W1G'] uppercase tracking-widest">Texts</div>
-      </div>
+    <div style="border: solid; border-color: red" class="w-full max-w-7xl mx-auto p-[16px] mb-2 ">
+      <p>Placeholder text</p>
     </div>
   </div>
-  
-  <div class="w-[1264px] h-[721px] pb-10 border border-black flex-col justify-center items-center gap-2.5 inline-flex">
-    <div class="grow shrink basis-0 border border-black"></div>
+
+  <div style="border: solid;" class="w-full max-w-7xl mx-auto h-[120px]">
+    <p>Paragraph ou of the scree</p>
   </div>
--->
-
-
-
-<div >
-  <!-- Define responsive and "fit-to-screen" container-->
-</div>
 
 </template>
