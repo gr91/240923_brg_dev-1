@@ -5,6 +5,6 @@ const route = useRoute()
 <template>
     <AppHeader />
     <div>
-        <p>My about page</p>
+        <p>My About page</p>
     </div>
 </template>
