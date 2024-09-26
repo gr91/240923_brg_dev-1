@@ -1,3 +1,10 @@
+  <script setup>
+  const route = useRoute()
+  const { data: posts } = await useAsyncData('posts', () => {
+    return queryContent('/artworks').find()
+  })
+  </script>
+
 <template >
 
     <main class="mx-auto max-w-7xl space-y-6">
@@ -20,9 +27,3 @@
 
   </template>
   
-  <script setup>
-  const route = useRoute()
-  const { data: posts } = await useAsyncData('posts', () => {
-    return queryContent('/artworks').find()
-  })
-  </script>
