@@ -21,7 +21,6 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
 
-collections:
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
