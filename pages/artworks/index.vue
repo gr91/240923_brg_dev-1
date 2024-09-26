@@ -7,7 +7,7 @@
 
 <template >
 
-    <main class="mx-auto max-w-7xl space-y-6">
+    <div>
       <AppHeader />
       <p><strong>artworks</strong>/index.vue page</p>
 
@@ -23,7 +23,7 @@
           </div>         
         </NuxtLink>
       </div>
-    </main>
+    </div>
 
   </template>
   
