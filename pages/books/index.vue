@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-//const route = useRoute()
+const route = useRoute()
 const { data: posts } = await useAsyncData('posts', () => {
     return queryContent('/books').find()
   })
