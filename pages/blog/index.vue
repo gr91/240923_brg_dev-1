@@ -29,6 +29,6 @@
   
   <script setup>
   const { data: posts } = await useAsyncData('posts', () => {
-    return queryContent('/blog').find()
+    return queryContent('/artworks').find()
   })
   </script>
