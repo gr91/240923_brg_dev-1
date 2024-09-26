@@ -3,7 +3,7 @@
   
     <main class="mx-auto max-w-7xl space-y-6">
         <AppHeader />
-        <!-- <NuxtLink to="/blog">&lt; Back</NuxtLink> -->
+        <!-- <NuxtLink to="/books">&lt; Back</NuxtLink> -->
         <nav class="mb-8" aria-label="go back">
             <router-back class="block" />
           </nav>
