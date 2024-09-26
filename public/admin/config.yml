@@ -39,9 +39,9 @@ collections:
 
 #----- START HERE -----
 #Create new collection for BRG artworks
-  - name: 'artworks'
-    label: 'Artworks'
-    folder: 'content/artworks'
+#  - name: 'artworks'
+#    label: 'Artworks'
+#    folder: 'content/artworks'
     #format:
-    create: true
-    
+#    create: true
+
