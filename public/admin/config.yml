@@ -43,4 +43,5 @@ collections:
     label: 'Artworks'
     folder: 'content/artworks'
     #format:
-    create: 'true'
+    create: true
+    
