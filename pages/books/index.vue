@@ -1,7 +1,8 @@
 <template>
+
     <main class="mx-auto max-w-7xl space-y-6">
         <AppHeader />
-        <p>books/index.vue page</p>
+        <p><strong>books</strong>/index.vue page</p>
 
         <div v-for="post of posts" :key="post.slug">
           <NuxtLink :to="post._path">
@@ -15,8 +16,8 @@
             </div>         
           </NuxtLink>
         </div>
-
     </main>
+
 </template>
 
 <script setup lang="ts">
