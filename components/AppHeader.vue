@@ -6,7 +6,7 @@
             </div>
             <div class="justify-end items-center gap-8 flex">
                 <div class="justify-center items-center gap-2.5 flex">
-                    <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/blog">Blog index</NuxtLink></div>
+                    <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/artworks">Artworks</NuxtLink></div>
                 </div>
                 <div class="justify-center items-center gap-2.5 flex">
                     <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/books">Books</NuxtLink></div>
