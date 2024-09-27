@@ -3,6 +3,8 @@
   const { data: posts } = await useAsyncData('posts', () => {
     return queryContent('/artworks').find()
   })
+  watch(() => route.query, () => refresh())
+
   </script>
 
 <template >
