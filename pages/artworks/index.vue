@@ -1,8 +1,9 @@
   <script setup>
-  const route = useRoute()
+  //const route = useRoute()
   const { data: posts } = await useAsyncData('posts', () => {
     return queryContent('/artworks').find()
   })
+  
   watch(() => route.query, () => refresh())
   key: (route) => route.fullPath
 
