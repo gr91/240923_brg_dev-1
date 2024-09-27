@@ -1,12 +1,11 @@
-  <script setup>
-  const route = useRoute()
-  const { data: posts } = await useAsyncData('posts', () => {
-    return queryContent('/artworks').find()
-  })
+<script setup lang="ts">
+const route = useRoute()
+const { data: posts } = await useAsyncData('posts', () => {
+  return queryContent('/artworks').find()
+})
+</script>
 
-  </script>
-
-<template >
+<template>
 
     <main class="mx-auto max-w-7xl space-y-6">
       <AppHeader />
@@ -26,5 +25,5 @@
       </div>
     </main>
 
-  </template>
+</template>
   

@@ -8,19 +8,21 @@ const { data: posts } = await useAsyncData('posts', () => {
 <template>
 
     <main class="mx-auto max-w-7xl space-y-6">
-        <AppHeader />
-        <p><strong>books</strong>/index.vue page</p>
+      <AppHeader />
+      <p><strong>books</strong>/index.vue page</p>
 
-        <div v-for="post of posts" :key="post.slug">
-          <div class="h-[52px] flex-col justify-start items-start inline-flex" >
-            <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-              <p>{{ post.date }}</p>
-            </div>
-            <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
-              <p>{{ post.title }}</p>
-            </div>
-          </div>         
-        </div>
+      <div v-for="post of posts" :key="post.slug">
+
+        <div class="h-[52px] flex-col justify-start items-start inline-flex" >
+          <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+            <p>{{ post.date }}</p>
+          </div>
+          <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
+            <p>{{ post.title }}</p>
+          </div>
+         </div>    
+              
+      </div>
     </main>
 
 </template>
