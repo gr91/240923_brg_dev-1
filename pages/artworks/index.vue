@@ -11,7 +11,7 @@
       <AppHeader />
       <p><strong>artworks</strong>/index.vue page</p>
 
-      <div v-for="post of posts" >
+      <div v-for="post of posts" :key="post.slug">
         <NuxtLink :to="post._path">
           <div class="h-[52px] flex-col justify-start items-start inline-flex" >
             <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
