@@ -4,6 +4,7 @@
     return queryContent('/artworks').find()
   })
   watch(() => route.query, () => refresh())
+  key: (route) => route.fullPath
 
   </script>
 
