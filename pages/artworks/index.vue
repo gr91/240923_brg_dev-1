@@ -1,6 +1,6 @@
   <script setup>
   const route = useRoute()
-  const { data: posts } = useAsyncData('posts', () => {
+  const { data: posts } = await useAsyncData('posts', () => {
     return queryContent('/artworks').find()
   })
   </script>
