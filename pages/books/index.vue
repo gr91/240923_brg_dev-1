@@ -1,12 +1,8 @@
-<script>
+<script setup lang="ts">
 const route = useRoute()
 const { data: posts } = await useAsyncData('posts', () => {
   return queryContent('/books').find()
 })
-
-watch(() => route.query, () => refresh())
-key: (route) => route.fullPath
-
 </script>
 
 <template>
