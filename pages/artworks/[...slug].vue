@@ -3,7 +3,7 @@
       
 const actualPath = route.path.replace(/\/$/, '');
       
-const { data: post } = await useAsyncData(`hello`, () =>
+const { data: artwork } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 </script>
@@ -17,9 +17,9 @@ const { data: post } = await useAsyncData(`hello`, () =>
         <router-back class="block" />
     </nav>
     <h1 class="text-4xl">
-      {{ post.title }}
+      {{ artwork.title }}
     </h1>
-    <p>{{ post.description }}</p>
+    <p>{{ artwork.description }}</p>
     <hr>
     <ContentDoc />
   </main>
