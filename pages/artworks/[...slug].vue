@@ -1,4 +1,5 @@
 <script setup>
+refreshNuxtData()
 const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
