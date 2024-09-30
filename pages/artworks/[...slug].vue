@@ -1,5 +1,5 @@
 <script setup>
- const route = useRoute()
+const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
       
@@ -12,7 +12,6 @@ const { data: artwork } = await useAsyncData(`hello`, () =>
 <template>
   <main class="mx-auto max-w-7xl space-y-6">
     <AppHeader />
-    <!-- <NuxtLink to="/artwork">&lt; Back</NuxtLink> -->
     <nav class="mb-8" aria-label="go back">
         <router-back class="block" />
     </nav>
