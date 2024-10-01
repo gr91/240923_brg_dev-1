@@ -39,9 +39,40 @@ collections:
 
 #----- START HERE -----
 #Create new collection for BRG artworks
-#  - name: 'artworks'
-#    label: 'Artworks'
-#    folder: 'content/artworks'
-    #format:
-#    create: true
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
+    format: 'frontmatter'
+    create: true
+    slug: {slug}
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string' }
+      - {
+          label: 'Begin Year',
+          name: 'begin-year',
+          widget: 'datetime',
+          date_format: 'YYYY' }
+      - {
+          label: 'End Year',
+          name: 'end-year',
+          widget: 'datetime',
+          date_format: 'YYYY',
+          required: false }
+      - {
+          label: 'Body ITA',
+          name: 'body-ita',
+          widget: 'markdown' }
+      - {
+          label: 'Body ENG',
+          name: 'body-eng',
+          widget: 'markdown' }
+      - {
+          label: 'Images',
+          name: 'iamges',
+          widget: 'image' }
 
