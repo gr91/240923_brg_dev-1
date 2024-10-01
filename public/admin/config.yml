@@ -59,32 +59,12 @@ collections:
         name: 'endyear'
         widget: 'number'
         required: false
-
-      - label: 'Media'
-        name: 'media'
-        widget: 'object'
-        field: 
-          - label: 'Caption'
-            name: 'caption'
-            widget: 'string'
-            required: false
-          - label: 'Images'
-            name: 'images'
-            widget: 'image'
-            media_library:
-              config:
-                multiple: true
-
-
-
-#      - label: 'Images'
-#        name: 'images'
-#        widget: 'image'
-#        media_library:
-#          config:
-#            multiple: true
-
-
+      - label: 'Images'
+        name: 'images'
+        widget: 'image'
+        media_library:
+          config:
+            multiple: true
       - label: 'Body ITA'
         name: 'bodyita'
         widget: 'markdown'
