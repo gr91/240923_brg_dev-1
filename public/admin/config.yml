@@ -43,26 +43,30 @@ collections:
     create: true
     slug: '{{slug}}'
     editor:
-      preview: false
+    preview: false
     fields:
       - label: 'Title'
         name: 'title'
         widget: 'string'
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Photo", "Video", "Other"]
+
       - label: 'Begin Year'
         name: 'beginyear'
         widget: 'number'
+
       - label: 'End Year'
         name: 'endyear'
         widget: 'number'
         required: false
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Photo", "Video", "Other"]
       
       - name: 'gallery'
         label: 'Gallery'
         widget: 'list'
+        required: false
         fields:
           - label: 'Images'
             name: 'images'
@@ -73,15 +77,15 @@ collections:
             hint: 'Image caption'
             required: false
 
-#      - label: 'Images'
-#        name: 'images'
-#        widget: 'image'
-#        media_library:
-#          config:
-#            multiple: true
+      - label: "Video"
+        name: "video"
+        widget: "file"
+        required: false
+      
       - label: 'Body ITA'
         name: 'bodyita'
         widget: 'markdown'
+
       - label: 'Body ENG'
         name: 'bodyeng'
         widget: 'markdown'
