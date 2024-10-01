@@ -12,6 +12,9 @@
                     <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/books">Books</NuxtLink></div>
                 </div>
                 <div class="justify-center items-center gap-2.5 flex">
+                    <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/projects">Projects</NuxtLink></div>
+                </div>
+                <div class="justify-center items-center gap-2.5 flex">
                     <div class="text-black text-base font-normal font-['Neue Haas Unica W1G']"><NuxtLink to="/custom-pages/bio">Bio</NuxtLink></div>
                 </div>
                 <div class="justify-center items-center gap-2.5 flex">

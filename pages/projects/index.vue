@@ -19,7 +19,12 @@ const { data: projects } = await useAsyncData('projects', () => {
             <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
               <p>{{ project.title }}</p>
             </div>
-          </div>         
+
+            <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+              <p>{{ project.bodyita }}</p>
+            </div>
+
+        </div>         
       </div>
     </main>
 
