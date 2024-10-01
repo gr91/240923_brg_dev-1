@@ -46,7 +46,7 @@ collections:
     create: true
     slug: '{slug}'
     editor:
-    preview: false
+      preview: false
     fields:
       - {
           label: 'Title',
@@ -68,8 +68,8 @@ collections:
           name: 'iamges',
           widget: 'image' }
           media_library:
-          config:
-          multiple: true
+            config:
+              multiple: true
       - {
           label: 'Body ITA',
           name: 'bodyita',
