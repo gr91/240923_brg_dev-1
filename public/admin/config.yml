@@ -45,33 +45,28 @@ collections:
     editor:
       preview: false
     fields:
-      - {
-          label: 'Title',
-          name: 'title',
-          widget: 'string' }
-      - {
-          label: 'Begin Year',
-          name: 'beginyear',
-          widget: 'datetime',
-          format: 'YYYY' }
-      - {
-          label: 'End Year',
-          name: 'endyear',
-          widget: 'datetime',
-          format: 'YYYY',
-          required: false }
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Begin Year'
+        name: 'beginyear'
+        widget: 'datetime'
+        format: 'YYYY'
+      - label: 'End Year'
+        name: 'endyear'
+        widget: 'datetime'
+        format: 'YYYY'
+        required: false
       - label: 'Images'
         name: 'images'
         widget: 'image'
         media_library:
           config:
-            multiple: true 
-      - {
-          label: 'Body ITA',
-          name: 'bodyita',
-          widget: 'markdown' }
-      - {
-          label: 'Body ENG',
-          name: 'bodyeng',
-          widget: 'markdown' }
+            multiple: true
+      - label: 'Body ITA'
+        name: 'bodyita'
+        widget: 'markdown'
+      - label: 'Body ENG'
+        name: 'bodyeng'
+        widget: 'markdown'
 
