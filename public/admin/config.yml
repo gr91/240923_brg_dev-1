@@ -55,7 +55,8 @@ collections:
       - label: 'End Year'
         name: 'endyear'
         widget: 'datetime'
-        format: '[YYYY]'
+        date_format: 'YYYY'
+        format: 'YYYY'
         required: false
       - label: 'Images'
         name: 'images'
