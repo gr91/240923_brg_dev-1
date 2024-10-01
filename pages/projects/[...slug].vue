@@ -30,7 +30,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
     </div>
 
     <div style="padding:75% 0 0 0;position:relative;">
-            <iframe src={{ project.video }} frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="-2022 HE SHE ME  01_4">      
+            <iframe {{ project.video }}>      
             </iframe>
         </div>
 
