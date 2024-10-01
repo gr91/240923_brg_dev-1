@@ -18,21 +18,30 @@ const { data: project } = await useAsyncData(`hello`, () =>
     <AppHeader />
     
     <div class="h-[52px] flex-col justify-start items-start inline-flex" >
+        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+            <p>{{ project.beginyear }}</p>
+        </div>
         <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
             <p>{{ project.title }}</p>
         </div>
-        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-          <p>{{ project.beginyear }}</p>
+
+        <hr>
+
+        <div>
+            <p>{{ project.bodyita }}</p>
         </div>
-        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-          <p>{{ project.category }}</p>
-        </div>
-    </div>
+    </div>         
 
     
     <!--
+        <ContentDoc />
+    -->
+    
+    
+    <!-------VIDEO EMBEDDING from vimeo using "video" field from collection------->
+
+    <!--
         <div {{ project.video }}>
-            
         </div>
 
         <div style="padding:75% 0 0 0;position:relative;">
@@ -41,7 +50,5 @@ const { data: project } = await useAsyncData(`hello`, () =>
         </div>
     -->
     
-    <hr>
-    <ContentDoc />
   </main>
 </template>
