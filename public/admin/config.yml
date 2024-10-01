@@ -60,12 +60,12 @@ collections:
           widget: 'datetime',
           format: 'YYYY',
           required: false }
-      -   label: 'Images',
-          name: 'iamges',
-          widget: 'image',
-          media_library:
-            config:
-              multiple: true 
+      - label: 'Images'
+        name: 'images'
+        widget: 'image'
+        media_library:
+          config:
+            multiple: true 
       - {
           label: 'Body ITA',
           name: 'bodyita',
