@@ -44,7 +44,7 @@ collections:
     folder: 'content/projects'
     format: 'frontmatter'
     create: true
-    slug: {slug}
+    slug: '{slug}'
     editor:
       preview: false
     fields:
