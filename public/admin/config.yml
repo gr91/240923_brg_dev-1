@@ -54,22 +54,22 @@ collections:
           widget: 'string' }
       - {
           label: 'Begin Year',
-          name: 'begin-year',
+          name: 'beginyear',
           widget: 'datetime',
           date_format: 'YYYY' }
       - {
           label: 'End Year',
-          name: 'end-year',
+          name: 'endyear',
           widget: 'datetime',
           date_format: 'YYYY',
           required: false }
       - {
           label: 'Body ITA',
-          name: 'body-ita',
+          name: 'bodyita',
           widget: 'markdown' }
       - {
           label: 'Body ENG',
-          name: 'body-eng',
+          name: 'bodyeng',
           widget: 'markdown' }
       - {
           label: 'Images',
