@@ -1,5 +1,5 @@
 ---
-title: Lo sguardo del poeta 2
+title: Lo sguardo del poeta
 category: Photo
 beginyear: 1989
 endyear: 1991
