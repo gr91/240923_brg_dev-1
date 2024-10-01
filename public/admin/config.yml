@@ -48,15 +48,16 @@ collections:
       - label: 'Title'
         name: 'title'
         widget: 'string'
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Photos", "Videos", "Other"]
       - label: 'Begin Year'
         name: 'beginyear'
         widget: 'number'
-        #format: 'YYYY'
       - label: 'End Year'
         name: 'endyear'
-        widget: 'datetime'
-        date_format: 'YYYY'
-        format: 'YYYY'
+        widget: 'number'
         required: false
       - label: 'Images'
         name: 'images'
