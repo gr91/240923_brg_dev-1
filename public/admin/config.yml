@@ -63,10 +63,10 @@ collections:
       - {
           label: 'Images',
           name: 'iamges',
-          widget: 'image' }
+          widget: 'image',
           media_library:
             config:
-              multiple: true
+              multiple: true }
       - {
           label: 'Body ITA',
           name: 'bodyita',
