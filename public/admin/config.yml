@@ -56,13 +56,20 @@ collections:
           label: 'Begin Year',
           name: 'beginyear',
           widget: 'datetime',
-          date_format: 'YYYY' }
+          format: 'YYYY' }
       - {
           label: 'End Year',
           name: 'endyear',
           widget: 'datetime',
-          date_format: 'YYYY',
+          format: 'YYYY',
           required: false }
+      - {
+          label: 'Images',
+          name: 'iamges',
+          widget: 'image' }
+          media_library:
+            config:
+              multiple: true
       - {
           label: 'Body ITA',
           name: 'bodyita',
@@ -71,8 +78,4 @@ collections:
           label: 'Body ENG',
           name: 'bodyeng',
           widget: 'markdown' }
-      - {
-          label: 'Images',
-          name: 'iamges',
-          widget: 'image' }
 
