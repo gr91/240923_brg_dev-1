@@ -36,9 +36,6 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
 
 
-
-#----- START HERE -----
-#Create new collection for BRG artworks
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
