@@ -63,7 +63,7 @@ collections:
       - label: 'Media'
         name: 'media'
         widget: 'object'
-        field: 
+        fields: 
           - label: 'Caption'
             name: 'caption'
             widget: 'string'
