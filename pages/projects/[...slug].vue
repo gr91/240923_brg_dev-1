@@ -29,10 +29,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
         </div>
     </div>
 
-    <div style="padding:75% 0 0 0;position:relative;">
-            <iframe {{ project.video }}>      
-            </iframe>
-        </div>
+    <div {{ project.video }}>    </div>
 
     <!--
         <div style="padding:75% 0 0 0;position:relative;">
