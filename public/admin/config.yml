@@ -60,9 +60,9 @@ collections:
         widget: 'number'
         required: false
       
-      - name: gallery
-        label: Gallery
-        widget: list
+      - name: 'gallery'
+        label: 'Gallery'
+        widget: 'list'
         fields:
           - label: 'Images'
             name: 'images'
