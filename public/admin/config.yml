@@ -11,7 +11,7 @@ collections:
     folder: 'content/artworks'
     format: 'frontmatter'
     create: true
-    slug: '{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
@@ -26,7 +26,7 @@ collections:
     folder: 'content/books'
     format: 'frontmatter'
     create: true
-    slug: '{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
     fields:
