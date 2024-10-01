@@ -58,10 +58,10 @@ collections:
         widget: 'number'
         required: false
 
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Photo", "Video", "Other"]
+      - label: 'Category'
+        name: 'category'
+        widget: 'select'
+        options: ['Photo', 'Video', 'Other']
       
       - name: 'gallery'
         label: 'Gallery'
@@ -77,9 +77,9 @@ collections:
             hint: 'Image caption'
             required: false
 
-      - label: "Video"
-        name: "video"
-        widget: "file"
+      - label: 'Video'
+        name: 'video'
+        widget: 'file'
         required: false
       
       - label: 'Body ITA'
