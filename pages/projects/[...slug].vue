@@ -7,9 +7,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 
-const { data: projectimage } = await useAsyncData('projects', () => {
-    return queryContent(actualPath).findOne()
-})
+
 
 </script>
 
@@ -37,14 +35,6 @@ const { data: projectimage } = await useAsyncData('projects', () => {
     </div>         
     
     
-    <!--
-        <div>
-            <UCarousel v-slot="{ item }" :items="items">
-                <img :src="item" width="300" height="400" draggable="false">
-            </UCarousel>
-        </div>
-        <ContentDoc />
-    -->
     
     
     <!-------VIDEO EMBEDDING from vimeo using "video" field from collection------->
