@@ -73,13 +73,13 @@ collections:
         widget: 'select'
         options: ['Photo', 'Video', 'Other']
       
-      - name: 'gallery'
-        label: 'Gallery'
+      - label: 'Images'
+        name: 'images'
         widget: 'list'
         required: false
         fields:
-          - label: 'Images'
-            name: 'images'
+          - label: 'Image'
+            name: 'image'
             widget: 'image'
           - label: 'Caption'
             name: 'caption'
