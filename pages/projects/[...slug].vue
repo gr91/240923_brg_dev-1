@@ -28,7 +28,10 @@ const { data: project } = await useAsyncData(`hello`, () =>
             </div>
         </div> 
 
-        
+        <div v-for="(img, index) in project.images" key="index" class="image-container">
+            <img :src="img.image" />
+            <p>{{ img.caption }}</p>
+        </div>
 
         <hr>
         <div>
