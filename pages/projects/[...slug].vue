@@ -34,9 +34,6 @@ const { data: projectimage } = await useAsyncData('projects', () => {
         </div>
 
         <hr>
-        <div>
-            <img src="./img/alda-merini-.png" width="500" height="600">
-        </div>
     </div>         
     
     
