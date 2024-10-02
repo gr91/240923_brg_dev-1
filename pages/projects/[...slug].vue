@@ -7,7 +7,9 @@ const { data: project } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 
-const myImage = "static/img/alda-merini-.png"
+const { data: projectimage } = await useAsyncData('projects', () => {
+    return queryContent(actualPath).findOne()
+})
 
 </script>
 

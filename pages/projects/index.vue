@@ -1,8 +1,12 @@
 <script setup lang="ts">
 //const route = useRoute()
 const { data: projects } = await useAsyncData('projects', () => {
-  return queryContent('/projects').find()
+  return queryContent('/projects')
+  .sort({beginyear: 1, endyear: 1})
+  .find()
 })
+
+
 </script>
 
 <template>
@@ -15,7 +19,7 @@ const { data: projects } = await useAsyncData('projects', () => {
             <NuxtLink :to="project._path">
                 <div class="h-[52px] flex-col justify-start items-start inline-flex" >
                     <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-                    <p>{{ project.beginyear }}</p>
+                    <p>{{ project.beginyear }}—{{ project.endyear }}</p>
                     </div>
                     <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
                     <p>{{ project.title }}</p>
