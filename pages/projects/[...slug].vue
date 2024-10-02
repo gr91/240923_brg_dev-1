@@ -3,13 +3,9 @@ const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
       
-const { data: project } = await useAsyncData(`hello`, () =>
-    queryContent(actualPath).findOne()
+const { data: project } = await useAsyncData('project', () => 
+  queryContent(actualPath).findOne()
 );
-
-const { data: projectimage } = await useAsyncData('projects', () => {
-    return queryContent(actualPath).findOne()
-})
 
 </script>
 
@@ -19,23 +15,44 @@ const { data: projectimage } = await useAsyncData('projects', () => {
 <template>
   <main class="mx-auto max-w-7xl space-y-6">
     <AppHeader />
-    
-    <div class="h-[52px] flex-col justify-start items-start inline-flex" >
-        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+
+
+    <div>
+        <div v-if(project.endyar) = true>
+            <p>{{ project.beginyear }}–{{ project.endyear }}</p>
+        </div>
+        <div v-else()>
             <p>{{ project.beginyear }}</p>
         </div>
-        <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
-            <p>{{ project.title }}</p>
-        </div>
-
-        <hr>
         <div>
-            <p>{{ project.bodyita }}</p>
+            <h1>{{ project.title }}</h1>
         </div>
-
-        <hr>
-    </div>         
+    </div>
     
+    <div v-for="(img, index) in project.images" :key="index">
+        <img :src="img.image">
+        <p>{{ img.caption }}</p>
+    </div>
+
+
+    <!--
+        <div class="h-[52px] flex-col justify-start items-start inline-flex" >
+            <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+                <p>{{ project.beginyear }}</p>
+            </div>
+            <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
+                <p>{{ project.title }}</p>
+            </div>
+    
+            <hr>
+            <div>
+                <p>{{ project.bodyita }}</p>
+            </div>
+    
+            <hr>
+        </div>         
+        
+    -->
     
     <!--
         <div>
