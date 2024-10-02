@@ -32,14 +32,17 @@ const { data: project } = await useAsyncData(`hello`, () =>
 
         <hr>
         <div>
+            <img {{ project.gallery }}>
+        </div>
+    </div>         
+    
+    
+    <!--
+        <div>
             <UCarousel v-slot="{ item }" :items="items">
                 <img :src="item" width="300" height="400" draggable="false">
             </UCarousel>
         </div>
-    </div>         
-
-    
-    <!--
         <ContentDoc />
     -->
     

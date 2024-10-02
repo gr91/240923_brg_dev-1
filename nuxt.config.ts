@@ -3,7 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   ssr: true,
-  modules: ['@nuxt/content', '@nuxtjs/i18n', '@nuxt/ui'],
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/i18n',
+    '@nuxt/ui',
+    '@nuxtjs/tailwindcss'
+  ],
   content: {
     // Options
   }
