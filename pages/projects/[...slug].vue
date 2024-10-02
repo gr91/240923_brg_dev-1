@@ -3,13 +3,10 @@ const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
       
-const { data: project } = await useAsyncData(`hello`, () =>
+const { data: project } = await useAsyncData(`hello`, () => {
     queryContent(actualPath).findOne()
-);
-
-const { data: projectimage } = await useAsyncData('projects', () => {
-    return queryContent(actualPath).findOne()
 })
+
 
 </script>
 
