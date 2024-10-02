@@ -21,7 +21,7 @@ const { data: project } = await useAsyncData('project', () =>
         <div v-if(project.endyar) = true>
             <p>{{ project.beginyear }}–{{ project.endyear }}</p>
         </div>
-        <div v-else()>
+        <div  v-if(project.endyar) = false>
             <p>{{ project.beginyear }}</p>
         </div>
         <div>
