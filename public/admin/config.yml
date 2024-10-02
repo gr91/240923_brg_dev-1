@@ -46,7 +46,7 @@ collections:
   - name: 'projects'
     label: 'Projects'
     folder: 'content/projects'
-    format: 'json'
+    format: 'frontmatter'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
