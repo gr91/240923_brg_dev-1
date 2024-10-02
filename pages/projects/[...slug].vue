@@ -19,12 +19,16 @@ const { data: project } = await useAsyncData(`hello`, () =>
     <AppHeader />
     
     <div class="h-[52px] flex-col justify-start items-start inline-flex" >
-        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-            <p>{{ project.beginyear }}</p>
-        </div>
-        <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
-            <p>{{ project.title }}</p>
-        </div>
+        <div class="h-[52px] flex-col justify-start items-start inline-flex" >
+            <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
+                <p>{{ project.beginyear }}—{{ project.endyear }}</p>
+            </div>
+            <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
+                <p>{{ project.title }}</p>
+            </div>
+        </div> 
+
+        
 
         <hr>
         <div>

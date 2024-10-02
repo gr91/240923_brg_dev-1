@@ -31,4 +31,3 @@ const { data: projects } = await useAsyncData('projects', () => {
     </main>
 
 </template>
-  
