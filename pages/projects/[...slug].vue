@@ -7,6 +7,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 
+const myImage = "static/img/alda-merini-.png"
 
 </script>
 
@@ -32,7 +33,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
 
         <hr>
         <div>
-            <img {{ project.gallery }}>
+            <img src="./img/alda-merini-.png" width="500" height="600">
         </div>
     </div>         
     
