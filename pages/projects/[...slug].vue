@@ -26,9 +26,15 @@ const { data: project } = await useAsyncData(`hello`, () =>
         </div>
 
         <hr>
-
         <div>
             <p>{{ project.bodyita }}</p>
+        </div>
+
+        <hr>
+        <div>
+            <UCarousel v-slot="{ item }" :items="items">
+                <img :src="item" width="300" height="400" draggable="false">
+            </UCarousel>
         </div>
     </div>         
 
