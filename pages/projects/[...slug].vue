@@ -15,7 +15,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
 
 
 <template>
-  <main class="mx-auto max-w-7xl space-y-6">
+  <main style="border:solid, red" class="mx-auto max-w-7xl space-y-6">
     <AppHeader />
     
     <div class="h-[52px] flex-col justify-start items-start inline-flex" >
@@ -27,10 +27,12 @@ const { data: project } = await useAsyncData(`hello`, () =>
                 <p>{{ project.title }}</p>
             </div>
         </div> 
-
-        <div v-for="(img, index) in project.images" key="index" class="image-container">
-            <img :src="img.image" />
-            <p>{{ img.caption }}</p>
+        <div style="border:solid, wheat" class="w-full p-1 ">
+            <div  v-for="(img, index) in project.images" key="index" >
+                <img class="w-full" :src="img.image" />
+                <p>{{ img.caption }}</p>
+                <hr>
+            </div>
         </div>
 
         <hr>
