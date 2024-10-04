@@ -24,6 +24,10 @@ export default {
       'brg-light-gray': '#ff3300',
     },
   },
+  //-----remove default style from tailwind-----
+  //corePlugins: {
+  //  preflight: false,
+  //},
   plugins: [],
 }
 
