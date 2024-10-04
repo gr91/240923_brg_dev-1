@@ -9,27 +9,35 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/i18n',
     '@nuxt/ui',
     '@nuxtjs/tailwindcss'
   ],
+
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
   content: {
     // Options
   },
+
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: "first" }],
     configPath: '~/config/tailwind.js',
     exposeConfig: true,
     config: {},
     viewer: true,
+  },
+
+  colorMode: {
+    preference: 'light'
   }
 
 })
