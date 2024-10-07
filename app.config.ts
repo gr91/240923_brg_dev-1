@@ -1,7 +1,9 @@
 //------Default setting for nuxt ui------
-//export default defineAppConfig({
-//    ui: {
-//        primary: 'green',
-//        grey: 'cool',
-//    }
-//})
+export default defineAppConfig({
+    // Your config options here
+    ui: {
+      primary: 'blue',
+      secondary: 'red'
+    }
+  })
+  

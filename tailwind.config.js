@@ -23,7 +23,14 @@ export default {
       'brg-red': '#ff3300',
       'brg-light-gray': '#ff3300',
     },
-  },
+    extend: {
+      aspectRatio: {
+        auto: 'auto',
+        square: '1 / 1',
+        video: '16 / 9'
+      }
+    }
+  },  
   //-----remove default style from tailwind-----
   //corePlugins: {
   //  preflight: false,

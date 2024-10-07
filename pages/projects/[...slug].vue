@@ -27,13 +27,30 @@ const { data: project } = await useAsyncData(`hello`, () =>
                 <p>{{ project.title }}</p>
             </div>
         </div> 
-        <div style="border:solid, wheat" class="w-full p-1 ">
-            <div  v-for="(img, index) in project.images" key="index" >
-                <img class="w-full" :src="img.image" />
-                <p>{{ img.caption }}</p>
-                <hr>
+
+        
+
+        <div id="controls-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <div  v-for="(img, index) in project.images" key="index" >
+                    <img :src="img.image" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <p>{{ img.caption }}</p>
+                    <hr>
+                </div>
             </div>
         </div>
+
+
+        <!--
+            <div style="border:solid, wheat" class="w-full p-1 ">
+                <div  v-for="(img, index) in project.images" key="index" >
+                    <img class="w-full" :src="img.image" />
+                    <p>{{ img.caption }}</p>
+                    <hr>
+                </div>
+            </div>
+        -->
 
         <hr>
         <div>
