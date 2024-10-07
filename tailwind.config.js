@@ -20,8 +20,7 @@ export default {
       'gray': '#8492a6',
       'gray-light': '#d3dce6',
       //-----add custom colors here below-----
-      'brg-red': '#ff3300',
-      'brg-light-gray': '#ff3300',
+      'BRG-white': '#E7E7E4',
     },
     extend: {
       aspectRatio: {
