@@ -11,7 +11,9 @@ useHead({
 
 <template >
   <main class="mx-auto max-w-7xl space-y-6">
-    <AppHeader />
+    <!--
+      <AppHeader />
+    -->
     <div>
       <h1 class="text-4xl font-bold text-center text-blue-500">Nuxt Routing set up successfully!</h1>
       <p>Current route: {{ route.path }}</p>
