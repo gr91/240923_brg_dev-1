@@ -18,43 +18,48 @@ const { data: project } = await useAsyncData(`hello`, () =>
     <!--
         <AppHeader />
     -->
+    <div style="border: solid aquamarine" class="p-4 h-screen">
+
+        <div style="border:solid green" class="h-[52px] flex-col justify-start items-start inline-flex" >
+            <div class="self-stretch brg-body-text">
+                <p>{{ project.beginyear }}—{{ project.endyear }}</p>
+            </div>
+            <div class="self-stretch brg-heading-text">
+                <p>{{ project.title }}</p>
+            </div>
+        </div> 
     
-    <div style="border:solid green" class="h-[52px] flex-col justify-start items-start inline-flex" >
-        <div class="self-stretch text-[#141414] text-sm font-normal font-['Neue Haas Unica W1G']">
-            <p>{{ project.beginyear }}—{{ project.endyear }}</p>
-        </div>
-        <div class="self-stretch text-[#141414] text-2xl font-normal font-['Neue Haas Unica W1G'] leading-[31.20px]">
-            <p>{{ project.title }}</p>
-        </div>
-    </div> 
-
-    <div style="border:solid, blue" class="w-full mx-auto p-1 ">
-        <div  v-for="(img, index) in project.images" key="index" >
-            <img class="w-[80px] mx-auto" :src="img.image" />
-            <p>{{ img.caption }}</p>
-            <hr>
-        </div>
-    </div>
         
+        <div style="border: solid blue" id="controls-carousel" class="w-full">
+            <div style="border:solid cyan" class="relative overflow-hidden ">
+                <div  v-for="(img, index) in project.images" key="index" >
+                    <img :src="img.image" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <p>{{ img.caption }}</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
 
+
+    </div>
+
+    
     <hr>
     <div style="border: solid black">
         <p>{{ project.bodyita }}</p>
     </div>
-
-
+    
+    
     
     <!--
-    <div style="border: solid blue" id="controls-carousel" class="w-full">
-        <div style="border:solid cyan" class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div style="border:solid, blue" class="w-full mx-auto p-1 ">
             <div  v-for="(img, index) in project.images" key="index" >
-                <img :src="img.image" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                <img class="w-[80px] mx-auto" :src="img.image" />
                 <p>{{ img.caption }}</p>
                 <hr>
             </div>
         </div>
-    </div>
--->    
+    -->    
 
 
 
