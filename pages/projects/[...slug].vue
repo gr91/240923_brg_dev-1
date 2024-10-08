@@ -45,7 +45,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
 
     
     <hr>
-    <div style="border: solid black">
+    <div style="border: solid black" class="h-screen">
         <p>{{ project.bodyita }}</p>
     </div>
     
