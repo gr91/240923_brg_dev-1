@@ -1,6 +1,6 @@
 <template>
     <span>
-        <div style="border:solid black" class="sticky w-full h-28 mx-auto py-[16px] bg-BRG-white justify-between items-start inline-flex">
+        <div class="w-full h-28 mx-auto py-[16px] bg-BRG-white items-start justify-between inline-flex">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
             </div>
