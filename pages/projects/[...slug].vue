@@ -18,9 +18,9 @@ const { data: project } = await useAsyncData(`hello`, () =>
     <!--
         <AppHeader />
     -->
-    <div style="border: solid aquamarine" class="p-4 h-screen">
+    <div style="border: solid aquamarine" class="mt-28 h-screen">
 
-        <div style="border:solid green" class="h-[52px] flex-col justify-start items-start inline-flex" >
+        <div style="border:solid green" class="mt-28 h-[52px] flex-col justify-start items-start inline-flex" >
             <div class="self-stretch brg-body-text">
                 <p>{{ project.beginyear }}—{{ project.endyear }}</p>
             </div>
