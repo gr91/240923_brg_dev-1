@@ -6,6 +6,18 @@ const actualPath = route.path.replace(/\/$/, '');
 const { data: project } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
+
+
+const items = project.value.images.map(image => ({
+  image: image.image,   // The image URL from the markdown file
+  caption: image.caption // The caption from the markdown file
+}))
+;
+
+
+
+
+
 </script>
 
 
@@ -41,32 +53,64 @@ const { data: project } = await useAsyncData(`hello`, () =>
         </div>
         
         <!--Images Carousel section / fill height-->
-        <div style="border: solid blue" class="w-full flex-auto">
-            <p>Images carousel</p>
-        </div>
-
-    </div>
-
-
-
-    <!--SCROLL SECTION with texts-->        
-    <div style="border: solid black" class="h-svh ">
-        <p>{{ project.bodyita }}</p>
-    </div>
-            
-            
-            
         
-        
-            <!--
-                <div style="border:solid, blue" class="w-full mx-auto p-1 ">
-                    <div  v-for="(img, index) in project.images" key="index" >
-                        <img class="w-80 mx-auto" :src="img.image" />
-                        <p>{{ img.caption }}</p>
-                        <hr>
-                    </div>
+        <UCarousel
+            v-slot="{ item, index }"
+            :items="items"
+            :ui="{ item: 'w-full' }"
+            
+            :prev-button="{
+                color: '',
+                icon: 'i-heroicons-arrow-left-20-solid',
+                class: '-start'
+            }"
+            :next-button="{
+                color: '',
+                icon: 'i-heroicons-arrow-right-20-solid',
+                class: '-end'
+            }"
+            arrows
+            
+            style="border:solid blue"
+            class="w-full mx-auto p-4 flex-auto"
+        >
+
+            <div class="mx-auto w-full flex flex-col" style="border:solid red">
+                <div style="border:solid orange" class="flex-auto">
+                    <img :src="item.image" :alt="item.caption" class=" w-48 h-48 mb-2" draggable="false">
                 </div>
-            -->
+
+                <div class="flex-none">
+                    <p>{{ item.caption }} </p>
+                </div>
+            </div>
+
+
+        </UCarousel>
+
+        
+    </div>
+    
+    
+    
+    <!--SCROLL SECTION with texts-->        
+    <p>{{ project.bodyita }}</p>
+    
+    
+    
+    
+    <!--
+        <div style="border: solid black" class="h-svh ">
+            <div style="border:solid, blue" class="w-full mx-auto p-1 ">
+                <div  v-for="(img) in project.images" key="index" >
+                    <img class="w-80 mx-auto" :src="img.image" />
+                    <p>{{ img.caption }}</p>
+                    <p>{{ img.image }}</p>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    -->
 
 
 
