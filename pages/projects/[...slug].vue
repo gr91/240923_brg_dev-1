@@ -7,7 +7,7 @@ const { data: project } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 
-
+//------ Create and populate and array with images'URLs and caption for 'project' array ------//
 const items = project.value.images.map(image => ({
   image: image.image,   // The image URL from the markdown file
   caption: image.caption // The caption from the markdown file
@@ -77,13 +77,18 @@ const items = project.value.images.map(image => ({
             >
     
     
-                <div style="border:solid red" class="mx-auto max-w-full x-fit min-h-0 flex flex-col " >
+                <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
 
-                    <div style="border:solid green 2px" class="mx-auto flex-1 min-h-0">
-                        <img :src="item.image" :alt="item.caption" class="h-full" draggable="false" >
+                    <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
+                        <img :src="item.image" :alt="item.caption" draggable="false"
+                            style="
+                            max-width: 100%;
+                            max-height: 100%;
+                            display: block;
+                            margin: auto;" >
                     </div>
                         
-                    <div style="border:solid green 2px" class="flex-none">
+                    <div style="border:solid green 2px" class="flex-none w-fit">
                         <p>{{ item.caption }} </p>
                     </div>
 
