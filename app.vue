@@ -2,18 +2,20 @@
 
   <!--MAIN-->
   <!--Set max width for the whole app-->
-  <main style="border:solid, red" class="mx-auto max-w-7xl">
+  <main class="mx-auto max-w-7xl px-4"> <!-- style="border:solid, red" -->
     
       <!--APP HEADER CONTAINER-->
       <!--Fix AppHeader at the top of the page and make it respect position and width -->
-      <div style="border:solid black" class="fixed mx-auto w-full max-w-7xl">
+      <div  class="fixed mx-auto w-full max-w-7xl z-20"> <!--style="border:solid black"-->
+        <AppHeader />  
         <!--
-          <AppHeader />  
         -->
       </div>
 
       <!--PAGES-->
-      <NuxtPage />
+      <div class="mx-auto w-full max-w-7xl">
+        <NuxtPage />
+      </div>
     
   </main>
 </template>

@@ -26,32 +26,47 @@ const items = project.value.images.map(image => ({
 <template>
 
     <!--FIT TO SCREEN-->        
-    <div style="border:solid, black" class="w-full h-svh mx-auto mb-1 p-4 flex flex-col">
+    <div class="w-full h-svh mx-auto mb-1 flex flex-col"> <!--style="border:solid, black"-->
 
-        <!--Empty section alligned to AppHeader / fixed height-->
-        <div style="border:solid, blue" class="w-full h-24 mb-1 flex-none "></div>
         
-        <!--Project Heading section + navigation buttons / fixed height-->
-        <div style="border:solid, blue" class="w-full h-24 mb-1 flex-none ">
-            <div style="border:solid, aqua" class="bg-BRG-white flex flex-row justify-between ">
-                
-                <div style="border:solid green" class=" flex-col justify-start items-start inline-flex" >
-                    <div class="self-stretch brg-body-text">
-                        <p>{{ project.beginyear }}—{{ project.endyear }}</p>
+        <!--PROJECT HEADER -->
+        
+        <!--Container for Header ans AppHeader alignment / fixed positionheight background fill-->
+        <div class="fixed z-10 mx-auto w-full max-w-7xl pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
+            
+            <!--Empty section alligned to AppHeader-->
+            <div class="w-full h-24 flex-none"> <!--style="border:solid, blue"-->
+            </div>   
+            
+            <!--Project Heading section + navigation buttons-->
+            <div class="w-full h-24 flex-none">  <!--style="border:solid, blue"-->
+                <div  class="flex flex-row justify-between "> <!--style="border:solid, aqua"-->
+                    
+                    <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+                        <div class="self-stretch brg-body-text">
+                            <p>{{ project.beginyear }}—{{ project.endyear }}</p>
+                        </div>
+                        <div class="self-stretch brg-heading-text">
+                            <p style="font-size: 24px;">{{ project.title }}</p>
+                        </div>
+                    </div> 
+                    
+                    <div  class=" flex justify-start items-start gap-4"> <!--style="border: solid greenyellow"-->
+                        <div class="self-stretch brg-body-text">Images</div>
+                        <div class="self-stretch brg-body-text">Texts</div>
                     </div>
-                    <div class="self-stretch brg-heading-text">
-                        <p style="font-size: 24px;">{{ project.title }}</p>
-                    </div>
-                </div> 
-                
-                <div style="border: solid greenyellow" class=" flex justify-start items-start gap-4">
-                    <div class="self-stretch brg-body-text">Images</div>
-                    <div class="self-stretch brg-body-text">Texts</div>
+                    
                 </div>
-                
             </div>
         </div>
         
+
+
+        <!--Empty section alligned to AppHeader / fixed height-->
+        <div  class="w-full h-48 mb-1 flex-none "></div> <!--style="border:solid, blue"-->
+        
+
+
         <!--Images Carousel section / fill height-->
         <div style="border:solid blue 3px; " class="w-full mx-auto p-4 flex-1 min-h-0" >
         

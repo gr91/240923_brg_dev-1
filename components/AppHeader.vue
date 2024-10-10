@@ -1,6 +1,6 @@
 <template>
     <span>
-        <div class="w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
+        <div class="w-full h-24 mx-auto pt-4 pr-8 bg-BRG-white items-start justify-between inline-flex">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
             </div>
