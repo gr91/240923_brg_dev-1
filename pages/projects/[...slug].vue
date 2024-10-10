@@ -53,40 +53,54 @@ const items = project.value.images.map(image => ({
         </div>
         
         <!--Images Carousel section / fill height-->
+        <div style="border:solid blue 3px; " class="w-full mx-auto p-4 flex-1 min-h-0" >
         
-        <UCarousel
-            v-slot="{ item, index }"
-            :items="items"
-            :ui="{ item: 'w-full' }"
-            
-            :prev-button="{
-                color: '',
-                icon: 'i-heroicons-arrow-left-20-solid',
-                class: '-start'
-            }"
-            :next-button="{
-                color: '',
-                icon: 'i-heroicons-arrow-right-20-solid',
-                class: '-end'
-            }"
-            arrows
-            
-            style="border:solid blue"
-            class="w-full mx-auto p-4 flex-auto"
-        >
+            <UCarousel
+                v-slot="{ item, index }"
+                :items="items"
+                :ui="{ item: 'w-full' }"
+                
+                :prev-button="{
+                    color: '',
+                    icon: 'i-heroicons-arrow-left-20-solid',
+                    class: '-start'
+                }"
+                :next-button="{
+                    color: '',
+                    icon: 'i-heroicons-arrow-right-20-solid',
+                    class: '-end'
+                }"
+                arrows
+                
+                style="border:solid aqua"
+                class="flex mx-auto h-full "
+            >
+    
+    
+                <div style="border:solid red" class="mx-auto max-w-full x-fit min-h-0 flex flex-col " >
 
-            <div class="mx-auto w-full flex flex-col" style="border:solid red">
-                <div style="border:solid orange" class="flex-auto">
-                    <img :src="item.image" :alt="item.caption" class=" w-48 h-48 mb-2" draggable="false">
+                    <div style="border:solid green 2px" class="mx-auto flex-1 min-h-0">
+                        <img :src="item.image" :alt="item.caption" class="h-full" draggable="false" >
+                    </div>
+                        
+                    <div style="border:solid green 2px" class="flex-none">
+                        <p>{{ item.caption }} </p>
+                    </div>
+
+                    <!--
+                        <div style="border:solid black" class="mb-2">
+                        </div>
+        
+                        <div style="border:solid gray" class=" ">
+                        </div>
+                    -->
+
                 </div>
-
-                <div class="flex-none">
-                    <p>{{ item.caption }} </p>
-                </div>
-            </div>
-
-
-        </UCarousel>
+    
+    
+            </UCarousel>
+        </div>    
+        
 
         
     </div>
