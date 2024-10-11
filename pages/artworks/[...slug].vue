@@ -3,12 +3,12 @@ const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
       
-const { data: project } = await useAsyncData(`hello`, () =>
+const { data: artwork } = await useAsyncData(`hello`, () =>
     queryContent(actualPath).findOne()
 );
 
-//------ Create and populate and array with images'URLs and caption for 'project' array ------//
-const items = project.value.images.map(image => ({
+//------ Create and populate and array with images'URLs and caption for 'artwork' array ------//
+const items = artwork.value.images.map(image => ({
   image: image.image,   // The image URL from the markdown file
   caption: image.caption // The caption from the markdown file
 }))
@@ -29,25 +29,25 @@ const items = project.value.images.map(image => ({
     <div class="w-full h-svh mx-auto mb-1 flex flex-col"> <!--style="border:solid, black"-->
 
         
-        <!--PROJECT HEADER -->
+        <!--ARTWORK HEADER -->
         
         <!--Container for Header ans AppHeader alignment / fixed positionheight background fill-->
-        <div class="fixed z-10 mx-auto w-full max-w-7xl pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
+        <div class="fixed z-10 mx-auto w-full max-w-7xl pr-4 md:pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
             
             <!--Empty section alligned to AppHeader-->
-            <div class="w-full h-24 flex-none"> <!--style="border:solid, blue"-->
+            <div class="w-full h-14 md:h-24 flex-none"> <!--style="border:solid, blue"-->
             </div>   
             
-            <!--Project Heading section + navigation buttons-->
+            <!--ARTWORK Heading section + navigation buttons-->
             <div class="w-full h-24 flex-none">  <!--style="border:solid, blue"-->
                 <div  class="flex flex-row justify-between "> <!--style="border:solid, aqua"-->
                     
                     <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
                         <div class="self-stretch brg-body-text">
-                            <p>{{ project.beginyear }}—{{ project.endyear }}</p>
+                            <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
                         </div>
                         <div class="self-stretch brg-heading-text">
-                            <p style="font-size: 24px;">{{ project.title }}</p>
+                            <p style="font-size: 24px;">{{ artwork.title }}</p>
                         </div>
                     </div> 
                     
@@ -128,7 +128,7 @@ const items = project.value.images.map(image => ({
     
     
     <!--SCROLL SECTION with texts-->        
-    <p>{{ project.bodyita }}</p>
+    <p>{{ artwork.bodyita }}</p>
     
     
     
@@ -136,7 +136,7 @@ const items = project.value.images.map(image => ({
     <!--
         <div style="border: solid black" class="h-svh ">
             <div style="border:solid, blue" class="w-full mx-auto p-1 ">
-                <div  v-for="(img) in project.images" key="index" >
+                <div  v-for="(img) in artwork.images" key="index" >
                     <img class="w-80 mx-auto" :src="img.image" />
                     <p>{{ img.caption }}</p>
                     <p>{{ img.image }}</p>
@@ -161,7 +161,7 @@ const items = project.value.images.map(image => ({
             <!--
                 <div style="border: solid blue" id="controls-carousel" class="w-full grow">
                     <div style="border:solid cyan" class="relative overflow-hidden ">
-                        <div  v-for="(img, index) in project.images" key="index" >
+                        <div  v-for="(img, index) in artwork.images" key="index" >
                             <img :src="img.image" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                             <p>{{ img.caption }}</p>
                             <hr>
@@ -179,7 +179,7 @@ const items = project.value.images.map(image => ({
     <!-------VIDEO EMBEDDING from vimeo using "video" field from collection------->
 
     <!--
-        <div {{ project.video }}>
+        <div {{ artwork.video }}>
         </div>
 
         <div style="padding:75% 0 0 0;position:relative;">
