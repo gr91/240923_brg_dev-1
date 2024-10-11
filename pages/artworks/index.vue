@@ -1,6 +1,6 @@
 <script setup lang="ts">
 //const route = useRoute()
-const { data: artworks } = useAsyncData('hello', () => {
+const { data: artworks } = await useAsyncData('hello', () => {
   return queryContent('/artworks')
   .sort({beginyear: 1, endyear: 1})
   .find()
