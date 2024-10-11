@@ -18,25 +18,24 @@ const { data: artworks } = await useAsyncData('hello', () => {
     </div>
     -->
 
-
-    <!--Empty section alligned to AppHeader-->
-    <div class="fixed w-full max-w-7xl mx-auto pr-8"> <!--style="border:solid, blue"-->
-    </div>   
+ 
         
     <!--ARTWORK Heading section + navigation buttons-->
-    <div style="border:solid" class="fixed w-full max-w-7xl h-24 mx-auto mt-14 mb:mt-24 pr-8 flex justify-stard md:justify-end">  <!--style="border:solid"-->
-        <div style="border:solid" class="flex flex-row gap-4 pt-1  "> <!--style="border: solid greenyellow"-->
-            <div class="self-stretch brg-body-text">Photos</div>
-            <div class="self-stretch brg-body-text">Videos</div>
-            <div class="self-stretch brg-body-text">Other</div>
-        </div>
-    </div>
-        
+    <div class="h-32 md:h-24"></div>
 
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">Photos</div>
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">Videos</div>
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">Other</div>
+    </div>
+
+        
     <!--Empty section alligned to AppHeader / fixed height-->
-    <div class="w-full h-48 md:h-24 flex-none "></div> <!--style="border:solid, blue"-->
+    <!--
+        <div style="border:solid lightgray" class="w-full h-48 md:h-24 flex-none "></div>
+    -->
     
-    <div v-for="artwork of artworks" :key="artwork.slug" class="mb-4">
+    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
         <NuxtLink :to="artwork._path">
             <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
                 <div class="self-stretch brg-body-text">

@@ -1,7 +1,7 @@
 <template>
     
-    <span class="hidden md:block" style="border:solid blue">
-        <div class=" w-full h-24 mx-auto pt-4 pr-8 bg-BRG-white items-start justify-between inline-flex">
+    <span class="hidden md:block max-w-7xl mx-auto" style="border:solid blue">
+        <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
             </div>
@@ -31,8 +31,8 @@
 
     </span>
 
-    <span class="block md:hidden" style="border:solid red" >
-        <div class="w-full h-14 mx-auto pt-2 pr-4 bg-BRG-white items-start justify-between inline-flex">
+    <span class="block md:hidden mx-auto" style="border:solid red" >
+        <div class="w-full h-12 mx-auto px-4 bg-BRG-white justify-between inline-flex items-center">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
             </div>

@@ -35,7 +35,7 @@ const items = artwork.value.images.map(image => ({
         <div class="fixed z-10 mx-auto w-full max-w-7xl pr-4 md:pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
             
             <!--Empty section alligned to AppHeader-->
-            <div class="w-full h-14 md:h-24 flex-none"> <!--style="border:solid, blue"-->
+            <div  class="w-full h-14 md:h-24 flex-none"> <!---->
             </div>   
             
             <!--ARTWORK Heading section + navigation buttons-->
