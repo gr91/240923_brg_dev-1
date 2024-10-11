@@ -3,7 +3,9 @@ const route = useRoute()
 </script>
 
 <template>
-    <div>
-        <p>My About page</p>
-    </div>
+    <!--
+        <div>
+            <p>My About page</p>
+        </div>
+    -->
 </template>
