@@ -1,6 +1,6 @@
 <template>
     
-    <span class="hidden md:block max-w-7xl mx-auto" style="border:solid blue">
+    <span class="hidden md:block max-w-7xl mx-auto" >
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
@@ -31,7 +31,7 @@
 
     </span>
 
-    <span class="block md:hidden mx-auto" style="border:solid red" >
+    <span class="block md:hidden mx-auto" >
         <div class="w-full h-12 mx-auto px-4 bg-BRG-white justify-between inline-flex items-center">
             <div class="justify-center items-center gap-2.5 flex">
                 <div class="brg-big-text"><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
