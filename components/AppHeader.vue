@@ -12,17 +12,16 @@
                     <div class="brg-big-text"><NuxtLink to="/books">Books</NuxtLink></div>
                 </div>
                 <div class="justify-center items-center gap-2.5 flex">
-                    <div class="brg-big-text"><NuxtLink to="/projects">Projects</NuxtLink></div>
-                </div>
-                <div class="justify-center items-center gap-2.5 flex">
                     <div class="brg-big-text"><NuxtLink to="/custom-pages/bio">Bio</NuxtLink></div>
                 </div>
                 <div class="justify-center items-center gap-2.5 flex">
                     <div class="brg-big-text"><NuxtLink to="/custom-pages/contacts">Contacts</NuxtLink></div>
                 </div>
-                <div class="justify-center items-center gap-2.5 flex">
-                    <div class="brg-big-text">ITA</div>
-                </div>
+                <!--
+                    <div class="justify-center items-center gap-2.5 flex">
+                        <div class="brg-big-text">ITA</div>
+                    </div>
+                -->
             </div>
         </div>
     </span>
