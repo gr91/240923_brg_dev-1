@@ -32,7 +32,7 @@ const items = artwork.value.images.map(image => ({
         <!--ARTWORK HEADER -->
         
         <!--Container for Header ans AppHeader alignment / fixed positionheight background fill-->
-        <div class="fixed z-10 mx-auto w-full max-w-7xl pr-8 md:pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
+        <div class="fixed z-10 mx-auto w-full max-w-7xl pr-4 md:pr-8 bg-BRG-white"> <!--style="border:solid, blue"-->
             
             <!--Empty section alligned to AppHeader-->
             <div  class="w-full h-14 md:h-24 flex-none"> <!---->
@@ -68,7 +68,7 @@ const items = artwork.value.images.map(image => ({
 
 
         <!--Images Carousel section / fill height-->
-        <div class="w-full mx-auto p-4 flex-1 min-h-0" >
+        <div style="border:solid blue 3px; " class="w-full mx-auto p-4 flex-1 min-h-0" >
         
             <UCarousel
                 v-slot="{ item, index }"
@@ -87,14 +87,14 @@ const items = artwork.value.images.map(image => ({
                 }"
                 arrows
                 
-                
+                style="border:solid aqua"
                 class="flex mx-auto h-full "
             >
     
     
-                <div class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
+                <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
 
-                    <div class="mx-auto flex-1 min-h-0">
+                    <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
                         <img :src="item.image" :alt="item.caption" draggable="false"
                             style="
                             max-width: 100%;
@@ -103,7 +103,7 @@ const items = artwork.value.images.map(image => ({
                             margin: auto;" >
                     </div>
                         
-                    <div class="flex-none w-fit">
+                    <div style="border:solid green 2px" class="flex-none w-fit">
                         <p>{{ item.caption }} </p>
                     </div>
 

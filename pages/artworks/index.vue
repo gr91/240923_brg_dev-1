@@ -23,7 +23,7 @@ const { data: artworks } = await useAsyncData('hello', () => {
     <!--ARTWORK Heading section + navigation buttons-->
     <div class="h-32 md:h-24"></div>
 
-    <div class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
         <div style="border-bottom: solid;" class="h-5 brg-body-text">Photos</div>
         <div style="border-bottom: solid;" class="h-5 brg-body-text">Videos</div>
         <div style="border-bottom: solid;" class="h-5 brg-body-text">Other</div>
