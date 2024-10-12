@@ -29,8 +29,24 @@ const items = artwork.value.images.map(image => ({
 
     <div class="w-full h-80 mt-40">
         <p>Template page:</p>
+        
+        <br>
+        <p>{{ actualPath }}</p>
+
+        <br>
+        <p>{{ myKey }}</p>
+
         <br>
         <p>{{ artwork }}</p>
+
+        <br>
+        <p>{{ artwork.beginyear }}</p>
+        <p>{{ artwork.title }}</p>
+
+        <div v-for="item of items" >
+            <img :src="item.image">
+            <p>{{ item.caption }}</p>
+        </div>
     </div>
 
 </template>
