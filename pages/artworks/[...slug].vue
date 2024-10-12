@@ -33,8 +33,7 @@ const items = artwork.value.images.map(image => ({
                 <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
             </div>
             <div class="self-stretch brg-heading-text">
-                <p style="font-size: 24px; line-height: 130%;">Il tempo l'architettura l'uomo</p>
-                <p style="font-size: 24px; line-height: 130%;">Ricostruzione del Padiglione d'Arte contemporanea di Milano</p>
+                <p style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</p>
             </div>
         </div> 
     
