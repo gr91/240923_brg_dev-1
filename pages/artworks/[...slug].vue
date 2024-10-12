@@ -22,63 +22,75 @@ const items = artwork.value.images.map(image => ({
 <template>
 
 
-    <!--ARTWORK Heading section + navigation buttons-->
-    <div class="h-12 md:h-24"></div>
-    
-    
-    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white flex flex-col md:flex-row justify-between ">
+    <!--FIT TO SCREEN-->
+    <div style="border: solid red;" class="w-full h-svh mx-auto mb-1 flex flex-col">
+
         
-        <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
-            <div class="self-stretch brg-body-text">
-                <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
+        <div style="border:solid" class="sticky top-12 md:top-24 z-40 bg-BRG-white flex flex-col md:flex-row justify-between ">
+            
+            <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+                <div class="self-stretch brg-body-text">
+                    <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
+                </div>
+                <div class="self-stretch brg-heading-text">
+                    <p style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</p>
+                    <p style="font-size: 24px; line-height: 130%;">Second line of Artwork's Heading, even if it's a very long line</p>
+                </div>
+            </div> 
+            
+            <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+                <div style="border-bottom: solid;" class="h-5 brg-body-text">IMAGES</div>
+                <div style="border-bottom: solid;" class="h-5 brg-body-text">TEXTS</div>
             </div>
-            <div class="self-stretch brg-heading-text">
-                <p style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</p>
-                <p style="font-size: 24px; line-height: 130%;">Second line of Artwork's Heading, even if it's a very long line</p>
-            </div>
-        </div> 
-        
-        <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-            <div style="border-bottom: solid;" class="h-5 brg-body-text">IMAGES</div>
-            <div style="border-bottom: solid;" class="h-5 brg-body-text">TEXTS</div>
+            
         </div>
         
-    </div>
-    
-    
-    
-    
-    <!--CAROUSEL-->
-    <div style="border:colo blue">
-        <UCarousel
-            v-slot="{ item, index }"
-            :items="items"
-            :ui="{ item: 'w-full' }"
-
-            style="border:solid aqua"
-            class="flex mx-auto h-full "
-        >
-
-            <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
-
-                <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
-                    <img :src="item.image" :alt="item.caption" draggable="false"
-                        style="
-                        max-width: 100%;
-                        max-height: 100%;
-                        display: block;
-                        margin: auto;"
-                    >
-                </div>
         
-                <div style="border:solid green 2px" class="flex-none w-fit">
-                    <p> {{ item.caption }} </p>
-                </div>
-
+        <!--ARTWORK Heading section + navigation buttons-->
+        <div style="border:solid green" class="h-12 md:h-24"></div>
+        
+        
+        <!--CAROUSEL-->
+        <div style="border:solid blue 3px; " class="w-full mx-auto p-4 flex-1 min-h-0" >
+    
+            <div style="border:colo blue">
+                <UCarousel
+                    v-slot="{ item, index }"
+                    :items="items"
+                    :ui="{ item: 'w-full' }"
+        
+                    style="border:solid aqua"
+                    class="flex mx-auto h-full "
+                >
+        
+                    <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
+        
+                        <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
+                            <img :src="item.image" :alt="item.caption" draggable="false"
+                                style="
+                                max-width: 100%;
+                                max-height: 100%;
+                                display: block;
+                                margin: auto;"
+                            >
+                        </div>
+                
+                        <div style="border:solid green 2px" class="flex-none w-fit">
+                            <p> {{ item.caption }} </p>
+                        </div>
+        
+                    </div>
+        
+                </UCarousel>
             </div>
+            
+        </div>
 
-        </UCarousel>
+        
     </div>
+
+
+    
 
 
 
@@ -105,7 +117,7 @@ const items = artwork.value.images.map(image => ({
                 <p>{{ item.caption }}</p>
             </div>
         -->
-            
+
     </div>
 
 </template>
