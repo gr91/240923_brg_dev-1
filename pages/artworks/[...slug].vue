@@ -2,8 +2,10 @@
 const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
+
+const myKey = actualPath.replace("/artworks/", "");
       
-const { data: artwork } = await useAsyncData(`helloSlug`, () =>
+const { data: artwork } = await useAsyncData(myKey, () =>
     queryContent(actualPath).findOne()
 );
 
@@ -130,6 +132,14 @@ const items = artwork.value.images.map(image => ({
     <!--SCROLL SECTION with texts-->        
     <p>{{ artwork.bodyita }}</p>
     
+    <br><br>
+    <p>{{ route }}</p>
+    
+    <br><br>
+    <p>{{ actualPath }}</p>
+
+    <br><br>
+    <p>{{ myKey }}</p>
     
     
     
