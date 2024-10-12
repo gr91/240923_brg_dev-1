@@ -109,14 +109,6 @@ const items = artwork.value.images.map(image => ({
                         <p>{{ item.caption }} </p>
                     </div>
 
-                    <!--
-                        <div style="border:solid black" class="mb-2">
-                        </div>
-        
-                        <div style="border:solid gray" class=" ">
-                        </div>
-                    -->
-
                 </div>
     
     
@@ -145,65 +137,8 @@ const items = artwork.value.images.map(image => ({
 
     <br><br>
     <p style="color: blue;">{{ items }}</p>
-    <!--
-    -->
-    
-    
-    
-    <!--
-        <div style="border: solid black" class="h-svh ">
-            <div style="border:solid, blue" class="w-full mx-auto p-1 ">
-                <div  v-for="(img) in artwork.images" key="index" >
-                    <img class="w-80 mx-auto" :src="img.image" />
-                    <p>{{ img.caption }}</p>
-                    <p>{{ img.image }}</p>
-                    <hr>
-                </div>
-            </div>
-        </div>
-    -->
 
 
-
-
-            <!--
-                <div style="border: solid aquamarine" class="mt-28 h-screen">
-                </div>
-            -->
-                
-                
-                
-                
-                
-            <!--
-                <div style="border: solid blue" id="controls-carousel" class="w-full grow">
-                    <div style="border:solid cyan" class="relative overflow-hidden ">
-                        <div  v-for="(img, index) in artwork.images" key="index" >
-                            <img :src="img.image" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                            <p>{{ img.caption }}</p>
-                            <hr>
-                        </div>
-                    </div>
-                </div>   
-            -->    
-
-
-
-    
-    
-    
-    
-    <!-------VIDEO EMBEDDING from vimeo using "video" field from collection------->
-
-    <!--
-        <div {{ artwork.video }}>
-        </div>
-
-        <div style="padding:75% 0 0 0;position:relative;">
-            <iframe src="https://player.vimeo.com/video/1014856847?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="-2022 HE SHE ME  01_4">      
-            </iframe>
-        </div>
-    -->
 
 
 </template>
