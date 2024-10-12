@@ -47,6 +47,37 @@ const items = artwork.value.images.map(image => ({
 
 
 
+
+    <div style="border:colo blue">
+        <UCarousel
+            v-slot="{ item, index }"
+            :items="items"
+            :ui="{ item: 'w-full' }"
+        >
+
+        <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
+
+            <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
+                <img :src="item.image" :alt="item.caption" draggable="false"
+                    style="
+                    max-width: 100%;
+                    max-height: 100%;
+                    display: block;
+                    margin: auto;" >
+            </div>
+    
+            <div style="border:solid green 2px" class="flex-none w-fit">
+                <p>{{ item.caption }} </p>
+            </div>
+
+        </div>
+
+        </UCarousel>
+    </div>
+
+
+
+
     <div class="w-full mt-24" style="border:solid red">
         <p>Template page:</p>
         
