@@ -53,6 +53,9 @@ const items = artwork.value.images.map(image => ({
             v-slot="{ item, index }"
             :items="items"
             :ui="{ item: 'w-full' }"
+
+            style="border:solid aqua"
+            class="flex mx-auto h-full "
         >
 
         <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
@@ -67,7 +70,7 @@ const items = artwork.value.images.map(image => ({
             </div>
     
             <div style="border:solid green 2px" class="flex-none w-fit">
-                <p>{{ item.caption }} </p>
+                <p> {{ item.caption }} </p>
             </div>
 
         </div>
