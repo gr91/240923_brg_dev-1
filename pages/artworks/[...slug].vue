@@ -23,7 +23,7 @@ const items = artwork.value.images.map(image => ({
 
 
     <!--FIT TO SCREEN-->
-    <div style="border: solid red;" class="w-full h-svh mx-auto mb-1 flex flex-col">
+    <div style="border: solid black;" class="w-full h-dvh mx-auto mb-1 flex flex-col pb-4 pt-12 md:pt-24">
 
         
         <div style="border:solid" class="sticky top-12 md:top-24 z-40 bg-BRG-white flex flex-col md:flex-row justify-between ">
@@ -46,45 +46,41 @@ const items = artwork.value.images.map(image => ({
         </div>
         
         
-        <!--ARTWORK Heading section + navigation buttons-->
-        <div style="border:solid green" class="h-12 md:h-24"></div>
+
         
+        
+
         
         <!--CAROUSEL-->
-        <div style="border:solid blue 3px; " class="w-full mx-auto p-4 flex-1 min-h-0" >
-    
-            <div style="border:colo blue">
-                <UCarousel
-                    v-slot="{ item, index }"
-                    :items="items"
-                    :ui="{ item: 'w-full' }"
+        <UCarousel
+            v-slot="{ item, index }"
+            :items="items"
+            :ui="{ item: 'w-full' }"
+
+            style="border:solid aqua"
+            class=" w-full mx-auto py-4 flex-1 min-h-0 flex h-full"
+        >
+
+            <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
+
+                <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
+                    <img :src="item.image" :alt="item.caption" draggable="false"
+                        style="
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;
+                        margin: auto;"
+                    >
+                </div>
         
-                    style="border:solid aqua"
-                    class="flex mx-auto h-full "
-                >
-        
-                    <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
-        
-                        <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
-                            <img :src="item.image" :alt="item.caption" draggable="false"
-                                style="
-                                max-width: 100%;
-                                max-height: 100%;
-                                display: block;
-                                margin: auto;"
-                            >
-                        </div>
-                
-                        <div style="border:solid green 2px" class="flex-none w-fit">
-                            <p> {{ item.caption }} </p>
-                        </div>
-        
-                    </div>
-        
-                </UCarousel>
+                <div style="border:solid green 2px" class="flex-none w-fit">
+                    <p> {{ item.caption }} </p>
+                </div>
+
             </div>
-            
-        </div>
+
+
+        </UCarousel>
 
         
     </div>
