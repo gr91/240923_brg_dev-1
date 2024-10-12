@@ -21,7 +21,33 @@ const items = artwork.value.images.map(image => ({
 <!--Nuxt page-->
 <template>
 
-    <div class="w-full h-80 mt-40">
+
+    <!--ARTWORK Heading section + navigation buttons-->
+    <div class="h-12 md:h-24"></div>
+
+
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white flex flex-col md:flex-row justify-between ">
+
+        <div  class="h-30 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+            <div class="self-stretch brg-body-text">
+                <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
+            </div>
+            <div class="self-stretch brg-heading-text">
+                <p style="font-size: 24px; line-height: 130%;">Il tempo l'architettura l'uomo</p>
+                <p style="font-size: 24px; line-height: 130%;">Ricostruzione del Padiglione d'Arte contemporanea di Milano</p>
+            </div>
+        </div> 
+    
+        <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+            <div style="border-bottom: solid;" class="h-5 brg-body-text">IMAGES</div>
+            <div style="border-bottom: solid;" class="h-5 brg-body-text">TEXTS</div>
+        </div>
+
+    </div>
+
+
+
+    <div class="w-full mt-24" style="border:solid red">
         <p>Template page:</p>
         
         <br>
