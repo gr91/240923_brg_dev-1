@@ -5,7 +5,7 @@ const actualPath = route.path.replace(/\/$/, '');
 
 //const myKey = actualPath.replace("/artworks/", "");
       
-const { data: artwork } = await useAsyncData(() =>
+const { data: artwork } = await useAsyncData('helloSlug', () =>
     queryContent(actualPath).findOne()
 );
 
