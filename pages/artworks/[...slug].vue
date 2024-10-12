@@ -3,7 +3,7 @@ const route = useRoute()
       
 const actualPath = route.path.replace(/\/$/, '');
       
-const { data: artwork } = await useAsyncData(`hello`, () =>
+const { data: artwork } = await useAsyncData(`helloSlug`, () =>
     queryContent(actualPath).findOne()
 );
 
