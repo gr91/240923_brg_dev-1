@@ -6,7 +6,12 @@ const actualPath = route.path.replace(/\/$/, '');
 const myKey = actualPath.replace("/artworks/", "");
       
 const { data: artwork } = await useAsyncData(myKey, () =>
-    queryContent(actualPath).findOne()
+    queryContent(actualPath).findOne(),
+    {
+        params: {
+            lazy:true
+        }
+    }
 );
 
 //------ Create and populate and array with images'URLs and caption for 'artwork' array ------//
