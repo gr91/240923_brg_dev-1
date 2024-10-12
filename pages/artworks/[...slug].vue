@@ -28,12 +28,13 @@ const items = artwork.value.images.map(image => ({
 
     <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white flex flex-col md:flex-row justify-between ">
 
-        <div  class="h-30 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+        <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
             <div class="self-stretch brg-body-text">
                 <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
             </div>
             <div class="self-stretch brg-heading-text">
                 <p style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</p>
+                <p style="font-size: 24px; line-height: 130%;">Second line of Artwork's Heading, even if it's a very long line</p>
             </div>
         </div> 
     
