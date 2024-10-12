@@ -24,10 +24,10 @@ const items = artwork.value.images.map(image => ({
 
     <!--ARTWORK Heading section + navigation buttons-->
     <div class="h-12 md:h-24"></div>
-
-
+    
+    
     <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white flex flex-col md:flex-row justify-between ">
-
+        
         <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
             <div class="self-stretch brg-body-text">
                 <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
@@ -37,17 +37,18 @@ const items = artwork.value.images.map(image => ({
                 <p style="font-size: 24px; line-height: 130%;">Second line of Artwork's Heading, even if it's a very long line</p>
             </div>
         </div> 
-    
+        
         <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
             <div style="border-bottom: solid;" class="h-5 brg-body-text">IMAGES</div>
             <div style="border-bottom: solid;" class="h-5 brg-body-text">TEXTS</div>
         </div>
-
+        
     </div>
-
-
-
-
+    
+    
+    
+    
+    <!--CAROUSEL-->
     <div style="border:colo blue">
         <UCarousel
             v-slot="{ item, index }"
@@ -81,27 +82,30 @@ const items = artwork.value.images.map(image => ({
 
 
 
-
-    <div class="w-full mt-24" style="border:solid red">
-        <p>Template page:</p>
+    <!--SCROLL section-->
+    <div class="w-full mt-4 h-80" style="border:solid red">
+        <p>{{ artwork.bodyita }}</p>
         
-        <br>
-        <p>{{ actualPath }}</p>
-
-        <br>
-        <p>{{ myKey }}</p>
-
-        <br>
-        <p>{{ artwork }}</p>
-
-        <br>
-        <p>{{ artwork.beginyear }}</p>
-        <p>{{ artwork.title }}</p>
-
-        <div v-for="item of items" >
-            <img :src="item.image">
-            <p>{{ item.caption }}</p>
-        </div>
+        <!--
+            <br>
+            <p>{{ actualPath }}</p>
+    
+            <br>
+            <p>{{ myKey }}</p>
+    
+            <br>
+            <p>{{ artwork }}</p>
+    
+            <br>
+            <p>{{ artwork.beginyear }}</p>
+            <p>{{ artwork.title }}</p>
+    
+            <div v-for="item of items" >
+                <img :src="item.image">
+                <p>{{ item.caption }}</p>
+            </div>
+        -->
+            
     </div>
 
 </template>
