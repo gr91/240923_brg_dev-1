@@ -27,8 +27,10 @@ const items = artwork.value.images.map(image => ({
 <!--Nuxt page-->
 <template>
 
-    <div class="w-full h-80">
-        <p>Template page</p>
+    <div class="w-full h-80 mt-40">
+        <p>Template page:</p>
+        <br>
+        <p>{{ artwork }}</p>
     </div>
 
 </template>
