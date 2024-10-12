@@ -61,7 +61,7 @@ const items = artwork.value.images.map(image => ({
             class="w-full h-full min-h-0 flex"
         >
 
-            <div style="border:solid red" class="mx-auto flex flex-col " > <!--min-h-0-->  
+            <div style="border:solid red" class="w-full mx-auto flex flex-col " > <!--min-h-0-->  
 
                 <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex">
                     <img :src="item.image" :alt="item.caption" draggable="false"
