@@ -123,7 +123,7 @@ const items = artwork.value.images.map(image => ({
             </UCarousel>
         </div>    
         
-
+    </div>
         
     
     
