@@ -57,13 +57,13 @@ const items = artwork.value.images.map(image => ({
             :items="items"
             :ui="{ item: 'w-full' }"
 
-            style="border:solid aqua"
-            class=" w-full mx-auto py-4 flex-1 min-h-0 flex h-full"
+            style="border:solid aqua 2px"
+            class="w-full h-full min-h-0 flex"
         >
 
-            <div style="border:solid red" class="mx-auto max-w-[90%] flex flex-col " > <!--min-h-0-->  
+            <div style="border:solid red" class="mx-auto flex flex-col " > <!--min-h-0-->  
 
-                <div style="border:solid green 3px" class="mx-auto flex-1 min-h-0">
+                <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex">
                     <img :src="item.image" :alt="item.caption" draggable="false"
                         style="
                         max-width: 100%;
