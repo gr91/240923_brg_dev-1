@@ -140,6 +140,12 @@ const items = artwork.value.images.map(image => ({
 
     <br><br>
     <p>{{ myKey }}</p>
+
+    <br><br>
+    <p style="color: red;">{{ artwork }}</p>
+
+    <br><br>
+    <p style="color: blue;">{{ items }}</p>
     <!--
     -->
     
