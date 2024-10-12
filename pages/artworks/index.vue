@@ -4,7 +4,15 @@ const { data: artworks } = await useAsyncData('hello', () => {
   return queryContent('/artworks')
   .sort({beginyear: 1, endyear: 1})
   .find()
-})
+});
+
+
+
+//const { data: myNewCont, data, status, error, refresh, clear } = await useFetch('/artwkors', {
+//    pick: ['title']
+
+//})
+
 
 
 </script>
@@ -42,11 +50,20 @@ const { data: artworks } = await useAsyncData('hello', () => {
                     <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
                 </div>
                 <div class="self-stretch brg-heading-text">
-                    <p style="font-size: 24px;">{{ artwork.title }}</p>
+                    <p style="font-size: 24px;">{{ artwork.title }} <br> <!--SUBTITLE--> </p>
                 </div>
-            </div>         
+            </div>
+                    
         </NuxtLink>
     </div>
+    
+
+    <!--
+        <br><br>
+        <p><strong>Artworks</strong> contains:</p><br><p>{{ artworks }}</p>
+        <br><br>
+        <p><strong>myNewCont</strong> contains:</p><br><p>{{ myNewCont }}</p>
+    -->
 
 
 
