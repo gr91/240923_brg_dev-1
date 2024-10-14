@@ -22,10 +22,11 @@ const items = artwork.value.images.map(image => ({
 <template>
 
 
+
     <!--FIT TO SCREEN-->
     <div style="border: solid black;" class="w-full h-dvh mx-auto mb-1 flex flex-col pb-4 pt-12 md:pt-24">
 
-        
+
         <div style="border:solid" class="sticky top-12 md:top-24 z-40 bg-BRG-white flex flex-col md:flex-row justify-between ">
             
             <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
@@ -45,13 +46,8 @@ const items = artwork.value.images.map(image => ({
             </div>
             
         </div>
-        
-        
 
-        
-        
 
-        
         <!--CAROUSEL-->
         <UCarousel
             v-slot="{ item, index }"
@@ -63,7 +59,6 @@ const items = artwork.value.images.map(image => ({
         >
 
             <div style="border:solid red" class="w-full mx-auto flex flex-col " > <!--min-h-0-->  
-
                 <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex">
                     <img :src="item.image" :alt="item.caption" draggable="false"
                         style="
@@ -73,13 +68,10 @@ const items = artwork.value.images.map(image => ({
                         margin: auto;"
                     >
                 </div>
-        
                 <div style="border:solid green 2px" class="flex-none w-fit">
                     <p> {{ item.caption }} </p>
                 </div>
-
             </div>
-
 
         </UCarousel>
 
@@ -87,34 +79,12 @@ const items = artwork.value.images.map(image => ({
     </div>
 
 
-    
-
-
 
     <!--SCROLL section-->
     <div class="w-full mt-4 h-80" style="border:solid red">
-        <p>{{ artwork.bodyita }}</p>
-        
-        <!--
-            <br>
-            <p>{{ actualPath }}</p>
-    
-            <br>
-            <p>{{ myKey }}</p>
-    
-            <br>
-            <p>{{ artwork }}</p>
-    
-            <br>
-            <p>{{ artwork.beginyear }}</p>
-            <p>{{ artwork.title }}</p>
-    
-            <div v-for="item of items" >
-                <img :src="item.image">
-                <p>{{ item.caption }}</p>
-            </div>
-        -->
-
+        <MDC :value="artwork.bodyita"/>
     </div>
+
+
 
 </template>
