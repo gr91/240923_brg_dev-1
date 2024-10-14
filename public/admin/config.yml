@@ -8,8 +8,8 @@ public_folder: '/img'
 #Add i18n configuration----------
 i18n:
   structure: multiple_folders
-  locales: [it, en]
-  default_locale: it
+  locales: [en, it]
+  default_locale: en
 #Add i18n configuration----------
 
 
