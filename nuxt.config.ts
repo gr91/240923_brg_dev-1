@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/i18n',
     '@nuxt/ui',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/mdc'
   ],
 
   postcss: {
