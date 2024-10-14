@@ -93,7 +93,7 @@ collections:
         widget: 'string'
 
       - label: 'Year'
-        name: 'date'
+        name: 'year'
         widget: 'number'
 
       - label: 'True description'
