@@ -30,7 +30,8 @@ const items = artwork.value.images.map(image => ({
             
             <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
                 <div class="self-stretch brg-body-text">
-                    <p>{{ artwork.beginyear }}—{{ artwork.endyear }}</p>
+                    <p v-if="artwork.endyear != 0"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                    <p v-else>{{ artwork.beginyear }}</p>
                 </div>
                 <div class="self-stretch brg-heading-text">
                     <p style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</p>
