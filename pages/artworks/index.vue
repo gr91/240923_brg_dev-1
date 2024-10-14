@@ -51,8 +51,8 @@ const { data: artworks } = await useAsyncData('hello', () => {
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
                 <div class="self-stretch brg-heading-text">
-                    <h1 style="font-size: 24px;">{{ artwork.title }}</h1>
-                    <h1 style="font-size: 24px;">{{ artwork.subtitle }}</h1>
+                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
+                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
                 </div>
             </div>
                     
