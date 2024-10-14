@@ -6,10 +6,9 @@ media_folder: 'public/img'
 public_folder: '/img'
 
 #Add i18n configuration----------
-i18n:
-  structure: multiple_folders
-  locales: [en, it]
-  default_locale: en
+structure: multiple_folders
+locales: [en, it]
+default_locale: en
 #Add i18n configuration----------
 
 
@@ -71,9 +70,7 @@ collections:
       - label: 'Body ITA'
         name: 'bodyita'
         widget: 'markdown'
-         #Add i18n configuration----------
         i18n: true
-         #Add i18n configuration----------
 
   - name: 'books'
     label: 'Books'
