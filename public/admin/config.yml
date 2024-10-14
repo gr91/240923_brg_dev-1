@@ -29,6 +29,11 @@ collections:
         name: 'title'
         widget: 'string'
 
+      - label: 'Subtitle'
+        name: 'subtitle'
+        widget: 'string'
+        required: false
+
       - label: 'Begin Year'
         name: 'beginyear'
         widget: 'number'
