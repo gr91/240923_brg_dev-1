@@ -6,9 +6,10 @@ media_folder: 'public/img'
 public_folder: '/img'
 
 #Add i18n configuration----------
-structure: multiple_folders
-locales: [en, it]
-default_locale: en
+i18n:
+  structure: multiple_folders
+  locales: [it, en]
+  default_locale: it
 #Add i18n configuration----------
 
 
@@ -72,6 +73,9 @@ collections:
         widget: 'markdown'
         i18n: true
 
+
+
+
   - name: 'books'
     label: 'Books'
     folder: 'content/books'
@@ -80,16 +84,28 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
+    #Add i18n configuration----------
+    i18n: true
+    #Add i18n configuration----------
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
 
+      - label: 'Year'
+        name: 'date'
+        widget: 'number'
 
+      - label: 'True description'
+        name: 'truedes'
+        widget: 'markdown'
+        #Add i18n configuration----------
+        i18n: true
+        #Add i18n configuration----------
 
-#Comment ENG Body
-#      - label: 'Body ENG'
-#        name: 'bodyeng'
-#        widget: 'markdown'
-
+      - label: 'Duplicate description'
+        name: 'dupldes'
+        widget: 'markdown'
+        #Add i18n configuration----------
+        i18n: duplicate
+        #Add i18n configuration----------
