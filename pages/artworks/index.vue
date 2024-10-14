@@ -47,7 +47,7 @@ const { data: artworks } = await useAsyncData('hello', () => {
         <NuxtLink :to="artwork._path">
             <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
                 <div class="self-stretch brg-body-text">
-                    <p v-if="artwork.endyear != 0"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                    <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
                 <div class="self-stretch brg-heading-text">

@@ -36,7 +36,6 @@ collections:
       - label: 'End Year'
         name: 'endyear'
         widget: 'number'
-        required: false
 
       - label: 'Category'
         name: 'category'
