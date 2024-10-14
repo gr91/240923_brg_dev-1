@@ -1,7 +1,7 @@
 ---
 title: Lo sguardo del poeta
 beginyear: 1989
-endyear: 1989
+endyear: 1991
 category: Photo
 images:
   - image: /img/alda-merini-.png
