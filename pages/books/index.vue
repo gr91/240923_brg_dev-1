@@ -4,7 +4,12 @@ const { data: books } = await useAsyncData('books', () => {
   return queryContent('/books')
   .sort({year: -1})
   .find()
-})
+});
+
+//------i18n configuration --- from nuxtjs/i18n docs
+const { locale, setLocale } = useI18n()
+
+
 </script>
 
 <template>
@@ -33,14 +38,14 @@ const { data: books } = await useAsyncData('books', () => {
     </div>
   </div>
 
-  
+
   <div>
     <div>
+      <button @click="setLocale('it')"
+        class="w-16 p-2 mx-2" style="border:solid">ITA</button>
+
       <button @click="setLocale('en')"
         class="w-16 p-2 mx-2" style="border:solid">ENG</button>
-
-      <button @click="setLocale('fr')"
-        class="w-16 p-2 mx-2" style="border:solid">FRA</button>
 
       <p>{{ $t('welcome') }}</p>
     </div>
