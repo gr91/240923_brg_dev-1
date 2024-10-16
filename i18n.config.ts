@@ -5,9 +5,17 @@ export default defineI18nConfig(() => ({
     messages: {
       it: {
         welcome: 'Benvenuti',
+        artworks: 'Opere',
+        books: 'Libri',
+        bio: 'Bio',
+        contacts: 'Contatti'
       },
       en: {
         welcome: 'Welcome',
+        artworks: 'Artworks',
+        books: 'Books',
+        bio: 'Bio',
+        contacts: 'Contacts'
       }
     }
   }))

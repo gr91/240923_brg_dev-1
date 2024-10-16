@@ -7,7 +7,12 @@ const { data: books } = await useAsyncData('books', () => {
 });
 
 //------i18n configuration --- from nuxtjs/i18n docs
-const { locale, setLocale } = useI18n()
+const { locale, setLocale } = useI18n();
+
+const switchLocalePath = useSwitchLocalePath()
+
+const localePath = useLocalePath()
+
 
 
 </script>
@@ -40,16 +45,14 @@ const { locale, setLocale } = useI18n()
 
 
   <div>
-    <div>
-      <button @click="setLocale('it')"
-        class="w-16 p-2 mx-2" style="border:solid">ITA</button>
-
-      <button @click="setLocale('en')"
-        class="w-16 p-2 mx-2" style="border:solid">ENG</button>
-
-      <p>{{ $t('welcome') }}</p>
-    </div>
+    <p>Current language is set to <strong>{{ locale }}</strong></p>
   </div>
+
+
+
+
+
+
 
   <!--
     <p><strong>books</strong>/index.vue page</p>

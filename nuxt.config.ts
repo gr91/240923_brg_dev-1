@@ -31,7 +31,9 @@ export default defineNuxtConfig({
 
   //------i18n configuration --- from nuxtjs/i18n docs
   i18n: {
-    vueI18n: './i18n.config.ts'
+    vueI18n: './i18n.config.ts',
+    locales: ['it', 'en' ], // used in URL path prefix
+    defaultLocale: 'it', // default locale of your project for Nuxt pages and routings
   },
 
   tailwindcss: {

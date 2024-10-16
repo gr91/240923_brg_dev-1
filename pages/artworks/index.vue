@@ -6,6 +6,9 @@ const { data: artworks } = await useAsyncData('hello', () => {
   .find()
 });
 
+//------i18n configuration --- from nuxtjs/i18n docs
+const { locale, setLocale } = useI18n();
+
 
 
 //const { data: myNewCont, data, status, error, refresh, clear } = await useFetch('/artwkors', {
@@ -43,6 +46,8 @@ const { data: artworks } = await useAsyncData('hello', () => {
         <div style="border:solid lightgray" class="w-full h-48 md:h-24 flex-none "></div>
     -->
     
+    <p>The current language is {{ locale }}</p>
+
     <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
         <NuxtLink :to="artwork._path">
             <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
