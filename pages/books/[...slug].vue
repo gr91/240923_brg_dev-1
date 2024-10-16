@@ -39,6 +39,9 @@ const { data: book } = await useAsyncData(myKey, () =>
         
         <p><strong>Locale</strong></p>
         <p>{{ locale }}</p> <br>
+
+        <p><strong>LocalePath</strong></p>
+        <p>{{ localePath }}</p> <br>
         
         <p><strong>Route</strong></p>
         <p>{{ route }}</p> <br>
