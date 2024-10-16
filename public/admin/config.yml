@@ -22,9 +22,6 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
-    #Add i18n configuration----------
-    i18n: true
-    #Add i18n configuration----------
     fields:
       - label: 'Title'
         name: 'title'
