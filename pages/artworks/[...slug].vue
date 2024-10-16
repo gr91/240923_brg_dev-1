@@ -1,5 +1,8 @@
 <script setup>
 
+//------i18n configuration --- from nuxtjs/i18n docs
+//------DUPLICATE SCRIPT SETUP FROM BOOKS/INDEX------
+
 const route = useRoute()      
 const actualPath = route.path.replace(/\/$/, '');
 const myKey = actualPath.replace("/artworks/", "");

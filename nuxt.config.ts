@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
     locales: ['it', 'en' ], // used in URL path prefix
     defaultLocale: 'it', // default locale of your project for Nuxt pages and routings
+    strategy: 'prefix', // set routing strategy to have a prefix for both language
   },
 
   tailwindcss: {

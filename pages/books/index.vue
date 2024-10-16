@@ -7,7 +7,8 @@ const { data: books } = await useAsyncData('books', () => {
 });
 
 //------i18n configuration --- from nuxtjs/i18n docs
-const { locale, setLocale } = useI18n();
+const localePath = useLocalePath()
+const { locale, setLocale } = useI18n()
 
 // const switchLocalePath = useSwitchLocalePath()
 // const localePath = useLocalePath()
@@ -26,6 +27,7 @@ const { locale, setLocale } = useI18n();
   </div>
 
   <div v-for="book in books" :key="book.slug" class="w-full my-4" style="border:solid grey">
+  
     <div>
       <p>{{ book.year }}</p>
       <h3>{{ book.title }}</h3>
