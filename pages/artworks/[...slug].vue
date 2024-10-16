@@ -41,8 +41,8 @@ const items = artwork.value.images.map(image => ({
             </div> 
             
             <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-                <div style="border-bottom: solid;" class="h-5 brg-body-text">IMAGES</div>
-                <div style="border-bottom: solid;" class="h-5 brg-body-text">TEXTS</div>
+                <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('images') }}</div>
+                <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('texts') }}</div>
             </div>
             
         </div>

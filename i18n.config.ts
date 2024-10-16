@@ -8,14 +8,25 @@ export default defineI18nConfig(() => ({
         artworks: 'Opere',
         books: 'Libri',
         bio: 'Bio',
-        contacts: 'Contatti'
+        contacts: 'Contatti',
+        photos: 'Foto',
+        videos: 'Video',
+        other: 'Altro',
+        images: 'Immagini',
+        texts: 'Testi',
       },
       en: {
         welcome: 'Welcome',
         artworks: 'Artworks',
         books: 'Books',
         bio: 'Bio',
-        contacts: 'Contacts'
+        contacts: 'Contacts',
+        photos: 'Photos',
+        videos: 'Videos',
+        other: 'Other',
+        images: 'Images',
+        texts: 'Text',
+
       }
     }
   }))

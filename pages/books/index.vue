@@ -9,9 +9,8 @@ const { data: books } = await useAsyncData('books', () => {
 //------i18n configuration --- from nuxtjs/i18n docs
 const { locale, setLocale } = useI18n();
 
-const switchLocalePath = useSwitchLocalePath()
-
-const localePath = useLocalePath()
+// const switchLocalePath = useSwitchLocalePath()
+// const localePath = useLocalePath()
 
 
 
