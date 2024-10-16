@@ -33,6 +33,19 @@ const { data: books } = await useAsyncData('books', () => {
     </div>
   </div>
 
+  
+  <div>
+    <div>
+      <button @click="setLocale('en')"
+        class="w-16 p-2 mx-2" style="border:solid">ENG</button>
+
+      <button @click="setLocale('fr')"
+        class="w-16 p-2 mx-2" style="border:solid">FRA</button>
+
+      <p>{{ $t('welcome') }}</p>
+    </div>
+  </div>
+
   <!--
     <p><strong>books</strong>/index.vue page</p>
   

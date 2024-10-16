@@ -29,6 +29,11 @@ export default defineNuxtConfig({
     // Options
   },
 
+  //------i18n configuration --- from nuxtjs/i18n docs
+  i18n: {
+    vueI18n: './i18n.config.ts'
+  },
+
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.css', { injectPosition: "first" }],
     configPath: '~/config/tailwind.js',
