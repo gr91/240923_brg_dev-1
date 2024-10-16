@@ -1,14 +1,22 @@
 <script setup lang="ts">
-//const route = useRoute()
-const { data: books } = await useAsyncData('books', () => {
-  return queryContent('/books')
-  .sort({year: -1})
-  .find()
-});
 
 //------i18n configuration --- from nuxtjs/i18n docs
 const localePath = useLocalePath()
 const { locale, setLocale } = useI18n()
+
+const route = useRoute()      
+const actualPath = route.path.replace(/\/$/, '');
+//edit path to include en/it folder 
+const myPath = "/books" + actualPath.replace("/books", "");
+
+
+//const route = useRoute()
+const { data: books } = await useAsyncData('books', () => {
+  return queryContent(myPath)
+  .sort({year: -1})
+  .find()
+});
+
 
 // const switchLocalePath = useSwitchLocalePath()
 // const localePath = useLocalePath()
