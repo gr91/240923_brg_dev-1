@@ -49,19 +49,20 @@ const { locale, setLocale } = useI18n();
     <p>The current language is {{ locale }}</p>
 
     <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
-        <NuxtLink :to="artwork._path">
-            <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
-                <div class="self-stretch brg-body-text">
-                    <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
-                    <p v-else>{{ artwork.beginyear }}</p>
-                </div>
-                <div class="self-stretch brg-heading-text">
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
-                </div>
+        <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+            <div class="self-stretch brg-body-text">
+                <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                <p v-else>{{ artwork.beginyear }}</p>
             </div>
-                    
-        </NuxtLink>
+            <div class="self-stretch brg-heading-text">
+                <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
+                <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
+            </div>
+        </div>
+        <!--
+            <NuxtLink :to="artwork._path">
+            </NuxtLink>
+        -->
     </div>
     
 
