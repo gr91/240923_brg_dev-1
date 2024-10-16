@@ -88,10 +88,16 @@ collections:
       - label: 'Title'
         name: 'title'
         widget: 'string'
+        #Add i18n configuration----------
+        i18n: duplicate
+        #Add i18n configuration----------
 
       - label: 'Year'
         name: 'year'
         widget: 'number'
+        #Add i18n configuration----------
+        i18n: duplicate
+        #Add i18n configuration----------
 
       - label: 'True description'
         name: 'truedes'
