@@ -44,10 +44,13 @@ const { data: books } = await useAsyncData('books', () => {
       <div style="color: red;">
         <MDC :value="book.truedes" />
       </div>
-
-      <br>
       <div style="color: blue">
         <MDC :value="book.dupldes" />
+      </div>
+      
+      <br>
+      <div>
+        <p>{{ book._path }}</p>
       </div>
     </div>
   </div>
