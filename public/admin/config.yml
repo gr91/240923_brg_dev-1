@@ -124,7 +124,7 @@ collections:
         required: false
         summary: '{{fields.image}} - {{fields.caption}}'
         #Add i18n configuration----------
-        i18n: true
+        i18n: duplicate
         fields:
           - label: 'Image'
             name: 'image'
