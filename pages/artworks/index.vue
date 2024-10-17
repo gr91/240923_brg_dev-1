@@ -59,16 +59,13 @@ const { data: artworks } = await useAsyncData(myKey, () => {
             <h3>{{ artwork.title }}</h3>
 
             <br>
-            <div style="color: red;">
-            <MDC :value="artwork.truedes" />
-            </div>
-            <div style="color: blue">
-            <MDC :value="artwork.dupldes" />
+            <div>
+            <p>{{ artwork._path }}</p>
             </div>
             
             <br>
             <div>
-            <p>{{ artwork._path }}</p>
+                <MDC :value="artwork.bodytext" />
             </div>
 
             <br>
