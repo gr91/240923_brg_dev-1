@@ -1,14 +1,15 @@
 <script setup>
 
-//------i18n configuration --- from nuxtjs/i18n docs
-const localePath = useLocalePath()
-const { locale, setLocale } = useI18n()
+//------------i18n configuration (from nuxtjs/i18n docs)------------
 
-//Redefine [...slug] path to match content dir architecture
-//  content                             pages
-//  ---books                            ---books
-//  ------it | en                       ------ADD HERE /it | /en TO THE PATH  
-//  ------------[slug].md               ---------[...slug].vue
+//const localePath = useLocalePath()
+//const { locale, setLocale } = useI18n()
+
+        //Redefine [...slug] path to match content dir architecture
+        //  content                             pages
+        //  ---books                            ---books
+        //  ------it | en                       ------ADD HERE /it | /en TO THE PATH  
+        //  ------------[slug].md               ---------[...slug].vue
 defineI18nRoute({
     paths: {
       it: '/books/it/[...slug]',
