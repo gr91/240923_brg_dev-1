@@ -1,6 +1,6 @@
 ---
 title: Il tempo l'architettura l'uomo
-subtitle: Ristrutturazione del Padiglione d'Arte Contemporanea di Milano
+subtitle: Ricostruzione del Padiglione d'Arte Contemporanea di Milano
 beginyear: 1993
 endyear: 1996
 category: Photo
