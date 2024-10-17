@@ -21,6 +21,7 @@ const { locale, setLocale } = useI18n()
             <div class="justify-end items-center gap-8 flex">
                 <NuxtLink :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
+                <NuxtLink :to="localePath('/projects')">{{ $t('projects') }}</NuxtLink>
                 <NuxtLink :to="localePath('/custom-pages/bio')">{{ $t('bio') }}</NuxtLink>
                 <NuxtLink :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
                 <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>

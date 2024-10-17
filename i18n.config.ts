@@ -14,6 +14,7 @@ export default defineI18nConfig(() => ({
         other: 'Altro',
         images: 'Immagini',
         texts: 'Testi',
+        projects: 'Progetti',
       },
       en: {
         welcome: 'Welcome',
@@ -26,6 +27,7 @@ export default defineI18nConfig(() => ({
         other: 'Other',
         images: 'Images',
         texts: 'Text',
+        projects: 'Projects',
 
       }
     }
