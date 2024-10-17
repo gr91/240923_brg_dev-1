@@ -35,13 +35,6 @@ export default defineNuxtConfig({
     locales: ['it', 'en' ], // used in URL path prefix
     defaultLocale: 'it', // default locale of your project for Nuxt pages and routings
     strategy: 'prefix', // set routing strategy to have a prefix for both language
-    customRoutes: 'config',
-    pages: {
-      index: {
-        it: '/it',
-        en: '/en',
-      }
-    }
   },
 
   tailwindcss: {
