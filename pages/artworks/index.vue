@@ -33,46 +33,39 @@ const { data: artworks } = await useAsyncData(myKey, () => {
 
 <template>
     
-      <!---- SET NEW PATH FOR DATA QUERY ---->
-    <div class="mt-24" style="border:solid">
-
-        <p><strong>actualPath</strong></p>
-        <p>{{ actualPath }}</p>
-        <br>
-
-        <p><strong>actualPath</strong></p>
-        <p>{{ myPath }}</p>
-        <br>
-        
-        <p><strong>actualPath</strong></p>
-        <p>{{ myKey }}</p>
-        <br>
-        
+    
+    <!--ARTWORK Heading section + navigation buttons-->
+    <div style="border:solid red" class="h-32 md:h-24"></div>
+    
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('photos') }}</div>
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('videos') }}</div>
+        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('other') }}</div>
     </div>
+    
 
-
-
-    <div v-for="artwork in artworks" :key="artwork.slug" class="w-full my-4" style="border:solid grey">
-  
-        <div>
-            <p>{{ artwork.year }}</p>
-            <h3>{{ artwork.title }}</h3>
-
-            <br>
-            <div>
-            <p>{{ artwork._path }}</p>
+    <!--ARTWORK List-->
+    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
+        <NuxtLink :to="localePath(String(artwork._path))">
+            <div  class=" flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+                <div class="self-stretch brg-body-text">
+                    <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                    <p v-else>{{ artwork.beginyear }}</p>
+                </div>
+                <div class="self-stretch brg-heading-text">
+                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
+                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
+                </div>
+                <div>
+                    <MDC :value="artwork.bodytext" />
+                </div>
             </div>
-            
-            <br>
-            <div>
-                <MDC :value="artwork.bodytext" />
-            </div>
-
-            <br>
-            <NuxtLink :to="localePath(String(artwork._path))"> See the artwork </NuxtLink>
-        </div>
-
+        </NuxtLink>
     </div>
+    
+    
+    <!--scroll test-->
+    <div class="w-full h-svh"></div>
 
 
 </template>
