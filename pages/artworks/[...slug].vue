@@ -7,7 +7,7 @@
 
         //Redefine [...slug] path to match content dir architecture
         //  content                             pages
-        //  ---artworks                            ---artworks
+        //  ---artworks                         ---artworks
         //  ------it | en                       ------ADD HERE /it | /en TO THE PATH  
         //  ------------[slug].md               ---------[...slug].vue
 defineI18nRoute({
