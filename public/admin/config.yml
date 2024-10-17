@@ -74,9 +74,9 @@ collections:
 
 
 
-  - name: 'project'
-    label: 'Project'
-    folder: 'content/project'
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'content/projects'
     format: 'frontmatter'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
