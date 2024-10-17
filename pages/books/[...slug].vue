@@ -21,7 +21,7 @@ defineI18nRoute({
 const route = useRoute()      
 //edit actualPath to match the correct content path
 const actualPath = route.path.replace(/\/$/, '').substring(3);
-//edit pruce a unique key  
+//pruce a unique key  
 const myKey = actualPath.replace("/books/", "").replace("/","-");
 
 const { data: book } = await useAsyncData(myKey, () =>

@@ -9,9 +9,11 @@ const actualPath = route.path.replace(/\/$/, '');
 //edit path to include en/it folder 
 const myPath = "/books" + actualPath.replace("/books", "");
 
+//pruce a unique key  
+const myKey = myPath.replace('/books/', 'HelloBooks-');
 
 //const route = useRoute()
-const { data: books } = await useAsyncData('books', () => {
+const { data: books } = await useAsyncData(myKey, () => {
   return queryContent(myPath)
   .sort({year: -1})
   .find()
@@ -30,9 +32,28 @@ const { data: books } = await useAsyncData('books', () => {
 
   <!---- SET NEW PATH FOR DATA QUERY ---->
   <div class="mt-24" style="border:solid">
+    
+    
+    <p><strong>actualPath</strong></p>
+    <p>{{ actualPath }}</p>
+    <br>
+
+    <p><strong>actualPath</strong></p>
+    <p>{{ myPath }}</p>
+    <br>
+    
+    <p><strong>actualPath</strong></p>
+    <p>{{ myKey }}</p>
+    <br>
+    
+    <p><strong>Books</strong></p>
     <p>{{ books }}</p>
+    <br>
 
   </div>
+
+
+
 
   <div v-for="book in books" :key="book.slug" class="w-full my-4" style="border:solid grey">
   
