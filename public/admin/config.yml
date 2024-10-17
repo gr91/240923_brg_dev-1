@@ -142,8 +142,8 @@ collections:
         #Add i18n configuration----------
         i18n: duplicate
 
-      - label: 'Body ITA'
-        name: 'bodyita'
+      - label: 'Text'
+        name: 'bodytext'
         widget: 'markdown'
         #Add i18n configuration----------
         i18n: true
