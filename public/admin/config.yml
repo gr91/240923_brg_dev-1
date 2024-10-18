@@ -132,9 +132,17 @@ collections:
         #Add i18n configuration----------
         i18n: true
 
+      - label: 'Order'
+        name: 'order'
+        widget: 'select'
+        options: ['Mail', 'Website']
+        #Add i18n configuration----------
+        i18n: duplicate
+
       - label: 'Button'
         name: 'button'
         widget: 'list'
+        summary: '{{fields.mailaddress}} - {{fields.websiteurl}}'
         required: false
         #Add i18n configuration----------
         i18n: true
