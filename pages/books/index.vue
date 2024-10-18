@@ -59,43 +59,33 @@ const { data: books } = await useAsyncData(myKey, () => {
 
       <div v-for="book in books" :key="book.slug" class="w-full max-w-[400px] mb-8" style="border:solid red">
           
-            <img :src="book.cover" class="w-full">
+        <img :src="book.cover" class="w-full mb-4">
             
-            <p>{{ book.year }}</p>
-            <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
+        <div class="mb-4">
+          <p>{{ book.year }}</p>
+          <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
+        </div>
   
-            <br>
-            <div>
-              <MDC :value="book.description" />
-            </div>
-  
-            <br>
-            <p>{{ book.order }}</p>
-            <p>{{ book.address }}</p>
-            
-            <br>
-            <div>
+        <div class="mb-4">
+          <MDC :value="book.description" />
+        </div>
               
-              <div v-if="book.order == ('Mail')">
-                <a :href="`mailto:${book.address}`"><strong>Send e-mail</strong></a>    
-              </div>
+        <div class="mb-4" style="text-decoration: underline; text-transform: uppercase;">
+          <div v-if="book.order == ('Mail')" >
+            <a :href="`mailto:${book.address}`">Send e-mail</a>    
+          </div>
+          <div v-else-if="book.order == ('Website')">
+            <a :href=book.address>Visit website</a>
+          </div>
+          <div v-else class="opacity-20">
+            <p>Unavailable</p>
+          </div>
+        </div>
 
-              <div v-else-if="book.order == ('Website')">
-                <a :href=book.address><strong>Visit website</strong></a>
-              </div>
-
-              <div v-else>
-                <p><strong>Unavailable</strong></p>
-              </div>
-
-            </div>
-            
-          
-            
-            <!--
-              <p>{{ book._path }}</p>
-              <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
-            -->
+        <!--
+          p>{{ book._path }}</p>
+          <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
+        -->
   
       </div>
 
