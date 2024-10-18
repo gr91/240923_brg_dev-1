@@ -106,6 +106,13 @@ collections:
         #Add i18n configuration----------
         i18n: duplicate
 
+      - label: 'Subtitle'
+        name: 'subtitle'
+        widget: 'string'
+        required: false
+        #Add i18n configuration----------
+        i18n: duplicate
+
       - label: 'Year'
         name: 'year'
         widget: 'number'
