@@ -131,3 +131,10 @@ collections:
         buttons: ['bold', 'italic', 'link']
         #Add i18n configuration----------
         i18n: true
+
+      - label: 'Order'
+        name: 'order'
+        widget: 'select'
+        options: ['Mail', 'Website', 'No']
+        #Add i18n configuration----------
+        i18n: duplicate
