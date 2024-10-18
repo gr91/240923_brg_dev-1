@@ -31,68 +31,73 @@ const { data: books } = await useAsyncData(myKey, () => {
 
 
   <!---- SET NEW PATH FOR DATA QUERY ---->
-  <div class="mt-24" style="border:solid">
-    
-    
-    <p><strong>actualPath</strong></p>
-    <p>{{ actualPath }}</p>
-    <br>
-
-    <p><strong>actualPath</strong></p>
-    <p>{{ myPath }}</p>
-    <br>
-    
-    <p><strong>actualPath</strong></p>
-    <p>{{ myKey }}</p>
-    <br>
-    
-    <p><strong>Books</strong></p>
-    <p>{{ books }}</p>
-    <br>
-
-  </div>
-
-
-
-
-  <div v-for="book in books" :key="book.slug" class="w-full max-w-[400px] mb-8" style="border:solid red">
+  <!--
+    <div class="mt-24" style="border:solid">
+      
+      <p><strong>actualPath</strong></p>
+      <p>{{ actualPath }}</p>
+      <br>
   
-    <img :src="book.cover" class="w-full">
-    
-    <p>{{ book.year }}</p>
-    <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
+      <p><strong>actualPath</strong></p>
+      <p>{{ myPath }}</p>
+      <br>
+      
+      <p><strong>actualPath</strong></p>
+      <p>{{ myKey }}</p>
+      <br>
+      
+      <p><strong>Books</strong></p>
+      <p>{{ books }}</p>
+      <br>
+  
+    </div>
+  -->
 
-    <br>
-    <div>
-      <MDC :value="book.description" />
+
+
+    <div class="mt-24">
+
+      <div v-for="book in books" :key="book.slug" class="w-full max-w-[400px] mb-8" style="border:solid red">
+          
+            <img :src="book.cover" class="w-full">
+            
+            <p>{{ book.year }}</p>
+            <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
+  
+            <br>
+            <div>
+              <MDC :value="book.description" />
+            </div>
+  
+            <br>
+            <p>{{ book.order }}</p>
+            <p>{{ book.address }}</p>
+            
+            <div>
+              <div v-if="book.order == ('Mail')">
+                <p><strong>Send mail</strong></p>
+                <a :href=book.address> HERE </a>
+              </div>
+              <div v-else-if="book.order == ('Website')">
+                <p><strong>Visit website</strong></p>
+                <a :href=book.address> HERE </a>
+              </div>
+              <div v-else>
+                <p><strong>Unavailable</strong></p>
+              </div>
+            </div>
+            
+          
+            
+            <!--
+              <p>{{ book._path }}</p>
+              <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
+            -->
+  
+      </div>
+
     </div>
 
-    <br>
-    <p>{{ book.order }}</p>
-    <p>{{ book.address }}</p>
-    
-    <div>
-      <div v-if="book.order == ('Mail')">
-        <p><strong>Send mail</strong></p>
-        <a :href=book.address> HERE </a>
-      </div>
-      <div v-else-if="book.order == ('Website')">
-        <p><strong>Visit website</strong></p>
-        <a :href=book.address> HERE </a>
-      </div>
-      <div v-else>
-        <p><strong>Unavailable</strong></p>
-      </div>
-    </div>
-    
-  
-    
-    <!--
-      <p>{{ book._path }}</p>
-      <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
-    -->
-
-  </div>
 
 
   <div>
