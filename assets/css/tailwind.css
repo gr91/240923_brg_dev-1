@@ -10,14 +10,12 @@ html {
 };
 
 
-.brg-heading-text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: normal;
+.brg-heading {
+    color: darkcyan;
 }
 
 .brg-big-text {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 400;
     line-height: normal;
 }
@@ -28,3 +26,9 @@ html {
     line-height: normal;
 }
 
+.brg-button {
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 1px;
+}

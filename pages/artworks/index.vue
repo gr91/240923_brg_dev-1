@@ -34,9 +34,9 @@ const { data: artworks } = await useAsyncData(myKey, () => {
     <div style="border:solid red" class="h-32 md:h-24"></div>
     
     <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end">
-        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('photos') }}</div>
-        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('videos') }}</div>
-        <div style="border-bottom: solid;" class="h-5 brg-body-text">{{ $t('other') }}</div>
+        <div class="h-5 brg-button ">{{ $t('photos') }}</div>
+        <div class="h-5 brg-button ">{{ $t('videos') }}</div>
+        <div class="h-5 brg-button ">{{ $t('other') }}</div>
     </div>
     
 
@@ -44,18 +44,22 @@ const { data: artworks } = await useAsyncData(myKey, () => {
     <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
         <NuxtLink :to="localePath(String(artwork._path))">
             <div  class=" flex-col justify-start items-start inline-flex" >
+
                 <div class="self-stretch brg-body-text">
                     <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
-                <div class="self-stretch brg-heading-text">
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
+
+                <div class="self-stretch brg-big-text">
+                    <h1>{{ artwork.title }}</h1>
+                    <h1>{{ artwork.subtitle }}</h1>
                 </div>
-                <!--content language update test-->
-                <div>
-                    <MDC :value="artwork.bodytext" />
-                </div>
+
+                <!--
+                    <div>
+                        <MDC :value="artwork.bodytext" />
+                    </div>
+                -->
             </div>
         </NuxtLink>
     </div>
