@@ -55,39 +55,46 @@ const { data: books } = await useAsyncData(myKey, () => {
 
 
 
-  <div v-for="book in books" :key="book.slug" class="w-full my-4" style="border:solid grey">
+  <div v-for="book in books" :key="book.slug" class="w-full max-w-[400px] mb-8" style="border:solid red">
   
+    <img :src="book.cover" class="w-full">
+    
+    <p>{{ book.year }}</p>
+    <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
+
+    <br>
     <div>
-      <img :src="book.cover" >
-      
-      <p>{{ book.year }}</p>
-      <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
-
-      <br>
-      <div>
-        <MDC :value="book.description" />
-      </div>
-
-      <br>
-      <div v-if="book.order = ('mail')">
-        <p>Send mail</p>
-      </div>
-      <div v-else-if="book.order = ('website')">
-        <p>Visit website</p>
-      </div>
-      <div v-else-if="book.order = ('no')">
-        <p>Unavailable</p>
-      </div>
-      
-      
-      <br>
-      <div>
-        <p>{{ book._path }}</p>
-      </div>
-
-      <br>
-      <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
+      <MDC :value="book.description" />
     </div>
+
+    <br>
+    <p>{{ book.order }}</p>
+    <p>{{ book.address }}</p>
+    
+    <div>
+      <div v-if="book.order == ('Mail')">
+        <p><strong>Send mail</strong></p>
+        <a :href=book.address> HERE </a>
+      </div>
+      <div v-else-if="book.order == ('Website')">
+        <p><strong>Visit website</strong></p>
+        <a :href=book.address> HERE </a>
+      </div>
+      <div v-else>
+        <p><strong>Unavailable</strong></p>
+      </div>
+    </div>
+    
+    
+    <br>
+    <div>
+      <p>{{ book._path }}</p>
+    </div>
+
+    <!--
+      <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
+    -->
+
   </div>
 
 
