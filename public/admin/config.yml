@@ -128,20 +128,13 @@ collections:
       - label: 'Button'
         name: 'button'
         widget: 'list'
+        required: false
         #Add i18n configuration----------
         i18n: true
-        types:
+        filed:
           - label: 'Mail'
-            name: 'mail'
-            widget: object
-            field:
-              - label: 'mail address'
-                name: 'address'
-                widget: 'string'
+            name: 'mailaddress'
+            widget: 'string'
           - label: 'Website'
-            name: 'website'
-            widget: object
-            filed:
-              - label: 'website'
-                name: 'url'
-                widget: 'string'
+            name: 'websiteurl'
+            widget: 'string'
