@@ -138,6 +138,10 @@ collections:
               - label: 'mail address'
                 name: 'address'
                 widget: 'string'
+          - label: 'website'
+            name: 'website'
+            widget: 'object'
+            filed:
               - label: 'website'
                 name: 'url'
                 widget: 'string'
