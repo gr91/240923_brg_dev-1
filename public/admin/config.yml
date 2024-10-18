@@ -121,6 +121,23 @@ collections:
       - label: 'Description'
         name: 'description'
         widget: 'markdown'
+        buttons: ['bold', 'italic', 'link']
         #Add i18n configuration----------
         i18n: true
 
+      - label: 'Button'
+        name: 'button'
+        widget: 'list'
+        #Add i18n configuration----------
+        i18n: true
+        types:
+          - label: 'mail'
+            name: 'mail'
+            widget: 'object'
+            field:
+              - label: 'mail address'
+                name: 'address'
+                widget: 'string'
+              - label: 'website'
+                name: 'url'
+                widget: 'string'
