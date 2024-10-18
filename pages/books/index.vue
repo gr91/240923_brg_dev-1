@@ -85,13 +85,10 @@ const { data: books } = await useAsyncData(myKey, () => {
       </div>
     </div>
     
+  
     
-    <br>
-    <div>
-      <p>{{ book._path }}</p>
-    </div>
-
     <!--
+      <p>{{ book._path }}</p>
       <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
     -->
 
