@@ -131,16 +131,16 @@ collections:
         #Add i18n configuration----------
         i18n: true
         types:
-          - label: 'mail'
+          - label: 'Mail'
             name: 'mail'
-            widget: 'object'
+            widget: object
             field:
               - label: 'mail address'
                 name: 'address'
                 widget: 'string'
-          - label: 'website'
+          - label: 'Website'
             name: 'website'
-            widget: 'object'
+            widget: object
             filed:
               - label: 'website'
                 name: 'url'
