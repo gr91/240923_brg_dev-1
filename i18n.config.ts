@@ -15,6 +15,7 @@ export default defineI18nConfig(() => ({
         images: 'Immagini',
         texts: 'Testi',
         projects: 'Progetti',
+        order: 'Ordina',
       },
       en: {
         welcome: 'Welcome',
@@ -28,6 +29,7 @@ export default defineI18nConfig(() => ({
         images: 'Images',
         texts: 'Text',
         projects: 'Projects',
+        order: 'Order',
 
       }
     }

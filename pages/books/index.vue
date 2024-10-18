@@ -63,10 +63,7 @@ const { data: books } = await useAsyncData(myKey, () => {
 
       <br>
       <div style="color: red;">
-        <MDC :value="book.truedes" />
-      </div>
-      <div style="color: blue">
-        <MDC :value="book.dupldes" />
+        <MDC :value="book.description" />
       </div>
       
       <br>

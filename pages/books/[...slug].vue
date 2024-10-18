@@ -54,11 +54,7 @@ const { data: book } = await useAsyncData(myKey, () =>
 
         <br>
         <p><strong>Book true description</strong></p>
-        <p>{{ book.truedes }}</p>
-
-        <br>
-        <p><strong>Book duplicate description</strong></p>
-        <p>{{ book.dupldes }}</p>
+        <p>{{ book.description }}</p>
 
     </div>
 
@@ -72,7 +68,7 @@ const { data: book } = await useAsyncData(myKey, () =>
             <p>{{ book }}</p> <br>
             <p>{{ book.title }}</p> <br>
             <p>{{ book.year }}</p> <br>
-            <MDC :value="book.truedes"/> <br>
+            <MDC :value="book.description"/> <br>
             <MDC :value="book.dupldes"/> <br>
         </div>
     

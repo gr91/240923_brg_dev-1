@@ -24,7 +24,6 @@ collections:
       preview: false
      #Add i18n configuration----------
     i18n: true
-    #Add i18n configuration----------
     fields:
       - label: 'Title'
         name: 'title'
@@ -100,32 +99,28 @@ collections:
       preview: false
     #Add i18n configuration----------
     i18n: true
-    #Add i18n configuration----------
     fields:
       - label: 'Title'
         name: 'title'
         widget: 'string'
         #Add i18n configuration----------
         i18n: duplicate
-        #Add i18n configuration----------
 
       - label: 'Year'
         name: 'year'
         widget: 'number'
         #Add i18n configuration----------
         i18n: duplicate
-        #Add i18n configuration----------
 
-      - label: 'True description'
-        name: 'truedes'
+      - label: 'Cover'
+        name: 'cover'
+        widget: 'image'
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Description'
+        name: 'description'
         widget: 'markdown'
         #Add i18n configuration----------
         i18n: true
-        #Add i18n configuration----------
 
-      - label: 'Duplicate description'
-        name: 'dupldes'
-        widget: 'markdown'
-        #Add i18n configuration----------
-        i18n: duplicate
-        #Add i18n configuration----------
