@@ -15,7 +15,7 @@ const myKey = myPath.replace('/books/', 'HelloBooks-');
 //const route = useRoute()
 const { data: books } = await useAsyncData(myKey, () => {
   return queryContent(myPath)
-  .sort({year: -1})
+  .sort({year: 1})
   .find()
 });
 
@@ -73,18 +73,21 @@ const { data: books } = await useAsyncData(myKey, () => {
             <p>{{ book.order }}</p>
             <p>{{ book.address }}</p>
             
+            <br>
             <div>
+              
               <div v-if="book.order == ('Mail')">
-                <p><strong>Send mail</strong></p>
-                <a :href=book.address> HERE </a>
+                <a :href="`mailto:${book.address}`"><strong>Send e-mail</strong></a>    
               </div>
+
               <div v-else-if="book.order == ('Website')">
-                <p><strong>Visit website</strong></p>
-                <a :href=book.address> HERE </a>
+                <a :href=book.address><strong>Visit website</strong></a>
               </div>
+
               <div v-else>
                 <p><strong>Unavailable</strong></p>
               </div>
+
             </div>
             
           
