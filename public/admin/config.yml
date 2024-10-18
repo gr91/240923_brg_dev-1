@@ -138,3 +138,9 @@ collections:
         options: ['Mail', 'Website', 'No']
         #Add i18n configuration----------
         i18n: duplicate
+
+      - label: 'Address'
+        name: 'address'
+        widget: 'string'
+        #Add i18n configuration----------
+        i18n: duplicate
