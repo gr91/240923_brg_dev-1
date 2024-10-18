@@ -58,13 +58,27 @@ const { data: books } = await useAsyncData(myKey, () => {
   <div v-for="book in books" :key="book.slug" class="w-full my-4" style="border:solid grey">
   
     <div>
+      <img :src="book.cover" >
+      
       <p>{{ book.year }}</p>
-      <h3>{{ book.title }}</h3>
+      <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
 
       <br>
-      <div style="color: red;">
+      <div>
         <MDC :value="book.description" />
       </div>
+
+      <br>
+      <div v-if="book.order = ('mail')">
+        <p>Send mail</p>
+      </div>
+      <div v-else-if="book.order = ('website')">
+        <p>Visit website</p>
+      </div>
+      <div v-else-if="book.order = ('no')">
+        <p>Unavailable</p>
+      </div>
+      
       
       <br>
       <div>
