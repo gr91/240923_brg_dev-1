@@ -59,15 +59,19 @@ const items = artwork.value.images.map(image => ({
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
                 <div class="self-stretch brg-txt-heading">
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
-                    <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
+                    <h1>{{ artwork.title }}</h1>
+                    <h1>{{ artwork.subtitle }}</h1>
                 </div>
             </div> 
             
             <!--ARTWORKA Navigation-->
             <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-                <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
-                <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
+                <a href="#anchorimg">
+                    <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
+                </a>
+                <a href="#anchortxt">
+                    <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
+                </a>
             </div>
             
         </div>
@@ -81,6 +85,7 @@ const items = artwork.value.images.map(image => ({
         
         style="border:solid aqua 2px"
         class="w-full h-full min-h-0 flex"
+        id="anchorimg"
         >
         
             <div style="border:solid red" class="w-full mx-auto flex flex-col " > <!--min-h-0-->  
@@ -111,7 +116,11 @@ const items = artwork.value.images.map(image => ({
 
 
     <!--SCROLL section-->
-    <div class="w-full mt-4 h-80 brg-txt-body" style="border:solid red">
+    <div
+        class="w-full mt-4 h-80 brg-txt-body"
+        style="border:solid red"
+        id="anchortxt"
+    >
         <MDC :value="artwork.bodytext"/>
     </div>
 
