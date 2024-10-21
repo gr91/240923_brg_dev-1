@@ -31,12 +31,14 @@ const { data: books } = await useAsyncData(myKey, () => {
 
 
   
-<div style="border:solid red" class="h-32 md:h-24"></div>
+  <!--
+    -->
+  <div style="border:solid red" class="h-32 md:h-24"></div>
 
   
   <div class="mt-8">
     
-    <div v-for="book in books" :key="book.slug" class="w-full md:max-w-[400px] mb-8" style="border:solid red">
+    <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-12" style="border:solid red">
       
       <img :src="book.cover" class="w-full mb-4">
       
@@ -54,7 +56,7 @@ const { data: books } = await useAsyncData(myKey, () => {
           <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
         </div>
         <div v-else-if="book.order == ('Website')">
-          <a :href=book.address> {{ $t('order') }} </a>
+          <a :href=book.address target="_blank"> {{ $t('order') }} </a>
         </div>
         <div v-else class="unselected">
           <p> {{ $t('unavailable') }} </p>
