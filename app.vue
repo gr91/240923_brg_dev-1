@@ -2,7 +2,7 @@
 
   <!--APP HEADER CONTAINER-->
   <!--Fix AppHeader at the top of the page and make it respect position and width -->
-  <div class="fixed mx-auto w-full z-50 opacity-30"> <!--style="border:solid black" -->
+  <div class="fixed mx-auto w-full z-50"> <!--style="border:solid black" -->
     <AppHeader />  
     <!--
     -->

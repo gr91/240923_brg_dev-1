@@ -16,6 +16,7 @@ export default defineI18nConfig(() => ({
         texts: 'Testi',
         projects: 'Progetti',
         order: 'Ordina',
+        unavailable: 'Non disponibile',
       },
       en: {
         welcome: 'Welcome',
@@ -30,6 +31,7 @@ export default defineI18nConfig(() => ({
         texts: 'Text',
         projects: 'Projects',
         order: 'Order',
+        unavailable: 'Unavailable',
 
       }
     }

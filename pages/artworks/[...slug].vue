@@ -54,11 +54,11 @@ const items = artwork.value.images.map(image => ({
             
             <!--ARTWORKS Title-->
             <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
-                <div class="self-stretch brg-body-text">
+                <div class="self-stretch brg-txt-body">
                     <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
-                <div class="self-stretch brg-heading-text">
+                <div class="self-stretch brg-txt-heading">
                     <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.title }}</h1>
                     <h1 style="font-size: 24px; line-height: 130%;">{{ artwork.subtitle }}</h1>
                 </div>
@@ -66,8 +66,8 @@ const items = artwork.value.images.map(image => ({
             
             <!--ARTWORKA Navigation-->
             <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-                <div class="brg-button">{{ $t('images') }}</div>
-                <div class="brg-button">{{ $t('texts') }}</div>
+                <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
+                <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
             </div>
             
         </div>
@@ -97,7 +97,7 @@ const items = artwork.value.images.map(image => ({
                 </div>
                 
                 <!--CAROUSEL Caption-->
-                <div style="border:solid green 2px" class="flex-none w-fit">
+                <div style="border:solid green 2px" class="flex-none w-fit brg-txt-caption">
                     <p> {{ item.caption }} </p>
                 </div>
 
@@ -111,7 +111,7 @@ const items = artwork.value.images.map(image => ({
 
 
     <!--SCROLL section-->
-    <div class="w-full mt-4 h-80" style="border:solid red">
+    <div class="w-full mt-4 h-80 brg-txt-body" style="border:solid red">
         <MDC :value="artwork.bodytext"/>
     </div>
 

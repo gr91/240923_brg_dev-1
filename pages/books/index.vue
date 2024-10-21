@@ -30,6 +30,50 @@ const { data: books } = await useAsyncData(myKey, () => {
 <template>
 
 
+  
+<div style="border:solid red" class="h-32 md:h-24"></div>
+
+  
+  <div class="mt-8">
+    
+    <div v-for="book in books" :key="book.slug" class="w-full md:max-w-[400px] mb-8" style="border:solid red">
+      
+      <img :src="book.cover" class="w-full mb-4">
+      
+      <div class="mb-4">
+        <p class="brg-txt-body">{{ book.year }}</p>
+        <h1 class="brg-txt-heading">{{ book.title }}</h1>
+      </div>
+      
+      <div class="mb-4">
+        <MDC :value="book.description" />
+      </div>
+      
+      <div class="mb-4 h-5 brg-cta brg-txt-button">
+        <div v-if="book.order == ('Mail')" >
+          <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
+        </div>
+        <div v-else-if="book.order == ('Website')">
+          <a :href=book.address> {{ $t('order') }} </a>
+        </div>
+        <div v-else class="unselected">
+          <p> {{ $t('unavailable') }} </p>
+        </div>
+      </div>
+      
+      <!--
+        p>{{ book._path }}</p>
+        <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
+      -->
+      
+    </div>
+    
+  </div>
+  
+  
+  
+  
+  
   <!---- SET NEW PATH FOR DATA QUERY ---->
   <!--
     <div class="mt-24" style="border:solid">
@@ -52,53 +96,6 @@ const { data: books } = await useAsyncData(myKey, () => {
   
     </div>
   -->
-
-
-
-    <div class="mt-24">
-
-      <div v-for="book in books" :key="book.slug" class="w-full max-w-[400px] mb-8" style="border:solid red">
-          
-        <img :src="book.cover" class="w-full mb-4">
-            
-        <div class="mb-4">
-          <p>{{ book.year }}</p>
-          <h1 style="font-size: 24px; line-height: 130%;">{{ book.title }}</h1>
-        </div>
-  
-        <div class="mb-4">
-          <MDC :value="book.description" />
-        </div>
-              
-        <div class="mb-4" style="text-decoration: underline; text-transform: uppercase;">
-          <div v-if="book.order == ('Mail')" >
-            <a :href="`mailto:${book.address}`">Send e-mail</a>    
-          </div>
-          <div v-else-if="book.order == ('Website')">
-            <a :href=book.address>Visit website</a>
-          </div>
-          <div v-else class="opacity-20">
-            <p>Unavailable</p>
-          </div>
-        </div>
-
-        <!--
-          p>{{ book._path }}</p>
-          <NuxtLink :to="localePath(String(book._path))"> See the book </NuxtLink>
-        -->
-  
-      </div>
-
-    </div>
-
-
-
-  <div>
-    <p>Current language is set to <strong>{{ locale }}</strong></p>
-  </div>
-
-
-
 
 
 
