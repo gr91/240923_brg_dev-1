@@ -20,6 +20,7 @@ const { data: artworks } = await useAsyncData(myKey, () => {
   .find()
 });
 
+const myCategory = ['Photo', 'Video', 'Other'];
 
 </script>
 
@@ -42,26 +43,36 @@ const { data: artworks } = await useAsyncData(myKey, () => {
 
     <!--ARTWORK List-->
     <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
-        <NuxtLink :to="localePath(String(artwork._path))">
-            <div  class=" flex-col justify-start items-start inline-flex" >
 
-                <div class="self-stretch brg-txt-body">
-                    <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
-                    <p v-else>{{ artwork.beginyear }}</p>
-                </div>
+        <p>{{ myCategory }}</p>
+        <p>{{ artwork.category }}</p>
 
-                <div class="self-stretch brg-txt-heading">
-                    <h1>{{ artwork.title }}</h1>
-                    <h1>{{ artwork.subtitle }}</h1>
-                </div>
+        <div v-if=myCategory.includes(artwork.category)>
 
-                <!--
-                    <div>
-                        <MDC :value="artwork.bodytext" />
+            <NuxtLink :to="localePath(String(artwork._path))">
+                <div  class=" flex-col justify-start items-start inline-flex" >
+    
+                    <div class="self-stretch brg-txt-body">
+                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                        <p v-else>{{ artwork.beginyear }}</p>
                     </div>
-                -->
-            </div>
-        </NuxtLink>
+                    
+                    <div class="self-stretch brg-txt-heading">
+                        <h1>{{ artwork.title }}</h1>
+                        <h1>{{ artwork.subtitle }}</h1>
+                    </div>
+                    
+                    <p style="color:brown">{{ artwork.category }}</p>
+                    <!--
+                        <div>
+                            <MDC :value="artwork.bodytext" />
+                        </div>
+                    -->
+                </div>
+            </NuxtLink>
+
+        </div>
+
     </div>
     
     
