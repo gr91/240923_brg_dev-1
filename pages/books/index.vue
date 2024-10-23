@@ -33,12 +33,12 @@ const { data: books } = await useAsyncData(myKey, () => {
   
   <!--
     -->
-  <div style="border:solid red" class="h-32 md:h-24"></div>
+  <div class="h-32 md:h-24"></div> <!--style="border:solid red"-->
 
   
   <div class="mt-8">
     
-    <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-12" style="border:solid red">
+    <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-12" > <!--style="border:solid red"-->
       
       <img :src="book.cover" class="w-full mb-4">
       
