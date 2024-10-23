@@ -38,7 +38,10 @@ const isOpen = ref(false)
     <span class="block md:hidden mx-auto" style="border:solid red" >
         <div class="w-full h-12 mx-auto px-4 bg-BRG-white justify-between inline-flex items-center brg-txt-big">
             <div class="justify-center items-center gap-2.5 flex">
-                <div><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
+                <!--
+                    <div><NuxtLink to="/">Bruna Ginammi</NuxtLink></div>
+                -->
+                <NuxtLink :to="localePath('/')">Bruna Ginammi</NuxtLink>
             </div>
             <div class="justify-end items-center gap-8 flex">
                 <div class="justify-center items-center gap-2.5 flex">
@@ -70,8 +73,8 @@ const isOpen = ref(false)
                 <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
             </div>
             <div class="h-12 flex justify-start">
-                <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>
-                <button  v-else="locale == ('en')" @click="setLocale('it')">ITA</button>  
+                <button v-if="locale == ('it')" @click="setLocale('en'); isOpen = false">ENG</button>
+                <button  v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</button>  
             </div>
 
             <!--
