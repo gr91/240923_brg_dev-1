@@ -15,7 +15,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/mdc'
+    '@nuxtjs/mdc',
+    'nuxt-anchorscroll'
   ],
 
   postcss: {

@@ -20,5 +20,8 @@
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "nuxt-anchorscroll": "^1.0.3"
   }
 }
