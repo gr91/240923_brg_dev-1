@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const route = useRoute()
 
 //add Netlify Identity Widget 
@@ -8,6 +9,8 @@ useHead({
   ],
 });
 </script>
+
+
 
 <template >
   <main class="mx-auto max-w-7xl space-y-6">
