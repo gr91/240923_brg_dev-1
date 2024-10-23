@@ -13,6 +13,7 @@ const isOpen = ref(false)
 <template>
     
 
+    
     <!-- DESKTOP APPHEADER-->
     <span class="hidden md:block max-w-7xl mx-auto" style="border:solid blue">
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
@@ -33,6 +34,7 @@ const isOpen = ref(false)
         </div>
     </span>
     
+
     
     <!-- MOBILE APPHEADER-->
     <span class="block md:hidden mx-auto" style="border:solid red" >
@@ -51,8 +53,10 @@ const isOpen = ref(false)
         </div>
     </span>
     
+    <!-- MOBILE SLIDE OVER-->
     <USlideover
     v-model="isOpen"
+    :overlay="false"
     :ui="{
         background:'bg-BRG-white'
     }"
@@ -78,16 +82,6 @@ const isOpen = ref(false)
                 <button  v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</button>  
             </div>
 
-            <!--
-                <UButton
-                size="sm"
-                icon="i-heroicons-x-mark-20-solid"
-                class="flex sm:hidden absolute end-5 top-5 z-10"
-                square
-                padded
-                @click="isOpen = false"
-                />
-            -->
       </div>
     </USlideover>
     
