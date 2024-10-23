@@ -4,6 +4,9 @@
 const localePath = useLocalePath()
 const { locale, setLocale } = useI18n()
 
+//------Slideover
+const isOpen = ref(false)
+
 </script>
 
 
@@ -26,7 +29,7 @@ const { locale, setLocale } = useI18n()
                 <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>
                 <button  v-else="locale == ('en')" @click="setLocale('it')">ITA</button>  
             </div>
-      
+            
         </div>
     </span>
     
@@ -39,11 +42,49 @@ const { locale, setLocale } = useI18n()
             </div>
             <div class="justify-end items-center gap-8 flex">
                 <div class="justify-center items-center gap-2.5 flex">
-                    <div class="brg-big-text"><p>Menu</p></div>
+                    <a class="brg-big-text" @click="isOpen = true">Menu</a>
                 </div>
             </div>
         </div>
     </span>
+    
+    <USlideover
+    v-model="isOpen"
+    :ui="{
+        background:'bg-BRG-white'
+    }"
+        :slide="top"
+        
+        class="bg-BRG-white"
+        >
+        <div style="border:solid " class=" h-full px-4 flex flex-col">
+            
+            <div style="border:solid blue " class="h-12 flex justify-end items-center">
+                <p @click="isOpen = false">Close</p>
+            </div>
+            
+            <div style="border: solid red 1px;" class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">                    
+                <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/bio')">{{ $t('bio') }}</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
+            </div>
+            <div class="h-12 flex justify-start">
+                <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>
+                <button  v-else="locale == ('en')" @click="setLocale('it')">ITA</button>  
+            </div>
 
+            <!--
+                <UButton
+                size="sm"
+                icon="i-heroicons-x-mark-20-solid"
+                class="flex sm:hidden absolute end-5 top-5 z-10"
+                square
+                padded
+                @click="isOpen = false"
+                />
+            -->
+      </div>
+    </USlideover>
     
 </template>
