@@ -67,6 +67,7 @@ const isOpen = ref(false)
             </div>
             
             <div style="border: solid red 1px;" class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">                    
+                <NuxtLink @click="isOpen = false" :to="localePath('/')">Home</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/bio')">{{ $t('bio') }}</NuxtLink>
