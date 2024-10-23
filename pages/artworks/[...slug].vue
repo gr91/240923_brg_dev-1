@@ -53,7 +53,7 @@ const items = artwork.value.images.map(image => ({
         <div style="border:solid" class="sticky top-12 md:top-24 z-40 bg-BRG-white flex flex-col md:flex-row justify-between ">
             
             <!--ARTWORKS Title-->
-            <div style="border:solid grey" class="h-30 md:h-28 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+            <div style="border:solid grey" class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
                 <div class="self-stretch brg-txt-body">
                     <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
                     <p v-else>{{ artwork.beginyear }}</p>
@@ -66,12 +66,12 @@ const items = artwork.value.images.map(image => ({
             
             <!--ARTWORKA Navigation-->
             <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-                <a href="#anchorimg">
+                <NuxtLink :to="{hash:'#anchorimg'}">
                     <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
-                </a>
-                <a href="#anchortxt">
+                </NuxtLink>
+                <NuxtLink :to="{hash:'#anchortxt'}">
                     <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
-                </a>
+                </NuxtLink>
             </div>
             
         </div>
@@ -84,7 +84,7 @@ const items = artwork.value.images.map(image => ({
         :ui="{ item: 'w-full' }"
         
         style="border:solid aqua 2px"
-        class="w-full h-full min-h-0 flex"
+        class="w-full h-full min-h-0 flex scroll-mt-48"
         id="anchorimg"
         >
         
@@ -117,11 +117,12 @@ const items = artwork.value.images.map(image => ({
 
     <!--SCROLL section-->
     <div
-        class="w-full mt-4 h-80 brg-txt-body"
+        class="w-full mt-4 min-h-dvh brg-txt-body scroll-mt-48"
         style="border:solid red"
         id="anchortxt"
     >
         <MDC :value="artwork.bodytext"/>
+        <p>{{ actualPath }}</p>
     </div>
 
 
