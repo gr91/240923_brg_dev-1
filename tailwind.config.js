@@ -35,5 +35,11 @@ export default {
   //  preflight: false,
   //},
   plugins: [],
+
+  safelist: [
+    'ring-red-400',
+    'ring-red-500',
+    // Add other classes as needed
+  ],
 }
 
