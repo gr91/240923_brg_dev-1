@@ -1,15 +1,4 @@
 <script setup lang="ts">
-
-//------------i18n configuration (from nuxtjs/i18n docs)------------
-
-  defineI18nRoute({
-    paths: {
-      it: '/it',
-      en: '/en'
-    }
-  })
-
-
 const route = useRoute()
 
 //add Netlify Identity Widget 
