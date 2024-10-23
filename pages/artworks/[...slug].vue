@@ -37,6 +37,22 @@ const items = artwork.value.images.map(image => ({
   caption: image.caption // The caption from the markdown file
 }));
 
+
+// set scrollTo function to ensure scroll to section not affect browser history
+const scrollTo = (hash) => {
+  const element = document.querySelector(hash)
+  if (element) {
+
+    // Perform the smooth scroll
+    element.scrollIntoView({ behavior: 'smooth' });
+
+    // After scrolling, replace the state again to maintain the current URL
+    setTimeout(() => {
+      history.replaceState(null, null, hash);
+    }, 500);  // Add a slight delay to let the scroll complete smoothly
+  }
+}
+
 </script>
 
 
@@ -61,12 +77,14 @@ const items = artwork.value.images.map(image => ({
         
         <!--ARTWORKA Navigation-->
         <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
-            <NuxtLink :to="{hash:'#anchorimg'}">
+            
+            <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
-            </NuxtLink>
-            <NuxtLink :to="{hash:'#anchortxt'}">
+            </a>
+            <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
-            </NuxtLink>
+            </a>
+
         </div>
         
     </div>
