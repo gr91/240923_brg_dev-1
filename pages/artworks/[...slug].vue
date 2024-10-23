@@ -61,10 +61,10 @@ const scrollTo = (hash) => {
 
 
     <!--ARTWORKS header-->
-    <div class="fixed top-12 md:top-24 w-full max-w-7xl pr-8 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> <!--style="border:solid" -->
+    <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl pr-8 z-40 bg-BRG-white flex flex-col md:flex-row justify-between">
         
         <!--ARTWORKS Title-->
-        <div class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
+        <div style="border:solid grey" class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > <!--style="border:solid green"-->
             <div class="self-stretch brg-txt-body">
                 <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
                 <p v-else>{{ artwork.beginyear }}</p>
@@ -76,7 +76,7 @@ const scrollTo = (hash) => {
         </div> 
         
         <!--ARTWORKA Navigation-->
-        <div class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
+        <div style="border:solid grey" class="h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border: solid greenyellow"-->
             
             <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
@@ -92,23 +92,23 @@ const scrollTo = (hash) => {
     
 
     <!--FIT TO SCREEN section-->
-    <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> <!--style="border: solid red 4px;" -->
+    <div style="border: solid red 4px;" class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg">
         
         
         <!--CAROUSEL-->
-        <!--style="border:solid aqua 2px"-->
         <UCarousel
         v-slot="{ item, index }"
         :items="items"
         :ui="{ item: 'w-full' }"
         
+        style="border:solid aqua 2px"
         class="w-full h-full min-h-0 flex scroll-mt-48"
         >
         
-            <div class="w-full mx-auto flex flex-col " > <!--style="border:solid red" -->  
+            <div style="border:solid red" class="w-full mx-auto flex flex-col " > <!--min-h-0-->  
                 
                 <!--CAROUSEL Images-->
-                <div class="mx-auto min-h-0 flex-1 flex"> <!--style="border:solid green 3px"-->
+                <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex">
                     <img :src="item.image" :alt="item.caption" draggable="false"
                     style="
                         max-width: 100%;
@@ -119,7 +119,7 @@ const scrollTo = (hash) => {
                 </div>
                 
                 <!--CAROUSEL Caption-->
-                <div class="flex-none w-fit brg-txt-caption"> <!--style="border:solid green 2px" -->
+                <div style="border:solid green 2px" class="flex-none w-fit brg-txt-caption">
                     <p> {{ item.caption }} </p>
                 </div>
 
@@ -135,9 +135,11 @@ const scrollTo = (hash) => {
     <!--SCROLL section-->
     <div
         class="w-full min-h-dvh pt-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
+        style="border:solid red"
         id="anchortxt"
     >
         <MDC :value="artwork.bodytext"/>
+        <p>{{ actualPath }}</p>
     </div>
 
 
