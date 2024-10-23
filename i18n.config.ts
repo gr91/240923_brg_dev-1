@@ -17,6 +17,7 @@ export default defineI18nConfig(() => ({
         projects: 'Progetti',
         order: 'Ordina',
         unavailable: 'Non disponibile',
+        close:'Chiudi',
       },
       en: {
         welcome: 'Welcome',
@@ -32,7 +33,8 @@ export default defineI18nConfig(() => ({
         projects: 'Projects',
         order: 'Order',
         unavailable: 'Unavailable',
-
+        close:'Close',
+        
       }
     }
   }))

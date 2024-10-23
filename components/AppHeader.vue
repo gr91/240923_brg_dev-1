@@ -60,7 +60,7 @@ const isOpen = ref(false)
         <div style="border:solid " class=" h-full px-4 flex flex-col">
             
             <div style="border:solid blue " class="h-12 flex justify-end items-center">
-                <p @click="isOpen = false">Close</p>
+                <p @click="isOpen = false">{{ $t('close') }}</p>
             </div>
             
             <div style="border: solid red 1px;" class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">                    
