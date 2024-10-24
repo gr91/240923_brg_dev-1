@@ -144,3 +144,31 @@ collections:
         widget: 'string'
         #Add i18n configuration----------
         i18n: duplicate
+
+
+
+
+  - name: 'bio'
+    label: 'Bio'
+    files:
+      - label: 'Biography'
+        name: 'biography'
+        file: content/bio/biography.yml
+        fields:
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
+      - label: 'Awards'
+        name: 'awards'
+        file: content/bio/awards.yml
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Award'
+            name: 'award'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
