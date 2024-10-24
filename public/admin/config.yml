@@ -155,23 +155,24 @@ collections:
         name: 'biography'
         file: 'content/bio/biography.yml'
         fields:
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
           - label: 'Text'
             name: 'text'
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
-          - label: 'Image'
-            name: 'image'
-            widget: 'image'
 
       - label: 'Awards'
         name: 'awards'
         file: 'content/bio/awards.yml'
-        fields:
+        fields:          
           - label: 'Award'
             name: 'award'
             widget: 'list'
-            summary: '{{fields.year}} - {{fields.text}}'
-            fileds:
+            required: false
+            summary: '{{fields.yeat}} - {{fields.text}}'
+            fields:
               - label: 'Year'
                 name: 'year'
                 widget: 'number'
@@ -179,19 +180,4 @@ collections:
                 name: 'text'
                 widget: 'markdown'
                 buttons: ['bold', 'italic', 'link']
-          
-          - label: 'Images'
-            name: 'images'
-            widget: 'list'
-            required: false
-            summary: '{{fields.image}} - {{fields.caption}}'
-            fields:
-              - label: 'Image'
-                name: 'image'
-                widget: 'image'
-              - label: 'Caption'
-                name: 'caption'
-                widget: 'string'
-                hint: 'Image caption'
-                required: false
 
