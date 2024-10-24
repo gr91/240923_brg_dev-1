@@ -22,7 +22,7 @@ collections:
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
       preview: false
-     #Add i18n configuration----------
+    #Add i18n configuration----------
     i18n: true
     fields:
       - label: 'Title'
@@ -150,28 +150,37 @@ collections:
 
   - name: 'bio'
     label: 'Bio'
+    #Add i18n configuration----------
+    i18n:
+      structure: single_file
+      locales: [it, en]
     files:
       - label: 'Biography'
         name: 'biography'
         file: 'content/bio/biography.yml'
+        i18n: true
         fields:
           - label: 'Image'
             name: 'image'
             widget: 'image'
+            i18n: dublicate
           - label: 'Text'
             name: 'text'
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
+            i18n: true
 
       - label: 'Awards'
         name: 'awards'
         file: 'content/bio/awards.yml'
+        i18n: true
         fields:          
           - label: 'Award'
             name: 'award'
             widget: 'list'
             required: false
             summary: '{{fields.year}} - {{fields.text}}'
+            i18n: true
             fields:
               - label: 'Year'
                 name: 'year'
