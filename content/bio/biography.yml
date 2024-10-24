@@ -1,0 +1,6 @@
+it:
+  image: /img/ritratto-di-bruna-ginammi.png
+  text: Biografia *italiana*
+en:
+  image: /img/ritratto-di-bruna-ginammi.png
+  text: "*English* biography"
