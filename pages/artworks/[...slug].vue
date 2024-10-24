@@ -138,8 +138,7 @@ const scrollTo = (hash) => {
         style="border:solid red"
         id="anchortxt"
     >
-        <MDC :value="artwork.bodytext"/>
-        <p>{{ actualPath }}</p>
+        <MDC :value="artwork.bodytext"/><br>
     </div>
 
 

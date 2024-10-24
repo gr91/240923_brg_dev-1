@@ -25,7 +25,7 @@ const isOpen = ref(false)
             <div class="justify-end items-center gap-8 flex brg-txt-big">
                 <NuxtLink :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
-                <NuxtLink :to="localePath('/custom-pages/bio')">{{ $t('bio') }}</NuxtLink>
+                <NuxtLink :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
                 <NuxtLink :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
                 <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>
                 <button  v-else="locale == ('en')" @click="setLocale('it')">ITA</button>  
@@ -74,7 +74,7 @@ const isOpen = ref(false)
                 <NuxtLink @click="isOpen = false" :to="localePath('/')">Home</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
-                <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/bio')">{{ $t('bio') }}</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
             </div>
             <div class="h-12 flex justify-start">
