@@ -153,7 +153,7 @@ collections:
     files:
       - label: 'Biography'
         name: 'biography'
-        file: content/bio/biography.yml
+        file: 'content/bio/biography.yml'
         fields:
           - label: 'Text'
             name: 'text'
@@ -162,13 +162,18 @@ collections:
 
       - label: 'Awards'
         name: 'awards'
-        file: content/bio/awards.yml
+        file: 'content/bio/awards.yml'
         fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
           - label: 'Award'
             name: 'award'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
+            widget: 'list'
+            summary: '{{fields.year}} - {{fields.text}}'
+            fileds:
+              - label: 'Year'
+                name: 'year'
+                widget: 'number'
+              - label: 'Text'
+                name: 'text'
+                widget: 'markdown'
+                buttons: ['bold', 'italic', 'link']
 
