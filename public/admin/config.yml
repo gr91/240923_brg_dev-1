@@ -187,4 +187,67 @@ collections:
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
 
+      - label: 'Collection'
+        name: 'collection'
+        widget: 'list'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
+        #Add i18n configuration----------
+        i18n: true
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
+      - label: 'Solo Exhibition'
+        name: 'soloexhib'
+        widget: 'list'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
+        #Add i18n configuration----------
+        i18n: true
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
+      - label: 'Group Exhibition'
+        name: 'groupexhib'
+        widget: 'list'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
+        #Add i18n configuration----------
+        i18n: true
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
+      - label: 'Bibliography'
+        name: 'bibliography'
+        widget: 'list'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
+        #Add i18n configuration----------
+        i18n: true
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
         
