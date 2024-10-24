@@ -171,7 +171,7 @@ collections:
             name: 'award'
             widget: 'list'
             required: false
-            summary: '{{fields.yeat}} - {{fields.text}}'
+            summary: '{{fields.year}} - {{fields.text}}'
             fields:
               - label: 'Year'
                 name: 'year'
