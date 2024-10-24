@@ -147,44 +147,44 @@ collections:
 
 
 
-      - name: 'bio'
-        label: 'Bio'
-        folder: 'content/bio'
-        format: 'frontmatter'
-        create: true
-        slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-        editor:
-          preview: false
+  - name: 'bio'
+    label: 'Bio'
+    folder: 'content/bio'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    #Add i18n configuration----------
+    i18n: true
+    fields:
+      - label: 'Photo'
+        name: 'photo'
+        widget: 'image'
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Biography'
+        name: 'biography'
+        widget: 'markdown'
+        buttons: ['bold', 'italic', 'link']
+        #Add i18n configuration----------
+        i18n: true
+
+      - label: 'Award'
+        name: 'award'
+        widget: 'list'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
         #Add i18n configuration----------
         i18n: true
         fields:
-          - label: 'Photo'
-            name: 'photo'
-            widget: 'image'
-            #Add i18n configuration----------
-            i18n: duplicate
-
-          - label: 'Biography'
-            name: 'biography'
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
-            #Add i18n configuration----------
-            i18n: true
-
-          - label: 'Award'
-            name: 'award'
-            widget: 'list'
-            required: false
-            summary: '{{fields.year}} - {{fields.text}}'
-            #Add i18n configuration----------
-            i18n: true
-            fields:
-              - label: 'Year'
-                name: 'year'
-                widget: 'number'
-              - label: 'Text'
-                name: 'text'
-                widget: 'markdown'
-                buttons: ['bold', 'italic', 'link']
 
         
