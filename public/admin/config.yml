@@ -159,6 +159,9 @@ collections:
             name: 'text'
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
 
       - label: 'Awards'
         name: 'awards'
@@ -176,4 +179,19 @@ collections:
                 name: 'text'
                 widget: 'markdown'
                 buttons: ['bold', 'italic', 'link']
+          
+          - label: 'Images'
+            name: 'images'
+            widget: 'list'
+            required: false
+            summary: '{{fields.image}} - {{fields.caption}}'
+            fields:
+              - label: 'Image'
+                name: 'image'
+                widget: 'image'
+              - label: 'Caption'
+                name: 'caption'
+                widget: 'string'
+                hint: 'Image caption'
+                required: false
 
