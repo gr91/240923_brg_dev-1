@@ -27,29 +27,31 @@ const { data: bio } = await useAsyncData(myKey, () => {
 
 
 <template>
-    <div class="mt-40">
-
-        <p><strong>actualPath</strong></p>
-        <p>{{ actualPath }}</p>
-        <br>
-
-        <p><strong>myPath</strong></p>
-        <p>{{ myPath }}</p>
-        <br>
-
-        <p><strong>myKey</strong></p>
-        <p>{{ myKey }}</p>
-        <br>
-
-        <p><strong>biodata</strong></p>
-        <p>{{ bio }}</p>
-        <br>
-
-        <p><strong>biodata</strong></p>
-        <p>{{  }}</p>
-        <br>
-
-        
-
-    </div>
+    <!--
+        <div class="mt-40">
+    
+            <p><strong>actualPath</strong></p>
+            <p>{{ actualPath }}</p>
+            <br>
+    
+            <p><strong>myPath</strong></p>
+            <p>{{ myPath }}</p>
+            <br>
+    
+            <p><strong>myKey</strong></p>
+            <p>{{ myKey }}</p>
+            <br>
+    
+            <p><strong>biodata</strong></p>
+            <p>{{ bio }}</p>
+            <br>
+    
+            <p><strong>biodata</strong></p>
+            <p>{{  }}</p>
+            <br>
+    
+            
+    
+        </div>
+    -->
 </template>
