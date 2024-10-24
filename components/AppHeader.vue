@@ -67,7 +67,7 @@ const isOpen = ref(false)
         <div class=" h-full px-4 flex flex-col"> <!--style="border:solid "-->
             
             <div class="h-12 flex justify-between items-center"> <!--style="border:solid blue " -->
-                <NuxtLink :to="localePath('/')">Bruna Ginammi</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/')">Bruna Ginammi</NuxtLink>
                 <p @click="isOpen = false">{{ $t('close') }}</p>
             </div>
             
