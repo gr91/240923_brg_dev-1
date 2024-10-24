@@ -135,7 +135,7 @@ const scrollTo = (hash) => {
 
     <!--SCROLL section-->
     <div
-        class="w-full min-h-dvh pt-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
+        class="w-full md:max-w-xl min-h-dvh pt-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
     >
         <MDC :value="artwork.bodytext"/><br>
