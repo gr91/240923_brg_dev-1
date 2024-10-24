@@ -32,18 +32,17 @@ const myCategory = ['Photo', 'Other'];
     
     
     <!--ARTWORK Heading section + navigation buttons-->
-    <div style="border:solid red" class="h-32 md:h-24"></div>
+    <div class="h-32 md:h-24"></div> <!--style="border:solid red" -->
     
-    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end">
+    <div class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end"> <!--style="border:solid" -->
         <div class="h-4 brg-txt-button brg-cta">{{ $t('photos') }}</div>
         <div class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</div>
         <div class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</div>
     </div>
     
-    <p>{{ myCategory }}</p>
 
     <!--ARTWORK List-->
-    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
+    <div v-for="artwork of artworks" :key="artwork.slug" class="mb-8">
 
         
         <div v-if=myCategory.includes(artwork.category)>
@@ -60,7 +59,9 @@ const myCategory = ['Photo', 'Other'];
                         <h1>{{ artwork.title }}</h1>
                         <h1>{{ artwork.subtitle }}</h1>
                     </div>
-                    <p style="color:brown">{{ artwork.category }}</p>
+                    <!--
+                        <p style="color:brown">{{ artwork.category }}</p>
+                    -->
 
                 </div>
             </NuxtLink>
@@ -81,9 +82,9 @@ const myCategory = ['Photo', 'Other'];
                     <h1>{{ artwork.subtitle }}</h1>
                 </div>
                 
-                <p style="color:brown">{{ artwork.category }}</p>
                 <!--
                     <div>
+                        <p style="color:brown">{{ artwork.category }}</p>
                         <MDC :value="artwork.bodytext" />
                     </div>
                 -->

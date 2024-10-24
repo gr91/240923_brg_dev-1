@@ -15,7 +15,7 @@ const isOpen = ref(false)
 
     
     <!-- DESKTOP APPHEADER-->
-    <span class="hidden md:block max-w-7xl mx-auto" style="border:solid blue">
+    <span class="hidden md:block max-w-7xl mx-auto" > <!--style="border:solid blue"-->
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             
             <div class="justify-center items-center gap-2.5 flex brg-txt-big">
@@ -37,7 +37,7 @@ const isOpen = ref(false)
 
     
     <!-- MOBILE APPHEADER-->
-    <span class="block md:hidden mx-auto" style="border:solid red" >
+    <span class="block md:hidden mx-auto"  > <!--style="border:solid red"-->
         <div class="w-full h-12 mx-auto px-4 bg-BRG-white justify-between inline-flex items-center brg-txt-big">
             <div class="justify-center items-center gap-2.5 flex">
                 <!--
@@ -64,13 +64,13 @@ const isOpen = ref(false)
         
         class="bg-BRG-white"
         >
-        <div style="border:solid " class=" h-full px-4 flex flex-col">
+        <div class=" h-full px-4 flex flex-col"> <!--style="border:solid "-->
             
-            <div style="border:solid blue " class="h-12 flex justify-end items-center">
+            <div class="h-12 flex justify-end items-center"> <!--style="border:solid blue " -->
                 <p @click="isOpen = false">{{ $t('close') }}</p>
             </div>
             
-            <div style="border: solid red 1px;" class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">                    
+            <div class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
                 <NuxtLink @click="isOpen = false" :to="localePath('/')">Home</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
