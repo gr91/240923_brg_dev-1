@@ -18,6 +18,11 @@ const { data: artworks } = await useAsyncData(myKey, () => {
 
 const myCategory = ['Photo', 'Other'];
 
+
+const route = useRoute()      
+const actualPath = route.path.replace(/\/$/, '');
+
+
 </script>
 
 
@@ -37,13 +42,15 @@ const myCategory = ['Photo', 'Other'];
     </div>
     
     <!----Variable test print----
+    -->
     <p>----------------------------------------</p>
     <p>VARIABLES PRINT TEST</p>
     <p><strong>locale: </strong>{{ locale }}</p>
     <p><strong>contentPath: </strong>{{ contentPath }}</p>
     <p><strong>myKey: </strong>{{ myKey }}</p>
+    <p><strong>route: </strong>{{ route }}</p>
+    <p><strong>actualPath: </strong>{{ actualPath }}</p>
     <p>----------------------------------------</p>
-    -->
     
     
     
@@ -53,7 +60,8 @@ const myCategory = ['Photo', 'Other'];
         
         <div v-if=myCategory.includes(artwork.category)>
             
-            <NuxtLink :to="localePath(String(artwork._path))">
+            <!--Edit artwork._path to remove locale marker from content path-->
+            <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)">
                 <div  class=" flex-col justify-start items-start inline-flex" >
     
                     <div class="self-stretch brg-txt-body">
@@ -66,6 +74,7 @@ const myCategory = ['Photo', 'Other'];
                         <h1>{{ artwork.subtitle }}</h1>
                     </div>
                     <p style="color:brown">{{ artwork.category }}</p>
+                    <p>{{ `/artworks${artwork._path?.substring(12)}` }}</p>
 
                 </div>
             </NuxtLink>
