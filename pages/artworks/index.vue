@@ -41,10 +41,10 @@ const myCategory = ['Photo', 'Other'];
     <!--ARTWORK Heading section + navigation buttons-->
     <div style="border:solid red" class="h-32 md:h-24"></div>
     
-    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end">
-        <div class="h-4 brg-txt-button brg-cta">{{ $t('photos') }}</div>
-        <div class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</div>
-        <div class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</div>
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end ">
+        <button class="h-4 brg-txt-button brg-cta">{{ $t('photos') }}</button>
+        <button class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</button>
+        <button class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</button>
     </div>
     
     
@@ -57,7 +57,7 @@ const myCategory = ['Photo', 'Other'];
         <div v-if=myCategory.includes(artwork.category)>
             
             <!--Edit artwork._path to remove locale marker from content path-->
-            <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)">
+            <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
                 <div  class=" flex-col justify-start items-start inline-flex" >
     
                     <div class="self-stretch brg-txt-body">
