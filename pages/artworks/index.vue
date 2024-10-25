@@ -34,8 +34,6 @@ const myCategory = ['Photo', 'Other'];
     <p><strong>locale: </strong>{{ locale }}</p>
     <p><strong>contentPath: </strong>{{ contentPath }}</p>
     <p><strong>myKey: </strong>{{ myKey }}</p>
-    <p><strong>route: </strong>{{ route }}</p>
-    <p><strong>actualPath: </strong>{{ actualPath }}</p>
     <p>----------------------------------------</p>
     -->
     
