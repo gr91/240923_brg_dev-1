@@ -19,16 +19,16 @@ const isOpen = ref(false)
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             
             <div class="justify-center items-center gap-2.5 flex brg-txt-big">
-                <NuxtLink :to="localePath('/')">Bruna Ginammi</NuxtLink>
+                <NuxtLink :to="localePath('/')" class="hover:opacity-50">Bruna Ginammi</NuxtLink>
             </div>
             
             <div class="justify-end items-center gap-8 flex brg-txt-big">
-                <NuxtLink :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
-                <NuxtLink :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
-                <NuxtLink :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
-                <NuxtLink :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
-                <button v-if="locale == ('it')" @click="setLocale('en')">ENG</button>
-                <button  v-else="locale == ('en')" @click="setLocale('it')">ITA</button>  
+                <NuxtLink :to="localePath('/artworks')" class="hover:opacity-50">{{ $t('artworks') }}</NuxtLink>
+                <NuxtLink :to="localePath('/books')" class="hover:opacity-50">{{ $t('books') }}</NuxtLink>
+                <NuxtLink :to="localePath('/bio')" class="hover:opacity-50">{{ $t('bio') }}</NuxtLink>
+                <NuxtLink :to="localePath('/custom-pages/contacts')" class="hover:opacity-50">{{ $t('contacts') }}</NuxtLink>
+                <button v-if="locale == ('it')" @click="setLocale('en')" class="hover:opacity-50">ENG</button>
+                <button  v-else="locale == ('en')" @click="setLocale('it')" class="hover:opacity-50">ITA</button>  
             </div>
             
         </div>
