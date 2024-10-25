@@ -19,8 +19,6 @@ const { data: artworks } = await useAsyncData(myKey, () => {
 const myCategory = ['Photo', 'Other'];
 
 
-const route = useRoute()      
-const actualPath = route.path.replace(/\/$/, '');
 
 
 </script>
@@ -30,6 +28,16 @@ const actualPath = route.path.replace(/\/$/, '');
 
 
 <template>
+    <!----Variable test print----
+    <p>----------------------------------------</p>
+    <p>VARIABLES PRINT TEST</p>
+    <p><strong>locale: </strong>{{ locale }}</p>
+    <p><strong>contentPath: </strong>{{ contentPath }}</p>
+    <p><strong>myKey: </strong>{{ myKey }}</p>
+    <p><strong>route: </strong>{{ route }}</p>
+    <p><strong>actualPath: </strong>{{ actualPath }}</p>
+    <p>----------------------------------------</p>
+    -->
     
     
     <!--ARTWORK Heading section + navigation buttons-->
@@ -41,16 +49,6 @@ const actualPath = route.path.replace(/\/$/, '');
         <div class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</div>
     </div>
     
-    <!----Variable test print----
-    -->
-    <p>----------------------------------------</p>
-    <p>VARIABLES PRINT TEST</p>
-    <p><strong>locale: </strong>{{ locale }}</p>
-    <p><strong>contentPath: </strong>{{ contentPath }}</p>
-    <p><strong>myKey: </strong>{{ myKey }}</p>
-    <p><strong>route: </strong>{{ route }}</p>
-    <p><strong>actualPath: </strong>{{ actualPath }}</p>
-    <p>----------------------------------------</p>
     
     
     
@@ -75,7 +73,6 @@ const actualPath = route.path.replace(/\/$/, '');
                     </div>
                     <p style="color:brown">{{ artwork.category }}</p>
                     <p>{{ `/artworks${artwork._path?.substring(12)}` }}</p>
-
                 </div>
             </NuxtLink>
             
