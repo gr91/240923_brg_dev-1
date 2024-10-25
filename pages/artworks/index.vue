@@ -1,24 +1,20 @@
 <script setup lang="ts">
 
 
-//------i18n configuration --- from nuxtjs/i18n docs
-const localePath = useLocalePath()
+//------i18n configuration (from nuxtjs/i18n docs)------
+const localePath = useLocalePath();
+const { locale, setLocale } = useI18n();
 
-const route = useRoute()      
-const actualPath = route.path.replace(/\/$/, '');
+//produce content path and dynamic key based on locale
+const contentPath = `/artworks/${locale.value}`;
+const myKey = `HelloArtworks-${locale.value}`;
 
-//edit path to include en/it folder 
-const myPath = "/artworks" + actualPath.replace("/artworks", "");
-
-//produce a unique key for useAsyncData composable
-const myKey = myPath.replace('/artworks/', 'Helloartworks-');
-
-//const route = useRoute()
+//execute content query
 const { data: artworks } = await useAsyncData(myKey, () => {
-  return queryContent(myPath)
-  .sort({beginyear: 1, endyear: 1})
-  .find()
-});
+    return queryContent(contentPath)
+    .sort({beginyear: 1, endyear: 1})
+    .find()
+});    
 
 const myCategory = ['Photo', 'Other'];
 
@@ -40,8 +36,17 @@ const myCategory = ['Photo', 'Other'];
         <div class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</div>
     </div>
     
-    <p>{{ myCategory }}</p>
-
+    <!----Variable test print----
+    <p>----------------------------------------</p>
+    <p>VARIABLES PRINT TEST</p>
+    <p><strong>locale: </strong>{{ locale }}</p>
+    <p><strong>contentPath: </strong>{{ contentPath }}</p>
+    <p><strong>myKey: </strong>{{ myKey }}</p>
+    <p>----------------------------------------</p>
+    -->
+    
+    
+    
     <!--ARTWORK List-->
     <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
 
