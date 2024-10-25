@@ -135,6 +135,7 @@ const scrollTo = (hash) => {
 
     <!--SCROLL section-->
     <div
+        style="border:solid red"
         class="w-full md:max-w-xl min-h-dvh pt-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
     >

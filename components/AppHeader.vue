@@ -15,7 +15,7 @@ const isOpen = ref(false)
 
     
     <!-- DESKTOP APPHEADER-->
-    <span class="hidden md:block max-w-7xl mx-auto" > <!--style="border:solid blue"-->
+    <span style="border:solid blue" class="hidden md:block max-w-7xl mx-auto" > <!---->
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             
             <div class="justify-center items-center gap-2.5 flex brg-txt-big">
@@ -37,7 +37,7 @@ const isOpen = ref(false)
     
     
     <!-- MOBILE APPHEADER-->
-    <span class="block md:hidden mx-auto"  > <!--style="border:solid red"-->
+    <span style="border:solid red" class="block md:hidden mx-auto"  > <!---->
         <div class="w-full h-12 mx-auto px-4 bg-BRG-white justify-between inline-flex items-center brg-txt-big">
             <div class="justify-center items-center gap-2.5 flex">
                 <!--
