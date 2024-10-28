@@ -261,20 +261,30 @@ collections:
 #---NEW BIO FILE COLLECTION-----------------------------------------
   - name: 'newbio'
     label: 'NewBio'
+    #Add i18n configuration----------
+    i18n:
+      structure: single_file
+      locales: [it, en]
     files:
 
       #Biography file
       - label: 'Biography'
         name: 'biography'
         file: 'content/newbio/biography.yml'
+        #Add i18n configuration----------
+        i18n: true
         fields:
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
+            #Add i18n configuration----------
+            i18n: duplicate
           - label: Text
             name: text
             widget: markdown
             buttons: ['bold', 'italic', 'link']
-          - label: 'Image'
-            name: 'image'
-            widget: 'image'
+            #Add i18n configuration----------
+            i18n: true
 
       #Awards file
       - label: "Awards"
