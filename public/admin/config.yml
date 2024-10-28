@@ -297,7 +297,25 @@ collections:
             required: false
             fields:
               - label: Year
-                name: Year
+                name: year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
+                buttons: ['bold', 'italic', 'link']
+
+      #Group Exhibitions file
+      - label: "Group Exhibitions"
+        name: "groupexhib"
+        file: "content/newbio/groupexhib.yml"
+        fields:
+          - label: Exhib
+            name: exhib
+            widget: list
+            required: false
+            fields:
+              - label: Year
+                name: year
                 widget: number
               - label: Text
                 name: text
