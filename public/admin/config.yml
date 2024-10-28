@@ -256,4 +256,36 @@ collections:
             name: 'text'
             widget: 'markdown'
             buttons: ['bold', 'italic', 'link']
-        
+
+
+#------------------------------------------------------------
+  - name: 'newbio'
+    label: 'NewBio'
+    files:
+      - label: 'Biography'
+        name: 'biography'
+        file: 'content/bio/biography.yml'
+        field:
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
+
+      - label: 'Awards'
+        name: 'awards'
+        widget: 'list'
+        file: 'content/bio/awards.yml'
+        required: false
+        summary: '{{fields.year}} - {{fields.text}}'
+        fields:
+          - label: 'Year'
+            name: 'year'
+            widget: 'number'
+          - label: 'Text'
+            name: 'text'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+
