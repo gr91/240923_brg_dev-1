@@ -262,36 +262,35 @@ collections:
   - name: 'newbio'
     label: 'NewBio'
     files:
-    
+
       #Biography file
       - label: 'Biography'
         name: 'biography'
         file: 'content/newbio/biography.yml'
         fields:
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
+          - label: Text
+            name: text
+            widget: markdown
             buttons: ['bold', 'italic', 'link']
           - label: 'Image'
             name: 'image'
             widget: 'image'
 
       #Awards file
-      - label: 'Awards'
-        name: 'awards'
-        file: 'content/newbio/awards.yml'
-        fileds:
-          - label: 'Award'
-            name: 'award'
-            widget: 'list'
-            summary: '{{fields.year}} - {{fields.text}}'
+      - label: "Awards"
+        name: "awards"
+        file: "site/newbio/awards.yml"
+        fields:
+          - label: Award
+            name: award
+            widget: list
             required: false
             fields:
-              - label: 'Year'
-                name: 'year'
-                widget: 'number'
-              - label: 'Text'
-                name: 'text'
-                widget: 'markdown'
+              - label: Year
+                name: Year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
                 buttons: ['bold', 'italic', 'link']
 
