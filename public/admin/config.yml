@@ -291,7 +291,7 @@ collections:
         name: "awards"
         file: "content/newbio/awards.yml"
         #Add i18n configuration----------
-        i18n: true
+        i18n: false
         fields:
           - label: Award
             name: award
