@@ -1,22 +1,19 @@
 <script setup lang="ts">
 
-//------i18n configuration --- from nuxtjs/i18n docs
-const localePath = useLocalePath()
+//------i18n configuration (from nuxtjs/i18n docs)------
+const localePath = useLocalePath();
+const { locale, setLocale } = useI18n();
 
-const route = useRoute()      
-const actualPath = route.path.replace(/\/$/, '');
+//produce content path and dynamic key based on locale
+const contentPath = `/bio/${locale.value}`;
+const myKey = `HelloBio-${locale.value}`;
 
-//edit path to include en/it folder 
-const myPath = "/bio" + actualPath.replace("/bio", "");
-
-//produce a unique key for useAsyncData composable
-const myKey = myPath.replace('/bio/', 'Hellobio-');
-
-//const route = useRoute()
+//execute content query
 const { data: bio } = await useAsyncData(myKey, () => {
-  return queryContent(myPath)
-  .find()
-});
+    return queryContent(contentPath)
+    .sort({beginyear: 1, endyear: 1})
+    .find()
+});    
 
 //create and populate and array with separate list
 
@@ -28,30 +25,13 @@ const { data: bio } = await useAsyncData(myKey, () => {
 
 <template>
     <!--
-        <div class="mt-40">
-    
-            <p><strong>actualPath</strong></p>
-            <p>{{ actualPath }}</p>
-            <br>
-    
-            <p><strong>myPath</strong></p>
-            <p>{{ myPath }}</p>
-            <br>
-    
-            <p><strong>myKey</strong></p>
-            <p>{{ myKey }}</p>
-            <br>
-    
-            <p><strong>biodata</strong></p>
-            <p>{{ bio }}</p>
-            <br>
-    
-            <p><strong>biodata</strong></p>
-            <p>{{  }}</p>
-            <br>
-    
-            
-    
-        </div>
     -->
+    <div class="mt-40"></div>
+    <p>----------------------------------------</p>
+    <p>VARIABLES PRINT TEST</p>
+    <p><strong>locale: </strong>{{ locale }}</p>
+    <p><strong>contentPath: </strong>{{ contentPath }}</p>
+    <p><strong>myKey: </strong>{{ myKey }}</p>
+    <p>----------------------------------------</p>
+
 </template>
