@@ -258,10 +258,12 @@ collections:
             buttons: ['bold', 'italic', 'link']
 
 
-#------------------------------------------------------------
+#---NEW BIO FILE COLLECTION-----------------------------------------
   - name: 'newbio'
     label: 'NewBio'
     files:
+    
+      #Biography file
       - label: 'Biography'
         name: 'biography'
         file: 'content/newbio/biography.yml'
@@ -274,18 +276,22 @@ collections:
             name: 'image'
             widget: 'image'
 
+      #Awards file
       - label: 'Awards'
         name: 'awards'
-        widget: 'list'
         file: 'content/newbio/awards.yml'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
+        fileds:
+          - label: 'Award'
+            name: 'award'
+            widget: 'list'
+            summary: '{{fields.year}} - {{fields.text}}'
+            required: false
+            fields:
+              - label: 'Year'
+                name: 'year'
+                widget: 'number'
+              - label: 'Text'
+                name: 'text'
+                widget: 'markdown'
+                buttons: ['bold', 'italic', 'link']
 
