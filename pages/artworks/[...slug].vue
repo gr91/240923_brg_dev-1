@@ -134,6 +134,13 @@ const scrollTo = (hash) => {
         id="anchortxt"
     >
         <MDC :value="artwork.bodytext"/><br>
+
+        <br>
+        <p>{{ thisArtworkPath }}</p>
+        <br>
+        <p>{{ artwork }}</p>
+        <br>
+        <p>{{ artwork.title }}</p>
     </div>
     
 
