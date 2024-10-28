@@ -265,7 +265,7 @@ collections:
       - label: 'Biography'
         name: 'biography'
         file: 'content/newbio/biography.yml'
-        field:
+        fields:
           - label: 'Text'
             name: 'text'
             widget: 'markdown'
