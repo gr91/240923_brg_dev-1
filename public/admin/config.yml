@@ -289,7 +289,7 @@ collections:
       #Awards file
       - label: "Awards"
         name: "awards"
-        file: "site/newbio/awards.yml"
+        file: "content/newbio/awards.yml"
         fields:
           - label: Award
             name: award
