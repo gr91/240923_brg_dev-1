@@ -264,7 +264,7 @@ collections:
     files:
       - label: 'Biography'
         name: 'biography'
-        file: 'content/bio/biography.yml'
+        file: 'content/newbio/biography.yml'
         field:
           - label: 'Text'
             name: 'text'
@@ -277,7 +277,7 @@ collections:
       - label: 'Awards'
         name: 'awards'
         widget: 'list'
-        file: 'content/bio/awards.yml'
+        file: 'content/newbio/awards.yml'
         required: false
         summary: '{{fields.year}} - {{fields.text}}'
         fields:
