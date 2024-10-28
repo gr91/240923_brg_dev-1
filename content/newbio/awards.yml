@@ -1,9 +1,5 @@
 it:
-  award:
-    - Year: 1995
-      text: Kodak award
-    - Year: 2000
-      text: New award
+  award: []
 en:
   award:
     - Year: 1995
