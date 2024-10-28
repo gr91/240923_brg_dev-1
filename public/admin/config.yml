@@ -290,6 +290,8 @@ collections:
       - label: "Awards"
         name: "awards"
         file: "content/newbio/awards.yml"
+        #Add i18n configuration----------
+        i18n: true
         fields:
           - label: Award
             name: award
