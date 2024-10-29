@@ -31,7 +31,6 @@ const { data: extractAwards } = await useAsyncData('awards', () => {
     .where({_path: '/newbio/awards'})
     .find()
 });
-
 const awards = extractAwards.value[0].it.award;
 
 
@@ -74,8 +73,22 @@ const awards = extractAwards.value[0].it.award;
         <br>
         -->
 
+    <!--Biography-->
+    <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
+        <h3 class="brg-txt-heading mb-2">Biography</h3>
+
+        <div v-if="locale == String('it')">
+            <MDC :value="biography.it.text"/>
+        </div>
+        <div v-else>
+            <MDC :value="biography.en.text"/>
+        </div>
+    </div>
+
+    
     <!--Awards List-->
-    <div>
+    <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
         <h3 class="brg-txt-heading mb-2">Awards</h3>
         <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
             <div class="w-16 flex-0" style="border:solid red">
