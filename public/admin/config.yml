@@ -304,6 +304,42 @@ collections:
                 widget: markdown
                 buttons: ['bold', 'italic', 'link']
 
+      #Public Collections file
+      - label: "Public Collections"
+        name: "publiccoll"
+        file: "content/newbio/publiccoll.yml"
+        fields:
+          - label: Collection
+            name: collection
+            widget: list
+            required: false
+            fields:
+              - label: Year
+                name: year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
+                buttons: ['bold', 'italic', 'link']
+
+      #Solo Exhibitions file
+      - label: "Solo Exhibitions"
+        name: "soloexhib"
+        file: "content/newbio/soloexhib.yml"
+        fields:
+          - label: Exhib
+            name: exhib
+            widget: list
+            required: false
+            fields:
+              - label: Year
+                name: year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
+                buttons: ['bold', 'italic', 'link']
+
       #Group Exhibitions file
       - label: "Group Exhibitions"
         name: "groupexhib"
@@ -311,6 +347,24 @@ collections:
         fields:
           - label: Exhib
             name: exhib
+            widget: list
+            required: false
+            fields:
+              - label: Year
+                name: year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
+                buttons: ['bold', 'italic', 'link']
+
+      #Pubblications file
+      - label: "Pubblications"
+        name: "pubblications"
+        file: "content/newbio/pubblications.yml"
+        fields:
+          - label: Pubblication
+            name: pubblication
             widget: list
             required: false
             fields:
