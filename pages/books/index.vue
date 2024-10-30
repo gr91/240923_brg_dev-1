@@ -51,18 +51,18 @@ const { data: books } = await useAsyncData(myKey, () => {
                 <MDC :value="book.description" />
             </div>
             
-            <div class="mb-4 h-5 brg-cta brg-txt-button">
-                <div v-if="book.order == ('Mail')" >
+            <div class="w-fit mb-4 h-5 brg-txt-button">
+                <div v-if="book.order == ('Mail')" class="brg-cta">
                 <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
                 </div>
-                <div v-else-if="book.order == ('Website')">
+                <div v-else-if="book.order == ('Website')" class="brg-cta">
                 <a :href=book.address target="_blank"> {{ $t('order') }} </a>
                 </div>
                 <div v-else class="unselected">
                 <p> {{ $t('unavailable') }} </p>
                 </div>
             </div>
-        
+            
         <!--
         -->
         
