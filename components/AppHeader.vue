@@ -61,7 +61,6 @@ const isOpen = ref(false)
         :ui="{
             background:'bg-BRG-white'
         }"
-        :slide="top"
         
         class="bg-BRG-white"
         >
@@ -76,6 +75,7 @@ const isOpen = ref(false)
                 <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
+                <NuxtLink @click="isOpen = false" :to="localePath('/newbio')">NewBio</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
             </div>
             <div class="h-12 flex justify-start">
