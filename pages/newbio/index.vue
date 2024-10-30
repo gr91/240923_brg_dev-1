@@ -53,7 +53,7 @@ const scrollTo = (hash) => {
 
     <!--BIO Navigation-->
     <!--<div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll">-->
-    <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center md:justify-end overflow-x-auto no-scrollbar">
+    <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar">
         
         <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
             <div class="h-4 brg-txt-button brg-cta">Biography</div>

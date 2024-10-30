@@ -55,7 +55,7 @@ const scrollTo = (hash) => {
 <template>
 
     <!--ARTWORKS header-->
-    <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl pr-8 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> 
+    <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl px-4 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> 
         
         <!--ARTWORKS Title-->
         <div style="border:solid green" class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > 
@@ -92,15 +92,15 @@ const scrollTo = (hash) => {
         
         <!--CAROUSEL-->
         <UCarousel
-        v-slot="{ item, index }"
-        :items="items"
-        :ui="{ item: 'w-full' }"
-        
-        style="border:solid aqua 2px"
-        class="w-full h-full min-h-0 flex scroll-mt-48 "
+            v-slot="{ item, index }"
+            :items="items"
+            :ui="{ item: 'w-full' }"
+            
+            style="border:solid aqua 2px"
+            class="w-full h-full min-h-0 md:px-4 flex scroll-mt-48 "
         >
         
-            <div style="border:solid red" class="w-full mx-auto flex flex-col " >   
+            <div style="border:solid red" class=" mx-auto px-4 md:px-0 flex flex-col " >   
                 
                 <!--CAROUSEL Images-->
                 <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex"> 
@@ -130,17 +130,23 @@ const scrollTo = (hash) => {
     <!--SCROLL section-->
     <div
         style="border:solid red"
-        class="w-full md:max-w-xl min-h-dvh pt-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
+        class="w-full md:max-w-xl min-h-dvh p-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
     >
         <MDC :value="artwork.bodytext"/><br>
 
         <br>
+        <p><strong>thisArtworkPath</strong></p>
         <p>{{ thisArtworkPath }}</p>
         <br>
+        <p><strong>artwork</strong></p>
         <p>{{ artwork }}</p>
         <br>
+        <p><strong>artwork.title</strong></p>
         <p>{{ artwork.title }}</p>
+        <br>
+        <p><strong>items</strong></p>
+        <p>{{ items }}</p>
     </div>
     
 
