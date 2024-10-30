@@ -41,7 +41,7 @@ const myCategory = ['Photo', 'Other'];
     <!--ARTWORK Heading section + navigation buttons-->
     <div style="border:solid red" class="h-32 md:h-24"></div>
     
-    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white  h-12 flex flex-row gap-4 items-center md:justify-end ">
+    <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center md:justify-end ">
         <button class="h-4 brg-txt-button brg-cta">{{ $t('photos') }}</button>
         <button class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</button>
         <button class="h-4 brg-txt-button brg-cta">{{ $t('other') }}</button>
@@ -51,7 +51,7 @@ const myCategory = ['Photo', 'Other'];
     
     
     <!--ARTWORK List-->
-    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4">
+    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4 px-4">
 
         
         <div v-if=myCategory.includes(artwork.category)>

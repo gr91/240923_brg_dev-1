@@ -10,7 +10,7 @@
 
   <!--MAIN-->
   <!--Set max width for the whole app-->
-  <main class="mx-auto max-w-7xl px-4" style="border:solid, grey"> <!-- asd  -->
+  <main class="mx-auto max-w-7xl" style="border:solid, grey"> <!-- asd  -->
     
 
       <!--PAGES-->

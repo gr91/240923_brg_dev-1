@@ -53,7 +53,7 @@ const scrollTo = (hash) => {
 
     <!--BIO Navigation-->
     <!--<div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll">-->
-    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white h-12 w-[80%] flex flex-row gap-4 items-center md:justify-end overflow-x-auto no-scrollbar">
+    <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center md:justify-end overflow-x-auto no-scrollbar">
         
         <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
             <div class="h-4 brg-txt-button brg-cta">Biography</div>
@@ -81,45 +81,50 @@ const scrollTo = (hash) => {
 
 
 
-    <!--Biography-->
-    <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px" id="biography">
-        <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
-        <h3 class="brg-txt-heading mb-2">Biography</h3>
-        
-        <div v-if="locale == String('it')">
-            <MDC :value="biography.it.text"/>
-        </div>
-        <div v-else>
-            <MDC :value="biography.en.text"/>
-        </div>
-    </div>
-    
-    
+    <div class="px-4">
 
-    <!--Awards List-->
-    <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
-        <h3 class="brg-txt-heading mb-2">Awards</h3>
-        <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-            <div class="w-16 flex-0" style="border:solid red">
-                <p>{{ award.year }}</p>
+        <!--Biography-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px" id="biography">
+            <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
+            <h3 class="brg-txt-heading mb-2">Biography</h3>
+            
+            <div v-if="locale == String('it')">
+                <MDC :value="biography.it.text"/>
             </div>
-            <div class="flex-1" style="border:solid blue">
-                <p>{{ award.text }}</p>
+            <div v-else>
+                <MDC :value="biography.en.text"/>
             </div>
         </div>
+        
+        
+    
+        <!--Awards List-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+            <h3 class="brg-txt-heading mb-2">Awards</h3>
+            <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
+                <div class="w-16 flex-0" style="border:solid red">
+                    <p>{{ award.year }}</p>
+                </div>
+                <div class="flex-1" style="border:solid blue">
+                    <p>{{ award.text }}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!--Solo Exhibition List-->
+        <div class="h-[1200px]">
+            <h3 class="brg-txt-heading mb-2">Solo Exhibition</h3>
+        </div>
+        
+        <!--Group Exhibition List-->
+        <div></div>
+        
+        <!--Personal Pubblication List-->
+        <div></div>
+        
     </div>
-    
-    <!--Solo Exhibition List-->
-    <div class="h-[1200px]">
-        <h3 class="brg-txt-heading mb-2">Solo Exhibition</h3>
-    </div>
-    
-    <!--Group Exhibition List-->
-    <div></div>
-    
-    <!--Personal Pubblication List-->
-    <div></div>
-    
+
+
     
     
     <!--
