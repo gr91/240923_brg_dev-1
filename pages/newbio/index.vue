@@ -49,30 +49,36 @@ const scrollTo = (hash) => {
 <template>
 
     <!--BIO header-->
-    <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl pr-8 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> 
+    <div style="border:solid red" class="h-32 md:h-24"></div>
 
-        <!--BIO Navigation-->
-        <div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll"> 
-            
-            <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
-                <div class="h-4 brg-txt-button brg-cta">Biography</div>
-            </a>
-            <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-                <div class="h-4 brg-txt-button brg-cta">Awards</div>
-            </a>
-            <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-                <div class="h-4 brg-txt-button brg-cta">Exhibition</div>
-            </a>
-            <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-                <div class="h-4 brg-txt-button brg-cta">Collections</div>
-            </a>
-            <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-                <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
-            </a>
-            
-        </div>
-
+    <!--BIO Navigation-->
+    <!--<div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll">-->
+    <div style="border:solid" class="sticky top-12 md:top-24 bg-BRG-white h-12 w-[80%] flex flex-row gap-4 items-center md:justify-end overflow-x-auto no-scrollbar">
+        
+        <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
+            <div class="h-4 brg-txt-button brg-cta">Biography</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Awards</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Exhibition</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Collections</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
+        </a>
+        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
+            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
+        </a>
+        
     </div>
+
 
 
     <!--Biography-->
@@ -89,6 +95,7 @@ const scrollTo = (hash) => {
     </div>
     
     
+
     <!--Awards List-->
     <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
         <h3 class="brg-txt-heading mb-2">Awards</h3>
@@ -103,7 +110,9 @@ const scrollTo = (hash) => {
     </div>
     
     <!--Solo Exhibition List-->
-    <div></div>
+    <div class="h-[1200px]">
+        <h3 class="brg-txt-heading mb-2">Solo Exhibition</h3>
+    </div>
     
     <!--Group Exhibition List-->
     <div></div>
