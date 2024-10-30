@@ -18,6 +18,13 @@ export default defineI18nConfig(() => ({
         order: 'Ordina',
         unavailable: 'Non disponibile',
         close:'Chiudi',
+
+        biography:'Biografia',
+        awards:'Premi',
+        publiccollections:'Collezioni pubbliche',
+        soloexhibitions:'Mostre personali',
+        groupexhibitions:'Mostre collettive',
+        pubblications:'Pubblicazioni',
       },
       en: {
         welcome: 'Welcome',
@@ -35,6 +42,12 @@ export default defineI18nConfig(() => ({
         unavailable: 'Unavailable',
         close:'Close',
         
+        biography:'Biography',
+        awards:'Awards',
+        publiccollections:'Public collections',
+        soloexhibitions:'Solo exhibitions',
+        groupexhibitions:'Group exhibitions',
+        pubblications:'Pubblications',
       }
     }
   }))

@@ -86,7 +86,7 @@ const scrollTo = (hash) => {
         <!--Biography-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px" id="biography">
             <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
-            <h3 class="brg-txt-heading mb-2">Biography</h3>
+            <h3 class="brg-txt-heading mb-2">{{ $t('biography') }}</h3>
             
             <div v-if="locale == String('it')">
                 <MDC :value="biography.it.text"/>
@@ -96,11 +96,10 @@ const scrollTo = (hash) => {
             </div>
         </div>
         
-        
     
         <!--Awards List-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
-            <h3 class="brg-txt-heading mb-2">Awards</h3>
+            <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
             <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ award.year }}</p>
@@ -111,16 +110,33 @@ const scrollTo = (hash) => {
             </div>
         </div>
         
-        <!--Solo Exhibition List-->
-        <div class="h-[1200px]">
-            <h3 class="brg-txt-heading mb-2">Solo Exhibition</h3>
+        
+        <!--Public Collections List-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+            <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
+            <p>List</p>
         </div>
         
-        <!--Group Exhibition List-->
-        <div></div>
         
-        <!--Personal Pubblication List-->
-        <div></div>
+        <!--Solo Exhibition List-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+            <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
+            <p>List</p>
+        </div>
+        
+        
+        <!--Group Exhibition List-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+            <h3 class="brg-txt-heading mb-2">{{ $t('groupexhibitions') }}</h3>
+            <p>List</p>
+        </div>
+        
+        
+        <!--Pubblications List-->
+        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+            <h3 class="brg-txt-heading mb-2">{{ $t('pubblications') }}</h3>
+            <p>List</p>
+        </div>
         
     </div>
 
