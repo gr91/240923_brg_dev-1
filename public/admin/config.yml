@@ -147,120 +147,9 @@ collections:
 
 
 
+#---NEW BIO FILE COLLECTION-----------------------------------------
   - name: 'bio'
     label: 'Bio'
-    folder: 'content/bio'
-    format: 'frontmatter'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    #Add i18n configuration----------
-    i18n: true
-    fields:
-      - label: 'Title'
-        name: 'title'
-        widget: 'string'
-        #Add i18n configuration----------
-        i18n: duplicate
-
-      - label: 'Photo'
-        name: 'photo'
-        widget: 'image'
-        #Add i18n configuration----------
-        i18n: duplicate
-
-      - label: 'Biography'
-        name: 'biography'
-        widget: 'markdown'
-        buttons: ['bold', 'italic', 'link']
-        #Add i18n configuration----------
-        i18n: true
-
-      - label: 'Award'
-        name: 'award'
-        widget: 'list'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        #Add i18n configuration----------
-        i18n: true
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
-
-      - label: 'Collection'
-        name: 'collection'
-        widget: 'list'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        #Add i18n configuration----------
-        i18n: true
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
-
-      - label: 'Solo Exhibition'
-        name: 'soloexhib'
-        widget: 'list'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        #Add i18n configuration----------
-        i18n: true
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
-
-      - label: 'Group Exhibition'
-        name: 'groupexhib'
-        widget: 'list'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        #Add i18n configuration----------
-        i18n: true
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
-
-      - label: 'Bibliography'
-        name: 'bibliography'
-        widget: 'list'
-        required: false
-        summary: '{{fields.year}} - {{fields.text}}'
-        #Add i18n configuration----------
-        i18n: true
-        fields:
-          - label: 'Year'
-            name: 'year'
-            widget: 'number'
-          - label: 'Text'
-            name: 'text'
-            widget: 'markdown'
-            buttons: ['bold', 'italic', 'link']
-
-
-#---NEW BIO FILE COLLECTION-----------------------------------------
-  - name: 'newbio'
-    label: 'NewBio'
     #Add i18n configuration----------
     i18n:
       structure: single_file
@@ -270,7 +159,7 @@ collections:
       #Biography file
       - label: 'Biography'
         name: 'biography'
-        file: 'content/newbio/biography.yml'
+        file: 'content/bio/biography.yml'
         #Add i18n configuration----------
         i18n: true
         fields:
@@ -289,7 +178,7 @@ collections:
       #Awards file
       - label: "Awards"
         name: "awards"
-        file: "content/newbio/awards.yml"
+        file: "content/bio/awards.yml"
         fields:
           - label: Award
             name: award
@@ -308,7 +197,7 @@ collections:
       #Public Collections file
       - label: "Public Collections"
         name: "publiccoll"
-        file: "content/newbio/publiccoll.yml"
+        file: "content/bio/publiccoll.yml"
         fields:
           - label: Collection
             name: collection
@@ -326,7 +215,7 @@ collections:
       #Solo Exhibitions file
       - label: "Solo Exhibitions"
         name: "soloexhib"
-        file: "content/newbio/soloexhib.yml"
+        file: "content/bio/soloexhib.yml"
         fields:
           - label: Exhib
             name: exhib
@@ -344,7 +233,7 @@ collections:
       #Group Exhibitions file
       - label: "Group Exhibitions"
         name: "groupexhib"
-        file: "content/newbio/groupexhib.yml"
+        file: "content/bio/groupexhib.yml"
         fields:
           - label: Exhib
             name: exhib
@@ -362,7 +251,7 @@ collections:
       #Pubblications file
       - label: "Pubblications"
         name: "pubblications"
-        file: "content/newbio/pubblications.yml"
+        file: "content/bio/pubblications.yml"
         fields:
           - label: Pubblication
             name: pubblication

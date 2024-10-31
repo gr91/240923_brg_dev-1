@@ -26,7 +26,6 @@ const isOpen = ref(false)
                 <NuxtLink :to="localePath('/artworks')" class="hover:opacity-50">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink :to="localePath('/books')" class="hover:opacity-50">{{ $t('books') }}</NuxtLink>
                 <NuxtLink :to="localePath('/bio')" class="hover:opacity-50">{{ $t('bio') }}</NuxtLink>
-                <NuxtLink :to="localePath('/newbio')" class="hover:opacity-50">NewBio</NuxtLink>
                 <NuxtLink :to="localePath('/custom-pages/contacts')" class="hover:opacity-50">{{ $t('contacts') }}</NuxtLink>
                 <button v-if="locale == ('it')" @click="setLocale('en')" class="hover:opacity-50">ENG</button>
                 <button  v-else="locale == ('en')" @click="setLocale('it')" class="hover:opacity-50">ITA</button>  
@@ -75,7 +74,6 @@ const isOpen = ref(false)
                 <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
-                <NuxtLink @click="isOpen = false" :to="localePath('/newbio')">NewBio</NuxtLink>
                 <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
             </div>
             <div class="h-12 flex justify-start">
