@@ -64,6 +64,14 @@ const { data: extractPubblications } = await useAsyncData('pubblications', () =>
 });
 const pubblications = extractPubblications.value[0].it.pubblication;
 
+//Magazines
+const { data: extractMagazines } = await useAsyncData('magazines', () => {
+    return queryContent('/bio')
+    .where({_path: '/bio/magazines'})
+    .find()
+});
+const magazines = extractMagazines.value[0].it.magazine;
+
 
 
 // set scrollTo function to ensure scroll to section not affect browser history
@@ -93,23 +101,26 @@ const scrollTo = (hash) => {
     <!--BIO Navigation-->
     <div class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar"> <!--style="border:solid" -->
         
-        <a href="#anchorimg" @click.prevent="scrollTo('#biography')" class="flex-none">
+        <a href="#biography" @click.prevent="scrollTo('#biography')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('biography') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#awards')" class="flex-none">
+        <a href="#awards" @click.prevent="scrollTo('#awards')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('awards') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#publiccollections')" class="flex-none">
+        <a href="#publiccollections" @click.prevent="scrollTo('#publiccollections')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('publiccollections') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#soloexhibitions')" class="flex-none">
+        <a href="#soloexhibitions" @click.prevent="scrollTo('#soloexhibitions')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('soloexhibitions') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#groupexhibitions')" class="flex-none">
+        <a href="#groupexhibitions" @click.prevent="scrollTo('#groupexhibitions')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('groupexhibitions') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#pubblications')" class="flex-none">
+        <a href="#pubblications" @click.prevent="scrollTo('#pubblications')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('pubblications') }}</div>
+        </a>
+        <a href="#magazines" @click.prevent="scrollTo('#magazines')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('magazines') }}</div>
         </a>
         
     </div>
@@ -212,6 +223,23 @@ const scrollTo = (hash) => {
                 </div>
             </div>
         </div>
+
+
+        <!--Magazines list-->
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="magazines"> <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('magazines') }}</h3>
+            <!--<p>{{ pubblications }}</p>-->
+            <div v-for="magazine in magazines" class="w-full flex flex-row brg-txt-body mb-2" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
+                    <p>{{ magazine.year }}</p>
+                </div>
+                <div class="flex-1" > <!--style="border:solid blue"-->
+                    <MDC :value="magazine.text"/>
+                </div>
+            </div>
+        </div>
+
+
 
         <!--temporary div for scroll test-->
         <div class="h-[1200px]"></div>
