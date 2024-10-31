@@ -20,6 +20,9 @@ it:
     - year: 2016
       text: "*Riflessioni Autoritratto in assenza*, Centro Italiano della fotografia
         d’autore, pag. 34-35"
+    - year: 2002
+      text: "*Album di famiglia*, in Io Donna, a cura di Susanna Legrenzi, Corriere
+        della sera, pag. 126-129"
     - year: 2000
       text: "*Arte in Contemporanea Modena Ophelia’s Awakening*, a cura di Ornella
         Corradini , pag. 162-163"
@@ -78,3 +81,6 @@ en:
     - year: 1995
       text: "*L’io e il suo doppio un secolo di ritratto fotografico in Italia
         1895/1995,* Alinari, a cura di I.Zannier, pag. 210"
+    - year: 2000
+      text: "*Album di famiglia*, in Io Donna, a cura di Susanna Legrenzi, Corriere
+        della sera, pag. 126-129"
