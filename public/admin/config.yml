@@ -270,3 +270,22 @@ collections:
                 widget: markdown
                 buttons: ['bold', 'italic', 'link']
 
+      #Magazine file
+      - label: "Magazines"
+        name: "magazines"
+        file: "content/bio/magazines.yml"
+        fields:
+          - label: Magazine
+            name: magazine
+            widget: list
+            summary: '{{fields.year}} - {{fields.text}}'
+            required: false
+            fields:
+              - label: Year
+                name: year
+                widget: number
+              - label: Text
+                name: text
+                widget: markdown
+                buttons: ['bold', 'italic', 'link']
+
