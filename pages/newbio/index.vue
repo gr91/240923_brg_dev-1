@@ -88,11 +88,10 @@ const scrollTo = (hash) => {
 <template>
 
     <!--BIO header-->
-    <div style="border:solid red" class="h-32 md:h-24"></div>
+    <div class="h-32 md:h-24"></div> <!--style="border:solid red"-->
 
     <!--BIO Navigation-->
-    <!--<div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll">-->
-    <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar">
+    <div class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar"> <!--style="border:solid" -->
         
         <a href="#anchorimg" @click.prevent="scrollTo('#biography')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('biography') }}</div>
@@ -117,7 +116,7 @@ const scrollTo = (hash) => {
 
 
 
-    <div class="w-full px-4" style="border:solid red">
+    <div class="w-full px-4" > <!--style="border:solid red"-->
 
         <!--Entire newbio
             <div>
@@ -128,8 +127,8 @@ const scrollTo = (hash) => {
 
 
         <!--Biography-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" style="border:solid grey 2px" id="biography">
-            <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
+        <div class="w-full md:max-w-xl mt-6 mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" id="biography"> <!--style="border:solid grey 2px" -->
+            <img :src="biography.it.image" class="w-40 md:w-60 mb-8">
             <h3 class="brg-txt-heading mb-2">{{ $t('biography') }}</h3>
             <div v-if="locale == String('it')">
                 <MDC :value="biography.it.text"/>
@@ -141,14 +140,14 @@ const scrollTo = (hash) => {
         
         
         <!--Awards List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="awards">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="awards"> <!--style="border:solid grey 2px" -->
             <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
             <!--<p>{{ awards }}</p>-->
-            <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-                <div class="w-16 flex-0" style="border:solid red">
+            <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ award.year }}</p>
                 </div>
-                <div class="flex-1" style="border:solid blue">
+                <div class="flex-1" > <!--style="border:solid blue"-->
                     <MDC :value="award.text"/>
                 </div>
             </div>
@@ -156,14 +155,14 @@ const scrollTo = (hash) => {
         
         
         <!--Public Collections List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="publiccollections"> <!--style="border:solid grey 2px" -->
             <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
             <!--<p>{{ publicColls }}</p>-->
-            <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-                <div class="w-16 flex-0" style="border:solid red">
+            <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ publicColl.year }}</p>
                 </div>
-                <div class="flex-1" style="border:solid blue">
+                <div class="flex-1" > <!--style="border:solid blue"-->
                     <MDC :value="publicColl.text"/>
                 </div>
             </div>
@@ -171,14 +170,14 @@ const scrollTo = (hash) => {
         
         
         <!--Solo Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="soloexhibitions">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="soloexhibitions"> <!--style="border:solid grey 2px" -->
             <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
             <!--<p>{{ soloExhibs }}</p>-->
-            <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-                <div class="w-16 flex-0" style="border:solid red">
+            <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ soloExhib.year }}</p>
                 </div>
-                <div class="flex-1" style="border:solid blue">
+                <div class="flex-1" > <!--style="border:solid blue"-->
                     <MDC :value="soloExhib.text"/>
                 </div>
             </div>
@@ -186,14 +185,14 @@ const scrollTo = (hash) => {
         
         
         <!--Group Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="groupexhibitions">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="groupexhibitions"> <!--style="border:solid grey 2px" -->
             <h3 class="brg-txt-heading mb-2">{{ $t('groupexhibitions') }}</h3>
             <!--<p>{{ groupExhibs }}</p>-->
-            <div v-for="groupExhib in groupExhibs" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-                <div class="w-16 flex-0" style="border:solid red">
+            <div v-for="groupExhib in groupExhibs" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ groupExhib.year }}</p>
                 </div>
-                <div class="flex-1" style="border:solid blue">
+                <div class="flex-1" > <!--style="border:solid blue"-->
                     <MDC :value="groupExhib.text"/>
                 </div>
             </div>
@@ -201,18 +200,21 @@ const scrollTo = (hash) => {
         
         
         <!--Pubblications List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="pubblications">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="pubblications"> <!--style="border:solid grey 2px" -->
             <h3 class="brg-txt-heading mb-2">{{ $t('pubblications') }}</h3>
             <!--<p>{{ pubblications }}</p>-->
-            <div v-for="pubblication in pubblications" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
-                <div class="w-16 flex-0" style="border:solid red">
+            <div v-for="pubblication in pubblications" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+                <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ pubblication.year }}</p>
                 </div>
-                <div class="flex-1" style="border:solid blue">
+                <div class="flex-1" > <!--style="border:solid blue"-->
                     <MDC :value="pubblication.text"/>
                 </div>
             </div>
         </div>
+
+        <!--temporary div for scroll test-->
+        <div class="h-[1200px]"></div>
         
     </div>
 
