@@ -127,9 +127,9 @@ const scrollTo = (hash) => {
 
 
         <!--Biography-->
-        <div class="w-full md:max-w-xl mt-6 mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" id="biography"> <!--style="border:solid grey 2px" -->
-            <img :src="biography.it.image" class="w-40 md:w-60 mb-8">
-            <h3 class="brg-txt-heading mb-2">{{ $t('biography') }}</h3>
+        <div class="w-full md:max-w-xl mt-6 mb-12 scroll-mt-44 md:scroll-mt-48" id="biography"> <!--style="border:solid grey 2px" -->
+            <img :src="biography.it.image" class="w-40 md:w-60 mb-10">
+            <h3 class="brg-txt-heading mb-4">{{ $t('biography') }}</h3>
             <div v-if="locale == String('it')">
                 <MDC :value="biography.it.text"/>
             </div>
@@ -140,8 +140,8 @@ const scrollTo = (hash) => {
         
         
         <!--Awards List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="awards"> <!--style="border:solid grey 2px" -->
-            <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="awards"> <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('awards') }}</h3>
             <!--<p>{{ awards }}</p>-->
             <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
                 <div class="w-12 flex-none" > <!--style="border:solid red"-->
@@ -155,10 +155,10 @@ const scrollTo = (hash) => {
         
         
         <!--Public Collections List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="publiccollections"> <!--style="border:solid grey 2px" -->
-            <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="publiccollections" > <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('publiccollections') }}</h3>
             <!--<p>{{ publicColls }}</p>-->
-            <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+            <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body mb-2" > <!--style="border:solid lightgray"-->
                 <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ publicColl.year }}</p>
                 </div>
@@ -170,10 +170,10 @@ const scrollTo = (hash) => {
         
         
         <!--Solo Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="soloexhibitions"> <!--style="border:solid grey 2px" -->
-            <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="soloexhibitions"> <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('soloexhibitions') }}</h3>
             <!--<p>{{ soloExhibs }}</p>-->
-            <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+            <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body mb-2" > <!--style="border:solid lightgray"-->
                 <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ soloExhib.year }}</p>
                 </div>
@@ -185,10 +185,10 @@ const scrollTo = (hash) => {
         
         
         <!--Group Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="groupexhibitions"> <!--style="border:solid grey 2px" -->
-            <h3 class="brg-txt-heading mb-2">{{ $t('groupexhibitions') }}</h3>
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="groupexhibitions"> <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('groupexhibitions') }}</h3>
             <!--<p>{{ groupExhibs }}</p>-->
-            <div v-for="groupExhib in groupExhibs" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+            <div v-for="groupExhib in groupExhibs" class="w-full flex flex-row brg-txt-body mb-2" > <!--style="border:solid lightgray"-->
                 <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ groupExhib.year }}</p>
                 </div>
@@ -200,10 +200,10 @@ const scrollTo = (hash) => {
         
         
         <!--Pubblications List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" id="pubblications"> <!--style="border:solid grey 2px" -->
-            <h3 class="brg-txt-heading mb-2">{{ $t('pubblications') }}</h3>
+        <div class="w-full md:max-w-xl mb-12 scroll-mt-32 md:scroll-mt-48" id="pubblications"> <!--style="border:solid grey 2px" -->
+            <h3 class="brg-txt-heading mb-4">{{ $t('pubblications') }}</h3>
             <!--<p>{{ pubblications }}</p>-->
-            <div v-for="pubblication in pubblications" class="w-full flex flex-row brg-txt-body" > <!--style="border:solid lightgray"-->
+            <div v-for="pubblication in pubblications" class="w-full flex flex-row brg-txt-body mb-2" > <!--style="border:solid lightgray"-->
                 <div class="w-12 flex-none" > <!--style="border:solid red"-->
                     <p>{{ pubblication.year }}</p>
                 </div>
