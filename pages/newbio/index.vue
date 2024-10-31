@@ -8,6 +8,12 @@ const { locale, setLocale } = useI18n();
 
 
 //Biography
+const { data: newbio } = await useAsyncData('newbio', () => {
+    return queryContent('/newbio')
+    .find()
+});
+
+//Biography
 const { data: extractBiography } = await useAsyncData('biography', () => {
     return queryContent('/newbio')
     .where({_path: '/newbio/biography'})
@@ -24,12 +30,21 @@ const { data: extractAwards } = await useAsyncData('awards', () => {
 const awards = extractAwards.value[0].it.award;
 
 //Public Collections
-const { data: extractPublicColl } = await useAsyncData('publicColls', () => {
+const { data: extractPublicColl } = await useAsyncData('publicColl', () => {
     return queryContent('/newbio')
     .where({_path: '/newbio/publiccoll'})
     .find()
 });
 const publicColls = extractPublicColl.value[0].it.collection;
+
+//Public Collections
+const { data: extractSoloExhib } = await useAsyncData('soloExhib', () => {
+    return queryContent('/newbio')
+    .where({_path: '/newbio/soloexhib'})
+    .find()
+});
+const soloExhibs = extractSoloExhib.value[0].it.exhib;
+
 
 //------Add query------//
 
@@ -88,6 +103,12 @@ const scrollTo = (hash) => {
 
     <div class="w-full px-4" style="border:solid red">
 
+        <div>
+            <p>{{ newbio }}</p>
+        </div>
+        <br><br><br>
+
+
         <!--Biography-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" style="border:solid grey 2px" id="biography">
             <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
@@ -105,6 +126,7 @@ const scrollTo = (hash) => {
         <!--Awards List-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="awards">
             <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
+            <p>{{ awards }}</p>
             <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ award.year }}</p>
@@ -119,7 +141,7 @@ const scrollTo = (hash) => {
         <!--Public Collections List-->
         <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
             <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
-            <p>List</p>
+            <p>{{ publicColls }}</p>
             <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ publicColl.year }}</p>
@@ -134,7 +156,15 @@ const scrollTo = (hash) => {
         <!--Solo Exhibition List-->
         <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="soloexhibitions">
             <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
-            <p>List</p>
+            <p>{{ soloExhibs }}</p>
+            <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
+                <div class="w-16 flex-0" style="border:solid red">
+                    <p>{{ soloExhib.year }}</p>
+                </div>
+                <div class="flex-1" style="border:solid blue">
+                    <p>{{ soloExhib.text }}</p>
+                </div>
+            </div>
         </div>
         
         
