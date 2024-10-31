@@ -6,6 +6,38 @@ it:
     - year: 2020
       text: "*Cultura Commestibile Sguardi al femminile*, a cura di Giovanna
         Sparapani, maschietto editore"
+    - year: 2020
+      text: |-
+        *Archivio n°5 the nineties issue*, Archivio, pag. 06A
+
+        ISBN - 25331043
+    - year: 2018
+      text: "*Blue No name Collective Art Magazine*, a cura di Valentine H.Hyman, NNC
+        V-WORLD"
+    - year: 2018
+      text: "*Grey No name Collective Art Magazine*, a cura di Valentine H.Hyman, NNC
+        V-WORLD"
+    - year: 2016
+      text: "*Riflessioni Autoritratto in assenza*, Centro Italiano della fotografia
+        d’autore, pag. 34-35"
+    - year: 2000
+      text: "*Arte in Contemporanea Modena Ophelia’s Awakening*, a cura di Ornella
+        Corradini , pag. 162-163"
+    - year: 1998
+      text: "*April FA 2*, a cura di Mario Milizia, pag. 44"
+    - year: 1997
+      text: "*Donna Think Big*, a cura di Toni Thorimbert, pag. 96–98"
+    - year: 1996
+      text: |-
+        *Everything that lives eats*, Aperture Foundation, pag. 24
+
+        ISBN - 0893816868
+    - year: 1995
+      text: "*Domus n°773 La Biennale di Venezia cento anni di Arte*, a cura di Pierre
+        Restany, pag. 55"
+    - year: 1995
+      text: "*L’io e il suo doppio un secolo di ritratto fotografico in Italia
+        1895/1995,* Alinari, a cura di I.Zannier, pag. 210"
 en:
   magazine:
     - year: 2021
@@ -14,3 +46,35 @@ en:
     - year: 2020
       text: "*Cultura Commestibile Sguardi al femminile*, a cura di Giovanna
         Sparapani, maschietto editore"
+    - year: 2020
+      text: |-
+        *Archivio n°5 the nineties issue*, Archivio, pag. 06A
+
+        ISBN - 25331043
+    - year: 2018
+      text: "*Blue No name Collective Art Magazine*, a cura di Valentine H.Hyman, NNC
+        V-WORLD"
+    - year: 2018
+      text: "*Grey No name Collective Art Magazine*, a cura di Valentine H.Hyman, NNC
+        V-WORLD"
+    - year: 2016
+      text: "*Riflessioni Autoritratto in assenza*, Centro Italiano della fotografia
+        d’autore, pag. 34-35"
+    - year: 2000
+      text: "*Arte in Contemporanea Modena Ophelia’s Awakening*, a cura di Ornella
+        Corradini , pag. 162-163"
+    - year: 1998
+      text: "*April FA 2*, a cura di Mario Milizia, pag. 44"
+    - year: 1997
+      text: "*Donna Think Big*, a cura di Toni Thorimbert, pag. 96–98"
+    - year: 1996
+      text: |-
+        *Everything that lives eats*, Aperture Foundation, pag. 24
+
+        ISBN - 0893816868
+    - year: 1995
+      text: "*Domus n°773 La Biennale di Venezia cento anni di Arte*, a cura di Pierre
+        Restany, pag. 55"
+    - year: 1995
+      text: "*L’io e il suo doppio un secolo di ritratto fotografico in Italia
+        1895/1995,* Alinari, a cura di I.Zannier, pag. 210"
