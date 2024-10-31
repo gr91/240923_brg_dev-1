@@ -55,36 +55,33 @@ const scrollTo = (hash) => {
     <!--<div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end overflow-x-scroll">-->
     <div style="border:solid" class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar">
         
-        <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
-            <div class="h-4 brg-txt-button brg-cta">Biography</div>
+        <a href="#anchorimg" @click.prevent="scrollTo('#biography')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('biography') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Awards</div>
+        <a href="#anchortxt" @click.prevent="scrollTo('#awards')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('awards') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Exhibition</div>
+        <a href="#anchortxt" @click.prevent="scrollTo('#publiccollections')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('publiccollections') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Collections</div>
+        <a href="#anchortxt" @click.prevent="scrollTo('#soloexhibitions')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('soloexhibitions') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
+        <a href="#anchortxt" @click.prevent="scrollTo('#groupexhibitions')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('groupexhibitions') }}</div>
         </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
-        </a>
-        <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
-            <div class="h-4 brg-txt-button brg-cta">Pubblication</div>
+        <a href="#anchortxt" @click.prevent="scrollTo('#pubblications')" class="flex-none">
+            <div class="h-4 brg-txt-button brg-cta">{{ $t('pubblications') }}</div>
         </a>
         
     </div>
 
 
 
-    <div class="px-4">
+    <div class="w-full px-4" style="border:solid red">
 
         <!--Biography-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px" id="biography">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" style="border:solid grey 2px" id="biography">
             <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
             <h3 class="brg-txt-heading mb-2">{{ $t('biography') }}</h3>
             
@@ -98,7 +95,7 @@ const scrollTo = (hash) => {
         
     
         <!--Awards List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="awards">
             <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
             <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
@@ -112,28 +109,28 @@ const scrollTo = (hash) => {
         
         
         <!--Public Collections List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
             <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
             <p>List</p>
         </div>
         
         
         <!--Solo Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="soloexhibitions">
             <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
             <p>List</p>
         </div>
         
         
         <!--Group Exhibition List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="groupexhibitions">
             <h3 class="brg-txt-heading mb-2">{{ $t('groupexhibitions') }}</h3>
             <p>List</p>
         </div>
         
         
         <!--Pubblications List-->
-        <div class="w-full md:max-w-xl mb-8 md:mb-12" style="border:solid grey 2px">
+        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="pubblications">
             <h3 class="brg-txt-heading mb-2">{{ $t('pubblications') }}</h3>
             <p>List</p>
         </div>
