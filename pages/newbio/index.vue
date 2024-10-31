@@ -23,6 +23,14 @@ const { data: extractAwards } = await useAsyncData('awards', () => {
 });
 const awards = extractAwards.value[0].it.award;
 
+//Public Collections
+const { data: extractPublicColl } = await useAsyncData('publicColls', () => {
+    return queryContent('/newbio')
+    .where({_path: '/newbio/publiccoll'})
+    .find()
+});
+const publicColls = extractPublicColl.value[0].it.collection;
+
 //------Add query------//
 
 
@@ -112,6 +120,14 @@ const scrollTo = (hash) => {
         <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
             <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
             <p>List</p>
+            <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
+                <div class="w-16 flex-0" style="border:solid red">
+                    <p>{{ publicColl.year }}</p>
+                </div>
+                <div class="flex-1" style="border:solid blue">
+                    <p>{{ publicColl.text }}</p>
+                </div>
+            </div>
         </div>
         
         
