@@ -38,6 +38,26 @@ it:
     - year: 2016
       text: Autoritratto in assenza - Centro Italiano della fotografia d’Autore -
         Bibbiena (AR) by G.Calvenzi – e Lucia Miodini
+    - year: 2015
+      text: Video - Parlando con voi - Le Murate Progetti d’arte Contemporanea
+        Firenze      by G. Chiti e L.Covi
+    - year: 2000
+      text: ArteinContemporanea -Proiezione del video Ophelia’s awakening - Modena by
+        Ornella Corradini
+    - year: 1999
+      text: Un Paese Unico Italia Fotografie 1900 - 2000 - Alinari Marino alla Scala
+        Art Center -  MI by Cesare Colombo
+    - year: 1998
+      text: Pagine di Fotografia Italiana 1900 - 1998, by Roberta Valtorta
+    - year: 1998
+      text: Il San Gottardo - Galleria Gottardo - Lugano by Luca Patocchi & Alberto
+        Bianda
+    - text: Un secolo di ritratto fotografico in Italia 1895/1995 a cura di Italo
+        Zannier La Biennale di Venezia Padiglione Italia
+      year: 1995
+    - year: 1993
+      text: A propos de la Photographie Italienne -Il Diaframma Noces d’argent, by
+        Charles Henry Favrod - Museè de L’Elyseé - CH Lausanne
 en:
   exhib:
     - year: 2023
@@ -78,3 +98,22 @@ en:
     - year: 2016
       text: Autoritratto in assenza - Centro Italiano della fotografia d’Autore -
         Bibbiena (AR) by G.Calvenzi – e Lucia Miodini
+    - year: 2015
+      text: Video - Parlando con voi - Le Murate Progetti d’arte Contemporanea
+        Firenze      by G. Chiti e L.Covi
+    - year: 2000
+      text: ArteinContemporanea -Proiezione del video Ophelia’s awakening - Modena by
+        Ornella Corradini
+    - year: 1999
+      text: Un Paese Unico Italia Fotografie 1900 - 2000 - Alinari Marino alla Scala
+        Art Center -  MI by Cesare Colombo
+    - year: 1998
+      text: Pagine di Fotografia Italiana 1900 - 1998, by Roberta Valtorta
+    - year: 1998
+      text: Il San Gottardo - Galleria Gottardo - Lugano by Luca Patocchi & Alberto
+        Bianda
+    - text: Un secolo di ritratto fotografico in Italia 1895/1995 a cura di Italo
+        Zannier La Biennale di Venezia Padiglione Italia
+      year: 1995
+    - year: 1993
+      text: ""
