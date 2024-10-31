@@ -1,12 +1,8 @@
 it:
   award:
     - year: 1995
-      text: Kodak award
-    - year: 2000
-      text: A new award
+      text: European Kodak Panorama Awards for young photographer, Arles
 en:
   award:
     - year: 1995
-      text: Kodak award
-    - year: 2000
-      text: A new award
+      text: European Kodak Panorama Awards for young photographer, Arles
