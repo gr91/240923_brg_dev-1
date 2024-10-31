@@ -1,17 +1,20 @@
 <script setup>
 
+
+
 //------i18n configuration (from nuxtjs/i18n docs)------
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
 
 
 
+//------PERFORM QUARIES------//
 
-//Biography
-const { data: newbio } = await useAsyncData('newbio', () => {
-    return queryContent('/newbio')
-    .find()
-});
+//Entire newbio --- FOR TEST ONSLY
+    //const { data: newbio } = await useAsyncData('newbio', () => {
+    //    return queryContent('/newbio')
+    //    .find()
+    //});
 
 //Biography
 const { data: extractBiography } = await useAsyncData('biography', () => {
@@ -37,7 +40,7 @@ const { data: extractPublicColl } = await useAsyncData('publicColl', () => {
 });
 const publicColls = extractPublicColl.value[0].it.collection;
 
-//Public Collections
+//Solo Exhibitions
 const { data: extractSoloExhib } = await useAsyncData('soloExhib', () => {
     return queryContent('/newbio')
     .where({_path: '/newbio/soloexhib'})
@@ -45,9 +48,21 @@ const { data: extractSoloExhib } = await useAsyncData('soloExhib', () => {
 });
 const soloExhibs = extractSoloExhib.value[0].it.exhib;
 
+//Group Exhibitions
+const { data: extractGropuExhib } = await useAsyncData('groupExhib', () => {
+    return queryContent('/newbio')
+    .where({_path: '/newbio/groupexhib'})
+    .find()
+});
+const groupExhibs = extractGropuExhib.value[0].it.exhib;
 
-//------Add query------//
-
+//Pubblications
+const { data: extractPubblications } = await useAsyncData('pubblications', () => {
+    return queryContent('/newbio')
+    .where({_path: '/newbio/pubblications'})
+    .find()
+});
+const pubblications = extractPubblications.value[0].it.pubblication;
 
 
 
@@ -65,6 +80,7 @@ const scrollTo = (hash) => {
     }, 500);  // Add a slight delay to let the scroll complete smoothly
   }
 }
+
 
 
 </script>
@@ -103,17 +119,18 @@ const scrollTo = (hash) => {
 
     <div class="w-full px-4" style="border:solid red">
 
-        <div>
-            <p>{{ newbio }}</p>
-        </div>
-        <br><br><br>
+        <!--Entire newbio
+            <div>
+                <p>{{ newbio }}</p>
+            </div>
+            <br><br><br>
+        -->
 
 
         <!--Biography-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-44 md:scroll-mt-48" style="border:solid grey 2px" id="biography">
             <img :src="biography.it.image" class="w-40 md:w-60 mb-2">
             <h3 class="brg-txt-heading mb-2">{{ $t('biography') }}</h3>
-            
             <div v-if="locale == String('it')">
                 <MDC :value="biography.it.text"/>
             </div>
@@ -122,63 +139,79 @@ const scrollTo = (hash) => {
             </div>
         </div>
         
-    
+        
         <!--Awards List-->
         <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="awards">
             <h3 class="brg-txt-heading mb-2">{{ $t('awards') }}</h3>
-            <p>{{ awards }}</p>
+            <!--<p>{{ awards }}</p>-->
             <div v-for="award in awards" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ award.year }}</p>
                 </div>
                 <div class="flex-1" style="border:solid blue">
-                    <p>{{ award.text }}</p>
+                    <MDC :value="award.text"/>
                 </div>
             </div>
         </div>
         
         
         <!--Public Collections List-->
-        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="publiccollections">
             <h3 class="brg-txt-heading mb-2">{{ $t('publiccollections') }}</h3>
-            <p>{{ publicColls }}</p>
+            <!--<p>{{ publicColls }}</p>-->
             <div v-for="publicColl in publicColls" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ publicColl.year }}</p>
                 </div>
                 <div class="flex-1" style="border:solid blue">
-                    <p>{{ publicColl.text }}</p>
+                    <MDC :value="publicColl.text"/>
                 </div>
             </div>
         </div>
         
         
         <!--Solo Exhibition List-->
-        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="soloexhibitions">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="soloexhibitions">
             <h3 class="brg-txt-heading mb-2">{{ $t('soloexhibitions') }}</h3>
-            <p>{{ soloExhibs }}</p>
+            <!--<p>{{ soloExhibs }}</p>-->
             <div v-for="soloExhib in soloExhibs" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
                 <div class="w-16 flex-0" style="border:solid red">
                     <p>{{ soloExhib.year }}</p>
                 </div>
                 <div class="flex-1" style="border:solid blue">
-                    <p>{{ soloExhib.text }}</p>
+                    <MDC :value="soloExhib.text"/>
                 </div>
             </div>
         </div>
         
         
         <!--Group Exhibition List-->
-        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="groupexhibitions">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="groupexhibitions">
             <h3 class="brg-txt-heading mb-2">{{ $t('groupexhibitions') }}</h3>
-            <p>List</p>
+            <!--<p>{{ groupExhibs }}</p>-->
+            <div v-for="groupExhib in groupExhibs" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
+                <div class="w-16 flex-0" style="border:solid red">
+                    <p>{{ groupExhib.year }}</p>
+                </div>
+                <div class="flex-1" style="border:solid blue">
+                    <MDC :value="groupExhib.text"/>
+                </div>
+            </div>
         </div>
         
         
         <!--Pubblications List-->
-        <div class="w-full h-[1200px] md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="pubblications">
+        <div class="w-full md:max-w-xl mb-8 md:mb-12 scroll-mt-32 md:scroll-mt-48" style="border:solid grey 2px" id="pubblications">
             <h3 class="brg-txt-heading mb-2">{{ $t('pubblications') }}</h3>
-            <p>List</p>
+            <!--<p>{{ pubblications }}</p>-->
+            <div v-for="pubblication in pubblications" class="w-full flex flex-row brg-txt-body" style="border:solid lightgray">
+                <div class="w-16 flex-0" style="border:solid red">
+                    <p>{{ pubblication.year }}</p>
+                </div>
+                <div class="flex-1" style="border:solid blue">
+                    <MDC :value="pubblication.text"/>
+                </div>
+            </div>
         </div>
         
     </div>
