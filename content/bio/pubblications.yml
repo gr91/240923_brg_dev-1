@@ -61,6 +61,51 @@ it:
 
 
         ISBN - 8884970865
+    - year: 1999
+      text: >-
+        *Histories d’oeufs*, a cura di Collezione Michéle Auer, edizioni ides et
+        calendes, pag. 148
+
+        ISBN - 2825801410
+    - year: 1999
+      text: |-
+        *Tritolo*, Giacomo Sartori, Il Saggiatore
+
+        ISBN - 8842807338
+    - year: 1998
+      text: "*Ad occhi aperti 3 l’autoritratto Museo dei Bozzetti Pietrasanta*, a cura
+        di Antonella  Serafini, pag. 20-21"
+    - year: 1998
+      text: "*I praise my destroyer poems by Diane Ackerman*, Diane Ackerman"
+    - year: 1997
+      text: >-
+        *Galleria Gottardo una fondazione per la cultura della banca del
+        Gottardo*, a cura di Luca Patocchi, pag. 233-234
+
+        ISBN - 8886455089
+    - year: 1997
+      text: "*Luisa Figini catalogo opere*, cura di Luisa Figini, pag. 6, 10–15, 18,
+        21"
+    - year: 1997
+      text: "*Flower un fiore per la vita*, catalogo asta Sotheby’s, pag, 76"
+    - year: 1996
+      text: |-
+        *La TerraSanta*, Alda Merini, Iibri Scheiwiller, pag. 5
+
+        ISBN - 8876442278
+    - year: 1995
+      text: >-
+        *Donne di fine Millennio*, a cura di Denis Curtis, Periplo Edizioni,
+        pag. 89
+
+
+        ISBN - 8886113129
+    - year: 1992
+      text: "*Bruno Brancher Cuore di Bruno*, prefazione Michele Serra, pag.
+        copertina"
+    - year: 1991
+      text: "*Altri termini. Quaderni internazionali di letteratura. Omaggio a Corrado
+        Costa*, pag. 63"
 en:
   pubblication:
     - year: 2024
@@ -124,3 +169,47 @@ en:
 
 
         ISBN - 8884970865
+    - year: 1999
+      text: >-
+        *Histories d’oeufs*, a cura di Collezione Michéle Auer, edizioni ides et
+        calendes, pag. 148
+
+        ISBN - 2825801410
+    - year: 1999
+      text: |-
+        *Tritolo*, Giacomo Sartori, Il Saggiatore
+
+        ISBN - 8842807338
+    - year: 1998
+      text: "*Ad occhi aperti 3 l’autoritratto Museo dei Bozzetti Pietrasanta*, a cura
+        di Antonella  Serafini, pag. 20-21"
+    - year: 1998
+      text: "*I praise my destroyer poems by Diane Ackerman*, Diane Ackerman"
+    - year: 1997
+      text: >-
+        *Galleria Gottardo una fondazione per la cultura della banca del
+        Gottardo*, a cura di Luca Patocchi, pag. 233-234
+
+        ISBN - 8886455089
+    - year: 1997
+      text: "*Luisa Figini catalogo opere*, cura di Luisa Figini, pag. 6, 10–15, 18,
+        21"
+    - year: 1997
+      text: "*Flower un fiore per la vita*, catalogo asta Sotheby’s, pag, 76"
+    - year: 1996
+      text: |-
+        *La TerraSanta*, Alda Merini, Iibri Scheiwiller, pag. 5
+
+        ISBN - 8876442278
+    - year: 1995
+      text: >-
+        *Donne di fine Millennio*, a cura di Denis Curtis, Periplo Edizioni,
+        pag. 89
+
+
+        ISBN - 8886113129
+    - year: 1992
+      text: "*Bruno Brancher Cuore di Bruno*, prefazione Michele Serra, pag.
+        copertina"
+    - year: 1991
+      text: ""
