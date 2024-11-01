@@ -142,10 +142,10 @@ const scrollTo = (hash) => {
             <img :src="biography.it.image" class="w-40 md:w-60 mb-10">
             <h3 class="brg-txt-heading mb-4">{{ $t('biography') }}</h3>
             <div v-if="locale == String('it')">
-                <MDC :value="biography.it.text"/>
+                <MDC :value="biography.it.text" class="brg-txt-body"/>
             </div>
             <div v-else>
-                <MDC :value="biography.en.text"/>
+                <MDC :value="biography.en.text" class="brg-txt-body"/>
             </div>
         </div>
         
