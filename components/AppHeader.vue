@@ -19,7 +19,7 @@ const isOpen = ref(false)
         <div class=" w-full h-24 mx-auto p-4 bg-BRG-white items-start justify-between inline-flex">
             
             <div class="justify-center items-center gap-2.5 flex brg-txt-big">
-                <NuxtLink :to="localePath('/')" class="hover:opacity-50">Bruna Ginammi</NuxtLink>
+                <NuxtLink :to="localePath('/')" class="hover:opacity-50">Bruna Ginammi website</NuxtLink>
             </div>
             
             <div class="justify-end items-center gap-8 flex brg-txt-big">
