@@ -1,5 +1,5 @@
 ---
-title: Nuovo artwork
+title: Nuovo Video Artwork
 beginyear: 2024
 endyear: 2025
 category: Video
