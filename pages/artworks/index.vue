@@ -43,9 +43,9 @@ const otherIsActive = ref (true);
     
     
     <!--ARTWORK Heading section + navigation buttons-->
-    <div style="border:solid red" class="h-32 md:h-24"></div>
+    <div class="h-32 md:h-24"></div> <!--style="border:solid red" -->
     
-    <div style="border:solid" class="sticky top-12 md:top-24 h-12 z-40 px-4 bg-BRG-white md:bg-opacity-0 flex flex-row gap-4 items-center md:justify-end ">
+    <div class="sticky top-12 md:top-24 h-12 z-40 px-4 bg-BRG-white md:bg-opacity-0 flex flex-row gap-4 items-center md:justify-end "> <!--style="border:solid" -->
         <!--Photo buttons-->
         <button v-if="photoIsActive==true"
             @click="photoIsActive=false"
@@ -81,7 +81,7 @@ const otherIsActive = ref (true);
     
     
     <!--ARTWORK List-->
-    <div v-for="artwork of artworks" :key="artwork.slug" class="my-4 px-4">
+    <div v-for="artwork of artworks" :key="artwork.slug" class="my-6 px-4">
 
 
         <!--Build photo artworks-->
@@ -93,14 +93,13 @@ const otherIsActive = ref (true);
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)">
                     <div  class=" flex-col justify-start items-start inline-flex" >
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                             <p v-else>{{ artwork.beginyear }}</p>
                         </div>
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
                             <h1>{{ artwork.subtitle }}</h1>
                         </div>
-                        <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                     </div>
                 </NuxtLink>
             </div>
@@ -108,14 +107,13 @@ const otherIsActive = ref (true);
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                         <p v-else>{{ artwork.beginyear }}</p>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
                         <h1>{{ artwork.subtitle }}</h1>
                     </div>
-                    <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                 </div>
             </div>
             
@@ -132,14 +130,13 @@ const otherIsActive = ref (true);
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
                     <div  class=" flex-col justify-start items-start inline-flex" >
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                             <p v-else>{{ artwork.beginyear }}</p>
                         </div>
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
                             <h1>{{ artwork.subtitle }}</h1>
                         </div>
-                        <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                     </div>
                 </NuxtLink>
             </div>
@@ -147,14 +144,13 @@ const otherIsActive = ref (true);
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                         <p v-else>{{ artwork.beginyear }}</p>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
                         <h1>{{ artwork.subtitle }}</h1>
                     </div>
-                    <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                 </div>
             </div>
         </div>
@@ -170,14 +166,13 @@ const otherIsActive = ref (true);
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
                     <div  class=" flex-col justify-start items-start inline-flex" >
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                             <p v-else>{{ artwork.beginyear }}</p>
                         </div>
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
                             <h1>{{ artwork.subtitle }}</h1>
                         </div>
-                        <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                     </div>
                 </NuxtLink>
             </div>
@@ -185,14 +180,13 @@ const otherIsActive = ref (true);
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}—{{ artwork.endyear }} </p>
+                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                         <p v-else>{{ artwork.beginyear }}</p>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
                         <h1>{{ artwork.subtitle }}</h1>
                     </div>
-                    <p style="text-decoration: underline; font-size: 9px">{{ artwork.category }}</p>
                 </div>
             </div>
         </div>
