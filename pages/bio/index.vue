@@ -99,7 +99,7 @@ const scrollTo = (hash) => {
     <div class="h-32 md:h-24"></div> <!--style="border:solid red"-->
 
     <!--BIO Navigation-->
-    <div class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center lg:justify-end overflow-x-auto no-scrollbar"> <!--style="border:solid" -->
+    <div class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center overflow-x-auto no-scrollbar"> <!--style="border:solid" -->
         
         <a href="#biography" @click.prevent="scrollTo('#biography')" class="flex-none">
             <div class="h-4 brg-txt-button brg-cta">{{ $t('biography') }}</div>
