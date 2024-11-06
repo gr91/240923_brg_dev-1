@@ -9,6 +9,7 @@ const actualPath = route.path.replace(/\/$/, '');
 
 
 
+
 //edit actualPath to remove locale prefix and incldue locale sub folder in content path
 const marker = '/artworks/';
 const index = actualPath.indexOf(marker);
@@ -17,6 +18,7 @@ const thisArtworkPath = `/artworks/${locale.value}/${cleanedPath}`;
 
 //produce a unique key for useAsyncData that includes locale
 const myKey = `${locale.value}-${cleanedPath}`;
+
 
 
 
@@ -30,6 +32,22 @@ const items = artwork.value.images.map(image => ({
   image: image.image,   // The image URL from the markdown file
   caption: image.caption // The caption from the markdown file
 }));
+
+//add carousel autoplay configuration
+const carouselRef = ref();
+
+onMounted(() => {
+  setInterval(() => {
+    if (!carouselRef.value) return
+
+    if (carouselRef.value.page === carouselRef.value.pages) {
+      return carouselRef.value.select(0)
+    }
+
+    carouselRef.value.next()
+  }, 6000)
+});
+
 
 
 
@@ -95,7 +113,7 @@ const scrollTo = (hash) => {
             v-slot="{ item, index }"
             :items="items"
             :ui="{ item: 'w-full px-4 md:px-0'}"
-            
+            ref="carouselRef"
             style="border:solid aqua 2px"
             class="h-full md:px-4 flex scroll-mt-48 "
         >
