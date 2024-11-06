@@ -71,9 +71,9 @@ const scrollTo = (hash) => {
         
         
         <!--ARTWORKA Navigation-->
-        <div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:justify-end"> 
+        <div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:items-start md:pt-1 md:justify-end"> 
             
-            <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')">
+            <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')"  >
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
             </a>
             <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
@@ -94,31 +94,37 @@ const scrollTo = (hash) => {
         <UCarousel
             v-slot="{ item, index }"
             :items="items"
-            :ui="{ item: 'w-full' }"
+            :ui="{ item: 'w-full px-4 md:px-0'}"
             
             style="border:solid aqua 2px"
-            class="w-full h-full min-h-0 md:px-4 flex scroll-mt-48 "
+            class="h-full md:px-4 flex scroll-mt-48 "
         >
         
-            <div style="border:solid red" class=" mx-auto px-4 md:px-0 flex flex-col " >   
+            <div style="border: solid orange 3px" class="h-full m-auto flex flex-col justify-start items-start ">
+
                 
+
                 <!--CAROUSEL Images-->
-                <div style="border:solid green 3px" class="mx-auto min-h-0 flex-1 flex"> 
-                    <img :src="item.image" :alt="item.caption" draggable="false"
-                    style="
-                    max-width: 100%;
-                    max-height: 100%;
-                    display: block;
-                    margin: auto;"
+                <div style="border:solid green 3px" class="w-fit h-full min-h-0 max-h-full flex"> 
+                    <img :src="item.image" :alt="item.caption"
+                        draggable="false"
+                        style="
+                        max-width: 100%;
+                        max-height: 100%;
+                        display: block;"
+                        class="max-w-full object-contain"
                     >
                 </div>
-                
+                    
                 <!--CAROUSEL Caption-->
-                <div style="border:solid green 2px" class="flex-none w-fit brg-txt-caption"> 
+                <div style="border:solid green 2px" class="w-fit brg-txt-caption "> 
                     <p> {{ item.caption }} </p>
                 </div>
+                    
+    
                 
             </div>
+
         
         </UCarousel>
 
