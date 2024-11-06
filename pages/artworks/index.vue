@@ -92,7 +92,7 @@ function updateFilter (
     <!--ARTWORK Heading section + navigation buttons-->
     <div class="h-32 md:h-24"></div> <!--style="border:solid red" -->
     
-    <div class="sticky top-12 md:top-24 h-12 z-40 px-4 bg-BRG-white md:bg-opacity-0 flex flex-row gap-4 items-center md:justify-end ">
+    <div class="sticky top-12 md:top-24 h-12 z-40 px-4 bg-BRG-white md:bg-opacity-0 flex flex-row gap-4 items-center md:items-start md:pt-1 md:justify-end">
         
         <div v-for="(item, index) in filter" :key="index">
     
