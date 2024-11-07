@@ -76,16 +76,24 @@ collections:
 
       - label: 'Video'
         name: 'video'
-        widget: 'file'
+        widget: 'string'
         required: false
         #Add i18n configuration----------
         i18n: duplicate
 
-      - label: 'Text'
-        name: 'bodytext'
-        widget: 'markdown'
+      - label: 'Description'
+        name: 'description'
+        widget: 'list'
+        required: false
         #Add i18n configuration----------
         i18n: true
+        fields:
+        - label: 'Text'
+          name: 'text'
+          widget: 'markdown'
+          buttons: ['bold', 'italic', 'link']
+          #Add i18n configuration----------
+          i18n: true
 
 
 
