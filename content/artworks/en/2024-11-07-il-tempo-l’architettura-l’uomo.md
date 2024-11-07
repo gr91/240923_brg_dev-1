@@ -27,6 +27,9 @@ description:
       In a second set, Bruna Ginammi carries out an actual analysis of the progress of the reconstruction work by identifying three main view points from which she takes identical shots over time, later adding a few other angles made necessary by the progress of the work. The third and final set covers all the types of work being carried out by the workers, to whom she also dedicates individual portraits, all the spaces captured from different angles, plus a number of details, objects, fragments through which traces of the past come to the surface.
 
 
+      —
+
+
       *Between time and place, the architecture*, by Roberta Valtorta
 
 

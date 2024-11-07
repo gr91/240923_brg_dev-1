@@ -24,6 +24,9 @@ description:
       Una prima parte delle fotografie riguarda la situazione subito dopo la distruzione, lo sgombero delle macerie e i momenti della commemorazione. In una seconda parte Bruna Ginammi conduce una vera e propria analisi dell’avanzamento dell’opera di ricostruzione individuando tre punti di vista principali dai quali compie identiche riprese nel tempo, successivamente allargati a qualche altro punto di vista reso necessario proprio dal procedere dei lavori. In una terza parte infine tutti i tipi di lavoro che vanno compiendo gli uomini, ai quali la fotografa dedica anche singoli ritratti, l’insieme degli spazi ripresi da punti di vista diversi, e alcuni particolari, gli oggetti, i frammenti attraverso i quali riemergono tracce del passato.
 
 
+      —
+
+
       *Fra il tempo e il luogo, l’architettura*,di Roberta Valtorta
 
 
