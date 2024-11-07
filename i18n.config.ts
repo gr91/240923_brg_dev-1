@@ -37,7 +37,7 @@ export default defineI18nConfig(() => ({
         videos: 'Videos',
         other: 'Other',
         images: 'Images',
-        texts: 'Text',
+        texts: 'Texts',
         projects: 'Projects',
         order: 'Order',
         unavailable: 'Unavailable',
