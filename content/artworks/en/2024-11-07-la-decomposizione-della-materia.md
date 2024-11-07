@@ -25,6 +25,9 @@ description:
       existence is to be discarded.
 
 
+      —
+
+
       *Page of Italian Photography 1900-1998*, by Roberta Valtorta, Charta 1998.
   - text: >-
       …These photograhs of plants deteriorating from the combined effects of
@@ -41,6 +44,9 @@ description:
 
 
       You see a nature that is at once fascinating and frightening.
+
+
+      —
 
 
       *Spoglie vitali* by Francesco Zanot, in *Decomposizione della materia* by Bruna Ginammi, Galerie Mazzoli Berlin, March 2023.

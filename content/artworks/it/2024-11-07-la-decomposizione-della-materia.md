@@ -25,6 +25,9 @@ description:
       dell’esistenza, è da scartare.
 
 
+      —
+
+
       *Pagine di fotografia italiana 1900-1998*, di Roberta Valtorta, Charta 1998.
   - text: >-
       …Queste fotografie di vegetali deteriorati dall’azione combinata del tempo
@@ -41,6 +44,9 @@ description:
 
 
       Si vede una natura attraente e spaventosa insieme.
+
+
+      —
 
 
       *Spoglie vitali* di Francesco Zanot, in *Decomposizione della materia* di Bruna Ginammi, Galerie Mazzoli Berlin, Marzo 2023.
