@@ -127,10 +127,17 @@ collections:
 
       - label: 'Description'
         name: 'description'
-        widget: 'markdown'
-        buttons: ['bold', 'italic', 'link']
+        widget: 'list'
+        required: false
         #Add i18n configuration----------
         i18n: true
+        fields:
+        - label: 'Text'
+          name: 'text'
+          widget: 'markdown'
+          buttons: ['bold', 'italic', 'link']
+          #Add i18n configuration----------
+          i18n: true
 
       - label: 'Order'
         name: 'order'
