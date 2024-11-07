@@ -1,31 +1,22 @@
 <script setup lang="ts">
 
-
 const VimeoPlayerProps = defineProps(['VideoId'])
 const SourceVideoId = `https://player.vimeo.com/video/${VimeoPlayerProps.VideoId}`;
-
-
-
-
-
-
-
-// Compute the Vimeo embed URL based on the provided vimeoId or vimeoUrl
-//const tempId = '1026152179';
-//const vimeoEmbedId = `https://player.vimeo.com/video/${tempId}`;
-
-
 
 </script>
 
 
 
 <template>
-    <p><strong>VideoId</strong>: {{ VideoId }}</p>
-    <p><strong>SourceVideoId</strong>: {{ SourceVideoId }}</p><br>
 
+    <!--
+        <p><strong>VideoId</strong>: {{ VideoId }}</p>
+        <p><strong>SourceVideoId</strong>: {{ SourceVideoId }}</p><br>
+    -->
 
-    <div style="padding:56.25% 0 0 0;position:relative;">
+    <div
+        style="padding:56.25% 0 0 0;position:relative; border: solid 3px;"
+    >
 
         <iframe
             :src="SourceVideoId"
