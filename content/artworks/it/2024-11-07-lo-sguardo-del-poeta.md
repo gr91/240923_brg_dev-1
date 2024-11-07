@@ -28,6 +28,9 @@ description:
       lenti illuse e non illuse) all’Imperscrutabile. 
 
 
+      —
+
+
       Allen Mandelbaum
 
 
@@ -35,6 +38,9 @@ description:
   - text: >-
       …Guardare ha anche senso di custodire: l’occhio di Bruna Ginammi
       custodisce gli sguardi dei poeti.
+
+
+      —
 
 
       Vanni Scheiwiller

@@ -28,10 +28,16 @@ description:
       baffled and unbaffled lens) at the Inscrutable.
 
 
+      —
+
+
       Allen Mandelbaum
   - text: >-
       Looking also means guarding: Bruna Ginammi’s eye guards the gazes of
       poets.
+
+
+      —
 
 
       Vanni Scheiwiller
