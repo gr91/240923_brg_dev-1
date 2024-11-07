@@ -1,5 +1,6 @@
 <script setup >
 
+
 //------i18n configuration (from nuxtjs/i18n docs)------
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
@@ -33,6 +34,9 @@ const items = artwork.value.images.map(image => ({
   caption: image.caption // The caption from the markdown file
 }));
 
+
+
+
 //add carousel autoplay configuration
 const carouselRef = ref();
 
@@ -43,17 +47,9 @@ onMounted(() => {
         if (carouselRef.value.page === carouselRef.value.pages) {
             return carouselRef.value.select(0)
         }
-        
         carouselRef.value.next()
     }, 6000)
 });
-
-
-
-//---------Setup video player -----------------------
-const vimeoEmbedCode = artwork.title;
-const artworkVideoId = '1026150751';
-
 
 
 
@@ -73,11 +69,15 @@ const scrollTo = (hash) => {
   }
 }
 
+
 </script>
 
 
 
 <template>
+
+
+
 
     <!--ARTWORKS header-->
     <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl px-4 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> 
@@ -115,7 +115,7 @@ const scrollTo = (hash) => {
     <!--FIT TO SCREEN section-->
     <div style="border: solid red 4px;" class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
         
-        
+
         <!--PHOTO PROJECT-->
         <div v-if="artwork.category === 'Photo' || artwork.categoty === 'Other'" class="h-full" style="border: solid blue 3px">
             
@@ -156,27 +156,21 @@ const scrollTo = (hash) => {
             
         
             
-    
-        
         <!--PHOTO PROJECT-->
         <div v-if="artwork.category === 'Video'"
             class="h-full px-4 flex items-center"
             style="border: solid blue 3px"
         >
 
-            <!--
-                <p>{{ artwork.title }} is a <strong>video artwork</strong></p>
-                <p><strong>Video Id</strong>: {{ artwork.video }}</p>
-                <p>-------------------</p>
-            -->
             <div class="flex-auto">
                 <VimeoVideoPlayer :VideoId="artwork.video"/>
             </div>
 
         </div>
 
-    
+
     </div>
+
 
 
 
@@ -187,58 +181,13 @@ const scrollTo = (hash) => {
         id="anchortxt"
     >
 
-            <p>----------------------------</p>
-            <MDC :value="artwork.bodytext"/><br>
-
-
-
-        <!--
-        -->
-
-        <!--
-            <br>
-            <p><strong>thisArtworkPath</strong></p>
-            <p>{{ thisArtworkPath }}</p>
-            <br>
-            <p><strong>artwork</strong></p>
-            <p>{{ artwork }}</p>
-            <br>
-            <p><strong>artwork.title</strong></p>
-            <p>{{ artwork.title }}</p>
-            <br>
-            <p><strong>items</strong></p>
-            <p>{{ items }}</p>
-        -->
+        <div v-for="item in artwork.description">
+            <MDC :value="item.text" /> <br>
         </div>
+
+    </div>
     
 
 
-
-
-
-
-
-
-    <!--
-    <div style="border:solid red" class="h-32 md:h-24"></div>
-    <p>----------------------------------------</p>
-    <p><strong>route: </strong>{{ route }}</p><br>
-    <p><strong>actualPath: </strong>{{ actualPath }}</p><br>
-    
-    <br>
-    <br>
-    <br>
-    <p><strong>cleanedPath: </strong>{{ cleanedPath }}</p><br>
-    <p><strong>thisArtworkPath: </strong>{{ thisArtworkPath }}</p><br>
-    <p><strong>myKey: </strong>{{ myKey }}</p><br>
-    <br>
-    <br>
-    <br>
-    <p>{{ artwork }}</p><br>
-    <p>{{ artwork.title }}</p><br>
-    <p>{{ artwork.beginyear }}</p><br>
-    <p>{{ items }}</p><br>
-    <MDC :value="artwork.bodytext"/>
-    -->
 
 </template>
