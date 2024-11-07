@@ -37,16 +37,23 @@ const items = artwork.value.images.map(image => ({
 const carouselRef = ref();
 
 onMounted(() => {
-  setInterval(() => {
-    if (!carouselRef.value) return
-
-    if (carouselRef.value.page === carouselRef.value.pages) {
-      return carouselRef.value.select(0)
-    }
-
-    carouselRef.value.next()
-  }, 6000)
+    setInterval(() => {
+        if (!carouselRef.value) return
+        
+        if (carouselRef.value.page === carouselRef.value.pages) {
+            return carouselRef.value.select(0)
+        }
+        
+        carouselRef.value.next()
+    }, 6000)
 });
+
+
+
+//---------Setup video player -----------------------
+const vimeoEmbedCode = artwork.title;
+const artworkVideoId = '1026150751';
+
 
 
 
@@ -92,7 +99,8 @@ const scrollTo = (hash) => {
         <div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:items-start md:pt-1 md:justify-end"> 
             
             <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')"  >
-                <div class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
+                <div v-if="artwork.category=='Photo' || artwork.category=='Other'" class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
+                <div v-else class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</div>
             </a>
             <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
@@ -108,43 +116,64 @@ const scrollTo = (hash) => {
     <div style="border: solid red 4px;" class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
         
         
-        <!--CAROUSEL-->
-        <UCarousel
+        <!--PHOTO PROJECT-->
+        <div v-if="artwork.category === 'Photo' || artwork.categoty === 'Other'" class="h-full" style="border: solid blue 3px">
+            
+            <!--CAROUSEL-->
+            <UCarousel
             v-slot="{ item, index }"
             :items="items"
             :ui="{ item: 'w-full px-4 md:px-0'}"
             ref="carouselRef"
             style="border:solid aqua 2px"
             class="h-full md:px-4 flex scroll-mt-48 "
-        >
-        
+            >
+            
             <div style="border: solid orange 3px" class="h-full m-auto flex flex-col justify-start items-start ">
-
                 
-
                 <!--CAROUSEL Images-->
                 <div style="border:solid green 3px" class="w-fit h-full min-h-0 max-h-full flex"> 
                     <img :src="item.image" :alt="item.caption"
-                        draggable="false"
-                        style="
-                        max-width: 100%;
-                        max-height: 100%;
-                        display: block;"
-                        class="max-w-full object-contain"
-                    >
-                </div>
+                    draggable="false"
+                    style="
+                            max-width: 100%;
+                            max-height: 100%;
+                            display: block;"
+                            class="max-w-full object-contain"
+                            >
+                        </div>
+                        
+                        <!--CAROUSEL Caption-->
+                        <div style="border:solid green 2px" class="w-fit brg-txt-caption "> 
+                            <p> {{ item.caption }} </p>
+                        </div>
+                        
+                    </div>
                     
-                <!--CAROUSEL Caption-->
-                <div style="border:solid green 2px" class="w-fit brg-txt-caption "> 
-                    <p> {{ item.caption }} </p>
-                </div>
-                    
-    
+                </UCarousel>
                 
             </div>
-
+            
         
-        </UCarousel>
+            
+    
+        
+        <!--PHOTO PROJECT-->
+        <div v-if="artwork.category === 'Video'"
+            class="h-full px-4 flex items-center"
+            style="border: solid blue 3px"
+        >
+
+            <!--
+                <p>{{ artwork.title }} is a <strong>video artwork</strong></p>
+                <p><strong>Video Id</strong>: {{ artwork.video }}</p>
+                <p>-------------------</p>
+            -->
+            <div class="flex-auto">
+                <VimeoVideoPlayer :VideoId="artwork.video"/>
+            </div>
+
+        </div>
 
     
     </div>
@@ -157,21 +186,30 @@ const scrollTo = (hash) => {
         class="w-full md:max-w-xl min-h-dvh p-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
     >
-        <MDC :value="artwork.bodytext"/><br>
 
-        <br>
-        <p><strong>thisArtworkPath</strong></p>
-        <p>{{ thisArtworkPath }}</p>
-        <br>
-        <p><strong>artwork</strong></p>
-        <p>{{ artwork }}</p>
-        <br>
-        <p><strong>artwork.title</strong></p>
-        <p>{{ artwork.title }}</p>
-        <br>
-        <p><strong>items</strong></p>
-        <p>{{ items }}</p>
-    </div>
+            <p>----------------------------</p>
+            <MDC :value="artwork.bodytext"/><br>
+
+
+
+        <!--
+        -->
+
+        <!--
+            <br>
+            <p><strong>thisArtworkPath</strong></p>
+            <p>{{ thisArtworkPath }}</p>
+            <br>
+            <p><strong>artwork</strong></p>
+            <p>{{ artwork }}</p>
+            <br>
+            <p><strong>artwork.title</strong></p>
+            <p>{{ artwork.title }}</p>
+            <br>
+            <p><strong>items</strong></p>
+            <p>{{ items }}</p>
+        -->
+        </div>
     
 
 
