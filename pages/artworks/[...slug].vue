@@ -182,7 +182,7 @@ const scrollTo = (hash) => {
     >
 
         <div v-for="item in artwork.description">
-            <MDC :value="item.text" /> <br>
+            <MDC :value="item.text" class="mb-12"/>
         </div>
 
     </div>
