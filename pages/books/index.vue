@@ -38,13 +38,16 @@ const { data: books } = await useAsyncData(myKey, () => {
 
     <div class="mt-8 px-4">
     
-        <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-12 " style="border:solid red">
-        
-            <img :src="book.cover" class="w-full mb-4">
+        <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-20">
+            
+            <div class="drop-shadow-xl max-w-[320px] md:max-w-sm">
+                <img :src="book.cover" class="w-full mb-4">
+            </div>
         
             <div class="mb-4">
                 <p class="brg-txt-body">{{ book.year }}</p>
                 <h1 class="brg-txt-heading">{{ book.title }}</h1>
+                <h1 class="brg-txt-heading">{{ book.subtitle }}</h1>
             </div>
         
             <div class="mb-4">
@@ -62,12 +65,9 @@ const { data: books } = await useAsyncData(myKey, () => {
                 <p> {{ $t('unavailable') }} </p>
                 </div>
             </div>
-            
-        <!--
-        -->
         
         </div>
     
-  </div>
+    </div>
 
 </template>
