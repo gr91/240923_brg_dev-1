@@ -29,17 +29,13 @@ bodytext: >-
 
 
 
+  …These photograhs of plants deteriorating from the combined effects of time and the environment are portraits.
 
 
-  …..These photograhs of plants deteriorating from the combined effects of time and the environment are portraits.
-
-
-  ….These photographs are landscape. Utopian and fabulous landscapes. Lysergic.
+  …These photographs are landscape. Utopian and fabulous landscapes. Lysergic.
 
 
   …you look at these photographs with bated breath.You see a nature that is at once fascinating and frightening.
-
-
 
 
   Spoglie vitali 

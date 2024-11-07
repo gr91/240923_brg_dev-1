@@ -29,23 +29,19 @@ bodytext: >-
 
 
 
+  ...Queste fotografie di vegetali deteriorati dall’azione combinata del tempo e dell’ambiente sono ritratti.
 
 
-  ….Queste fotografie di vegetali deteriorati dall’azione combinata del tempo e dell’ambiente sono ritratti.
-
-
-  …. Queste fotografie sono paesaggi.
+  …Queste fotografie sono paesaggi.
 
 
   Paesaggi utopici e favolosi. Lisergici.
 
 
-  ….Queste fotografie si guardano con il fiato sospeso.
+  ...Queste fotografie si guardano con il fiato sospeso.
 
 
   Si vede una natura attraente e spaventosa insieme.
-
-
 
 
   Spoglie vitali 
