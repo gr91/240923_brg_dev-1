@@ -1,7 +1,7 @@
 ---
 title: Omaggio a Pompei
 beginyear: 2019
-inprogress: true
+inprogress: false
 endyear: 2019
 category: Photo
 images:
