@@ -1,6 +1,7 @@
 ---
 title: A matter of love
 beginyear: 2018
+inprogress: true
 endyear: 2019
 category: Other
 images:
