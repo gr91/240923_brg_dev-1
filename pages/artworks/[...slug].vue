@@ -28,7 +28,7 @@ const { data: artwork } = await useAsyncData(myKey, () =>
     queryContent(thisArtworkPath).findOne()
 );
 
-//create and populate and array with images'URLs and caption for 'artwork' array
+//create and populate and array with images'URLs and caption from 'artwork' array
 const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
     ? artwork.value.images.map(image => ({
     image: image.image,   // The image URL from the markdown file
