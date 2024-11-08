@@ -1,6 +1,7 @@
 ---
 title: A.R. Life’s flags
 beginyear: 2015
+inprogress: true
 endyear: 2017
 category: Photo
 images:
