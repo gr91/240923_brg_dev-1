@@ -240,10 +240,6 @@ const scrollTo = (hash) => {
         </div>
 
 
-
-        <!--temporary div for scroll test-->
-        <div class="h-[1200px]"></div>
-
     </div>
 
 
