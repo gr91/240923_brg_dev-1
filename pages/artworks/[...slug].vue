@@ -117,7 +117,7 @@ const scrollTo = (hash) => {
         
 
         <!--PHOTO PROJECT-->
-        <div v-if="artwork.category === 'Photo' || artwork.categoty === 'Other'" class="h-full" style="border: solid blue 3px">
+        <div v-if="artwork.category != 'Video'" class="h-full" style="border: solid blue 3px">
             
             <!--CAROUSEL-->
             <UCarousel
@@ -157,7 +157,7 @@ const scrollTo = (hash) => {
         
             
         <!--PHOTO PROJECT-->
-        <div v-if="artwork.category === 'Video'"
+        <div v-else
             class="h-full px-4 flex items-center"
             style="border: solid blue 3px"
         >
