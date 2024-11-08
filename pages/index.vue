@@ -31,6 +31,20 @@ const imageItems = homeArtwork?.images.map((image: { image: string; caption: str
     caption: image.caption // The caption from the markdown file
     }));
 
+//add carousel autoplay configuration
+const carouselRef = ref();
+
+onMounted(() => {
+    setInterval(() => {
+        if (!carouselRef.value) return
+        
+        if (carouselRef.value.page === carouselRef.value.pages) {
+            return carouselRef.value.select(0)
+        }
+        carouselRef.value.next()
+    }, 6000)
+});
+
 </script>
 
 
@@ -41,7 +55,7 @@ const imageItems = homeArtwork?.images.map((image: { image: string; caption: str
   
   
   <!--FIT TO SCREEN section-->
-  <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" style="border:solid">
+  <div class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 ">
     
     
     
@@ -50,9 +64,8 @@ const imageItems = homeArtwork?.images.map((image: { image: string; caption: str
     <UCarousel
     v-slot="{ item, index }"
     :items="imageItems"
-    :ui="{ item: 'w-full px-4 md:px-0'}"
+    :ui="{ item: 'w-full px-4 md:px-0 py-16'}"
     ref="carouselRef"
-    style=""
     class="h-full md:px-4 flex scroll-mt-48 "
     >
     
@@ -71,7 +84,7 @@ const imageItems = homeArtwork?.images.map((image: { image: string; caption: str
                   </div>
                   
                   <!--CAROUSEL Caption-->
-                  <div class="w-fit brg-txt-caption mt-2"> 
+                  <div class="w-fit brg-txt-caption"> 
                     <p> {{ item.caption }} </p>
                   </div>
                   
