@@ -1,6 +1,6 @@
 ---
 title: Il corpo dell’identità
-beginyear: 1994
+beginyear: 1995
 inprogress: true
 category: Photo
 images:
