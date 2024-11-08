@@ -63,7 +63,7 @@ const isOpen = ref(false)
         
         class="bg-BRG-white"
         >
-        <div class=" h-full px-4 flex flex-col"> <!--style="border:solid "-->
+        <div class=" h-full pl-2 pr-4 flex flex-col"> <!--style="border:solid "-->
             
             <div class="h-12 flex justify-between items-center"> <!--style="border:solid blue " -->
                 <UButton
@@ -76,7 +76,7 @@ const isOpen = ref(false)
                 <p @click="isOpen = false">{{ $t('close') }}</p>
             </div>
             
-            <div class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
+            <div class="flex-1 gap-2 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
                 <UButton variant="ghost"
                     @click="isOpen = false" :to="localePath('/artworks')">
                     <p class="brg-txt-heading">{{ $t('artworks') }}</p>
@@ -95,7 +95,7 @@ const isOpen = ref(false)
                 </UButton>
 
             </div>
-            <div class="h-12 flex justify-start">
+            <div class="h-12 pl-2 flex items-center justify-start" >
                 <p v-if="locale == ('it')" @click="setLocale('en'); isOpen = false">ENG</p>
                 <p v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</p>  
             </div>
