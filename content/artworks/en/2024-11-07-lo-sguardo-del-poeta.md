@@ -1,7 +1,7 @@
 ---
 title: Lo sguardo del poeta
 beginyear: 1991
-inprogress: true
+inprogress: false
 endyear: 1991
 category: Photo
 images:
