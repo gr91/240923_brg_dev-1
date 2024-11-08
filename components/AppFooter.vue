@@ -13,7 +13,7 @@
     
                 <div class="h-min brg-txt-caption">
                     <p>Via Privata Paolo Cezanne, 11</p>
-                    <p>1120143 Milano MI, Italy</p>
+                    <p>20143 Milano MI, Italy</p>
                     <a href="mailto: brunaginammi64@gmail.com">brunaginammi64@gmail.com</a>
                 </div>
             </div>
