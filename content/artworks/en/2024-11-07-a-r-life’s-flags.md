@@ -1,6 +1,5 @@
 ---
 title: A.R. Life’s flags
-keyword: AR
 beginyear: 2015
 inprogress: false
 endyear: 2017
