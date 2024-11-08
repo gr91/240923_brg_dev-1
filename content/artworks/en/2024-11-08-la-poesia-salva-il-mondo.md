@@ -3,8 +3,8 @@ title: La poesia salva il mondo
 beginyear: 2023
 category: Other
 images:
-  - image: /img/n0079.png
-  - image: /img/okn0082.png
+  - image: /img/brunaginammi_lapoesiasalvailmondo_foglia4_210x297mm_ph©rolandopaologuerzoni.png
+  - image: /img/brunaginammi_lapoesiasalvailmondo_foglia4_210x297mm_particolare_ph©rolandopaologuerzoni.png
 description:
   - text: >-
       This work speaks of poetry as a creative force in which sounds are also
