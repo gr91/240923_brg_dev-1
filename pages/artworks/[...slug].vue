@@ -29,10 +29,12 @@ const { data: artwork } = await useAsyncData(myKey, () =>
 );
 
 //create and populate and array with images'URLs and caption for 'artwork' array
-const items = artwork.value.images.map(image => ({
-  image: image.image,   // The image URL from the markdown file
-  caption: image.caption // The caption from the markdown file
-}));
+const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
+    ? artwork.value.images.map(image => ({
+    image: image.image,   // The image URL from the markdown file
+    caption: image.caption // The caption from the markdown file
+    }))
+    : [];
 
 
 
@@ -131,7 +133,7 @@ const scrollTo = (hash) => {
             <!--CAROUSEL-->
             <UCarousel
             v-slot="{ item, index }"
-            :items="items"
+            :items="imageItems"
             :ui="{ item: 'w-full px-4 md:px-0'}"
             ref="carouselRef"
             style="border:solid aqua 2px"
