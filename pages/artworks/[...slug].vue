@@ -85,8 +85,17 @@ const scrollTo = (hash) => {
         <!--ARTWORKS Title-->
         <div style="border:solid green" class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > 
             <div class="self-stretch brg-txt-body">
-                <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                <p v-else>{{ artwork.beginyear }}</p>
+
+                <!------------------MODIFY CONDITIONS HERE----------------->
+                <div v-if="artwork.inprogress == true">
+                    <p>{{ artwork.beginyear }} – In progress</p>
+                </div>
+                <div v-else>
+                    <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                    <p v-else>{{ artwork.beginyear }}</p>
+                </div>
+                <!------------------MODIFY CONDITIONS HERE----------------->
+                
             </div>
             <div class="self-stretch brg-txt-heading">
                 <h1>{{ artwork.title }}</h1>

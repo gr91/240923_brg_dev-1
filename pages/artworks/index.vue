@@ -12,7 +12,7 @@ const myKey = `HelloArtworks-${locale.value}`;
 //execute content query
 const { data: artworks } = await useAsyncData(myKey, () => {
     return queryContent(contentPath)
-    .sort({beginyear: 1, endyear: 1})
+    .sort({beginyear: 1})
     .find()
 });    
 
@@ -101,7 +101,7 @@ function updateFilter (
                 class="flex h-4 brg-txt-button brg-cta"
                 @click="updateFilter(index, filter, activeCounter)"
             >
-                {{ item.category }}
+                {{ $t(item.category) }}
             </button>
     
             <!--IF the category is NOT active or not-->
@@ -109,7 +109,7 @@ function updateFilter (
                 class="flex h-4 brg-txt-button brg-cta opacity-30"
                 @click="updateFilter(index, filter, activeCounter)"
             >
-                {{ item.category }}
+                {{ $t(item.category) }}
             </button>
     
         </div>
@@ -131,10 +131,17 @@ function updateFilter (
                 <!--Edit artwork._path to remove locale marker from content path-->
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)">
                     <div  class=" flex-col justify-start items-start inline-flex" >
+
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                            <p v-else>{{ artwork.beginyear }}</p>
+                            <div v-if="artwork.inprogress == true">
+                                <p>{{ artwork.beginyear }} – In progress</p>
+                            </div>
+                            <div v-else>
+                                <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                                <p v-else>{{ artwork.beginyear }}</p>
+                            </div>
                         </div>
+                        
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
                             <h1>{{ artwork.subtitle }}</h1>
@@ -146,8 +153,13 @@ function updateFilter (
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                        <p v-else>{{ artwork.beginyear }}</p>
+                        <div v-if="artwork.inprogress == true">
+                            <p>{{ artwork.beginyear }} – In progress</p>
+                        </div>
+                        <div v-else>
+                            <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                            <p v-else>{{ artwork.beginyear }}</p>
+                        </div>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
@@ -169,8 +181,13 @@ function updateFilter (
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
                     <div  class=" flex-col justify-start items-start inline-flex" >
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                            <p v-else>{{ artwork.beginyear }}</p>
+                            <div v-if="artwork.inprogress == true">
+                                <p>{{ artwork.beginyear }} – In progress</p>
+                            </div>
+                            <div v-else>
+                                <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                                <p v-else>{{ artwork.beginyear }}</p>
+                            </div>
                         </div>
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
@@ -183,8 +200,13 @@ function updateFilter (
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                        <p v-else>{{ artwork.beginyear }}</p>
+                        <div v-if="artwork.inprogress == true">
+                            <p>{{ artwork.beginyear }} – In progress</p>
+                        </div>
+                        <div v-else>
+                            <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                            <p v-else>{{ artwork.beginyear }}</p>
+                        </div>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
@@ -205,8 +227,13 @@ function updateFilter (
                 <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
                     <div  class=" flex-col justify-start items-start inline-flex" >
                         <div class="self-stretch brg-txt-body">
-                            <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                            <p v-else>{{ artwork.beginyear }}</p>
+                            <div v-if="artwork.inprogress == true">
+                                <p>{{ artwork.beginyear }} – In progress</p>
+                            </div>
+                            <div v-else>
+                                <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                                <p v-else>{{ artwork.beginyear }}</p>
+                            </div>
                         </div>
                         <div class="self-stretch brg-txt-heading">
                             <h1>{{ artwork.title }}</h1>
@@ -219,8 +246,13 @@ function updateFilter (
             <div v-else>
                 <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
                     <div class="self-stretch brg-txt-body">
-                        <p v-if="artwork.beginyear != artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                        <p v-else>{{ artwork.beginyear }}</p>
+                        <div v-if="artwork.inprogress == true">
+                            <p>{{ artwork.beginyear }} – In progress</p>
+                        </div>
+                        <div v-else>
+                            <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                            <p v-else>{{ artwork.beginyear }}</p>
+                        </div>
                     </div>
                     <div class="self-stretch brg-txt-heading">
                         <h1>{{ artwork.title }}</h1>
