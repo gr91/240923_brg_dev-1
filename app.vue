@@ -10,12 +10,13 @@
 
   <!--MAIN-->
   <!--Set max width for the whole app-->
-  <main class="mx-auto max-w-7xl" style="border:solid, grey"> <!-- asd  -->
+  <main class="mx-auto max-w-7xl" > <!-- style="border:solid, grey"  -->
     
 
       <!--PAGES-->
       <div class="mx-auto w-full max-w-7xl">
         <NuxtPage />
+        <AppFooter />
       </div>
     
   </main>
