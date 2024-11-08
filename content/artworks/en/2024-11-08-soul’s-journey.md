@@ -1,6 +1,7 @@
 ---
 title: Soul’s Journey
 beginyear: 2018
+inprogress: true
 endyear: 2019
 category: Photo
 images:
