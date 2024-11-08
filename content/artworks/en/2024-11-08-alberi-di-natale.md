@@ -1,6 +1,7 @@
 ---
 title: Alberi di Natale
 beginyear: 2021
+inprogress: true
 endyear: 2022
 category: Photo
 images:
