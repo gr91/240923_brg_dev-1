@@ -15,7 +15,7 @@ const SourceVideoId = `https://player.vimeo.com/video/${VimeoPlayerProps.VideoId
     -->
 
     <div
-        style="padding:56.25% 0 0 0;position:relative; border: solid 3px;"
+        style="padding:56.25% 0 0 0;position:relative;"
     >
 
         <iframe

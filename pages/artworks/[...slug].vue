@@ -82,10 +82,10 @@ const scrollTo = (hash) => {
 
 
     <!--ARTWORKS header-->
-    <div style="border:solid" class="fixed top-12 md:top-24 w-full max-w-7xl px-4 z-40 bg-BRG-white flex flex-col md:flex-row justify-between"> 
+    <div class="fixed top-12 md:top-24 w-full max-w-7xl px-4 z-40 bg-BRG-white flex flex-col md:flex-row justify-between">
         
         <!--ARTWORKS Title-->
-        <div style="border:solid green" class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > 
+        <div class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > 
             <div class="self-stretch brg-txt-body">
 
                 <!------------------MODIFY CONDITIONS HERE----------------->
@@ -107,7 +107,7 @@ const scrollTo = (hash) => {
         
         
         <!--ARTWORKA Navigation-->
-        <div style="border: solid greenyellow" class="h-12 flex flex-row gap-4 items-center md:items-start md:pt-1 md:justify-end"> 
+        <div class="h-12 flex flex-row gap-4 items-center md:items-start md:pt-1 md:justify-end"> 
             
             <a href="#anchorimg" @click.prevent="scrollTo('#anchorimg')"  >
                 <div v-if="artwork.category=='Photo' || artwork.category=='Other'" class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
@@ -124,11 +124,11 @@ const scrollTo = (hash) => {
 
 
     <!--FIT TO SCREEN section-->
-    <div style="border: solid red 4px;" class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
+    <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
         
 
         <!--PHOTO PROJECT-->
-        <div v-if="artwork.category != 'Video'" class="h-full" style="border: solid blue 3px">
+        <div v-if="artwork.category != 'Video'" class="h-full" >
             
             <!--CAROUSEL-->
             <UCarousel
@@ -136,14 +136,14 @@ const scrollTo = (hash) => {
             :items="imageItems"
             :ui="{ item: 'w-full px-4 md:px-0'}"
             ref="carouselRef"
-            style="border:solid aqua 2px"
+            style=""
             class="h-full md:px-4 flex scroll-mt-48 "
             >
             
-            <div style="border: solid orange 3px" class="h-full m-auto flex flex-col justify-start items-start ">
+            <div class="h-full m-auto flex flex-col justify-start items-start ">
                 
                 <!--CAROUSEL Images-->
-                <div style="border:solid green 3px" class="w-fit h-full min-h-0 max-h-full flex"> 
+                <div class="w-fit h-full min-h-0 max-h-full flex"> 
                     <img :src="item.image" :alt="item.caption"
                     draggable="false"
                     style="
@@ -155,7 +155,7 @@ const scrollTo = (hash) => {
                         </div>
                         
                         <!--CAROUSEL Caption-->
-                        <div style="border:solid green 2px" class="w-fit brg-txt-caption "> 
+                        <div class="w-fit brg-txt-caption mt-2"> 
                             <p> {{ item.caption }} </p>
                         </div>
                         
@@ -167,10 +167,9 @@ const scrollTo = (hash) => {
             
         
             
-        <!--PHOTO PROJECT-->
+        <!--VIDEO PROJECT-->
         <div v-else
             class="h-full px-4 flex items-center"
-            style="border: solid blue 3px"
         >
 
             <div class="flex-auto">
@@ -187,7 +186,6 @@ const scrollTo = (hash) => {
 
     <!--SCROLL section-->
     <div
-        style="border:solid red"
         class="w-full md:max-w-xl min-h-dvh p-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
     >
