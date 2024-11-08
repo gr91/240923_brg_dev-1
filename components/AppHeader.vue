@@ -47,7 +47,7 @@ const isOpen = ref(false)
                 </div>
                 <div class="justify-end items-center gap-8 flex">
                     <div class="justify-center items-center gap-2.5 flex">
-                        <a class="brg-big-text" @click="isOpen = true">Menu</a>
+                        <a @click="isOpen = true">Menu</a>
                     </div>
                 </div>
             </div>
@@ -66,19 +66,38 @@ const isOpen = ref(false)
         <div class=" h-full px-4 flex flex-col"> <!--style="border:solid "-->
             
             <div class="h-12 flex justify-between items-center"> <!--style="border:solid blue " -->
-                <NuxtLink @click="isOpen = false" :to="localePath('/')">Bruna Ginammi</NuxtLink>
+                <UButton
+                    variant="ghost"
+                    @click="isOpen = false" :to="localePath('/')"
+                >
+                    <p class="brg-txt-big">Bruna Ginammi</p>
+                </UButton>
+
                 <p @click="isOpen = false">{{ $t('close') }}</p>
             </div>
             
             <div class="flex-1 gap-4 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
-                <NuxtLink @click="isOpen = false" :to="localePath('/artworks')">{{ $t('artworks') }}</NuxtLink>
-                <NuxtLink @click="isOpen = false" :to="localePath('/books')">{{ $t('books') }}</NuxtLink>
-                <NuxtLink @click="isOpen = false" :to="localePath('/bio')">{{ $t('bio') }}</NuxtLink>
-                <NuxtLink @click="isOpen = false" :to="localePath('/custom-pages/contacts')">{{ $t('contacts') }}</NuxtLink>
+                <UButton variant="ghost"
+                    @click="isOpen = false" :to="localePath('/artworks')">
+                    <p class="brg-txt-heading">{{ $t('artworks') }}</p>
+                </UButton>
+                <UButton variant="ghost"
+                    @click="isOpen = false" :to="localePath('/books')">
+                    <p class="brg-txt-heading">{{ $t('books') }}</p>
+                </UButton>
+                <UButton variant="ghost"
+                    @click="isOpen = false" :to="localePath('/bio')">
+                    <p class="brg-txt-heading">{{ $t('bio') }}</p>
+                </UButton>
+                <UButton variant="ghost"
+                    @click="isOpen = false" :to="localePath('/custom-pages/contacts')">
+                    <p class="brg-txt-heading">{{ $t('contacts') }}</p>
+                </UButton>
+
             </div>
             <div class="h-12 flex justify-start">
-                <button v-if="locale == ('it')" @click="setLocale('en'); isOpen = false">ENG</button>
-                <button  v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</button>  
+                <p v-if="locale == ('it')" @click="setLocale('en'); isOpen = false">ENG</p>
+                <p v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</p>  
             </div>
 
       </div>
