@@ -1,7 +1,7 @@
 ---
 title: La decomposizione della materia
 beginyear: 1993
-inprogress: true
+inprogress: false
 endyear: 1995
 category: Photo
 images:
