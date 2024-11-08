@@ -19,7 +19,7 @@ collections:
     folder: 'content/artworks'
     format: 'frontmatter'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{keyword}}'
     editor:
       preview: false
     #Add i18n configuration----------
@@ -27,6 +27,12 @@ collections:
     fields:
       - label: 'Title'
         name: 'title'
+        widget: 'string'
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Keyword'
+        name: 'keyword'
         widget: 'string'
         #Add i18n configuration----------
         i18n: duplicate
