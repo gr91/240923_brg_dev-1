@@ -44,9 +44,16 @@ collections:
         #Add i18n configuration----------
         i18n: duplicate
 
+      - label: 'In progress'
+        name: 'inprogress'
+        widget: 'boolean'
+        #Add i18n configuration----------
+        i18n: duplicate
+
       - label: 'End Year'
         name: 'endyear'
         widget: 'number'
+        required: false
         #Add i18n configuration----------
         i18n: duplicate
 
