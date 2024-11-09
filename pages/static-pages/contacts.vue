@@ -31,7 +31,7 @@ const route = useRoute()
             <div class="mb-4">
                 <p>via Nazario Sauro, 62</p>
                 <p>41121 Modena MO, Italy</p>
-                <a href="www.galleriamazzoli.com" target="_blank">www.galleriamazzoli.com</a>
+                <a href="https://www.galleriamazzoli.com" target="_blank">www.galleriamazzoli.com</a>
             </div>
             
         </div>
