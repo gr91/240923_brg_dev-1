@@ -8,27 +8,31 @@ const route = useRoute()
     <div class="w-full h-dvh mx-auto px-4 pt-12  flex flex-col">
 
         <div class="flex-1 flex flex-col justify-center brg-txt-big" style="line-height: 140%;">
-            <p>Bruna Ginammi</p>
-            <p>Fotografa</p>
-            <br>
+            <div class="mb-4">
+                <p>Bruna Ginammi</p>
+                <p>Fotografa</p>
+            </div>
             
-            <p>via Privata Paolo Cezanne, 11</p>
-            <p>20143 Milano MI, Italy</p>
-            <br>
+            <div class="mb-4">
+                <p>via Privata Paolo Cezanne, 11</p>
+                <p>20143 Milano MI, Italy</p>
+            </div>
             
-            <p>+39 351 830 33 52</p>
-            <a href="mailto:brunaginammi64@gmail.com">brunaginammi64@gmail.com</a>
-            <p><a href="https://www.facebook.com/bruna.ginammi" target="_blank" style="text-decoration: none;">Facebook</a> | <a href="https://www.instagram.com/brunaginammi_photographer/" target="_blank" style="text-decoration: none;">Instagram</a></p>
-            <br>
-            <br>
-            <br>
+            <div class="mb-12">
+                <p>+39 351 830 33 52</p>
+                <a href="mailto:brunaginammi64@gmail.com">brunaginammi64@gmail.com</a>
+                <p><a href="https://www.facebook.com/bruna.ginammi" target="_blank" style="text-decoration: none;">Facebook</a> | <a href="https://www.instagram.com/brunaginammi_photographer/" target="_blank" style="text-decoration: none;">Instagram</a></p>
+            </div>
+
+            <div class="mb-4">
+                <p>Galleria Mazzoli</p>
+            </div>
             
-            <p>Galleria Mazzoli</p>
-            <br>
-            
-            <p>via Nazario Sauro, 62</p>
-            <p>41121 Modena MO, Italy</p>
-            <a href="www.galleriamazzoli.com" target="_blank">www.galleriamazzoli.com</a>
+            <div class="mb-4">
+                <p>via Nazario Sauro, 62</p>
+                <p>41121 Modena MO, Italy</p>
+                <a href="www.galleriamazzoli.com" target="_blank">www.galleriamazzoli.com</a>
+            </div>
             
         </div>
 
