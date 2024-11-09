@@ -26,6 +26,8 @@ export default defineI18nConfig(() => ({
         groupexhibitions:'Mostre collettive',
         pubblications:'Pubblicazioni',
         magazines:'Riviste',
+        
+        designanddev:'Design e sviluppo',
       },
       en: {
         welcome: 'Welcome',
@@ -50,6 +52,8 @@ export default defineI18nConfig(() => ({
         groupexhibitions:'Group exhibitions',
         pubblications:'Pubblications',
         magazines:'Magazines',
+
+        designanddev:'Design and development',
       }
     }
   }))

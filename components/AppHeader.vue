@@ -26,7 +26,7 @@ const isOpen = ref(false)
                 <NuxtLink :to="localePath('/artworks')" class="hover:opacity-50">{{ $t('artworks') }}</NuxtLink>
                 <NuxtLink :to="localePath('/books')" class="hover:opacity-50">{{ $t('books') }}</NuxtLink>
                 <NuxtLink :to="localePath('/bio')" class="hover:opacity-50">{{ $t('bio') }}</NuxtLink>
-                <NuxtLink :to="localePath('/custom-pages/contacts')" class="hover:opacity-50">{{ $t('contacts') }}</NuxtLink>
+                <NuxtLink :to="localePath('/static-pages/contacts')" class="hover:opacity-50">{{ $t('contacts') }}</NuxtLink>
                 <button v-if="locale == ('it')" @click="setLocale('en')" class="hover:opacity-50">ENG</button>
                 <button  v-else="locale == ('en')" @click="setLocale('it')" class="hover:opacity-50">ITA</button>  
             </div>
@@ -90,7 +90,7 @@ const isOpen = ref(false)
                     <p class="brg-txt-heading">{{ $t('bio') }}</p>
                 </UButton>
                 <UButton variant="ghost"
-                    @click="isOpen = false" :to="localePath('/custom-pages/contacts')">
+                    @click="isOpen = false" :to="localePath('/static-pages/contacts')">
                     <p class="brg-txt-heading">{{ $t('contacts') }}</p>
                 </UButton>
 
