@@ -134,16 +134,16 @@ const scrollTo = (hash) => {
             <UCarousel
                 v-slot="{ item, index }"
                 :items="imageItems"
-                :ui="{ item: 'w-full px-4 md:px-0'}"
+                :ui="{ item: 'w-full px-4 md:px-0 border-black'}"
                 ref="carouselRef"
                 style=""
                 class="h-full md:px-4 flex scroll-mt-48 "
             >
             
-                <div class="h-full m-auto flex flex-col justify-start items-start ">
+                <div class="h-full m-auto flex flex-col justify-start items-start md:px-4" >
                     
                     <!--CAROUSEL Images-->
-                    <div class="w-fit h-full min-h-0 max-h-full flex"> 
+                    <div class="w-fit h-full min-h-0 max-h-full flex" > 
                         <img :src="item.image" :alt="item.caption"
                             draggable="false"
                             class="max-w-full object-contain"
@@ -155,7 +155,7 @@ const scrollTo = (hash) => {
                     </div>
                             
                     <!--CAROUSEL Caption-->
-                    <div class="w-fit brg-txt-caption mt-2"> 
+                    <div v-if="item.caption" class="w-fit brg-txt-caption mt-2"> 
                         <p> {{ item.caption }} </p>
                     </div>
                             
