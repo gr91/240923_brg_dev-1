@@ -161,6 +161,20 @@ collections:
         #Add i18n configuration----------
         i18n: duplicate
 
+      - label: 'Media Images'
+        name: 'mediaimages'
+        widget: 'image'
+        required: false
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Media Video'
+        name: 'mediavideo'
+        widget: 'string'
+        required: false
+        #Add i18n configuration----------
+        i18n: duplicate
+
 
 
 #---NEW BIO FILE COLLECTION-----------------------------------------
