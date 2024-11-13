@@ -163,11 +163,15 @@ collections:
 
       - label: 'Media Images'
         name: 'mediaimages'
-        widget: 'image'
-        allow_multiple: true
+        widget: 'list'
         required: false
+        summary: '{{fields.image}} - {{fields.caption}}'
         #Add i18n configuration----------
-        i18n: duplicate
+        i18n: true
+        fields:
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
 
       - label: 'Media Video'
         name: 'mediavideo'
