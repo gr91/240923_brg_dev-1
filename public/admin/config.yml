@@ -164,6 +164,7 @@ collections:
       - label: 'Media Images'
         name: 'mediaimages'
         widget: 'image'
+        allow_multiple: true
         required: false
         #Add i18n configuration----------
         i18n: duplicate
