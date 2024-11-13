@@ -132,34 +132,34 @@ const scrollTo = (hash) => {
             
             <!--CAROUSEL-->
             <UCarousel
-            v-slot="{ item, index }"
-            :items="imageItems"
-            :ui="{ item: 'w-full px-4 md:px-0'}"
-            ref="carouselRef"
-            style=""
-            class="h-full md:px-4 flex scroll-mt-48 "
+                v-slot="{ item, index }"
+                :items="imageItems"
+                :ui="{ item: 'w-full px-4 md:px-0'}"
+                ref="carouselRef"
+                style=""
+                class="h-full md:px-4 flex scroll-mt-48 "
             >
             
-            <div class="h-full m-auto flex flex-col justify-start items-start ">
-                
-                <!--CAROUSEL Images-->
-                <div class="w-fit h-full min-h-0 max-h-full flex"> 
-                    <img :src="item.image" :alt="item.caption"
-                    draggable="false"
-                    style="
-                            max-width: 100%;
-                            max-height: 100%;
-                            display: block;"
+                <div class="h-full m-auto flex flex-col justify-start items-start ">
+                    
+                    <!--CAROUSEL Images-->
+                    <div class="w-fit h-full min-h-0 max-h-full flex"> 
+                        <img :src="item.image" :alt="item.caption"
+                            draggable="false"
                             class="max-w-full object-contain"
-                            >
-                        </div>
-                        
-                        <!--CAROUSEL Caption-->
-                        <div class="w-fit brg-txt-caption mt-2"> 
-                            <p> {{ item.caption }} </p>
-                        </div>
-                        
+                            style="
+                                max-width: 100%;
+                                max-height: 100%;
+                                display: block;"
+                        >
                     </div>
+                            
+                    <!--CAROUSEL Caption-->
+                    <div class="w-fit brg-txt-caption mt-2"> 
+                        <p> {{ item.caption }} </p>
+                    </div>
+                            
+                </div>
                     
                 </UCarousel>
                 
