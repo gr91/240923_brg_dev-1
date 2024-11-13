@@ -35,6 +35,18 @@ const { data: books } = await useAsyncData(myKey, () => {
 
     <div style="border:solid red" class="h-32 md:h-24"></div>
 
+    <p>--------------------</p>
+    <div>
+        <div v-for="book in books">
+            <p>{{ book.mediaimages }}</p>
+            <p>----------------</p>
+            <div v-for="image in book.mediaimages">
+                <p>{{ image.image }}</p>
+            </div>
+        </div>
+    </div>
+    <p>--------------------</p>
+
 
     <div class="mt-8 px-4">
     
@@ -65,6 +77,33 @@ const { data: books } = await useAsyncData(myKey, () => {
                 <p> {{ $t('unavailable') }} </p>
                 </div>
             </div>
+
+            <!--MEDIA SESSION-->
+            <div>
+
+                <!--IMAGES-->
+                <div v-if="book.mediaimages"
+                    class="max-w-[320px] md:max-w-sm mb-4 flex flex-row gap-4"
+                    style="border:solid">
+                    <div v-for="image in book.mediaimages"
+                        class="flex "
+                    >
+                        <img :src="image.image" >
+                    </div>
+                </div>
+
+                <!--VIDEO-->
+                <div v-if="book.mediavideo"
+                    class="h-full max-w-[320px] md:max-w-sm flex items-center"
+                >
+                    <div class="flex-auto">
+                        <VimeoVideoPlayer :VideoId="book.mediavideo"/>
+                    </div>
+                </div>
+                   
+            </div>
+
+            
         
         </div>
     
