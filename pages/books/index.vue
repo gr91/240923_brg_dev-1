@@ -12,7 +12,7 @@ const myKey = `HelloBooks-${locale.value}`;
 //execute content query
 const { data: books } = await useAsyncData(myKey, () => {
     return queryContent(contentPath)
-    .sort({beginyear: 1, endyear: 1})
+    .sort({year: -1})
     .find()
 });    
 
@@ -46,10 +46,10 @@ function updateThisMediaImage (
 
     <div class="mt-8 px-4">
     
-        <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-20">
+        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-sm mb-20">
             
             <!--COVER-->
-            <div class="drop-shadow-xl max-w-[320px] md:max-w-sm">
+            <div class="drop-shadow-xl w-full">
                 <img :src="book.cover" class="w-full mb-4">
             </div>
             
@@ -66,7 +66,7 @@ function updateThisMediaImage (
             </div>
             
             <!--BUTTON-->
-            <div class="my-8">
+            <div class="my-4">
                 <div class="w-fit brg-txt-button">
                     <div v-if="book.order == ('Mail')" class="brg-cta">
                     <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
@@ -89,19 +89,18 @@ function updateThisMediaImage (
 
 
                 <!--IMAGES-->
-                <div>
+                <div >
     
                     <div v-if="book.mediaimages"
                         class="max-w-[320px] md:max-w-sm mb-4 flex flex-row gap-4"
                     >
     
-                        <div v-for="image in book.mediaimages"
+                        <button v-for="image in book.mediaimages"
+                            @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
                             class="flex"
                         >
-                            <img :src="image.image"
-                                @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
-                            >
-                        </div>
+                            <img :src="image.image">
+                    </button>
     
                     </div>
     
