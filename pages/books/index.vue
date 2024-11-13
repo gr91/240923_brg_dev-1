@@ -17,7 +17,15 @@ const { data: books } = await useAsyncData(myKey, () => {
 });    
 
 
+//nuxt ui modal config
+const isOpen = ref(false);
 
+const modalImage = ref({value: 'asd'});
+function updateThisMediaImage (
+    modalImage: {value: string},
+    currentImage: string) {
+        modalImage.value = currentImage;
+};
 
 
 </script>
@@ -35,62 +43,77 @@ const { data: books } = await useAsyncData(myKey, () => {
 
     <div style="border:solid red" class="h-32 md:h-24"></div>
 
-    <p>--------------------</p>
-    <div>
-        <div v-for="book in books">
-            <p>{{ book.mediaimages }}</p>
-            <p>----------------</p>
-            <div v-for="image in book.mediaimages">
-                <p>{{ image.image }}</p>
-            </div>
-        </div>
-    </div>
-    <p>--------------------</p>
-
 
     <div class="mt-8 px-4">
     
         <div v-for="book in books" :key="book.slug" class="w-full max-w-sm md:max-w-md mb-20">
             
+            <!--COVER-->
             <div class="drop-shadow-xl max-w-[320px] md:max-w-sm">
                 <img :src="book.cover" class="w-full mb-4">
             </div>
-        
+            
+            <!--HEADING-->
             <div class="mb-4">
                 <p class="brg-txt-body">{{ book.year }}</p>
                 <h1 class="brg-txt-heading">{{ book.title }}</h1>
                 <h1 class="brg-txt-heading">{{ book.subtitle }}</h1>
             </div>
-        
-            <div class="mb-4">
+            
+            <!--TEXT-->
+            <div class="mb-4 brg-txt-body">
                 <MDC :value="book.description" />
             </div>
             
-            <div class="w-fit mb-4 h-5 brg-txt-button">
-                <div v-if="book.order == ('Mail')" class="brg-cta">
-                <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
-                </div>
-                <div v-else-if="book.order == ('Website')" class="brg-cta">
-                <a :href=book.address target="_blank"> {{ $t('order') }} </a>
-                </div>
-                <div v-else class="unselected">
-                <p> {{ $t('unavailable') }} </p>
+            <!--BUTTON-->
+            <div class="my-8">
+                <div class="w-fit brg-txt-button">
+                    <div v-if="book.order == ('Mail')" class="brg-cta">
+                    <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
+                    </div>
+                    <div v-else-if="book.order == ('Website')" class="brg-cta">
+                    <a :href=book.address target="_blank"> {{ $t('order') }} </a>
+                    </div>
+                    <div v-else class="unselected">
+                    <p> {{ $t('unavailable') }} </p>
+                    </div>
                 </div>
             </div>
+
+
+
 
             <!--MEDIA SESSION-->
             <div>
 
+
+
                 <!--IMAGES-->
-                <div v-if="book.mediaimages"
-                    class="max-w-[320px] md:max-w-sm mb-4 flex flex-row gap-4"
-                    style="border:solid">
-                    <div v-for="image in book.mediaimages"
-                        class="flex "
+                <div>
+    
+                    <div v-if="book.mediaimages"
+                        class="max-w-[320px] md:max-w-sm mb-4 flex flex-row gap-4"
                     >
-                        <img :src="image.image" >
+    
+                        <div v-for="image in book.mediaimages"
+                            class="flex"
+                        >
+                            <img :src="image.image"
+                                @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
+                            >
+                        </div>
+    
                     </div>
+    
+                    <UModal
+                        v-model="isOpen"
+                    >
+                        <img :src="modalImage.value">
+                    </UModal>
+    
                 </div>
+
+
 
                 <!--VIDEO-->
                 <div v-if="book.mediavideo"
@@ -100,11 +123,15 @@ const { data: books } = await useAsyncData(myKey, () => {
                         <VimeoVideoPlayer :VideoId="book.mediavideo"/>
                     </div>
                 </div>
+
+
                    
             </div>
 
+
+            <br><br><br>
             
-        
+
         </div>
     
     </div>
