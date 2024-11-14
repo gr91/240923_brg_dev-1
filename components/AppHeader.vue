@@ -73,7 +73,7 @@ const isOpen = ref(false)
                     <p class="brg-txt-big">Bruna Ginammi</p>
                 </UButton>
 
-                <p @click="isOpen = false">{{ $t('close') }}</p>
+                <p @click="isOpen = false" class="brg-txt-big">{{ $t('close') }}</p>
             </div>
             
             <div class="flex-1 gap-2 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
