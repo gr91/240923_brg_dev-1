@@ -125,9 +125,7 @@ function updateThisMediaImage (
 
                 <!--VIDEO-->
                 <div v-if="book.mediavideo"
-                    class="h-full max-w-[320px] md:max-w-sm flex items-center"
-                    style="border: solid blue"
-                >
+                    class="h-full max-w-[320px] md:max-w-sm flex items-center"> <!--style="border: solid blue"-->
                     <div class="flex-auto">
                         <VimeoVideoPlayer :VideoId="book.mediavideo"/>
                     </div>
