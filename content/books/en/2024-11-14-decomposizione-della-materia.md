@@ -16,4 +16,7 @@ description: |-
   2023
 order: Mail
 address: brunaginammi64@gmail.com
+mediaimages:
+  - image: /img/la-lettura_20240707_163119.png
+  - image: /img/la-lettura_20240707_163233.png
 ---
