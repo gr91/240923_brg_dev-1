@@ -46,7 +46,7 @@ function updateThisMediaImage (
 
     <div class="mt-8 px-4" >
     
-        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-sm pb-20 mb-20" > <!--style="border-bottom: solid lightgray;"-->
+        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-sm pb-12 mb-12" > <!--style="border-bottom: solid lightgray;"-->
             
             <!--COVER-->
             <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
@@ -90,7 +90,7 @@ function updateThisMediaImage (
 
                 <!--IMAGES-->
                 <div v-if="book.mediaimages"
-                    class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2"> <!--style="border: solid green;"-->
+                    class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2 mb-8"> <!--style="border: solid green;"-->
 
                     <button v-for="image in book.mediaimages"
                         @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
@@ -125,7 +125,7 @@ function updateThisMediaImage (
 
                 <!--VIDEO-->
                 <div v-if="book.mediavideo"
-                    class="h-full max-w-[320px] md:max-w-sm flex items-center"> <!--style="border: solid blue"-->
+                    class="h-full max-w-[320px] md:max-w-sm flex items-center mb-8"> <!--style="border: solid blue"-->
                     <div class="flex-auto">
                         <VimeoVideoPlayer :VideoId="book.mediavideo"/>
                     </div>
