@@ -41,12 +41,12 @@ function updateThisMediaImage (
     <p>----------------------------------------</p>
     -->
 
-    <div style="border:solid red" class="h-32 md:h-24"></div>
+    <div class="h-32 md:h-24"></div>
 
 
-    <div class="mt-8 px-4" style="border: solid black;">
+    <div class="mt-8 px-4" >
     
-        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-md mb-20" style="border: solid grey;">
+        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-sm pb-20 mb-20" > <!--style="border-bottom: solid lightgray;"-->
             
             <!--COVER-->
             <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
@@ -66,7 +66,7 @@ function updateThisMediaImage (
             </div>
             
             <!--BUTTON-->
-            <div class="my-4">
+            <div class="mt-6 mb-8">
                 <div class="w-fit brg-txt-button">
                     <div v-if="book.order == ('Mail')" class="brg-cta">
                     <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
@@ -84,20 +84,19 @@ function updateThisMediaImage (
 
 
             <!--MEDIA SESSION-->
-            <div style="border: solid red;">
+            <div> <!--style="border: solid red;"-->
 
 
 
                 <!--IMAGES-->
                 <div v-if="book.mediaimages"
-                    class="max-w-[320px] md:max-w-sm mb-4 flex flex-row items-start gap-4"
-                    style="border: solid green;">
+                    class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2"> <!--style="border: solid green;"-->
 
                     <button v-for="image in book.mediaimages"
                         @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
                         class=""
                     >
-                        <img :src="image.image">
+                        <img :src="image.image" class="h-20 object-container">
                     </button>
 
                 </div>
@@ -106,21 +105,17 @@ function updateThisMediaImage (
                     v-model="isOpen"
                     fullscreen
                     :ui="{
-                        overlay: {background: 'bg-BRG-white '}
+                        overlay: {background: 'bg-BRG-white opacity-50'}
                     }"
                 >
-                    <div class="w-full h-full max-w-4xl m-auto flex px-8 md:px-0 py-4 md:py-12"> <!--style="border: solid red"-->
-                        <div class="m-auto w-full h-full flex"> <!--style="border: solid blue;"-->
+                    <div class="w-full h-full max-w-5xl m-auto flex px-8 md:px-0 py-4 md:py-16" > <!--style="border: solid red"-->
+                        <div class="m-auto w-full h-full flex" > <!--style="border: solid blue;"-->
 
                             <img
                                 :src="modalImage.value"
-                                class="object-contain m-auto"
-                                style="
-                                    max-width: 100%;
-                                    max-height: 100%;
-                                    display: block;"
+                                class="object-contain h-full w-full m-auto"
                             >
-                            
+
                         </div>
                     </div>
                 </UModal>
@@ -143,7 +138,6 @@ function updateThisMediaImage (
             </div>
 
 
-            <br><br><br>
             
 
         </div>
