@@ -44,12 +44,12 @@ function updateThisMediaImage (
     <div style="border:solid red" class="h-32 md:h-24"></div>
 
 
-    <div class="mt-8 px-4">
+    <div class="mt-8 px-4" style="border: solid black;">
     
-        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-sm mb-20">
+        <div v-for="book in books" :key="book.slug" class="w-full max-w-[320px] md:max-w-md mb-20" style="border: solid grey;">
             
             <!--COVER-->
-            <div class="drop-shadow-xl w-full">
+            <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
                 <img :src="book.cover" class="w-full mb-4">
             </div>
             
@@ -84,39 +84,54 @@ function updateThisMediaImage (
 
 
             <!--MEDIA SESSION-->
-            <div>
+            <div style="border: solid red;">
 
 
 
                 <!--IMAGES-->
-                <div >
-    
-                    <div v-if="book.mediaimages"
-                        class="max-w-[320px] md:max-w-sm mb-4 flex flex-row gap-4"
+                <div v-if="book.mediaimages"
+                    class="max-w-[320px] md:max-w-sm mb-4 flex flex-row items-start gap-4"
+                    style="border: solid green;">
+
+                    <button v-for="image in book.mediaimages"
+                        @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
+                        class=""
                     >
-    
-                        <button v-for="image in book.mediaimages"
-                            @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
-                            class="flex"
-                        >
-                            <img :src="image.image">
+                        <img :src="image.image">
                     </button>
-    
-                    </div>
-    
-                    <UModal
-                        v-model="isOpen"
-                    >
-                        <img :src="modalImage.value">
-                    </UModal>
-    
+
                 </div>
+
+                <UModal
+                    v-model="isOpen"
+                    fullscreen
+                    :ui="{
+                        overlay: {background: 'bg-BRG-white '}
+                    }"
+                >
+                    <div class="w-full h-full max-w-4xl m-auto flex px-8 md:px-0 py-4 md:py-12"> <!--style="border: solid red"-->
+                        <div class="m-auto w-full h-full flex"> <!--style="border: solid blue;"-->
+
+                            <img
+                                :src="modalImage.value"
+                                class="object-contain m-auto"
+                                style="
+                                    max-width: 100%;
+                                    max-height: 100%;
+                                    display: block;"
+                            >
+                            
+                        </div>
+                    </div>
+                </UModal>
+ 
 
 
 
                 <!--VIDEO-->
                 <div v-if="book.mediavideo"
                     class="h-full max-w-[320px] md:max-w-sm flex items-center"
+                    style="border: solid blue"
                 >
                     <div class="flex-auto">
                         <VimeoVideoPlayer :VideoId="book.mediavideo"/>
@@ -136,3 +151,5 @@ function updateThisMediaImage (
     </div>
 
 </template>
+
+
