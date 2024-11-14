@@ -85,6 +85,7 @@ collections:
       - label: 'Video'
         name: 'video'
         widget: 'string'
+        hint: 'VIMEO ONLY. Insert video ID: https://vimeo.com/manage/videos/**********'
         required: false
         #Add i18n configuration----------
         i18n: duplicate
@@ -176,6 +177,7 @@ collections:
       - label: 'Media Video'
         name: 'mediavideo'
         widget: 'string'
+        hint: 'YOUTUBE ONLY. https://www.youtube.com/watch?v=***********'
         required: false
         #Add i18n configuration----------
         i18n: duplicate

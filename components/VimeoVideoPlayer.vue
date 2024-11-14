@@ -9,11 +9,6 @@ const SourceVideoId = `https://player.vimeo.com/video/${VimeoPlayerProps.VideoId
 
 <template>
 
-    <!--
-        <p><strong>VideoId</strong>: {{ VideoId }}</p>
-        <p><strong>SourceVideoId</strong>: {{ SourceVideoId }}</p><br>
-    -->
-
     <div
         style="padding:56.25% 0 0 0;position:relative;"
     >
