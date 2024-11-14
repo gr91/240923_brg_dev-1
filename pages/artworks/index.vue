@@ -120,7 +120,7 @@ function updateFilter (
 
     
     <!--ARTWORK List-->
-    <div v-for="artwork of artworks" :key="artwork.slug" class="my-6 px-4">
+    <div v-for="artwork of artworks" :key="artwork.slug" class="my-8 px-4">
 
 
         <!--Build photo artworks-->
