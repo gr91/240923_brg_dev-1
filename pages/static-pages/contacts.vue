@@ -10,7 +10,7 @@ const route = useRoute()
         <div class="flex-1 flex flex-col justify-center brg-txt-big" style="line-height: 140%;">
             <div class="mb-4">
                 <p>Bruna Ginammi</p>
-                <p>Fotografa</p>
+                <p>{{ $t('photographer') }}</p>
             </div>
             
             <div class="mb-4">

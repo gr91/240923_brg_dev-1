@@ -6,7 +6,7 @@ export default defineI18nConfig(() => ({
       it: {
         welcome: 'Benvenuti',
         artworks: 'Opere',
-        books: 'Libri',
+        books: 'Volumi',
         bio: 'Bio',
         contacts: 'Contatti',
         Photo: 'Foto',
@@ -27,6 +27,7 @@ export default defineI18nConfig(() => ({
         pubblications:'Pubblicazioni',
         magazines:'Riviste',
         
+        photographer:'Fotografa',
         designanddev:'Design e sviluppo',
       },
       en: {
@@ -52,8 +53,9 @@ export default defineI18nConfig(() => ({
         groupexhibitions:'Group exhibitions',
         pubblications:'Pubblications',
         magazines:'Magazines',
-
+        
         designanddev:'Design and development',
+        photographer:'Photographer',
       }
     }
   }))
