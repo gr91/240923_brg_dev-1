@@ -1,7 +1,7 @@
 it:
   pubblication:
     - year: 2024
-      text: "*Oltre l’amore oltre il colore*, a cura di cristiano Plicat, pag. 18-19"
+      text: "*Oltre l’amore oltre il colore*, a cura di cristiano Plicato, pag. 18-19"
     - year: 2023
       text: "*Parlando con voi. Immagini e parole di trenta fotografe italiane*,
         auditorium S.Agostino Civitanova Marche, pag. 80-83"
@@ -116,7 +116,7 @@ it:
 en:
   pubblication:
     - year: 2024
-      text: "*Oltre l’amore oltre il colore*, a cura di cristiano Plicat, pag. 18-19"
+      text: "*Oltre l’amore oltre il colore*, a cura di cristiano Plicato, pag. 18-19"
     - year: 2023
       text: "*Parlando con voi. Immagini e parole di trenta fotografe italiane*,
         auditorium S.Agostino Civitanova Marche, pag. 80-83"
@@ -188,6 +188,13 @@ en:
 
         ISBN - 8842807338
     - year: 1998
+      text: >-
+        *Pagine di fotografia italiana 1900*, a cura di R.Valtorta, Charta, pag.
+        191
+
+
+        ISBN - 8881581779
+    - year: 1998
       text: "*Ad occhi aperti 3 l’autoritratto Museo dei Bozzetti Pietrasanta*, a cura
         di Antonella  Serafini, pag. 20-21"
     - year: 1998
@@ -221,10 +228,3 @@ en:
     - year: 1991
       text: "*Altri termini. Quaderni internazionali di letteratura. Omaggio a Corrado
         Costa*, pag. 63"
-    - year: 1998
-      text: >-
-        Pagine di fotografia italiana 1900, a cura di R.Valtorta, Charta, pag.
-        191
-
-
-        ISBN - 8881581779
