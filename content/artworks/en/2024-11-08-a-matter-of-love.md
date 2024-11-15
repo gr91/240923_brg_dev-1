@@ -1,5 +1,5 @@
 ---
-title: A matter of love
+title: A matter of love (Una questione d'amore)
 beginyear: 2018
 inprogress: false
 endyear: 2019
