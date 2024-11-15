@@ -33,4 +33,16 @@ description:
 
 
       Tratto da *Fotografia e femminismo nell’Italia degli anni Settanta: Rispecchiamento, indagine critica e testimonianza*, a cura di Cristina Casero, pag.156-157, postmedia.book, Milano 2021, ISBN-9788874903023
+  - text: >-
+      …I nudi che lei dedica a se stessa, sono così spogli di prevedibilità da
+      risultare quasi vestiti di candore dell’osservazione umana.
+
+
+      Mi sembra, questa fotografia sfuggire da tutti i luoghi comuni del retorico o erotico del nudo, per approdare a una neosemplicità. Al tempo del nudo turistico lei sa trovare una rappresentazione così spoglia da raggiungere il proprio linguaggio.
+
+
+      —
+
+
+      Guido Oldani, 2024
 ---

@@ -33,4 +33,16 @@ description:
 
 
       Extract from Cristina Casero, ed. *Fotografia e femminismo nell’Italia degli anni Settanta: Rispecchiamento, indagine critica e testimonianza* (Milan: postmedia books, 2021), 156–157, ISBN-9788874903023
+  - text: >-
+      The nudes she dedicates to herself are so devoid of predictability as to
+      appear almost clad in the candour of human observation.
+
+
+      To me this kind of photography escapes all the clichés of rhetorical or erotic nudes, attaining a neo-simplicity. At a time of touristic nudes, Bruna Ginammi knows how to find a representation so bare that it attains a language of its own.
+
+
+      —
+
+
+      Guido Oldani 2024
 ---
