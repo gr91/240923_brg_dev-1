@@ -2,11 +2,11 @@
 title: Omaggio a Pompei
 beginyear: 2019
 inprogress: false
-endyear: 2019
+endyear: ""
 category: Photo
 images:
-  - image: /img/32dscn7978-stampato-2019.png
   - image: /img/33dscn8000stampato.png
+  - image: /img/32dscn7978-stampato-2019.png
   - image: /img/34dscn7998stampato.png
   - image: /img/36dscn7978stampato.png
   - image: /img/38fioredscn8045stampato.png
