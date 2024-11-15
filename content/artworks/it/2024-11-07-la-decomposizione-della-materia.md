@@ -17,6 +17,8 @@ images:
     caption: Studio di caco vaniglia
   - image: /img/35_fg.png
     caption: Studio di pesca
+  - image: /img/peperoneok.png
+    caption: Studio di peperone
 description:
   - text: >-
       …la realtà, con il suo instancabile pulsare di vita e di forme, si incarna
