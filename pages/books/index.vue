@@ -89,9 +89,9 @@ function updateThisMediaImage (
 
 
                 <!--IMAGES-->
-                <div v-if="book.mediaimages" class="mb-8" style="border: solid;"> 
+                <div v-if="book.mediaimages" class="mb-8"> 
 
-                    <div class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2 mb-2" style="border: solid grey;"> <!--style="border: solid green;"-->
+                    <div class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2 mb-2"> <!--style="border: solid green;"-->
                         <button v-for="image in book.mediaimages"
                             @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
                             class=""
@@ -127,9 +127,9 @@ function updateThisMediaImage (
             
             
                 <!--VIDEO-->
-                <div v-if="book.mediavideo" class="mb-8" style="border: solid;"> <!---->
+                <div v-if="book.mediavideo" class="mb-8" > <!---->
                 
-                    <div class="max-w-[320px] md:max-w-sm flex items-center mb-2" style="border: solid grey;">
+                    <div class="max-w-[320px] md:max-w-sm flex items-center mb-2">
                         <YouTubeVideoPlayer :VideoId="book.mediavideo" class="w-full"/>
                     </div>
                 
