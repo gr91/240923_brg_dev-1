@@ -180,7 +180,7 @@ collections:
         buttons: ['bold', 'italic', 'link']
         required: false
         #Add i18n configuration----------
-        i18n: duplicate
+        i18n: true
 
       - label: 'Media Video'
         name: 'mediavideo'
@@ -196,7 +196,7 @@ collections:
         buttons: ['bold', 'italic', 'link']
         required: false
         #Add i18n configuration----------
-        i18n: duplicate
+        i18n: true
 
 
 
