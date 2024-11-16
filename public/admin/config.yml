@@ -178,6 +178,7 @@ collections:
         name: 'mediaimagescaption'
         widget: 'markdown'
         buttons: ['bold', 'italic', 'link']
+        required: false
         #Add i18n configuration----------
         i18n: duplicate
 
@@ -193,6 +194,7 @@ collections:
         name: 'mediavideocaption'
         widget: 'markdown'
         buttons: ['bold', 'italic', 'link']
+        required: false
         #Add i18n configuration----------
         i18n: duplicate
 
