@@ -21,4 +21,5 @@ description: |-
 order: Mail
 address: brunaginammi64@gmail.com
 mediavideo: xfTTwDVQr68
+mediavideocaption: "Exhibition: *L’altro sguardo. Fotografie 1965–2015*, collezione Donata Pizzi."
 ---
