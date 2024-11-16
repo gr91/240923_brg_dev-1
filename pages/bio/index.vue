@@ -102,25 +102,25 @@ const scrollTo = (hash) => {
     <div class="sticky top-12 md:top-24 h-12 px-4 bg-BRG-white flex flex-row gap-4 items-center overflow-x-auto no-scrollbar"> <!--style="border:solid" -->
         
         <a href="#biography" @click.prevent="scrollTo('#biography')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('biography') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('biography') }}</div>
         </a>
         <a href="#awards" @click.prevent="scrollTo('#awards')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('awards') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('awards') }}</div>
         </a>
         <a href="#publiccollections" @click.prevent="scrollTo('#publiccollections')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('publiccollections') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('publiccollections') }}</div>
         </a>
         <a href="#soloexhibitions" @click.prevent="scrollTo('#soloexhibitions')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('soloexhibitions') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('soloexhibitions') }}</div>
         </a>
         <a href="#groupexhibitions" @click.prevent="scrollTo('#groupexhibitions')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('groupexhibitions') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('groupexhibitions') }}</div>
         </a>
         <a href="#pubblications" @click.prevent="scrollTo('#pubblications')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('pubblications') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('pubblications') }}</div>
         </a>
         <a href="#magazines" @click.prevent="scrollTo('#magazines')" class="flex-none">
-            <div class="h-4 brg-txt-button brg-cta">{{ $t('magazines') }}</div>
+            <div class="h-4 brg-txt-button brg-cta hover:opacity-30">{{ $t('magazines') }}</div>
         </a>
         
     </div>

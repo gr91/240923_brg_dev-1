@@ -98,7 +98,7 @@ function updateFilter (
     
             <!--IF the category is active or not-->
             <button v-if="item.isActive == true"
-                class="flex h-4 brg-txt-button brg-cta"
+                class="flex h-4 brg-txt-button brg-cta hover:opacity-30"
                 @click="updateFilter(index, filter, activeCounter)"
             >
                 {{ $t(item.category) }}
