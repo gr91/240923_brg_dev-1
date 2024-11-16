@@ -174,11 +174,25 @@ collections:
             name: 'image'
             widget: 'image'
 
+      - label: 'Media Images Caption'
+        name: 'mediaimagescaption'
+        widget: 'markdown'
+        buttons: ['bold', 'italic', 'link']
+        #Add i18n configuration----------
+        i18n: duplicate
+
       - label: 'Media Video'
         name: 'mediavideo'
         widget: 'string'
         hint: 'YOUTUBE ONLY. https://www.youtube.com/watch?v=***********'
         required: false
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Media Video Caption'
+        name: 'mediavideocaption'
+        widget: 'markdown'
+        buttons: ['bold', 'italic', 'link']
         #Add i18n configuration----------
         i18n: duplicate
 
