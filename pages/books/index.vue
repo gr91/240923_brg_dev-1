@@ -69,13 +69,13 @@ function updateThisMediaImage (
             <div class="mt-6 mb-8">
                 <div class="w-fit brg-txt-button">
                     <div v-if="book.order == ('Mail')" class="brg-cta">
-                    <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
+                        <a :href="`mailto:${book.address}`"> {{ $t('order') }} </a>    
                     </div>
                     <div v-else-if="book.order == ('Website')" class="brg-cta">
-                    <a :href=book.address target="_blank"> {{ $t('order') }} </a>
+                        <a :href=book.address target="_blank"> {{ $t('order') }} </a>
                     </div>
                     <div v-else class="unselected">
-                    <p> {{ $t('unavailable') }} </p>
+                        <p> {{ $t('unavailable') }} </p>
                     </div>
                 </div>
             </div>
@@ -89,55 +89,57 @@ function updateThisMediaImage (
 
 
                 <!--IMAGES-->
-                <div v-if="book.mediaimages"
-                    class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2 mb-8"> <!--style="border: solid green;"-->
+                <div v-if="book.mediaimages" class="mb-8" style="border: solid;"> 
 
-                    <button v-for="image in book.mediaimages"
-                        @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
-                        class=""
-                    >
-                        <img :src="image.image" class="h-20 object-container">
-                    </button>
+                    <div class="max-w-[320px] md:max-w-sm flex flex-wrap items-start gap-2 mb-2" style="border: solid grey;"> <!--style="border: solid green;"-->
+                        <button v-for="image in book.mediaimages"
+                            @click="isOpen = true; updateThisMediaImage(modalImage, image.image)"
+                            class=""
+                        >
+                            <img :src="image.image" class="h-20 object-container">
+                        </button>
+                    </div>
 
+                    <MDC :value="book.mediaimagescaption" class="brg-txt-caption"/>                    
+                    
                 </div>
-
+                
                 <UModal
-                    v-model="isOpen"
-                    fullscreen
-                    :ui="{
-                        overlay: {background: 'bg-BRG-white opacity-50'}
+                v-model="isOpen"
+                fullscreen
+                :ui="{
+                    overlay: {background: 'bg-BRG-white opacity-50'}
                     }"
                 >
                     <div class="w-full h-full max-w-5xl m-auto flex px-8 md:px-0 py-4 md:py-16" > <!--style="border: solid red"-->
                         <div class="m-auto w-full h-full flex" > <!--style="border: solid blue;"-->
-
+                            
                             <img
-                                :src="modalImage.value"
-                                class="object-contain h-full w-full m-auto"
+                            :src="modalImage.value"
+                            class="object-contain h-full w-full m-auto"
                             >
-
+                            
                         </div>
                     </div>
                 </UModal>
- 
-
-
-
+            
+            
+            
+            
                 <!--VIDEO-->
-                <div v-if="book.mediavideo"
-                    class="h-full max-w-[320px] md:max-w-sm flex items-center mb-8"> <!---->
-
-                    <div class="flex-auto">
-                        <YouTubeVideoPlayer :VideoId="book.mediavideo"
-                            class="w-full"/>
-                        <br>    
+                <div v-if="book.mediavideo" class="mb-8" style="border: solid;"> <!---->
+                
+                    <div class="max-w-[320px] md:max-w-sm flex items-center mb-2" style="border: solid grey;">
+                        <YouTubeVideoPlayer :VideoId="book.mediavideo" class="w-full"/>
                     </div>
-
+                
+                    <MDC :value="book.mediavideocaption" class="brg-txt-caption"/>                    
+                
                 </div>
-
-                   
+        
+        
             </div>
-
+    
 
             
 
