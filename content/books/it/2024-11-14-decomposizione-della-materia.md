@@ -19,5 +19,5 @@ address: brunaginammi64@gmail.com
 mediaimages:
   - image: /img/la-lettura_20240707_163119.png
   - image: /img/la-lettura_20240707_163233.png
-mediaimagescaption: "*Corriere della Sera*, 7 luglio 2024"
+mediaimagescaption: "*Corriere della Sera*, 7 luglio 2024."
 ---
