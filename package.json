@@ -22,7 +22,6 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "flyonui": "^1.1.0",
     "nuxt-anchorscroll": "^1.0.3"
   }
 }
