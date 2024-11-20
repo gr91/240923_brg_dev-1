@@ -17,7 +17,7 @@ description: |-
 order: Mail
 address: brunaginammi64@gmail.com
 mediaimages:
-  - image: /img/la-lettura_20240707_163119.png
-  - image: /img/la-lettura_20240707_163233.png
+  - image: /img/img_20241119_111914.png
+  - image: /img/la-lettura_20241119_112103.png
 mediaimagescaption: "*Corriere della Sera*, 7 luglio 2024."
 ---
