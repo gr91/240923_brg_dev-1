@@ -38,15 +38,6 @@ function updateThisMediaCaption (
 </script>
 
 <template>
-    <!----Variable test print----
-    <p>----------------------------------------</p>
-    <div class="mt-48"></div>
-    <p>VARIABLES PRINT TEST</p>
-    <p><strong>locale: </strong>{{ locale }}</p>
-    <p><strong>contentPath: </strong>{{ contentPath }}</p>
-    <p><strong>myKey: </strong>{{ myKey }}</p>
-    <p>----------------------------------------</p>
-    -->
 
     <div class="h-32 md:h-24"></div>
 
@@ -106,7 +97,7 @@ function updateThisMediaCaption (
                                 modalMediaImageIsOpen = true;
                                 updateThisMediaImage(modalImage, image.image)
                                 updateThisMediaCaption(modalCaption, book.mediaimagescaption)"
-                        >
+                            >
 
                             <img :src="image.image" class="h-20 object-container">
 
@@ -123,7 +114,8 @@ function updateThisMediaCaption (
                     v-model="modalMediaImageIsOpen"
                     :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
                     fullscreen
-                >
+                    >
+
                     <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2" >
 
                         <div class="h-8 flex-none flex justify-between items-center " >
@@ -133,7 +125,7 @@ function updateThisMediaCaption (
                             <button
                                 @click="modalMediaImageIsOpen = false"
                                 class="brg-cta brg-txt-button h-4 "
-                            >
+                                >
                                 {{ $t('close') }}
                             </button>
 
@@ -142,7 +134,7 @@ function updateThisMediaCaption (
                         <div class="flex-1 overflow-hidden flex w-fit mx-auto" >
                             <img :src="modalImage.value"
                                 class="object-contain h-full w-full"
-                            >
+                                >
                         </div>
 
                     </div>            
@@ -150,36 +142,10 @@ function updateThisMediaCaption (
                 </UModal>
 
 
-                <!--
-                <UModal
-                v-model="modalMediaImageIsOpen"
-                fullscreen
-                :ui="{ overlay: {background: 'bg-BRG-white opacity-50'} }"
-                >
-                    <div
-                        class="w-full h-full max-w-5xl m-auto flex p-4"
-                        style="border: solid red"
-                    > 
-                        <div
-                            class="m-auto w-full h-full flex"
-                            style="border: solid blue;"
-                        > 
-                            
-                            <img
-                                :src="modalImage.value"
-                                class="object-contain h-full w-full m-auto"
-                            >
-                            
-                        </div>
-                    </div>
-                </UModal>
-                -->
 
 
-
-            
                 <!--VIDEO-->
-                <div v-if="book.mediavideo" class="mb-8" > <!---->
+                <div v-if="book.mediavideo" class="mb-8" > 
                 
                     <div class="max-w-[320px] md:max-w-sm flex items-center mb-2">
                         <YouTubeVideoPlayer :VideoId="book.mediavideo" class="w-full"/>

@@ -25,29 +25,10 @@ const { data: artwork } = await useAsyncData(myKey, () =>
 //create and populate and array with images'URLs and caption from 'artwork' array
 const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
     ? artwork.value.images.map(image => ({
-    image: image.image,   // The image URL from the markdown file
-    caption: image.caption // The caption from the markdown file
+        image: image.image,   // The image URL from the markdown file
+        caption: image.caption // The caption from the markdown file
     }))
-    : [];
-
-
-
-
-// set scrollTo function to ensure scroll to section not affect browser history
-const scrollTo = (hash) => {
-  const element = document.querySelector(hash)
-  if (element) {
-
-    // Perform the smooth scroll
-    element.scrollIntoView({ behavior: 'smooth' });
-
-    // After scrolling, replace the state again to maintain the current URL
-    setTimeout(() => {
-      history.replaceState(null, null, hash);
-    }, 500);  // Add a slight delay to let the scroll complete smoothly
-  }
-}
-
+: [];
 
 
 
@@ -97,6 +78,24 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
 }
 
 //--------------------------------------------------------------
+
+
+
+// set scrollTo function to ensure scroll to section not affect browser history
+const scrollTo = (hash) => {
+  const element = document.querySelector(hash)
+  if (element) {
+
+    // Perform the smooth scroll
+    element.scrollIntoView({ behavior: 'smooth' });
+
+    // After scrolling, replace the state again to maintain the current URL
+    setTimeout(() => {
+      history.replaceState(null, null, hash);
+    }, 500);  // Add a slight delay to let the scroll complete smoothly
+  }
+}
+
 
 
 </script>
@@ -162,7 +161,7 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         <!-- PHOTO PROJECT -->
         <div v-if="artwork.category != 'Video'"
             class="h-full w-full px-4"
-        >
+            >
 
             <!-- NEW CAROUSEL -->
             <div class="w-full h-full flex justify-center items-center">
@@ -176,7 +175,7 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
                             updateThisMediaImage(modalImage, imageItems[currentIndex].image);
                             updateThisMediaCaption(modalCaption, imageItems[currentIndex].caption)"
                         class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
-                    >
+                        >
                             
                         <img
                             :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
@@ -193,7 +192,7 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
                     <!--CAROUSEL Caption-->
                     <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
                         class="w-fit brg-txt-caption mt-2"
-                    > 
+                        > 
                         <p> {{ imageItems[currentIndex].caption }} </p>
                     </div>
                                 
@@ -208,12 +207,9 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         
                 
         <!--VIDEO PROJECT-->
-        <div v-else
-            class="h-full px-4 flex items-center"
-            >
+        <div v-else class="h-full px-4 flex items-center">
             
-            <div class="w-full h-full "
-            >
+            <div class="w-full h-full ">
                 <VimeoVideoPlayer :VideoId="artwork.video"/>
             </div>
             
@@ -247,14 +243,10 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         v-model="modalArtImageIsOpen"
         :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
         fullscreen
-    >
-        <div
-            class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2"
         >
+        <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2">
 
-            <div
-                class="h-8 flex-none flex justify-between items-center "
-            >
+            <div class="h-8 flex-none flex justify-between items-center ">
                 <p class="brg-txt-body">
                     {{ modalCaption.value }}
                 </p>
@@ -262,16 +254,14 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
                 <button
                     @click="modalArtImageIsOpen = false"
                     class="brg-cta brg-txt-button h-4 "
-                >
+                    >
                     {{ $t('close') }}
                 </button>
 
             </div>
 
 
-            <div
-                class="flex-1 overflow-hidden flex w-fit mx-auto"
-            >
+            <div class="flex-1 overflow-hidden flex w-fit mx-auto">
                 <img
                     :src="modalImage.value"
                     class="object-contain h-full w-full"

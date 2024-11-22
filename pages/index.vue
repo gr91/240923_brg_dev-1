@@ -25,10 +25,12 @@ const { data: artwork } = await useAsyncData('helloHome', () =>
 //create and populate and array with images'URLs and caption from 'artwork' array
 const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
     ? artwork.value.images.map(image => ({
-    image: image.image,   // The image URL from the markdown file
-    caption: image.caption // The caption from the markdown file
+      image: image.image,   // The image URL from the markdown file
+      caption: image.caption // The caption from the markdown file
     }))
-    : [];
+: [];
+
+
 
 //---------------- CAROUSEL + MODAL SETTING ----------------------
 
@@ -83,10 +85,10 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
 
 
 <template >
-  
-  
-  
-  
+
+
+
+
   <!--FIT TO SCREEN section-->
   <div class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 ">
 
@@ -167,26 +169,6 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
 
       
   </UModal>
-  
-  
-  
-  
-  
-  
-  
-  <div style="border: solid;">
-
-    <p>------------------</p>
-    <p><strong>contentPath</strong>: {{ contentPath }}</p> <br>
-
-    <p>------------------</p>
-    <p><strong>artwork</strong>: {{ artwork }}</p> <br>
-
-    <p>------------------</p>
-    <p><strong>imageItems</strong>: {{ imageItems }}</p> <br>
-
-
-  </div>
 
 
 
