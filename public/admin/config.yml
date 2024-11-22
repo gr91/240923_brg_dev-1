@@ -14,6 +14,54 @@ i18n:
 
 
 collections:
+
+
+
+  #HOME collection
+  - name: 'home'
+    label: 'Home'
+    folder: 'content/home'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    #Add i18n configuration----------
+    i18n: true
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        #Add i18n configuration----------
+        i18n: duplicate
+
+      - label: 'Subtitle'
+        name: 'subtitle'
+        widget: 'string'
+        required: false
+        #Add i18n configuration----------
+        i18n: duplicate
+      
+      - label: 'Images'
+        name: 'images'
+        widget: 'list'
+        required: false
+        summary: '{{fields.image}} - {{fields.caption}}'
+        #Add i18n configuration----------
+        i18n: true
+        fields:
+          - label: 'Image'
+            name: 'image'
+            widget: 'image'
+          - label: 'Caption'
+            name: 'caption'
+            widget: 'string'
+            hint: 'Image caption'
+            required: false
+
+
+
+  #ARTWORKS collection
   - name: 'artworks'
     label: 'Artworks'
     folder: 'content/artworks'
@@ -106,6 +154,7 @@ collections:
 
 
 
+  #BOOKS collection
   - name: 'books'
     label: 'Books'
     folder: 'content/books'
@@ -200,7 +249,7 @@ collections:
 
 
 
-#---NEW BIO FILE COLLECTION-----------------------------------------
+  #BIO collection
   - name: 'bio'
     label: 'Bio'
     #Add i18n configuration----------
