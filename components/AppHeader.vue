@@ -5,7 +5,7 @@ const localePath = useLocalePath()
 const { locale, setLocale } = useI18n()
 
 //------Slideover
-const isOpen = ref(false)
+const modalMenuIsOpen = ref(false)
 
 </script>
 
@@ -47,7 +47,7 @@ const isOpen = ref(false)
                 </div>
                 <div class="justify-end items-center gap-8 flex">
                     <div class="justify-center items-center gap-2.5 flex">
-                        <a @click="isOpen = true">Menu</a>
+                        <a @click="modalMenuIsOpen = true">Menu</a>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ const isOpen = ref(false)
         
         <!-- MOBILE SLIDE OVER-->
         <USlideover
-        v-model="isOpen"
+        v-model="modalMenuIsOpen"
         :overlay="false"
         :ui="{
             background:'bg-BRG-white'
@@ -68,36 +68,36 @@ const isOpen = ref(false)
             <div class="h-12 flex justify-between items-center"> <!--style="border:solid blue " -->
                 <UButton
                     variant="ghost"
-                    @click="isOpen = false" :to="localePath('/')"
+                    @click="modalMenuIsOpen = false" :to="localePath('/')"
                 >
                     <p class="brg-txt-big">Bruna Ginammi</p>
                 </UButton>
 
-                <p @click="isOpen = false" class="brg-txt-big">{{ $t('close') }}</p>
+                <p @click="modalMenuIsOpen = false" class="brg-txt-big">{{ $t('close') }}</p>
             </div>
             
             <div class="flex-1 gap-2 flex flex-col justify-center brg-txt-heading">  <!--style="border: solid red 1px;" -->             
                 <UButton variant="ghost"
-                    @click="isOpen = false" :to="localePath('/artworks')">
+                    @click="modalMenuIsOpen = false" :to="localePath('/artworks')">
                     <p class="brg-txt-heading">{{ $t('artworks') }}</p>
                 </UButton>
                 <UButton variant="ghost"
-                    @click="isOpen = false" :to="localePath('/books')">
+                    @click="modalMenuIsOpen = false" :to="localePath('/books')">
                     <p class="brg-txt-heading">{{ $t('books') }}</p>
                 </UButton>
                 <UButton variant="ghost"
-                    @click="isOpen = false" :to="localePath('/bio')">
+                    @click="modalMenuIsOpen = false" :to="localePath('/bio')">
                     <p class="brg-txt-heading">{{ $t('bio') }}</p>
                 </UButton>
                 <UButton variant="ghost"
-                    @click="isOpen = false" :to="localePath('/static-pages/contacts')">
+                    @click="modalMenuIsOpen = false" :to="localePath('/static-pages/contacts')">
                     <p class="brg-txt-heading">{{ $t('contacts') }}</p>
                 </UButton>
 
             </div>
             <div class="h-12 pl-2 flex items-center justify-start" >
-                <p v-if="locale == ('it')" @click="setLocale('en'); isOpen = false">ENG</p>
-                <p v-else="locale == ('en')" @click="setLocale('it'); isOpen = false">ITA</p>  
+                <p v-if="locale == ('it')" @click="setLocale('en'); modalMenuIsOpen = false">ENG</p>
+                <p v-else="locale == ('en')" @click="setLocale('it'); modalMenuIsOpen = false">ITA</p>  
             </div>
 
       </div>
