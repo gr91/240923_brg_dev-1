@@ -1,4 +1,4 @@
-<script setup >
+<script setup  >
 
 
 //------i18n configuration (from nuxtjs/i18n docs)------
@@ -8,9 +8,6 @@ const { locale, setLocale } = useI18n();
 const route = useRoute()      
 const actualPath = route.path.replace(/\/$/, '');
 
-
-
-
 //edit actualPath to remove locale prefix and incldue locale sub folder in content path
 const marker = '/artworks/';
 const index = actualPath.indexOf(marker);
@@ -19,9 +16,6 @@ const thisArtworkPath = `/artworks/${locale.value}/${cleanedPath}`;
 
 //produce a unique key for useAsyncData that includes locale
 const myKey = `${locale.value}-${cleanedPath}`;
-
-
-
 
 //query data via useAsyncData composable
 const { data: artwork } = await useAsyncData(myKey, () =>
@@ -35,23 +29,6 @@ const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
     caption: image.caption // The caption from the markdown file
     }))
     : [];
-
-
-
-
-//add carousel autoplay configuration
-const carouselRef = ref();
-
-onMounted(() => {
-    setInterval(() => {
-        if (!carouselRef.value) return
-        
-        if (carouselRef.value.page === carouselRef.value.pages) {
-            return carouselRef.value.select(0)
-        }
-        carouselRef.value.next()
-    }, 6000)
-});
 
 
 
@@ -71,6 +48,56 @@ const scrollTo = (hash) => {
   }
 }
 
+
+
+
+//----------------NEW CAROUSEL SETTING ----------------------
+
+const currentIndex = ref(0);
+const modalArtImageIsOpen = ref(false);
+let interval;
+
+
+function startCarousel() {
+    // Change the image every 3 seconds (3000ms)
+    interval = setInterval(() => {
+        currentIndex.value = (currentIndex.value +1) % imageItems.length;
+    }, 4000);
+}
+
+function stopCarousel() {
+    clearInterval(interval);
+}
+
+onMounted(() => {
+    startCarousel();
+})
+
+
+// Watch the modal state to pause/resume the counter
+watch(modalArtImageIsOpen, (newValue) => {
+    if (newValue) {
+        stopCarousel;
+    }
+    else {
+        startCarousel;
+    }
+})
+
+
+// Define the reactive object
+const modalImage = ref({ value: '' });
+const modalCaption = ref({ value: '' });
+
+// Update function without TypeScript type annotations
+function updateThisMediaImage(modalImage, currentImage) {
+  modalImage.value = currentImage;
+}
+
+// Update function without TypeScript type annotations
+function updateThisMediaCaption(modalCaption, currentCaption) {
+    modalCaption.value = currentCaption;
+}
 
 </script>
 
@@ -99,10 +126,12 @@ const scrollTo = (hash) => {
                 <!------------------MODIFY CONDITIONS HERE----------------->
                 
             </div>
+
             <div class="self-stretch brg-txt-heading">
                 <h1>{{ artwork.title }}</h1>
                 <h1>{{ artwork.subtitle }}</h1>
             </div>
+
         </div> 
         
         
@@ -113,6 +142,7 @@ const scrollTo = (hash) => {
                 <div v-if="artwork.category=='Photo' || artwork.category=='Other'" class="h-4 brg-txt-button brg-cta">{{ $t('images') }}</div>
                 <div v-else class="h-4 brg-txt-button brg-cta">{{ $t('videos') }}</div>
             </a>
+
             <a href="#anchortxt" @click.prevent="scrollTo('#anchortxt')">
                 <div class="h-4 brg-txt-button brg-cta">{{ $t('texts') }}</div>
             </a>
@@ -127,24 +157,29 @@ const scrollTo = (hash) => {
     <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
         
 
-        <!--PHOTO PROJECT-->
-        <div v-if="artwork.category != 'Video'" class="h-full" >
-            
-            <!--CAROUSEL-->
-            <UCarousel
-                v-slot="{ item, index }"
-                :items="imageItems"
-                :ui="{ item: 'w-full px-4 md:px-0 border-black'}"
-                ref="carouselRef"
-                style=""
-                class="h-full md:px-4 flex scroll-mt-48 "
-            >
-            
-                <div class="h-full m-auto flex flex-col justify-start items-start md:px-4" >
-                    
+
+
+        <!-- PHOTO PROJECT -->
+        <div v-if="artwork.category != 'Video'"
+            class="h-full w-full px-4"
+        >
+
+            <!-- NEW CAROUSEL -->
+            <div class="w-full h-full flex justify-center items-center">
+                
+                <div class="h-full w-fit flex flex-col justify-start items-start" >
+                
                     <!--CAROUSEL Images-->
-                    <div class="w-fit h-full min-h-0 max-h-full flex" > 
-                        <img :src="item.image" :alt="item.caption"
+                    <button
+                        @click="
+                            modalArtImageIsOpen = true;
+                            updateThisMediaImage(modalImage, imageItems[currentIndex].image);
+                            updateThisMediaCaption(modalCaption, imageItems[currentIndex].caption)"
+                        class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
+                    >
+                            
+                        <img
+                            :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
                             draggable="false"
                             class="max-w-full object-contain"
                             style="
@@ -152,50 +187,103 @@ const scrollTo = (hash) => {
                                 max-height: 100%;
                                 display: block;"
                         >
-                    </div>
-                            
+
+                    </button>
+                                
                     <!--CAROUSEL Caption-->
-                    <div v-if="item.caption" class="w-fit brg-txt-caption mt-2"> 
-                        <p> {{ item.caption }} </p>
+                    <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
+                        class="w-fit brg-txt-caption mt-2"
+                    > 
+                        <p> {{ imageItems[currentIndex].caption }} </p>
                     </div>
-                            
+                                
                 </div>
-                    
-                </UCarousel>
-                
+
             </div>
+
             
+        </div>
+
         
-            
+        
+                
         <!--VIDEO PROJECT-->
         <div v-else
             class="h-full px-4 flex items-center"
-        >
-
+            style="border: solid ;"
+            >
+            
             <div class="flex-auto">
                 <VimeoVideoPlayer :VideoId="artwork.video"/>
             </div>
-
+            
         </div>
+    
 
 
+        
     </div>
-
-
+    
+    
 
 
     <!--SCROLL section-->
     <div
         class="w-full md:max-w-xl min-h-dvh p-4 scroll-mt-36 md:scroll-mt-48 brg-txt-body"
         id="anchortxt"
-    >
-
+        >
+        
         <div v-for="item in artwork.description">
             <MDC :value="item.text" class="mb-12"/>
         </div>
-
+        
     </div>
+
     
+
+
+    <!--IMAGE MODAL-->
+    <UModal
+        v-model="modalArtImageIsOpen"
+        :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
+        fullscreen
+    >
+        <div
+            class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2"
+        >
+
+            <div
+                class="h-8 flex-none flex justify-between items-center "
+            >
+                <p class="brg-txt-body">
+                    {{ modalCaption.value }}
+                </p>
+
+                <button
+                    @click="modalArtImageIsOpen = false"
+                    class="brg-cta brg-txt-button h-4 "
+                >
+                    {{ $t('close') }}
+                </button>
+
+            </div>
+
+
+            <div
+                class="flex-1 overflow-hidden flex w-fit mx-auto"
+            >
+                <img
+                    :src="modalImage.value"
+                    class="object-contain h-full w-full"
+                >
+            </div>
+            
+
+        </div>            
+
+        
+    </UModal>
+
 
 
 
