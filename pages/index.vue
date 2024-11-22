@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup >
 
 
 //add Netlify Identity Widget 
@@ -8,42 +8,75 @@ useHead({
   ],
 });
 
+
+
 //------i18n configuration (from nuxtjs/i18n docs)------
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
 
 //produce content path and dynamic key based on locale
-const contentPath = `/artworks/${locale.value}`;
+const contentPath = `/home/${locale.value}/home-project`;
 
-//execute content query
-const { data: artworks } = await useAsyncData('helloHome', () => {
-  return queryContent(contentPath)
-  .sort({beginyear: 1})
-  .find()
-});
+//query data via useAsyncData composable
+const { data: artwork } = await useAsyncData('helloHome', () =>
+    queryContent(contentPath).findOne()
+);
 
-//Find thr artwork to use for the homepage, based on its slug
-const homeArtwork = artworks.value?.find(artwork => artwork._path === `/artworks/${locale.value}/2024-11-08-il-corpo-dell'identita`);
-
-//create and populate and array with images'URLs and caption from 'homeArtwork' object
-const imageItems = homeArtwork?.images.map((image: { image: string; caption: string; }) => ({
+//create and populate and array with images'URLs and caption from 'artwork' array
+const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
+    ? artwork.value.images.map(image => ({
     image: image.image,   // The image URL from the markdown file
     caption: image.caption // The caption from the markdown file
-    }));
+    }))
+    : [];
 
-//add carousel autoplay configuration
-const carouselRef = ref();
+//---------------- CAROUSEL + MODAL SETTING ----------------------
+
+const currentIndex = ref(0);
+const modalArtImageIsOpen = ref(false);
+let interval;
+
+function startCarousel() {
+    // Change the image every 3 seconds (3000ms)
+    interval = setInterval(() => {
+        currentIndex.value = (currentIndex.value +1) % imageItems.length;
+    }, 4000);
+}
+
+function stopCarousel() {
+    clearInterval(interval);
+}
 
 onMounted(() => {
-    setInterval(() => {
-        if (!carouselRef.value) return
-        
-        if (carouselRef.value.page === carouselRef.value.pages) {
-            return carouselRef.value.select(0)
-        }
-        carouselRef.value.next()
-    }, 6000)
-});
+    startCarousel();
+})
+
+// Watch the modal state to pause/resume the counter
+watch(modalArtImageIsOpen, (newValue) => {
+    if (newValue) {
+        stopCarousel;
+    }
+    else {
+        startCarousel;
+    }
+})
+
+// Define the reactive object
+const modalImage = ref({ value: '' });
+const modalCaption = ref({ value: '' });
+
+// Update function without TypeScript type annotations
+function updateThisMediaImage(modalImage, currentImage) {
+  modalImage.value = currentImage;
+}
+
+// Update function without TypeScript type annotations
+function updateThisMediaCaption(modalCaption, currentCaption) {
+    modalCaption.value = currentCaption;
+}
+
+//--------------------------------------------------------------
+
 
 </script>
 
@@ -56,67 +89,104 @@ onMounted(() => {
   
   <!--FIT TO SCREEN section-->
   <div class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 ">
-    
-    
-    
-    
-    <!--CAROUSEL-->
-    <UCarousel
-    v-slot="{ item, index }"
-    :items="imageItems"
-    :ui="{ item: 'w-full px-4 md:px-0 py-16'}"
-    ref="carouselRef"
-    class="h-full md:px-4 flex scroll-mt-48 "
-    >
-    
-    <div class="h-full m-auto flex flex-col justify-start items-start ">
-      
-      <!--CAROUSEL Images-->
-      <div class="w-fit h-full min-h-0 max-h-full flex"> 
-        <img :src="item.image" :alt="item.caption"
-        draggable="false"
-        style="
-                    max-width: 100%;
-                    max-height: 100%;
-                    display: block;"
-                    class="max-w-full object-contain"
-                    >
-                  </div>
-                  
-                  <!--CAROUSEL Caption-->
-                  <div class="w-fit brg-txt-caption"> 
-                    <p> {{ item.caption }} </p>
-                  </div>
-                  
-                </div>
+
+        <!-- NEW CAROUSEL -->
+    <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-10">
                 
-              </UCarousel>
-              
-              
-            </div>
+      <div class="h-full w-fit flex flex-col justify-start items-start" >
+                
+        <!--CAROUSEL Images-->
+        <button
+          @click="
+            modalArtImageIsOpen = true;
+            updateThisMediaImage(modalImage, imageItems[currentIndex].image);
+            updateThisMediaCaption(modalCaption, imageItems[currentIndex].caption)"
+          class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
+          >
+                            
+          <img
+            :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
+            draggable="false"
+            class="max-w-full object-contain"
+            style="
+              max-width: 100%;
+              max-height: 100%;
+              display: block;"
+          >
+
+        </button>
+                                
+        <!--CAROUSEL Caption-->
+        <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
+          class="w-fit brg-txt-caption mt-2"
+          > 
+          <p> {{ imageItems[currentIndex].caption }} </p>
+        </div>
+                                
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--IMAGE MODAL-->
+  <UModal
+    v-model="modalArtImageIsOpen"
+    :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
+    fullscreen
+    >
+
+      <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2">
+
+
+        <div class="h-8 flex-none flex justify-between items-center ">
+          <p class="brg-txt-body">
+            {{ modalCaption.value }}
+          </p>
+
+          <button
+              @click="modalArtImageIsOpen = false"
+              class="brg-cta brg-txt-button h-4 "
+              >
+              {{ $t('close') }}
+          </button>
+
+        </div>
+
+
+        <div class="flex-1 overflow-hidden flex w-fit mx-auto">
+          <img
+            :src="modalImage.value"
+            class="object-contain h-full w-full"
+            >
+        </div>
             
-            
-            
-            
-            <!--
-              <div class="mt-40">
-                <p>----------------</p>
-                <br>
-                <br>
-                <p>{{ artworks }}</p>
-                <p>----------------</p>
-                <br><br><br>
-                <p><strong>artworks items</strong></p>
-                <div v-for="item of artworks">
-                  <p>{{ item }}</p><br>
-                </div>
-                <p>----------------</p>
-                <p><strong>homeArtwork</strong>: {{ homeArtwork }}</p>
-                <br><br><br>
-                <p>----------------</p>
-                <p>{{ homeArtwork?.images }}</p>
-              </div>
-            -->
+
+      </div>            
+
+      
+  </UModal>
+  
+  
+  
+  
+  
+  
+  
+  <div style="border: solid;">
+
+    <p>------------------</p>
+    <p><strong>contentPath</strong>: {{ contentPath }}</p> <br>
+
+    <p>------------------</p>
+    <p><strong>artwork</strong>: {{ artwork }}</p> <br>
+
+    <p>------------------</p>
+    <p><strong>imageItems</strong>: {{ imageItems }}</p> <br>
+
+
+  </div>
 
 
 
