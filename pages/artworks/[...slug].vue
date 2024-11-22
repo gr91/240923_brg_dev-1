@@ -51,12 +51,11 @@ const scrollTo = (hash) => {
 
 
 
-//----------------NEW CAROUSEL SETTING ----------------------
+//---------------- CAROUSEL + MODAL SETTING ----------------------
 
 const currentIndex = ref(0);
 const modalArtImageIsOpen = ref(false);
 let interval;
-
 
 function startCarousel() {
     // Change the image every 3 seconds (3000ms)
@@ -73,7 +72,6 @@ onMounted(() => {
     startCarousel();
 })
 
-
 // Watch the modal state to pause/resume the counter
 watch(modalArtImageIsOpen, (newValue) => {
     if (newValue) {
@@ -83,7 +81,6 @@ watch(modalArtImageIsOpen, (newValue) => {
         startCarousel;
     }
 })
-
 
 // Define the reactive object
 const modalImage = ref({ value: '' });
@@ -98,6 +95,9 @@ function updateThisMediaImage(modalImage, currentImage) {
 function updateThisMediaCaption(modalCaption, currentCaption) {
     modalCaption.value = currentCaption;
 }
+
+//--------------------------------------------------------------
+
 
 </script>
 
