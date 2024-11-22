@@ -210,10 +210,10 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         <!--VIDEO PROJECT-->
         <div v-else
             class="h-full px-4 flex items-center"
-            style="border: solid ;"
             >
             
-            <div class="flex-auto">
+            <div class="w-full h-full "
+            >
                 <VimeoVideoPlayer :VideoId="artwork.video"/>
             </div>
             
