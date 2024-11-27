@@ -38,30 +38,16 @@ const currentIndex = ref(0);
 const modalArtImageIsOpen = ref(false);
 let interval;
 
-function startCarousel() {
-    // Change the image every 3 seconds (3000ms)
+onMounted(() => {
     interval = setInterval(() => {
         currentIndex.value = (currentIndex.value +1) % imageItems.length;
     }, 4000);
-}
+});
 
-function stopCarousel() {
-    clearInterval(interval);
-}
-
-onMounted(() => {
-    startCarousel();
-})
-
-// Watch the modal state to pause/resume the counter
-watch(modalArtImageIsOpen, (newValue) => {
-    if (newValue) {
-        stopCarousel;
-    }
-    else {
-        startCarousel;
-    }
-})
+onBeforeUnmount(() => {
+  // Clear the interval on component unmount
+  clearInterval(interval);
+});
 
 // Define the reactive object
 const modalImage = ref({ value: '' });
