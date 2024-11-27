@@ -16,6 +16,8 @@ images:
     caption: Senza titolo-abbraccio
   - image: /img/take-me-i-m-yours.png
     caption: Take me I'm yours
+  - image: /img/ho-me-24-marzo-2021.png
+    caption: HO ME
 description:
   - text: >-
       I started taking photos of myself in 1994 to get to know myself in greater
