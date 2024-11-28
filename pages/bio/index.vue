@@ -1,77 +1,27 @@
 <script setup>
 
-
-
 //------i18n configuration (from nuxtjs/i18n docs)------
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
 
-
+const mykey = `newBio-${locale.value}`;
 
 //------PERFORM QUARIES------//
 
 //Entire bio --- FOR TEST ONSLY
-    //const { data: bio } = await useAsyncData('bio', () => {
-    //    return queryContent('/bio')
-    //    .find()
-    //});
+const { data: bio } = await useAsyncData(mykey, () => {
+        return queryContent('/bio')
+        .find()
+    });
 
-//Biography
-const { data: extractBiography } = await useAsyncData('biography', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/biography'})
-    .find()
-});
-const biography = extractBiography.value[0];
-
-//Awards
-const { data: extractAwards } = await useAsyncData('awards', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/awards'})
-    .find()
-});
-const awards = extractAwards.value[0].it.award;
-
-//Public Collections
-const { data: extractPublicColl } = await useAsyncData('publicColl', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/publiccoll'})
-    .find()
-});
-const publicColls = extractPublicColl.value[0].it.collection;
-
-//Solo Exhibitions
-const { data: extractSoloExhib } = await useAsyncData('soloExhib', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/soloexhib'})
-    .find()
-});
-const soloExhibs = extractSoloExhib.value[0].it.exhib;
-
-//Group Exhibitions
-const { data: extractGropuExhib } = await useAsyncData('groupExhib', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/groupexhib'})
-    .find()
-});
-const groupExhibs = extractGropuExhib.value[0].it.exhib;
-
-//Pubblications
-const { data: extractPubblications } = await useAsyncData('pubblications', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/pubblications'})
-    .find()
-});
-const pubblications = extractPubblications.value[0].it.pubblication;
-
-//Magazines
-const { data: extractMagazines } = await useAsyncData('magazines', () => {
-    return queryContent('/bio')
-    .where({_path: '/bio/magazines'})
-    .find()
-});
-const magazines = extractMagazines.value[0].it.magazine;
-
+//Split bio collections
+const biography = bio.value.find(item => item._path === '/bio/biography');
+const awards = bio.value.find(item => item._path === '/bio/awards').it.award;
+const publicColls = bio.value.find(item => item._path === '/bio/publiccoll').it.collection;
+const soloExhibs = bio.value.find(item => item._path ==='/bio/soloexhib').it.exhib;
+const groupExhibs = bio.value.find(item => item._path ==='/bio/groupexhib').it.exhib;
+const pubblications = bio.value.find(item => item._path ==='/bio/pubblications').it.pubblication;
+const magazines = bio.value.find(item => item._path ==='/bio/magazines').it.magazine;
 
 
 // set scrollTo function to ensure scroll to section not affect browser history
@@ -141,12 +91,8 @@ const scrollTo = (hash) => {
         <div class="w-full md:max-w-xl mt-6 mb-12 scroll-mt-44 md:scroll-mt-48" id="biography"> <!--style="border:solid grey 2px" -->
             <img :src="biography.it.image" class="w-40 md:w-60 mb-10">
             <h3 class="brg-txt-heading mb-4">{{ $t('biography') }}</h3>
-            <div v-if="locale == String('it')">
-                <MDC :value="biography.it.text" class="brg-txt-body"/>
-            </div>
-            <div v-else>
-                <MDC :value="biography.en.text" class="brg-txt-body"/>
-            </div>
+            <MDC v-if="locale === 'it'" :value="biography.it.text" />
+            <MDC v-else-if="locale === 'en'" :value="biography.en.text" />
         </div>
         
         
