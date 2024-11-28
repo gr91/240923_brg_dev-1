@@ -1,6 +1,7 @@
 ---
 title: La poesia salva il mondo
-beginyear: 2023
+beginyear: 2022
+endyear: 2023
 category: Other
 images:
   - image: /img/brunaginammi_lapoesiasalvailmondo_foglioa4_210x297mm_ph©rolandopaologuerzoni-2.png
