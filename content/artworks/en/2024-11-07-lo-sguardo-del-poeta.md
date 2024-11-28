@@ -8,7 +8,7 @@ images:
   - image: /img/alda-merini-.png
     caption: Alda Merini
   - image: /img/amelia-rosselli-copia.png
-    caption: Amalia Rosselli
+    caption: Amelia Rosselli
   - image: /img/attilio-bertolucci-copia-2.png
     caption: Attilio Bertolucci
   - image: /img/biancamaria-frabotta-2.png
