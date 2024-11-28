@@ -17,13 +17,7 @@ const { data: artworks } = await useAsyncData(myKey, () => {
 });    
 
 
-//Artworks filter variables
-const photoIsActive = ref (true);
-const videoIsActive = ref (true);
-const otherIsActive = ref (true);
-
-
-//---------------------
+//------artwork filter setup------
 type filterItem = {
     category: string;
     isActive: boolean;
@@ -78,17 +72,11 @@ function updateFilter (
 
 
 
-<template>
-    <!----Variable test print----
-    <p>----------------------------------------</p>
-    <p>VARIABLES PRINT TEST</p>
-    <p><strong>locale: </strong>{{ locale }}</p>
-    <p><strong>contentPath: </strong>{{ contentPath }}</p>
-    <p><strong>myKey: </strong>{{ myKey }}</p>
-    <p>----------------------------------------</p>
-    -->
+<template>    
     
-    
+
+
+
     <!--ARTWORK Heading section + navigation buttons-->
     <div class="h-32 md:h-24" ></div> <!--style="border:solid red" -->
     
@@ -120,27 +108,29 @@ function updateFilter (
 
     
     <!--ARTWORK List-->
-    <div class="px-4 pt-4 md:pt-0"
-    >
+    <div class="px-4 pt-4 md:pt-0">
 
-        <div v-for="artwork of artworks" :key="artwork.slug" class="mb-8">
-    
-    
-            <!--Build photo artworks-->
-            <div v-if="artwork.category == String('Photo')">
-                
-                <!--Check if photo artworks are selected-->
-                <div v-if="filter[0].isActive == true">
-                    <!--Edit artwork._path to remove locale marker from content path-->
-                    <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)">
-                        <div  class=" flex-col justify-start items-start inline-flex" >
-    
-                            <div class="self-stretch brg-txt-body">
+        <!--Iterate for each artworks-->
+        <div v-for="artwork of artworks" :key="artwork.slug" class="">
+            
+            <!--Iterate for each filter's category-->
+            <div v-for="filterItem in filter" :key="filterItem.category">
+
+                <!--Check if filter's category that match artwork's category-->
+                <div v-if="filterItem.category == artwork.category">
+                    
+                    <!--Check if filter's category is active -->
+                    <!--Build an active link -->
+                    <div v-if="filterItem.isActive == true" 
+                        class=" flex-col justify-start items-start inline-flex pb-10 md:hover:translate-x-4 transition duration-500" >
+                        <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" class="h-full" >
+                            
+                            <div class="self-stretch brg-txt-body ">
                                 <div v-if="artwork.inprogress == true">
-                                    <p>{{ artwork.beginyear }} – In progress</p>
+                                    <p>{{ artwork.beginyear }} – {{ $t('inprogress') }}</p>
                                 </div>
                                 <div v-else>
-                                    <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                                    <p v-if="artwork.endyear && artwork.endyear != ''"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                                     <p v-else>{{ artwork.beginyear }}</p>
                                 </div>
                             </div>
@@ -149,12 +139,13 @@ function updateFilter (
                                 <h1>{{ artwork.title }}</h1>
                                 <h1>{{ artwork.subtitle }}</h1>
                             </div>
-                        </div>
-                    </NuxtLink>
-                </div>
-                
-                <div v-else>
-                    <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
+                        </NuxtLink>
+                    </div>
+                    
+                    <!--else -->
+                    <!--build a non-active link -->
+                    <div v-else
+                        class=" flex-col justify-start items-start inline-flex pb-10 opacity-20" >
                         <div class="self-stretch brg-txt-body">
                             <div v-if="artwork.inprogress == true">
                                 <p>{{ artwork.beginyear }} – In progress</p>
@@ -169,103 +160,11 @@ function updateFilter (
                             <h1>{{ artwork.subtitle }}</h1>
                         </div>
                     </div>
+                    
                 </div>
-                
+
             </div>
-            
-            
-            
-            <!--Build video artworks-->
-            <div v-if="artwork.category == String('Video')">
-                
-                <!--Check if video artworks are selected-->
-                <div v-if="filter[1].isActive == true">
-                    <!--Edit artwork._path to remove locale marker from content path-->
-                    <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
-                        <div  class=" flex-col justify-start items-start inline-flex" >
-                            <div class="self-stretch brg-txt-body">
-                                <div v-if="artwork.inprogress == true">
-                                    <p>{{ artwork.beginyear }} – In progress</p>
-                                </div>
-                                <div v-else>
-                                    <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                                    <p v-else>{{ artwork.beginyear }}</p>
-                                </div>
-                            </div>
-                            <div class="self-stretch brg-txt-heading">
-                                <h1>{{ artwork.title }}</h1>
-                                <h1>{{ artwork.subtitle }}</h1>
-                            </div>
-                        </div>
-                    </NuxtLink>
-                </div>
-                
-                <div v-else>
-                    <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
-                        <div class="self-stretch brg-txt-body">
-                            <div v-if="artwork.inprogress == true">
-                                <p>{{ artwork.beginyear }} – In progress</p>
-                            </div>
-                            <div v-else>
-                                <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                                <p v-else>{{ artwork.beginyear }}</p>
-                            </div>
-                        </div>
-                        <div class="self-stretch brg-txt-heading">
-                            <h1>{{ artwork.title }}</h1>
-                            <h1>{{ artwork.subtitle }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            
-            <!--Build other artworks-->
-            <div v-if="artwork.category == String('Other')">
-                
-                <!--Check if other artworks are selected-->
-                <div v-if="filter[2].isActive == true">
-                    <!--Edit artwork._path to remove locale marker from content path-->
-                    <NuxtLink :to="localePath(`/artworks${artwork._path?.substring(12)}`)" >
-                        <div  class=" flex-col justify-start items-start inline-flex" >
-                            <div class="self-stretch brg-txt-body">
-                                <div v-if="artwork.inprogress == true">
-                                    <p>{{ artwork.beginyear }} – In progress</p>
-                                </div>
-                                <div v-else>
-                                    <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                                    <p v-else>{{ artwork.beginyear }}</p>
-                                </div>
-                            </div>
-                            <div class="self-stretch brg-txt-heading">
-                                <h1>{{ artwork.title }}</h1>
-                                <h1>{{ artwork.subtitle }}</h1>
-                            </div>
-                        </div>
-                    </NuxtLink>
-                </div>
-                
-                <div v-else>
-                    <div  class=" flex-col justify-start items-start inline-flex opacity-20" >
-                        <div class="self-stretch brg-txt-body">
-                            <div v-if="artwork.inprogress == true">
-                                <p>{{ artwork.beginyear }} – In progress</p>
-                            </div>
-                            <div v-else>
-                                <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
-                                <p v-else>{{ artwork.beginyear }}</p>
-                            </div>
-                        </div>
-                        <div class="self-stretch brg-txt-heading">
-                            <h1>{{ artwork.title }}</h1>
-                            <h1>{{ artwork.subtitle }}</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-                
+    
         </div>
 
     </div>

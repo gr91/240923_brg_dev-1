@@ -100,15 +100,13 @@ const scrollTo = (hash) => {
         <div class="h-30 md:h-24 flex-col justify-start items-start inline-flex" > 
             <div class="self-stretch brg-txt-body">
 
-                <!------------------MODIFY CONDITIONS HERE----------------->
                 <div v-if="artwork.inprogress == true">
-                    <p>{{ artwork.beginyear }} – In progress</p>
+                    <p>{{ artwork.beginyear }} – {{ $t('inprogress') }}</p>
                 </div>
                 <div v-else>
-                    <p v-if="artwork.endyear"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
+                    <p v-if="artwork.endyear && artwork.endyear != ''"> {{ artwork.beginyear }}–{{ artwork.endyear }} </p>
                     <p v-else>{{ artwork.beginyear }}</p>
                 </div>
-                <!------------------MODIFY CONDITIONS HERE----------------->
                 
             </div>
 

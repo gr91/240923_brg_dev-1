@@ -29,6 +29,8 @@ export default defineI18nConfig(() => ({
         
         photographer:'Fotografa',
         designanddev:'Design e sviluppo',
+
+        inprogress: 'In corso',
       },
       en: {
         welcome: 'Welcome',
@@ -56,6 +58,8 @@ export default defineI18nConfig(() => ({
         
         designanddev:'Design and development',
         photographer:'Photographer',
+
+        inprogress: 'In progress',
       }
     }
   }))
