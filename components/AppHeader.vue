@@ -56,12 +56,26 @@ const modalMenuIsOpen = ref(false)
         <!-- MOBILE SLIDE OVER-->
         <USlideover
         v-model="modalMenuIsOpen"
-        :overlay="false"
-        :ui="{
-            background:'bg-BRG-white'
-        }"
+            :ui="{
+                background:'bg-BRG-white',
+                overlay:{
+                    background: 'bg-BRG-white',
+                    transition:{
+                        enter: 'ease-in-out duration-700',
+                        enterFrom: 'opacity-0',
+                        enterTo: 'opacity-100',
+                        leave: 'ease-in-out duration-700',
+                        leaveFrom: 'opacity-100',
+                        leaveTo: 'opacity-0'
+                    }
+                },
+                transition: {
+                    enter:' transform transition ease-in-out duration-700',
+                    leave:' transform transition ease-in-out duration-700',
+                }
+            }"
         
-        class="bg-BRG-white"
+        
         >
         <div class=" h-full pl-2 pr-4 flex flex-col"> <!--style="border:solid "-->
             
