@@ -21,8 +21,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/mdc',
-    'nuxt-anchorscroll'
-  ],
+    'nuxt-anchorscroll',
+    '@nuxt/image'],
 
   postcss: {
     plugins: {
