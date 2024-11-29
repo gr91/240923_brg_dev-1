@@ -48,7 +48,14 @@ function updateThisMediaCaption (
             
             <!--COVER-->
             <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
-                <img :src="book.cover" class="w-full mb-4">
+                <NuxtImg
+                    :src="book.cover"
+                    sizes="400px md:1200px"
+                    format="webp"
+                    quality="100"
+
+                    class="w-full mb-4"
+                    />
             </div>
             
             <!--HEADING-->
