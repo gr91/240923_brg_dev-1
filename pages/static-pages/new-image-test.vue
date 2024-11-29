@@ -102,6 +102,9 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
           <NuxtImg
             :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
             format="webp"
+            quality="100"
+            loading="lazy"
+            
 
             class="object-contain w-full h-full"
             style="border: solid red 5px;"

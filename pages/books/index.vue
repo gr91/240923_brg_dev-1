@@ -53,6 +53,7 @@ function updateThisMediaCaption (
                     sizes="400px md:1200px"
                     format="webp"
                     quality="100"
+                    loading="lazy"
 
                     class="w-full mb-4"
                     />
