@@ -5,7 +5,7 @@ const currentYear = computed(() => new Date().getFullYear());
 <template>
 
     <div class="w-full min-h-12 px-4 flex items-center">
-        <div class="w-full min-h-12 flex flex-col items-center justify-center md:flex-row md:justify-start md:gap-4" style="border-top:solid lightgray;">
+        <div class="w-full min-h-12 flex flex-col items-center justify-center md:flex-row md:justify-start md:gap-4" style="border-top:solid lightgray 1px;">
             
             <div class="h-min w-full md:max-w-60 brg-txt-caption">
                 <p>© Bruna Ginammi, {{ currentYear }}</p>

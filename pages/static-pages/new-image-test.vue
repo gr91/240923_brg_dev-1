@@ -103,7 +103,7 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
             :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
             format="webp"
 
-            class="object-container w-full h-full"
+            class="object-contain w-full h-full"
             style="border: solid red 5px;"
           />
 
