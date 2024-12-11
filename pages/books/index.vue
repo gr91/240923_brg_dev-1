@@ -106,7 +106,12 @@ function updateThisMediaCaption (
                                 updateThisMediaCaption(modalCaption, book.mediaimagescaption)"
                             >
 
-                            <img :src="image.image" class="h-20 object-container">
+                            <NuxtImg
+                                preload
+                                :src="image.image"
+                                format="webp"
+                                sizes="120px md:400px"
+                                class="h-20 object-container"/>
 
                         </button>
 
@@ -139,9 +144,12 @@ function updateThisMediaCaption (
                         </div>
 
                         <div class="flex-1 overflow-hidden flex w-fit mx-auto" >
-                            <img :src="modalImage.value"
+                            <NuxtImg
+                                preload
+                                :src="modalImage.value"
+                                format="webp"
                                 class="object-contain h-full w-full"
-                                >
+                                />
                         </div>
 
                     </div>            
