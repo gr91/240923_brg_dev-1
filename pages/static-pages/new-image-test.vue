@@ -81,36 +81,25 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         <!-- NEW CAROUSEL -->
     <div
         class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-10"
-        style="border: solid gray 5px;"
+        style="border: solid lightgray 2px;"
         >
                 
       <div
         class="h-full w-fit flex flex-col justify-start items-start"
-        style="border: solid lightgray 5px;"
+        style="border: solid gray 2px;"
         >
                 
         <!--CAROUSEL Images-->
-        <button
-          @click="
-            modalArtImageIsOpen = true;
-            updateThisMediaImage(modalImage, imageItems[currentIndex].image);
-            updateThisMediaCaption(modalCaption, imageItems[currentIndex].caption)"
-            class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
-            style="border: solid blue 5px;"
-          >
-                            
-          <NuxtImg
-            :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
-            format="webp"
-            quality="100"
-            loading="lazy"
-            
+        <NuxtImg
+          :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
+          format="webp"
+          width="600"
+          height="600"
+          fit="contain"
+          sizes="100px"
 
-            class="object-contain w-full h-full"
-            style="border: solid red 5px;"
+          style="border: solid red 3px;"
           />
-
-        </button>
                                 
         <!--CAROUSEL Caption-->
         <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
