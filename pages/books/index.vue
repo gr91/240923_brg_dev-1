@@ -49,11 +49,10 @@ function updateThisMediaCaption (
             <!--COVER-->
             <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
                 <NuxtImg
+                    preload
                     :src="book.cover"
                     sizes="400px md:1200px"
                     format="webp"
-                    quality="100"
-                    loading="lazy"
 
                     class="w-full mb-4"
                     />
