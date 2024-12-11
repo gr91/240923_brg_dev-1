@@ -85,25 +85,30 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
         >
                 
       <div
-        class="h-full w-fit flex flex-col justify-start items-start"
+        class="h-full w-fit flex flex-col justify-start items-start p-4"
         style="border: solid gray 2px;"
         >
                 
         <!--CAROUSEL Images-->
-        <NuxtImg
-          :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
-          format="webp"
-          width="600"
-          height="600"
-          fit="contain"
-          sizes="100px"
+        <div class="flex-auto"
+          style="border: solid green 3px;"
+          >
 
-          style="border: solid red 3px;"
+          <NuxtImg
+            preload
+            :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
+            format="webp"
+  
+            class=" object-contain "
+            style="border: solid red 3px;"
           />
-                                
-        <!--CAROUSEL Caption-->
-        <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
-          class="w-fit brg-txt-caption mt-2"
+
+        </div>
+          
+          <!--CAROUSEL Caption-->
+          <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
+          class=" flex-0 w-fit brg-txt-caption mt-2"
+          style="border: solid green 3px;"
           > 
           <p> {{ imageItems[currentIndex].caption }} </p>
         </div>
