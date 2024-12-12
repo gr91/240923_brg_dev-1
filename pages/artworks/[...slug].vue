@@ -5,6 +5,9 @@
 const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
 
+
+
+//---------------- CONTENT QUERY ----------------------
 const route = useRoute()      
 const actualPath = route.path.replace(/\/$/, '');
 
@@ -63,9 +66,9 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
     modalCaption.value = currentCaption;
 }
 
-//--------------------------------------------------------------
 
 
+//-------------SCROLL SETTING------------------------------
 
 // set scrollTo function to ensure scroll to section not affect browser history
 const scrollTo = (hash) => {
@@ -134,7 +137,7 @@ const scrollTo = (hash) => {
         
     </div>
 
-
+    
 
     <!--FIT TO SCREEN section-->
     <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
