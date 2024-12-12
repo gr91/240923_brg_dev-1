@@ -10,7 +10,10 @@ i18n:
   structure: multiple_folders
   locales: [it, en]
   default_locale: it
-#Add i18n configuration----------
+
+#Sanitize slug name----------
+slug:
+  clean_accents: true
 
 
 collections:
