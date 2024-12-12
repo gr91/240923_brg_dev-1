@@ -48,14 +48,22 @@ function updateThisMediaCaption (
             
             <!--COVER-->
             <div class="drop-shadow-xl w-full max-w-[320px] md:max-w-sm">
-                <NuxtImg
-                    preload
-                    :src="book.cover"
-                    sizes="400px md:1200px"
-                    format="webp"
-
-                    class="w-full mb-4"
+                <button
+                    @click="
+                        modalMediaImageIsOpen = true;
+                        updateThisMediaImage(modalImage, book.cover)
+                        updateThisMediaCaption(modalCaption, String(book.title))"
+                    >
+                    
+                    <NuxtImg
+                        preload
+                        :src="book.cover"
+                        sizes="400px md:1200px"
+                        format="webp"
+                        class="w-full mb-4"
                     />
+
+                </button>
             </div>
             
             <!--HEADING-->
@@ -92,8 +100,6 @@ function updateThisMediaCaption (
             <div>
 
 
-
-
                 <!--IMAGES-->
                 <div v-if="book.mediaimages" class="mb-8"> 
 
@@ -121,61 +127,59 @@ function updateThisMediaCaption (
                     
                 </div>
 
-                <!--IMAGE MODAL-->
-                <UModal
-                    v-model="modalMediaImageIsOpen"
-                    :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
-                    fullscreen
-                    >
-
-                    <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2" >
-
-                        <div class="h-8 flex-none flex justify-between items-center " >
-
-                            <MDC :value="modalCaption.value" class="brg-txt-body"/>
-
-                            <button
-                                @click="modalMediaImageIsOpen = false"
-                                class="brg-cta brg-txt-button h-4 "
-                                >
-                                {{ $t('close') }}
-                            </button>
-
-                        </div>
-
-                        <div class="flex-1 overflow-hidden flex w-fit mx-auto" >
-                            <NuxtImg
-                                preload
-                                :src="modalImage.value"
-                                format="webp"
-                                class="object-contain h-full w-full"
-                                />
-                        </div>
-
-                    </div>            
-                    
-                </UModal>
-
-
-
-
+                
                 <!--VIDEO-->
                 <div v-if="book.mediavideo" class="mb-8" > 
-                
+                    
                     <div class="max-w-[320px] md:max-w-sm flex items-center mb-2">
                         <YouTubeVideoPlayer :VideoId="book.mediavideo" class="w-full"/>
                     </div>
-                
+                    
                     <MDC :value="book.mediavideocaption" class="brg-txt-caption"/>                    
-                
+                    
                 </div>
-        
-
-
-        
+                
+                
+                
             </div>
-    
+            
 
+
+            
+            <!--IMAGE MODAL-->
+            <UModal
+                v-model="modalMediaImageIsOpen"
+                :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
+                fullscreen
+                >
+
+                <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2" >
+
+                    <div class="h-8 flex-none flex justify-between items-center " >
+
+                        <MDC :value="modalCaption.value" class="brg-txt-body"/>
+
+                        <button
+                            @click="modalMediaImageIsOpen = false"
+                            class="brg-cta brg-txt-button h-4 "
+                            >
+                            {{ $t('close') }}
+                        </button>
+
+                    </div>
+
+                    <div class="flex-1 overflow-hidden flex w-fit mx-auto" >
+                        <NuxtImg
+                            preload
+                            :src="modalImage.value"
+                            format="webp"
+                            class="object-contain h-full w-full"
+                            />
+                    </div>
+
+                </div>            
+                
+            </UModal>
 
 
         </div>
