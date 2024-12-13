@@ -35,13 +35,19 @@ const { data: books } = await useAsyncData(myKey, () => {
                 <div
                     >
                     
-                    <NuxtImg
-                        preload
+                    <img
                         :src="book.cover"
+                        class="w-full mb-4"
+                    >
+                    <!--
+                        <NuxtImg
+                        :src="book.cover"
+                        preload
                         sizes="400px md:1200px"
                         format="webp"
                         class="w-full mb-4"
-                    />
+                        />
+                    -->
 
             </div>
             </div>
@@ -88,12 +94,19 @@ const { data: books } = await useAsyncData(myKey, () => {
                         <div v-for="image in book.mediaimages"
                             >
 
-                            <NuxtImg
+                            <img
+                                :src="image.image"
+                                class="h-20 object-container"
+                            >
+                            <!--
+                                <NuxtImg
                                 preload
                                 :src="image.image"
                                 format="webp"
                                 sizes="120px md:400px"
-                                class="h-20 object-container"/>
+                                class="h-20 object-container"
+                                />
+                            -->
 
                     </div>
 
