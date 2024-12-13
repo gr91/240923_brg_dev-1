@@ -63,7 +63,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    provider: 'netlify',
+    provider: 'ipx',
   }
 
 })
