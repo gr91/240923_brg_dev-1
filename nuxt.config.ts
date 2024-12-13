@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/mdc',
     'nuxt-anchorscroll',
-    '@nuxt/image'],
+    '@nuxt/image'
+  ],
 
   postcss: {
     plugins: {
@@ -59,6 +60,10 @@ export default defineNuxtConfig({
     options: {
       scrollBehaviorType: 'smooth'
     }
+  },
+
+  image: {
+    provider: 'netlify',
   }
 
 })
