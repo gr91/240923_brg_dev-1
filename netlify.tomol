@@ -1,0 +1,7 @@
+[build]
+command = "npx nuxi generate"
+publish = ".output/public"
+environment = { NODE_VERSION = "20.15.0", NPM_VERSION = "10.7.0" }
+
+# [[plugins]]
+# package = "netlify-plugin-subfont"
