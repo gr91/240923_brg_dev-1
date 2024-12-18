@@ -15,7 +15,7 @@ const localePath = useLocalePath();
 const { locale, setLocale } = useI18n();
 
 //produce content path and dynamic key based on locale
-const contentPath = `/home/${locale.value}/home-project`;
+const contentPath = `/home/${locale.value}/home-selection`;
 
 //query data via useAsyncData composable
 const { data: artwork } = await useAsyncData('helloHome', () =>
@@ -35,7 +35,6 @@ const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
 //---------------- CAROUSEL + MODAL SETTING ----------------------
 
 const currentIndex = ref(0);
-const modalArtImageIsOpen = ref(false);
 let interval;
 
 onMounted(() => {
@@ -49,19 +48,6 @@ onBeforeUnmount(() => {
   clearInterval(interval);
 });
 
-// Define the reactive object
-const modalImage = ref({ value: '' });
-const modalCaption = ref({ value: '' });
-
-// Update function without TypeScript type annotations
-function updateThisMediaImage(modalImage, currentImage) {
-  modalImage.value = currentImage;
-}
-
-// Update function without TypeScript type annotations
-function updateThisMediaCaption(modalCaption, currentCaption) {
-    modalCaption.value = currentCaption;
-}
 
 //--------------------------------------------------------------
 
@@ -85,10 +71,7 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
                 
         <!--CAROUSEL Images-->
         <button
-          @click="
-            modalArtImageIsOpen = true;
-            updateThisMediaImage(modalImage, imageItems[currentIndex].image);
-            updateThisMediaCaption(modalCaption, imageItems[currentIndex].caption)"
+          @click=""
           class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
           >
                             
@@ -118,43 +101,35 @@ function updateThisMediaCaption(modalCaption, currentCaption) {
   </div>
 
 
-  <!--IMAGE MODAL-->
-  <UModal
-    v-model="modalArtImageIsOpen"
-    :ui="{ overlay: {background: 'bg-BRG-white opacity-95'} }"
-    fullscreen
-    >
+  <div>
+    <p>-----------------------------</p>
+    <p><strong>artwork</strong> {{ artwork }}</p><br>
+    
+    <p>-----------------------------</p>
+    <p><strong>artwork.title</strong> {{ artwork.title }}</p>
+    <p><strong>artwork._path</strong> {{artwork._path }}</p>
 
-      <div class="h-full w-full  mx-auto px-4 pb-12 pt-2 flex flex-col gap-2">
-
-
-        <div class="h-8 flex-none flex justify-between items-center ">
-          <p class="brg-txt-body">
-            {{ modalCaption.value }}
-          </p>
-
-          <button
-              @click="modalArtImageIsOpen = false"
-              class="brg-cta brg-txt-button h-4 "
-              >
-              {{ $t('close') }}
-          </button>
-
-        </div>
-
-
-        <div class="flex-1 overflow-hidden flex w-fit mx-auto">
-          <img
-            :src="modalImage.value"
-            class="object-contain h-full w-full"
-            >
-        </div>
-            
-
-      </div>            
-
+    <p>-----------------------------</p>
+    <div v-for="(item, index) in imageItems">
+      <p><strong>Image {{ index }}</strong></p>
+      <p>{{ item }}</p>
+      <img
+        :src="item.image"
+        class="object-contain max-w-md"
+      >
+      <p>{{ item.caption }}</p>
+      <br>
       
-  </UModal>
+      <p>{{ item.artwork }}</p>
+      <br>
+      
+      <NuxtLink />
+      <br>
+      <br>
+      <br>
+    </div>
+  </div>
+
 
 
 
