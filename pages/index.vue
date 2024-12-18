@@ -60,48 +60,126 @@ onBeforeUnmount(() => {
 <template >
 
 
+  
 
+  <!--FIRST IMAGE-->
+  <div
+    class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 mb-12 md:mb-24"
+    style="border: solid grey;"
+    >
 
-  <!--FIT TO SCREEN section-->
-  <div class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 ">
-
-        <!-- NEW CAROUSEL -->
-    <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-10">
+    <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-8"
+      style="border: solid ;"
+      >
                 
-      <div class="h-full w-fit flex flex-col justify-start items-start" >
-                
-        <!--CAROUSEL Images-->
-        <button
-          @click=""
-          class="w-fit h-full min-h-0 max-h-full flex justify-center items-center"
+      <NuxtLink :to="localePath(imageItems[0].artworkPath)"
+        class="h-full w-fit flex flex-col justify-center items-start"
+        style="border: solid green;"
+        >
+        
+        <!--IMAGE-->
+        <div class="w-fit md:h-full min-h-0 max-h-full flex justify-center items-center"
+          style="border: solid blue;"
           >
-                            
           <img
-            :src="imageItems[currentIndex].image" :alt="imageItems[currentIndex].caption"
-            draggable="false"
+            :src="imageItems[0].image" :alt="imageItems[0].caption"
             class="max-w-full object-contain"
             style="
               max-width: 100%;
               max-height: 100%;
-              display: block;"
+              display: block;
+              border: solid red;"
           >
-
-        </button>
-                                
-        <!--CAROUSEL Caption-->
-        <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
-          class="w-fit brg-txt-caption mt-2"
-          > 
-          <p> {{ imageItems[currentIndex].caption }} </p>
         </div>
                                 
-      </div>
+        <!--CAPTION-->
+        <div v-show="imageItems[0].caption && imageItems[0].caption != ''"
+          class="w-fit brg-txt-caption mt-2"
+          > 
+          <p> {{ imageItems[0].caption }} </p>
+        </div>
+
+      </NuxtLink>
+
+    </div>
+
+  </div>
+
+  <!--FROM-->
+  <div v-for="item in imageItems.slice(1)"
+    class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-0 pb-0 md:pb-24"
+    style="border: solid grey;"
+    >
+
+    <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-8"
+      style="border: solid ;"
+      >
+                
+      <NuxtLink :to="localePath(item.artworkPath)"
+        class="h-full w-fit flex flex-col justify-start md:justify-center items-start"
+        style="border: solid green;"
+        >
+        
+        <!--IMAGE-->
+        <div class="w-fit md:h-full min-h-0 max-h-full flex justify-center items-center"
+          style="border: solid blue;"
+          >
+          <img
+            :src="item.image" :alt="item.caption"
+            class="max-w-full object-contain"
+            style="
+              max-width: 100%;
+              max-height: 100%;
+              display: block;
+              border: solid red;"
+          >
+        </div>
+                                
+        <!--CAPTION-->
+        <div v-show="item.caption && item.caption != ''"
+          class="w-fit brg-txt-caption mt-2"
+          > 
+          <p> {{ item.caption }} </p>
+        </div>
+
+      </NuxtLink>
 
     </div>
 
   </div>
 
 
+  <p>-------------------------------------------------</p>
+  <div
+    class="px-4 py-12 flex md:justify-center"
+    style="border: solid ;"
+    >
+    <NuxtLink
+      :to="localePath('/artworks')"
+      class="brg-txt-button brg-cta md:m-auto"
+      style="border: solid;"
+      >
+      {{ $t('artworks') }}
+    </NuxtLink>
+  </div>
+
+<!--
+  
+<div v-for="(item, index) in imageItems">
+  <NuxtLink :to="localePath(item.artworkPath)" >
+    <img
+    :src="item.image"
+    class="object-contain max-w-md"
+    >
+    <p class="brg-txt-caption">{{ item.caption }}</p>
+  </NuxtLink>
+</div>
+
+-->
+
+
+
+<!--
   <div>
     <p>-----------------------------</p>
     <p><strong>artwork</strong> {{ artwork }}</p><br>
@@ -109,7 +187,7 @@ onBeforeUnmount(() => {
     <p>-----------------------------</p>
     <p><strong>artwork.title</strong> {{ artwork.title }}</p>
     <p><strong>artwork._path</strong> {{artwork._path }}</p>
-
+    
     <p>-----------------------------</p>
     <div v-for="(item, index) in imageItems">
       <p><strong>Image {{ index }}</strong></p>
@@ -121,14 +199,15 @@ onBeforeUnmount(() => {
       
       <NuxtLink :to="localePath(item.artworkPath)" class="brg-cta">
         <img
-          :src="item.image"
-          class="object-contain max-w-md"
+        :src="item.image"
+        class="object-contain max-w-md"
         >
         <p class="brg-txt-caption">{{ item.caption }}</p>
       </NuxtLink>
     </div>
   </div>
-
+  
+-->
 
 
 
