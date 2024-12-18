@@ -49,8 +49,8 @@ collections:
             widget: 'string'
             hint: 'Image caption'
             required: false
-          - label: 'artwork'
-            name: 'artwork'
+          - label: 'Related artwork'
+            name: 'relartwork'
             widget: 'relation'
             collection: 'artworks'
             value_field: '{{slug}}'
