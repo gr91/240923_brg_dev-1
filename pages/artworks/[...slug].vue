@@ -1,4 +1,6 @@
 <script setup  >
+import image from '@nuxtjs/mdc/runtime/parser/handlers/image';
+
 
 
 //------i18n configuration (from nuxtjs/i18n docs)------
@@ -35,22 +37,49 @@ const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
 
 
 
-//---------------- CAROUSEL + MODAL SETTING ----------------------
+//---------------- CAROUSEL SETTING ----------------------
 
 const currentIndex = ref(0);
+const nextIndex = ref(1);
 const modalArtImageIsOpen = ref(false);
 let interval;
 
+function updateCurrentIndex (currentIndex) {
+    currentIndex.value = (currentIndex.value +1) % imageItems.length;
+};
+
+function updateNextIndex (currentIndex, nextIndex) {
+    nextIndex.value = currentIndex.value +1;
+}
+
+function loadNextImage(nextIndex){
+    const nextImage = new Image();
+    nextImage.src = imageItems[nextIndex].image;
+
+};
+
+
+
 onMounted(() => {
     interval = setInterval(() => {
-        currentIndex.value = (currentIndex.value +1) % imageItems.length;
+        updateCurrentIndex(currentIndex);
+        updateNextIndex(currentIndex, nextIndex);
+
+        loadNextImage(nextIndex);
+
     }, 4000);
 });
 
+
+
 onBeforeUnmount(() => {
-  // Clear the interval on component unmount
-  clearInterval(interval);
+    // Clear the interval on component unmount
+    clearInterval(interval);
 });
+
+
+
+//---------------- MODAL SETTING ----------------------
 
 // Define the reactive object
 const modalImage = ref({ value: '' });
@@ -180,7 +209,12 @@ const scrollTo = (hash) => {
                     <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
                         class="w-fit brg-txt-caption mt-2"
                         > 
-                        <p>{{ imageItems[currentIndex].caption }} </p>
+                        <p><strong>currentIndex:</strong> {{ currentIndex }}</p>
+                        <p>{{ imageItems[currentIndex].caption }}</p>
+                        <p>------</p>
+                        <p><strong>nextIndex:</strong> {{ nextIndex }}</p>
+                        <p>{{ imageItems[nextIndex].caption }}</p>
+                        <p>{{ imageItems[nextIndex].image }}</p>
                     </div>
                                 
                 </div>
