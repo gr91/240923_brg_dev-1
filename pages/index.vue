@@ -65,21 +65,17 @@ onBeforeUnmount(() => {
   <!--FIRST IMAGE-->
   <div
     class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 mb-12 md:mb-24"
-    style="border: solid grey;"
     >
 
     <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-8"
-      style="border: solid ;"
       >
                 
       <NuxtLink :to="localePath(imageItems[0].artworkPath)"
         class="h-full w-fit flex flex-col justify-center items-start"
-        style="border: solid green;"
         >
         
         <!--IMAGE-->
         <div class="w-fit md:h-full min-h-0 max-h-full flex justify-center items-center"
-          style="border: solid blue;"
           >
           <img
             :src="imageItems[0].image" :alt="imageItems[0].caption"
@@ -87,8 +83,7 @@ onBeforeUnmount(() => {
             style="
               max-width: 100%;
               max-height: 100%;
-              display: block;
-              border: solid red;"
+              display: block;"
           >
         </div>
                                 
@@ -108,21 +103,17 @@ onBeforeUnmount(() => {
   <!--FROM-->
   <div v-for="item in imageItems.slice(1)"
     class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-0 pb-0 md:pb-24"
-    style="border: solid grey;"
     >
 
     <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-8"
-      style="border: solid ;"
       >
                 
       <NuxtLink :to="localePath(item.artworkPath)"
         class="h-full w-fit flex flex-col justify-start md:justify-center items-start"
-        style="border: solid green;"
         >
         
         <!--IMAGE-->
         <div class="w-fit md:h-full min-h-0 max-h-full flex justify-center items-center"
-          style="border: solid blue;"
           >
           <img
             :src="item.image" :alt="item.caption"
@@ -130,8 +121,7 @@ onBeforeUnmount(() => {
             style="
               max-width: 100%;
               max-height: 100%;
-              display: block;
-              border: solid red;"
+              display: block;"
           >
         </div>
                                 
@@ -149,15 +139,12 @@ onBeforeUnmount(() => {
   </div>
 
 
-  <p>-------------------------------------------------</p>
   <div
-    class="px-4 py-12 flex md:justify-center"
-    style="border: solid ;"
+    class="px-4 pb-8 flex md:justify-center"
     >
     <NuxtLink
       :to="localePath('/artworks')"
       class="brg-txt-button brg-cta md:m-auto"
-      style="border: solid;"
       >
       {{ $t('artworks') }}
     </NuxtLink>
