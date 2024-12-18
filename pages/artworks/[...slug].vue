@@ -38,48 +38,44 @@ const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
 
 
 //---------------- CAROUSEL SETTING ----------------------
-
 const currentIndex = ref(0);
 const nextIndex = ref(1);
-const modalArtImageIsOpen = ref(false);
 let interval;
 
-function updateCurrentIndex (currentIndex) {
-    currentIndex.value = (currentIndex.value +1) % imageItems.length;
+
+function loadNextImage(){
+    return new Promise ((resolve) => {
+        const nextImage = new Image();
+        nextImage.src = imageItems[nextIndex.value].image;
+        nextImage.onload = () => resolve();
+    })
+    
 };
 
-function updateNextIndex (currentIndex, nextIndex) {
-    nextIndex.value = currentIndex.value +1;
+function updateIndex () {
+    currentIndex.value = (currentIndex.value +1) % imageItems.length;
+    nextIndex.value = (currentIndex.value +1) % imageItems.length;
+};
+
+async function checkLoadingAndUpdateIndex() {
+    await loadNextImage();
+    updateIndex();
 }
 
-function loadNextImage(nextIndex){
-    const nextImage = new Image();
-    nextImage.src = imageItems[nextIndex].image;
-
-};
-
-
-
 onMounted(() => {
-    interval = setInterval(() => {
-        updateCurrentIndex(currentIndex);
-        updateNextIndex(currentIndex, nextIndex);
-
-        loadNextImage(nextIndex);
-
+    interval = setInterval(async() => {
+        await checkLoadingAndUpdateIndex();
     }, 4000);
 });
 
-
-
 onBeforeUnmount(() => {
-    // Clear the interval on component unmount
     clearInterval(interval);
 });
 
 
 
 //---------------- MODAL SETTING ----------------------
+const modalArtImageIsOpen = ref(false);
 
 // Define the reactive object
 const modalImage = ref({ value: '' });
