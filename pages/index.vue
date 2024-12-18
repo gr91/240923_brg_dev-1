@@ -26,7 +26,8 @@ const { data: artwork } = await useAsyncData('helloHome', () =>
 const imageItems = (artwork.value?.images && artwork.value.images.length > 0)
     ? artwork.value.images.map(image => ({
       image: image.image,   // The image URL from the markdown file
-      caption: image.caption // The caption from the markdown file
+      caption: image.caption, // The caption from the markdown file
+      artworkPath: `/artworks/${image.relartwork}` // The caption from the markdown file
     }))
 : [];
 
@@ -113,20 +114,18 @@ onBeforeUnmount(() => {
     <div v-for="(item, index) in imageItems">
       <p><strong>Image {{ index }}</strong></p>
       <p>{{ item }}</p>
-      <img
-        :src="item.image"
-        class="object-contain max-w-md"
-      >
-      <p>{{ item.caption }}</p>
       <br>
       
-      <p>{{ item.artwork }}</p>
+      <p>{{ item.artworkPath }}</p>
       <br>
       
-      <NuxtLink />
-      <br>
-      <br>
-      <br>
+      <NuxtLink :to="localePath(item.artworkPath)" class="brg-cta">
+        <img
+          :src="item.image"
+          class="object-contain max-w-md"
+        >
+        <p class="brg-txt-caption">{{ item.caption }}</p>
+      </NuxtLink>
     </div>
   </div>
 
