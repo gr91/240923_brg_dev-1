@@ -53,9 +53,9 @@ collections:
             name: 'artwork'
             widget: 'relation'
             collection: 'artworks'
-            value_filed: '{{slug}}'
-            search_field: ['title']
-            disply_field: ['title']
+            value_field: '{{slug}}'
+            search_fields: ['title']
+            display_fields: ['title']
 
 
 
