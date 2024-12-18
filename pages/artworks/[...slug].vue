@@ -205,12 +205,7 @@ const scrollTo = (hash) => {
                     <div v-show="imageItems[currentIndex].caption && imageItems[currentIndex].caption != ''"
                         class="w-fit brg-txt-caption mt-2"
                         > 
-                        <p><strong>currentIndex:</strong> {{ currentIndex }}</p>
                         <p>{{ imageItems[currentIndex].caption }}</p>
-                        <p>------</p>
-                        <p><strong>nextIndex:</strong> {{ nextIndex }}</p>
-                        <p>{{ imageItems[nextIndex].caption }}</p>
-                        <p>{{ imageItems[nextIndex].image }}</p>
                     </div>
                                 
                 </div>
