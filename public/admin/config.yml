@@ -33,6 +33,12 @@ collections:
     #Add i18n configuration----------
     i18n: true
     fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+        #Add i18n configuration----------
+        i18n: duplicate
+        
       - label: 'Images'
         name: 'images'
         widget: 'list'
