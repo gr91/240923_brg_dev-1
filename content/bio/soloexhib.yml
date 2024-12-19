@@ -1,5 +1,7 @@
 it:
   exhib:
+    - year: 2025
+      text: " HOME, Casa degli artisti Milano, a cura di Susanna Ravelli"
     - year: 2024
       text: HOME, Casa Degli artisti Milano, by Susanna Ravelli
     - year: 2023
@@ -21,8 +23,6 @@ it:
     - year: 1995
       text: Decomposizione della materia - San Fedele - Milano I,   by Daniela
         Palazzoli
-    - year: 2025
-      text: " HOME, Casa degli artisti Milano, a cura di Susanna Ravelli"
 en:
   exhib:
     - year: 2024
