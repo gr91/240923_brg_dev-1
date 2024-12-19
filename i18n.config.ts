@@ -31,6 +31,9 @@ export default defineI18nConfig(() => ({
         designanddev:'Design e sviluppo',
 
         inprogress: 'In corso',
+
+        allartworks: 'Tutte le opere',
+        allbooks: 'Tutti i volumi'
       },
       en: {
         welcome: 'Welcome',
@@ -58,8 +61,11 @@ export default defineI18nConfig(() => ({
         
         designanddev:'Design and development',
         photographer:'Photographer',
-
+        
         inprogress: 'In progress',
+        
+        allartworks: 'All artworks',
+        allbooks: 'All books'
       }
     }
   }))

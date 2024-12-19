@@ -140,13 +140,23 @@ onBeforeUnmount(() => {
 
 
   <div
-    class="px-4 pb-8 flex md:justify-center"
+    class="w-full px-4 pb-12 flex gap-8 justify-center "
+    style="border: solid grey;"
     >
     <NuxtLink
       :to="localePath('/artworks')"
-      class="brg-txt-button brg-cta md:m-auto"
+      class="brg-txt-button brg-cta md:m-auto "
+      style="border: solid;"
       >
-      {{ $t('artworks') }}
+      {{ $t('allartworks') }}
+    </NuxtLink>
+    
+    <NuxtLink
+      :to="localePath('/books')"
+      class="brg-txt-button brg-cta md:m-auto"
+      style="border: solid;"
+      >
+      {{ $t('allbooks') }}
     </NuxtLink>
   </div>
 
