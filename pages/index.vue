@@ -64,7 +64,7 @@ onBeforeUnmount(() => {
 
   <!--FIRST IMAGE-->
   <div
-    class="w-full h-dvh mx-auto flex flex-col pt-12 md:pt-24 mb-12 md:mb-24"
+    class="w-full h-svh mx-auto flex flex-col pt-12 md:pt-24 mb-12 md:mb-24"
     >
 
     <div class="w-full h-full flex justify-center items-center px-4 pb-4 md:pb-8"

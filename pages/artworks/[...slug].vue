@@ -165,7 +165,7 @@ const scrollTo = (hash) => {
     
 
     <!--FIT TO SCREEN section-->
-    <div class="w-full h-dvh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
+    <div class="w-full h-svh mx-auto flex flex-col pb-4 pt-56 md:pt-52" id="anchorimg"> 
         
 
 
