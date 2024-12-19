@@ -20,6 +20,6 @@ description: |-
   ISBN 88-444-1249-7
 order: Mail
 address: brunaginammi64@gmail.com
-mediavideo: xfTTwDVQr68
+mediavideo: fRyTILmX0l8
 mediavideocaption: Mostra *L’altro sguardo. Fotografie 1965–2015*, collezione Donata Pizzi.
 ---
