@@ -1,5 +1,5 @@
 ---
-title: Life’s flags
+title: A.R. Life’s flags
 beginyear: 2015
 endyear: 2017
 category: Photo
