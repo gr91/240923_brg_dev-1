@@ -5,12 +5,12 @@ inprogress: false
 endyear: 1995
 category: Photo
 images:
+  - image: /img/11_fg.png
+    caption: Studio di uva
   - image: /img/22_fg.png
     caption: Studio di mandarino
   - image: /img/studio-di-peperone035.png
     caption: Studio di peperone
-  - image: /img/11_fg.png
-    caption: Studio di uva
   - image: /img/01_torta_fg.png
     caption: Studio di torta
   - image: /img/13_fg.png
