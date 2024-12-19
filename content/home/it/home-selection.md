@@ -24,6 +24,6 @@ images:
     caption: Eva
     relartwork: 2024-11-07-mutatis
   - image: /img/21-n8805.png
-    caption: Didascalia
+    caption: ""
     relartwork: 2024-11-07-utmos
 ---
