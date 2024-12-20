@@ -14,8 +14,8 @@ const route = useRoute()
             </div>
             
             <div class="mb-4">
-                <p>via Privata Paolo Cezanne, 11</p>
-                <p>20143 Milano MI, Italy</p>
+                <p>11, via Privata Paolo Cezanne</p>
+                <p>20143 Milano, Italy</p>
             </div>
             
             <div class="mb-12">
