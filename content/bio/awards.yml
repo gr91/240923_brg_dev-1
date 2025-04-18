@@ -2,10 +2,8 @@ it:
   award:
     - year: 1995
       text: European Kodak Panorama Awards for young photographer, Arles
-    - year: 2025
-      text: Menzione Onorabile  Photofrome Festival Frome UK
-    - year: 2025
-      text: Menzione Onorabile Photofrome Festival UK
+    - year: 2021
+      text: Menzione d'Onore PhotoFrome Festival Frome UK
 en:
   award:
     - year: 1995
