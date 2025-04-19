@@ -2,6 +2,8 @@ it:
   exhib:
     - year: 2025
       text: Mise en Scéne - Palazzo del duca Senigallia collezione Donata Pizzi
+    - year: 2025
+      text: PhotoFrome Festival Frome UK
     - year: 2023
       text: |-
         Parlando con voi - Museo Archivio della Grafica e del Manifesto 
@@ -68,8 +70,6 @@ it:
     - year: 1993
       text: A propos de la Photographie Italienne -Il Diaframma Noces d’argent, by
         Charles Henry Favrod - Museè de L’Elyseé - CH Lausanne
-    - year: 2025
-      text: PhotoFrome Festival Frome UK
 en:
   exhib:
     - year: 2023
