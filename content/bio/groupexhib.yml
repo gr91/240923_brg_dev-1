@@ -72,6 +72,18 @@ it:
         Charles Henry Favrod - Museè de L’Elyseé - CH Lausanne
 en:
   exhib:
+    - year: 2025
+      text: |-
+        Mise en Scéne - Palazzo del duca Senigallia collezione Donata Pizzi
+
+        (ENG)
+    - year: 2025
+      text: PhotoFrome Festival Frome UK
+    - year: 2023
+      text: |-
+        Parlando con voi - Museo Archivio della Grafica e del Manifesto 
+
+        Civitanova Alta by Daniela Tartaglia
     - year: 2023
       text: Soliera Castello dell’arte -Giochi di verità- Collezione Donata Pizzi
     - year: 2021
@@ -133,16 +145,3 @@ en:
     - year: 1993
       text: A propos de la Photographie Italienne -Il Diaframma Noces d’argent, by
         Charles Henry Favrod - Museè de L’Elyseé - CH Lausanne
-    - year: 2025
-      text: Photo Frome Festival UK
-    - year: 2023
-      text: |-
-        Parlando con voi - Museo Archivio della Grafica e del Manifesto 
-
-        Civitanova Alta by Daniela Tartaglia
-    - year: 2025
-      text: Mise en Scéne - Palazzo del duca Senigallia collezione Donata Pizzi
-    - year: 2025
-      text: Menzione d'onore  PhotoFrome Festival Frome UK
-    - year: 2025
-      text: Home
