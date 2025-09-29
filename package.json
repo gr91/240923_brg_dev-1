@@ -10,11 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/content": "^3.7.1",
-    "@nuxt/image": "^1.11.0",
+    "@nuxt/content": "^2.13.2",
+    "@nuxt/image": "^1.8.1",
     "@nuxt/ui": "npm:@nuxt/ui-edge@latest",
     "@nuxtjs/i18n": "^8.5.5",
-    "@nuxtjs/mdc": "^0.17.4",
+    "@nuxtjs/mdc": "^0.9.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vimeo/player": "^2.24.0",
     "nuxt": "^3.13.0",
