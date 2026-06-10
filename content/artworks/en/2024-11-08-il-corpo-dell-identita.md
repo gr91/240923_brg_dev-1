@@ -1,7 +1,9 @@
 ---
 title: Il corpo dell’identità
+subtitle: autoritratto con libri
 beginyear: 1994
 inprogress: true
+endyear: ""
 category: Photo
 images:
   - image: /img/22-definitiva1093ok-2.png
@@ -20,6 +22,7 @@ images:
     caption: Take me I'm yours
   - image: /img/ho-me-24-marzo-2021.png
     caption: HO ME
+video: null
 description:
   - text: >-
       I started taking photos of myself in 1994 to get to know myself in greater
