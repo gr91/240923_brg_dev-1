@@ -1,6 +1,6 @@
 ---
 title: Il corpo dell’identità
-subtitle: autoritratto con libri
+subtitle: ""
 beginyear: 1994
 inprogress: true
 endyear: ""
