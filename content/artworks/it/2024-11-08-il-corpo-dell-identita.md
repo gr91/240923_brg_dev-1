@@ -23,7 +23,7 @@ images:
   - image: /img/ho-me-24-marzo-2021.png
     caption: HO ME
   - image: /img/png-copia.png
-    caption: autoritratto con libri
+    caption: Autoritratto con libri
 description:
   - text: >-
       Ho iniziato a riprendere me stessa nel 1994 per conoscermi più in
