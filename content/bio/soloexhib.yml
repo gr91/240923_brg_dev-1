@@ -21,6 +21,9 @@ it:
     - year: 1995
       text: Decomposizione della materia - San Fedele - Milano I,   by Daniela
         Palazzoli
+    - year: 2026
+      text: Prospettive  a cura di Silvia Franceschi Spazio Blue Train e the kitchen
+        art gallery
 en:
   exhib:
     - year: 2024
@@ -44,5 +47,6 @@ en:
     - year: 1995
       text: Decomposizione della materia - San Fedele - Milano I,   by Daniela
         Palazzoli
-    - year: 2025
-      text: HOME, Casa degli artisti Milano, a cura di Susanna Ravelli
+    - year: 2026
+      text: Prospettive curated by  Silvia Franceschi Spazio Blue Train e the kitchen
+        art gallery
