@@ -1,5 +1,8 @@
 it:
   exhib:
+    - year: 2026
+      text: Prospettive -Spazio Blue Train-The kitchen art gallery Milano a cura
+        Silvia Franceschi
     - year: 2024
       text: HOME, Casa Degli artisti Milano, by Susanna Ravelli
     - year: 2023
@@ -21,9 +24,6 @@ it:
     - year: 1995
       text: Decomposizione della materia - San Fedele - Milano I,   by Daniela
         Palazzoli
-    - year: 2026
-      text: Prospettive -Spazio Blue Train-The kitchen art gallery Milano a cura
-        Silvia Franceschi
 en:
   exhib:
     - year: 2024
