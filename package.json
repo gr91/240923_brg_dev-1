@@ -17,7 +17,6 @@
     "@nuxtjs/mdc": "^0.9.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@vimeo/player": "^2.24.0",
-    "emojilib": "^4.0.3",
     "nuxt": "^3.13.0",
     "shell-quote": "^1.8.4",
     "vue": "latest",
