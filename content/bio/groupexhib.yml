@@ -1,5 +1,7 @@
 it:
   exhib:
+    - year: 2026
+      text: Nuova mostra
     - year: 2025
       text: Mise en Scéne - Palazzo del duca Senigallia collezione Donata Pizzi
     - year: 2025
@@ -68,8 +70,7 @@ it:
         Zannier La Biennale di Venezia Padiglione Italia
       year: 1995
     - year: 1993
-      text: A propos de la Photographie Italienne -Il Diaframma Noces d’argent, by
-        Charles Henry Favrod - Museè de L’Elyseé - CH Lausanne
+      text: Nuova mostra di prova
 en:
   exhib:
     - year: 2025
