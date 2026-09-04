@@ -66,4 +66,16 @@ export default defineNuxtConfig({
     provider: 'ipx',
   }
 
+  ,
+  vite: {
+    optimizeDeps: {
+      exclude: ['emojilib', 'node-emoji']
+    },
+    build: {
+      rollupOptions: {
+        external: ['emojilib', 'node-emoji']
+      }
+    }
+  }
+
 })
