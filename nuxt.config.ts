@@ -64,9 +64,12 @@ export default defineNuxtConfig({
 
   image: {
     provider: 'ipx',
-  }
+  },
 
-  ,
+  nitro: {
+    preset: 'netlify-static'
+  },
+
   vite: {
     optimizeDeps: {
       exclude: ['emojilib', 'node-emoji']
